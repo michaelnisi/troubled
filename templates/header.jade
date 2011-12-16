@@ -1,0 +1,12 @@
+header
+  section#tweet
+    p Oh Hello! 
+  a(href='/')
+   h1 THE TROUBLED PROGRAMMER
+  p= dateString
+  nav
+    ul
+      each item in mainNavigationItems
+        li
+          a(href= item.link)= item.title
+

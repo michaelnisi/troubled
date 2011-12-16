@@ -1,0 +1,9 @@
+{
+	{ "title":"Future Friendly",
+      "link:"http://futurefriend.ly/",
+	  "date":"Sun, 06 Nov 2011 05:52:15 EST"
+	}
+}
+
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"><channel><title>Instapaper: Starred</title><link>http://www.instapaper.com/starred</link><description></description><item><title>Future Friendly</title><link>http://futurefriend.ly/</link><description></description><pubDate>Sun, 06 Nov 2011 05:52:15 EST</pubDate></item><item><title>Modules | Learn You Some Erlang for Great Good!</title><link>http://learnyousomeerlang.com/modules</link><description></description><pubDate>Wed, 26 Oct 2011 10:15:46 EDT</pubDate></item><item><title>CommonJS effort sets JavaScript on path for world domination</title><link>http://arstechnica.com/web/news/2009/12/commonjs-effort-sets-javascript-on-path-for-world-domination.ars</link><description></description><pubDate>Fri, 07 Oct 2011 09:01:35 EDT</pubDate></item><item><title>Daring Fireball</title><link>http://daringfireball.net/</link><description></description><pubDate>Fri, 07 Oct 2011 08:56:53 EDT</pubDate></item><item><title>Behavior Driven Development - Wikipedia, the free encyclopedia</title><link>http://en.wikipedia.org/wiki/Behavior_Driven_Development</link><description></description><pubDate>Sat, 01 Oct 2011 14:26:53 EDT</pubDate></item></channel></rss>
