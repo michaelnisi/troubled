@@ -1,27 +1,27 @@
+- var hasItems = items && items.length > 0
+- var latestItem = hasItems ? items[0] : null
+
 !!! 5
 html(lang="en")
   include head
   body  
     div#container
       include header
-      section#cover
-        - var latestItem = items[0]
-        article
-          a(href= latestItem.link)
-            h2= latestItem.title
-          p.summary= latestItem.description
-          !{latestItem.content}
-      section#articles
-        ul
-          each item in items
-            - if (item != latestItem)
-              li
-                a(href= item.link)
-                  h3= item.title
-                  p.summary= item.description
+      - if (latestItem)
+        section#cover
+          article
+            a(href= latestItem.link)
+              h2= latestItem.title
+            p.summary= latestItem.description
+            !{latestItem.content}
+      - if (hasItems)
+        section#articles
+          ul
+            each item in items
+              - if (item != latestItem)
+                li
+                  a(href= item.link)
+                    h3= item.title
+                    p.summary= item.description
       section#likes
       include footer  
-      script(src='//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js')
-      script(src='/js/libs/highlight.pack.js')  
-      script(src='/js/plugins.js')
-      script(src='/js/script.js')

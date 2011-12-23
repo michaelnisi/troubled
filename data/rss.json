@@ -2,5 +2,6 @@
   "title": "Michael Nisi",
   "description": "Spectacular Programming Extravaganza",
   "link": "http://michaelnisi.com/",
-  "template": "rss.jade"
+  "template": "rss.jade",
+  "name": "rss.xml"
 }

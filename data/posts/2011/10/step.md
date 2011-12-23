@@ -2,11 +2,10 @@
   "title": "Step",
   "description": "Painless parallel execution, serial execution, and error handling",
   "template": "article.jade",
-  "path": "/2011/10/09/step",
-  "menu": [{ "title":"Home", "link":"/" }, { "title":"About", "link":"/about" }]
+  "date": "2011-10-25",
+  "path": "/2011/10"
 }
 $end
-
 The step library exports a single function I call step. It accepts any number of functions as arguments and runs them in serial order using the passed in this context as the callback to the next step.
 
     step(
