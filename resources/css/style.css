@@ -398,14 +398,20 @@ section#tweet p span {
   #container {
     max-width: 53em;
   }
+  
+  section#articles {
+    overflow: hidden;
+    width: 100%;
+  }
 
-  section#articles ul li {
+  section#articles ul {
+    width: 45%;
     float: left;
-    width: 50%;
-  }  
+  }
 
-  section#likes {
-    clear: left;
+  section#articles ul#secondArticlesColumn {
+    width: 45%;
+    float: right;
   }
 }
 

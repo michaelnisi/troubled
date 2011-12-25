@@ -10,4 +10,18 @@ $(document).ready(function() {
 	$('pre code').each(function(i, e) {
 		hljs.highlightBlock(e, '    ')
 	});
+	   
+	
+	if ($(window).width() > 768) {
+		$('#articles').append('<ul id="secondArticlesColumn"></ul>');
+
+		var items =  $('#articles ul li');
+		var threshold = items.length / 2;
+				
+		items.each(function(index) {
+			if (index >= threshold) {
+				$(this).appendTo($('#secondArticlesColumn'));
+			}
+		});
+	}
 });
