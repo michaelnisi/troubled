@@ -10,10 +10,11 @@ $(document).ready(function() {
 	$('pre code').each(function(i, e) {
 		hljs.highlightBlock(e, '    ')
 	});
-	   
+
+	var articles = $('#articles');
 	
-	if ($(window).width() > 768) {
-		$('#articles').append('<ul id="secondArticlesColumn"></ul>');
+	if (articles && $(window).width() > 768) {
+		articles.append('<ul id="secondArticlesColumn"></ul>');
 
 		var items =  $('#articles ul li');
 		var threshold = items.length / 2;
