@@ -1,10 +1,12 @@
+- var url = 'http://michaelnisi.com'
+
 doctype xml
 rss(version='2.0')
   channel
     title= channel.title
     description= channel.description
     language en-us
-    link http://michaelnisi.com/
+    link url
     lastBuildDate= channel.date
     pubDate= channel.date
 
@@ -12,5 +14,5 @@ rss(version='2.0')
       item
         title= item.title
         description= item.content
-        link= item.link
+        link= url + item.link
         pubDate= item.date

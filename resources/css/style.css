@@ -208,7 +208,7 @@ td { vertical-align: top; }
 
 
 /* ==|== primary styles =====================================================
-   Author: Michael Nisi (mn@michaelnisi.com) 
+   Author: Michael Nisi (michael.nisi@gmail.com) 
    ========================================================================== */
 
 body {
@@ -227,16 +227,16 @@ a h1 {
 
 h1, h2, h3 {
   font-family: Futura, sans-serif;
-  font-weight: lighter; 
+  font-weight: 500;
+  letter-spacing: .1em;  
 }
 
 h1 {
   font-size: 2em;
-  letter-spacing:-.05em;
 }
 
 h2 {
-  font-size: 2em;
+  font-size: 2.5em;
 }
 
 h3 {
@@ -289,7 +289,9 @@ nav ul li {
 }
 
 nav a {
-  font: 1em Futura, sans-serif; 
+  font-family: futura-pt-1, futura-pt-2, sans-serif;
+  font-weight: 500;
+  font-size: 1.154em; 
 }
 
 article p, .summary, .copy {
@@ -299,6 +301,7 @@ article p, .summary, .copy {
 
 .summary {
   font-style: italic;
+  margin-top: -.2em;
 }
 
 #container {
@@ -322,6 +325,10 @@ section#likes a {
   font-size: 1.2em;
 }
 
+section#likes ul li {
+  margin-bottom: 1em;
+}
+
 p#title {
   text-align:center;
   font-size: 2em;
@@ -338,12 +345,15 @@ p#copyright {
   text-align: center;
 }
 
-section#tweet  {
+section#tweet {
   font-size: 1.3em;
-  padding: .1em;
+  line-height: 1.4em;
+  padding-bottom: 1em;
+  padding-right: 3em;
+  padding-left: 3em;
 }
 
-section#tweet p span {
+a#understated {
   font-style: italic;
   color: #ccc;
 }
@@ -405,13 +415,9 @@ section#tweet p span {
   }
 
   section#articles ul {
-    width: 45%;
+    width: 25em;
     float: left;
-  }
-
-  section#articles ul#secondArticlesColumn {
-    width: 45%;
-    float: right;
+    padding-right: 1em;
   }
 }
 

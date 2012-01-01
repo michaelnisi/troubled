@@ -1,5 +1,9 @@
 - var hasItems = items && items.length > 0
 - var latestItem = hasItems ? items[0] : null
+- var threshold = (items.length / 2) + 1;
+- var firstColumnItems = items.slice(0, threshold);
+- var secondColumnItems = items.slice(threshold);
+
 
 !!! 5
 html(lang="en")
@@ -11,18 +15,25 @@ html(lang="en")
         section#cover
           article
             a(href= latestItem.link)
-              h2= latestItem.title
+              h2= latestItem.title.toUpperCase()
             p.summary= latestItem.description
             !{latestItem.content}
       - if (hasItems)
         section#articles
           ul
-            each item in items
-              - if (item != latestItem)
+            each firstColumnItem in firstColumnItems
+              - if (firstColumnItem != latestItem)
                 li
-                  a(href= item.link)
-                    h3= item.title
-                    p.summary= item.description
+                  a(href= firstColumnItem.link)
+                    h3= firstColumnItem.title.toUpperCase()
+                    p.summary= firstColumnItem.description
+          ul
+            each secondColumnItem in secondColumnItems
+              li
+                a(href= secondColumnItem.link)
+                  h3= secondColumnItem.title.toUpperCase()
+                  p.summary= secondColumnItem.description
+      
       section#likes
       include footer
     include scripts
