@@ -2,8 +2,7 @@
   "title": "Solarized",
   "description": "Colorscheme with precise CIELAB lightness relationships",
   "template": "article.jade",
-  "date": "2011-10-15",
-  "path": "/2011/10"
+  "date": "2011-10-15"
 }
 $end
 [Solarized](http://ethanschoonover.com/solarized) is a sixteen color palette (eight monotones, eight accent colors) designed for use with terminal and gui applications. It has several unique properties. Ethan Schoonover designed this colorscheme with both precise [CIELAB](http://en.wikipedia.org/wiki/Lab_color_space) lightness relationships and a refined set of hues based on fixed color wheel relationships.

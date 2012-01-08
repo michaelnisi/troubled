@@ -268,12 +268,6 @@ code {
   font-size: 1.154em;
 }
 
-footer {
-  width: 100%;
-  padding: 1em;
-  text-align: center;
-}
-
 header nav {
   text-align: left;
 }
@@ -288,10 +282,11 @@ nav ul li {
   padding-right: 1em;
 }
 
-nav a {
+nav a, section#likes  {
   font-family: futura-pt-1, futura-pt-2, sans-serif;
   font-weight: 500;
-  font-size: 1.154em; 
+  font-size: 1.154em;
+  letter-spacing: .1em;  
 }
 
 article p, .summary, .copy {
@@ -321,8 +316,8 @@ section#articles li {
   line-height: 0;
 }
 
-section#likes a {
-  font-size: 1.2em;
+section#likes {
+  padding-bottom: 2em;
 }
 
 section#likes ul li {
@@ -358,6 +353,9 @@ a#understated {
   color: #ccc;
 }
 
+footer {
+  text-align: center;
+}
 
 
 

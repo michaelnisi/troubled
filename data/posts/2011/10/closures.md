@@ -2,8 +2,7 @@
   "title": "Closure",
   "description": "A function together with a referencing environment",
   "template": "article.jade",
-  "date": "2011-10-28",
-  "path": "/2011/10"
+  "date": "2011-10-18"
 }
 $end
 A closure is a function together with a referencing environment for the non-local variables of that function. A closure allows a function to access variables outside its typical scope. Such a function is said to be *closed over* its free variables. The referencing environment binds the nonlocal names to the corresponding variables in scope at the time the closure is created, additionally extending their lifetime to at least as long as the lifetime of the closure itself. 
