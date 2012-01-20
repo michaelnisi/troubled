@@ -1,6 +1,6 @@
 var http = require('http');
 var blake = require('/home/ubuntu/blake/lib/blake.js');
-var gits = require('/home/ubuntu/blake/node_modules/gits/main.js');
+var gits = require('/home/ubuntu/node_modules/gits/main.js');
 
 var server;
 
