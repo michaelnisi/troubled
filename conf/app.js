@@ -59,4 +59,4 @@ server.listen(3000, '127.0.0.1');
 setInterval(function () {
 	reflect('/home/ubuntu/michaelnisi/templates/', 
 			'/var/www/michaelnisi');
-}(), 1000 * 60 * 60);
+}, 1000 * 60 * 60);
