@@ -12,7 +12,7 @@ server = http.createServer(function (request, response) {
 	}
 
 	// Continue if request comes from github
-	
+
 	var data, payload;
 
 	data = '';
@@ -43,13 +43,13 @@ server = http.createServer(function (request, response) {
 		console.log(payload);
 
 		// Analyze payload, bake granuarly.
-		
+
 		gits.git('/home/ubuntu/michaelnisi', ['pull'], function () {
 			blake.main(['/home/ubuntu/michaelnisi', 
-					    '/var/www/michaelnisi']);
+					   '/var/www/michaelnisi']);
 		});
 	});
-	
+
 	response.writeHead(200);
 	response.end();
 });
@@ -57,6 +57,6 @@ server = http.createServer(function (request, response) {
 server.listen(3000, '127.0.0.1');
 
 setInterval(function () {
-	reflect('/home/ubuntu/michaelnisi/input/templates/', 
+	reflect('/home/ubuntu/michaelnisi/templates/', 
 			'/var/www/michaelnisi');
-}, 1000 * 60 * 60);
+}(), 1000 * 60 * 60);
