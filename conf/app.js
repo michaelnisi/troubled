@@ -3,6 +3,10 @@ var blake = require('/home/ubuntu/blake/lib/blake.js');
 var gits = require('/home/ubuntu/node_modules/gits/main.js');
 var reflect = require('/home/ubuntu/reflector/index.js').main;
 
+var INPUT = '/home/ubuntu/michaelnisi';
+var TEMPLATES = INPUT + '/templates/';
+var OUTPUT = '/var/www/michaelnisi';
+
 var server;
 
 server = http.createServer(function (request, response) {
@@ -44,9 +48,10 @@ server = http.createServer(function (request, response) {
 
 		// Analyze payload, bake granuarly.
 
-		gits.git('/home/ubuntu/michaelnisi', ['pull'], function () {
-			blake.main(['/home/ubuntu/michaelnisi', 
-					   '/var/www/michaelnisi']);
+		gits.git(INPUT, ['pull'], function (error) {
+			blake.bake(INPUT, OUTPUT, function(error) {
+				reflect(TEMPLATES, OUTPUT);
+			});
 		});
 	});
 
@@ -57,6 +62,5 @@ server = http.createServer(function (request, response) {
 server.listen(3000, '127.0.0.1');
 
 setInterval(function () {
-	reflect('/home/ubuntu/michaelnisi/templates/', 
-			'/var/www/michaelnisi');
+	reflect(TEMPLATES, OUTPUT);
 }, 1000 * 60 * 60);
