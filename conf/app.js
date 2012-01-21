@@ -1,6 +1,7 @@
 var http = require('http');
 var blake = require('/home/ubuntu/blake/lib/blake.js');
 var gits = require('/home/ubuntu/node_modules/gits/main.js');
+var reflect = require('/home/ubuntu/reflector/index.js').main;
 
 var server;
 
@@ -54,3 +55,8 @@ server = http.createServer(function (request, response) {
 });
 
 server.listen(3000, '127.0.0.1');
+
+setInterval(function () {
+	reflect('/home/ubuntu/michaelnisi/input/templates/', 
+			'/var/www/michaelnisi');
+}, 1000 * 60 * 60);
