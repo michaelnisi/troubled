@@ -355,7 +355,16 @@ a#understated {
 
 footer {
   text-align: center;
+  background-color: #f4f4f4;
+  width: 100%;
+  height: 100%;
+  padding-top: 1em;
+  border-top-color: #ececec;
+  border-top-width: 1px;
+  border-top-style: solid;
 }
+
+
 
 
 
