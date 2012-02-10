@@ -7,7 +7,7 @@ var markdown = require('markdown').markdown;
 
 // Get source file for input file and return a new RSS feed item populated 
 // with the values form the source object. 
-function getItem (file, filename, paths) {
+function getItem(file, filename, paths) {
   var src = blake.getSource(file, filename, paths);
 
   if (!src) {
@@ -27,7 +27,7 @@ function getItem (file, filename, paths) {
 
 // After reading the article file, get the RSS feed item for that article
 // and add it to the items array.
-function addItem (name, paths, items, callback) {
+function addItem(name, paths, items, callback) {
   blake.readFile(name, function (err, data) {
     if (err) {
       throw err;
@@ -38,7 +38,7 @@ function addItem (name, paths, items, callback) {
 }
 
 // Bake the RSS feed XML file.
-function bake (src, callback) {
+function bake(src, callback) {
   var items, result, options, rss;
 
   options = { filename: src.templatePath, pretty: true };
@@ -49,17 +49,17 @@ function bake (src, callback) {
     function() {
       blake.readDir(src.paths.posts, this);
     },
-    function (err, names) {
+    function(err, names) {
       if (err) {
         throw err;
       }
 
     var group = this.group();
-    names.forEach(function (name) {
+    names.forEach(function(name) {
       addItem(name, src.paths, items, group());
     });
   },
-  function (err, files) {
+  function(err, files) {
     if (err) {
       throw err;
     }

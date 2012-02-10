@@ -1,8 +1,11 @@
 // The home.js module renders the home page.
 
+// Require external dependencies.
 var step = require('step');
 var jade = require('jade');
 var blake = require('blake');
+
+// Require the article view.
 var articles = require('./article.js');
 
 // Add item to specified items array.
