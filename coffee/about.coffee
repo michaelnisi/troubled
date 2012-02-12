@@ -1,5 +1,6 @@
 # This module bakes the about page.
 
+# Require external dependencies.
 jade = require 'jade'
 markdown = (require 'markdown').markdown
 

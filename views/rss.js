@@ -1,81 +1,84 @@
-// The rss.js module generates the rss feed.
+(function() {
+  var addItem, addItems, bake, blake, compile, getItem, jade, markdown, readDir;
 
-var step = require('step');
-var jade = require('jade');
-var blake = require('blake');
-var markdown = require('markdown').markdown;
+  jade = require('jade');
 
-// Get source file for input file and return a new RSS feed item populated 
-// with the values form the source object. 
-function getItem(file, filename, paths) {
-  var src = blake.getSource(file, filename, paths);
+  blake = require('blake');
 
-  if (!src) {
-    return null;
-  }
+  markdown = (require('markdown')).markdown;
 
-  var summary = '<h4>' + src.header.description + '</h4>';
-
-  return {
-    title: src.header.title,
-    description: src.header.description,
-    content: summary + markdown.toHTML(src.body),
-    link: src.link,
-    date: src.dateString
-  };
-}
-
-// After reading the article file, get the RSS feed item for that article
-// and add it to the items array.
-function addItem(name, paths, items, callback) {
-  blake.readFile(name, function (err, data) {
-    if (err) {
-      throw err;
-    }
-    items.push(getItem(data, name, paths));
-    callback(err, items);
-  });
-}
-
-// Bake the RSS feed XML file.
-function bake(src, callback) {
-  var items, result, options, rss;
-
-  options = { filename: src.templatePath, pretty: true };
-  items = [];
-  rss = jade.compile(src.template, options);
-
-  step(
-    function() {
-      blake.readDir(src.paths.posts, this);
-    },
-    function(err, names) {
-      if (err) {
-        throw err;
-      }
-
-    var group = this.group();
-    names.forEach(function(name) {
-      addItem(name, src.paths, items, group());
-    });
-  },
-  function(err, files) {
-    if (err) {
-      throw err;
-    }
-
-    result = rss({ items: items, channel: {
-      date: src.dateString,
+  getItem = function(file, filename, paths) {
+    var src;
+    src = blake.getSource(file, filename, paths);
+    if (src == null) return;
+    return {
       title: src.header.title,
-      description: src.header.description }
+      description: src.header.description,
+      content: "<h4>" + src.header.description + "</h4>" + (markdown.toHTML(src.body)),
+      link: src.link,
+      date: src.dateString
+    };
+  };
+
+  addItem = function(name, paths, items, callback) {
+    return blake.readFile(name, function(err, data) {
+      var item;
+      if (err) throw err;
+      item = getItem(data, name, paths);
+      items.push(item);
+      return callback(err, items);
     });
+  };
 
-    callback(null, src.path, src.name, result);
-  }
-  );
-}
+  readDir = function(path, callback) {
+    return blake.readDir(path, callback);
+  };
 
-module.exports = {
-  bake:bake,
-  getItem:getItem
-};
+  addItems = function(paths, names, items, callback) {
+    var name, _i, _len, _results;
+    _results = [];
+    for (_i = 0, _len = names.length; _i < _len; _i++) {
+      name = names[_i];
+      _results.push(addItem(name, paths, items, function(err, items) {
+        if (items.length === names.length) return callback(null, items);
+      }));
+    }
+    return _results;
+  };
+
+  compile = function(src, items, callback) {
+    var options, result, rss, rssOptions;
+    rssOptions = {
+      filename: src.templatePath,
+      pretty: true
+    };
+    rss = jade.compile(src.template, rssOptions);
+    options = {
+      items: items,
+      channel: {
+        date: src.dateString,
+        title: src.header.title,
+        description: src.header.description
+      }
+    };
+    result = rss(options);
+    return callback(null, src.path, src.name, result);
+  };
+
+  bake = function(src, callback) {
+    var posts;
+    posts = [];
+    return readDir(src.paths.posts, function(err, names) {
+      if (err) throw err;
+      return addItems(src.paths, names, posts, function(err, posts) {
+        return compile(src, posts, callback);
+      });
+    });
+  };
+
+  module.exports = {
+    bake: bake,
+    getItem: getItem
+  };
+
+}).call(this);
