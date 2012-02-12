@@ -5,8 +5,8 @@ jade = require 'jade'
 blake = require 'blake'
 markdown = (require 'markdown').markdown
 
-# Get source file for input file and return a new RSS feed item populated 
-# with the values form the source object. 
+# Get source object for input file from blake and return a new RSS feed item
+# populated with the values form the source object. 
 getItem = (file, filename, paths) ->
   src = blake.getSource file, filename, paths
 
@@ -29,11 +29,9 @@ addItem = (name, paths, items, callback) ->
     items.push item
     callback err, items
 
-# Read the directory on the given path.
-readDir = (path, callback) ->
-  blake.readDir path, callback
-
-# A
+# Iterate over names and add one item per name to the item array. Apply
+# callback if all items returned. Note that that this is parallel IO. We
+# return control when all files are read.
 addItems = (paths, names, items, callback) ->
   for name in names
     addItem name, paths, items, (err, items) ->
@@ -69,13 +67,13 @@ compile = (src, items, callback) ->
 bake = (src, callback) ->
   posts = []
   
-  readDir src.paths.posts, (err, names) ->
+  blake.readDir src.paths.posts, (err, names) ->
     throw err if err
 
     addItems src.paths, names, posts, (err, posts) ->
       compile src, posts, callback
 
-# Export API
+# Export API.
 module.exports = 
   bake: bake
   getItem: getItem
