@@ -7,36 +7,15 @@ markdown = (require 'markdown').markdown
 
 # Get source object for input file from blake and return a new RSS feed item
 # populated with the values form the source object. 
-getItem = (file, filename, paths) ->
-  src = blake.getSource file, filename, paths
-
-  unless src? 
-    return
+getItem = (file, paths) ->
+  src = blake.getSource file.content, file.name, paths
 
   title: src.header.title
   description: src.header.description
   content: "<h4>#{src.header.description}</h4>#{markdown.toHTML src.body}"
   link: src.link
   date: src.dateString
-
-# After reading the article file, get the RSS feed item for that article
-# and add it to the items array.
-addItem = (name, paths, items, callback) ->
-  blake.readFile name, (err, data) ->
-    throw err if err
-
-    item = getItem data, name, paths
-    items.push item
-    callback err, items
-
-# Iterate over names and add one item per name to the item array. Apply
-# callback if all items returned. Note that that this is parallel IO. We
-# return control when all files are read.
-addItems = (paths, names, items, callback) ->
-  for name in names
-    addItem name, paths, items, (err, items) ->
-      if items.length is names.length
-        callback null, items
+  time: src.date.getTime()
 
 # Create options object for Jade with a filename property pointing to our
 # template path and the pretty property set to true. Compile a Jade
@@ -55,23 +34,28 @@ compile = (src, items, callback) ->
     channel: 
       date: src.dateString
       title: src.header.title
+      link: src.header.link
       description: src.header.description
 
   result = rss locals
 
-  callback null, src.path, src.name, result
+  callback null, result
 
-# Create array to store posts. Read the posts directory and iterate over the
-# post filenames to add each post to the items array, which we probably should
-# rename into posts. Apply the callback when items is completely populated.
+# Read all posts and initialize an array to store the final items of the RSS
+# feed. Iterate over posts and add a feed item per post to the items array.
+# Sort the items descending by date (newest entry first). Compile the RSS feed
+# and apply the callback.
 bake = (src, callback) ->
-  posts = []
-  
-  blake.readDir src.paths.posts, (err, names) ->
+  blake.readFiles src.paths.posts, (err, files) ->
     throw err if err
+    
+    items = []
+    items.push getItem(file, src.paths) for file in files
+    items.sort (a, b) ->
+      (a.time - b.time)* -1
 
-    addItems src.paths, names, posts, (err, posts) ->
-      compile src, posts, callback
+    compile src, items, (err, data) ->
+      callback null, src.path, src.name, data
 
 # Export API.
 module.exports = 

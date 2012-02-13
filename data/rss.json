@@ -1,6 +1,6 @@
 {
   "title": "Michael Nisi",
-  "description": "Spectacular Programming Extravaganza",
+  "description": "The Troubled Programmer",
   "link": "http://michaelnisi.com/",
   "template": "rss.jade",
   "name": "rss.xml"
