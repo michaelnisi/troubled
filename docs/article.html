@@ -6,7 +6,7 @@ locals object is used by jade to populate fields in the template.</p>           
   <span class="nv">content: </span><span class="nx">markdown</span><span class="p">.</span><span class="nx">toHTML</span> <span class="nx">src</span><span class="p">.</span><span class="nx">body</span>
   <span class="nv">link: </span><span class="nx">src</span><span class="p">.</span><span class="nx">link</span>
   <span class="nv">date: </span><span class="nx">src</span><span class="p">.</span><span class="nx">date</span>
-  <span class="nv">time: </span><span class="nx">src</span><span class="p">.</span><span class="nx">date</span><span class="p">.</span><span class="nx">getTime</span>
+  <span class="nv">time: </span><span class="nx">src</span><span class="p">.</span><span class="nx">date</span><span class="p">.</span><span class="nx">getTime</span><span class="p">()</span>
   <span class="nv">dateString: </span><span class="nx">src</span><span class="p">.</span><span class="nx">dateString</span></pre></div>             </td>           </tr>                               <tr id="section-4">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-4">&#182;</a>               </div>               <p>Create a options object for Jade with the filename property set to the path
 to our template. Get a Jade compile function with template and options. 
 Apply Jade compile function with Jade locals created from our source.</p>             </td>             <td class="code">               <div class="highlight"><pre><span class="nv">bake = </span><span class="nf">(src, callback) -&gt;</span>
