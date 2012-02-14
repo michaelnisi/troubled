@@ -1,74 +1,55 @@
-// The home.js module renders the home page.
+(function() {
+  var article, bake, blake, compile, getItem, jade;
 
-// Require external dependencies.
-var step = require('step');
-var jade = require('jade');
-var blake = require('blake');
+  jade = require('jade');
 
-// Require the article view.
-var articles = require('./article.js');
+  blake = require('blake');
 
-// Add item to specified items array.
-var addItem = function(name, items, paths, callback) {
-  blake.readFile(name, function(err, file) {
-    if (err) {
-      throw err;
-    }
-    var src, item;
+  article = require('./article.js');
 
-    src = blake.getSource(file, name, paths);
-    item = articles.getJadeLocals(src);
-    
-    items.push(item);
-    callback(err, items);
-  });
-};
+  getItem = function(file, paths) {
+    var locals, src;
+    src = blake.getSource(file.content, file.name, paths);
+    return locals = article.getJadeLocals(src);
+  };
 
-// Bake the home page.
-var bake = function(src, callback) {
-  var items, result, options, jadeCompile;
+  compile = function(src, items, callback) {
+    var home, locals, options, result;
+    options = {
+      filename: src.templatePath,
+      pretty: true
+    };
+    home = jade.compile(src.template, options);
+    locals = {
+      mainNavigationItems: src.header.menu,
+      title: src.header.title,
+      items: items,
+      dateString: items[0].dateString
+    };
+    result = home(locals);
+    return callback(null, result);
+  };
 
-  items = [];
-  options = { filename: src.templatePath, pretty: true };
-  jadeCompile = jade.compile(src.template, options);
-
-  step(
-    function() {
-      blake.readDir(src.paths.posts, this);
-    },
-    function(err, names) {
-      if (err) {
-        throw err;
+  bake = function(src, callback) {
+    return blake.readFiles(src.paths.posts, function(err, files) {
+      var file, items, _i, _len;
+      if (err) throw err;
+      items = [];
+      for (_i = 0, _len = files.length; _i < _len; _i++) {
+        file = files[_i];
+        items.push(getItem(file, src.paths));
       }
-
-      var group = this.group();
-      names.forEach(function(name) {
-        addItem(name, items, src.paths, group());
-      });
-    },
-    function(err, files) {
-      if (err) {
-        throw err;
-      }
-
-      items.sort(function(a, b) { // descending by time
+      items.sort(function(a, b) {
         return (a.time - b.time) * -1;
       });
-
-      var latestItem = items[0];
-
-      result = jadeCompile({
-        mainNavigationItems: src.header.menu,
-        title: src.header.title,
-        items: items,
-        dateString: latestItem ? latestItem.dateString : src.dateString
+      return compile(src, items.slice(0, 6), function(err, html) {
+        return callback(null, src.path, src.name, html);
       });
+    });
+  };
 
-      callback(null, src.path, src.name, result);
-    }
-  );
-};
+  module.exports = {
+    bake: bake
+  };
 
-module.exports = {
-  bake:bake
-};
+}).call(this);

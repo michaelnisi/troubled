@@ -12,7 +12,7 @@
       content: markdown.toHTML(src.body),
       link: src.link,
       date: src.date,
-      time: src.date.getTime,
+      time: src.date.getTime(),
       dateString: src.dateString
     };
   };

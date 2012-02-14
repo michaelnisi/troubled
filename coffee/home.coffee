@@ -7,56 +7,47 @@ blake = require 'blake'
 # Require the article view.
 article = require './article.js'
 
-# Read file with provided filename and request the according source object
-# from blake. Get the Jade locals object for our source object and add the
-# locals object to the locals array.
-addItem = (name, locals, paths, callback) ->
-  blake.readFile name, (err, file) ->
-    throw err if err
+# Get the source object for the specified file and return the according Jade
+# locals object, representing this blog post.
+getItem = (file, paths) ->
+  src = blake.getSource file.content, file.name, paths
+  locals = article.getJadeLocals src
 
-    src = blake.getSource file, name, paths
-    locals = article.getJadeLocals src
-    locals.push locals
-    
-    callback err, locals
-
-
-# Iterate over names and add one item per name to the item array. Apply
-# callback if all items returned. Note that that this is parallel IO. We
-# return control when all files are read.
-addItems = (paths, names, items, callback) ->
-  for name in names
-    addItem name, paths, items, (err, items) ->
-      if items.length is names.length
-        callback null, items
-
-#
-compile = (src, posts, callback) ->
+# Create options object for Jade and compile template function to generate the 
+# home page. Populate a locals object to apply the template function with it.
+# Apply callback with resulting html result.
+compile = (src, items, callback) ->
   options = 
     filename: src.templatePath
     pretty: true
 
   home = jade.compile src.template, options
-  recent = posts[0]
+
   locals = 
     mainNavigationItems: src.header.menu
     title: src.header.title
     items: items
-    dateString: latestItem.dateString
+    dateString: items[0].dateString
 
-  callback null, home locals
+  html = home locals
 
-#
+  callback null, html
+
+# Read all posts and initialize an array to store the populated post items.
+# Iterate over the loaded files and store the resulting post item in the
+# items array. Sort the items by date, compile the html page with the latest
+# 6 posts and apply the callback.
 bake = (src, callback) ->
-  blake.readDir src.paths.posts, (err, names) ->
+  blake.readFiles src.paths.posts, (err, files) ->
     throw err if err
-
-    addItems src.paths, names, [], (err, posts) ->
-      posts.sort (a, b) ->
-        (a.time - b.time) * -1
-
-      compile src, posts, (err, html) ->
-        callback src.path, src.name, html
+    
+    items = []
+    items.push getItem(file, src.paths) for file in files
+    items.sort (a, b) ->
+      (a.time - b.time)* -1
+    
+    compile src, items[0..5], (err, html) ->
+      callback null, src.path, src.name, html
 
 # Export API.
 module.exports =

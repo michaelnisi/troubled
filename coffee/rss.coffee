@@ -6,7 +6,7 @@ blake = require 'blake'
 markdown = (require 'markdown').markdown
 
 # Get source object for input file from blake and return a new RSS feed item
-# populated with the values form the source object. 
+# populated with the values from the source object. 
 getItem = (file, paths) ->
   src = blake.getSource file.content, file.name, paths
 
@@ -54,8 +54,8 @@ bake = (src, callback) ->
     items.sort (a, b) ->
       (a.time - b.time)* -1
 
-    compile src, items, (err, data) ->
-      callback null, src.path, src.name, data
+    compile src, items, (err, xml) ->
+      callback null, src.path, src.name, xml
 
 # Export API.
 module.exports = 
