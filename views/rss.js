@@ -52,8 +52,8 @@
       items.sort(function(a, b) {
         return (a.time - b.time) * -1;
       });
-      return compile(src, items, function(err, data) {
-        return callback(null, src.path, src.name, data);
+      return compile(src, items, function(err, xml) {
+        return callback(null, src.path, src.name, xml);
       });
     });
   };

@@ -2,6 +2,7 @@
 
 # Require external dependencies.
 jade = require 'jade'
+blake = require 'blake'
 markdown = (require 'markdown').markdown
 
 # Return a new locals object from the provided source object. The returned 
@@ -14,6 +15,12 @@ getJadeLocals = (src) ->
   date: src.date
   time: src.date.getTime()
   dateString: src.dateString
+
+# Get the source object for the specified file and return the according Jade
+# locals object, representing this blog post.
+getItem = (file, paths) ->
+  src = blake.getSource file.content, file.name, paths
+  locals = getJadeLocals src
 
 # Create a options object for Jade with the filename property set to the path
 # to our template. Get a Jade compile function with template and options. 
@@ -31,4 +38,5 @@ bake = (src, callback) ->
 # Export API.
 module.exports = 
   bake: bake
-  getJadeLocals: getJadeLocals
+  getJadeLocals: getJadeLocals,
+  getItem: getItem

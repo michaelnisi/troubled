@@ -1,0 +1,29 @@
+- var hasItems = items && items.length > 0
+- var threshold = (items.length / 2) + 1;
+- var firstColumnItems = items.slice(0, threshold);
+- var secondColumnItems = items.slice(threshold);
+
+!!! 5
+html(lang="en")
+  include head
+  body  
+    div#container
+      include header
+      - if (hasItems)
+        section#articles
+          ul
+            each firstColumnItem in firstColumnItems
+              li
+                a(href= firstColumnItem.link)
+                  h3= firstColumnItem.title.toUpperCase()
+                  p.summary= firstColumnItem.description
+          ul
+            each secondColumnItem in secondColumnItems
+              li
+                a(href= secondColumnItem.link)
+                  h3= secondColumnItem.title.toUpperCase()
+                  p.summary= secondColumnItem.description
+      
+    include footer
+    include scripts
+
