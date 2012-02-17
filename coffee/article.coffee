@@ -21,7 +21,7 @@ getLocals = (srcOrFile, paths) ->
   time: src.date.getTime()
   dateString: src.dateString
 
-# Create a options object for Jade with the filename property set to the path
+# Create options object for Jade with the filename property set to the path
 # to our template. Get a Jade compile function with template and options. 
 # Apply Jade compile function with Jade locals created from our source.
 bake = (src, callback) ->
