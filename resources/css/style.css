@@ -285,15 +285,18 @@ nav a, section#likes  {
   letter-spacing: .1em;  
 }
 
-#page_footer, article p, .summary, .copy {
+#page_footer, article p, .summary, .copy, #summary {
   font-size: 1.5em;
   line-height: 1.4em;
 }
 
-.summary {
+.summary, #summary {
   font-style: italic;
   margin-top: -.2em;
-  min-height: 3em;
+}
+
+#summary {
+  min-height: 2.8em;
 }
 
 #container, #page_footer p {
