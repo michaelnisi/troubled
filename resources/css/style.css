@@ -311,6 +311,10 @@ section#cover, section#articles, section#likes {
   border-top-style: solid;
 }
 
+section#articles {
+  padding-bottom: 0;
+}
+
 section#articles li {
   padding-bottom: 1em;
   line-height: 0;
