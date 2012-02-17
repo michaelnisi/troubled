@@ -1,5 +1,5 @@
 var http = require('http');
-var blake = require('/home/ubuntu/blake/lib/blake.js');
+var blake = require('blake');
 var gits = require('/home/ubuntu/node_modules/gits/main.js');
 var reflect = require('/home/ubuntu/reflector/index.js').main;
 
