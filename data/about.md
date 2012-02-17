@@ -2,8 +2,7 @@
   "title": "About The Troubled Programmer",
   "template": "about.jade",
   "date": "2011-12-13",
-  "name": "about.html",
-  "menu": [{ "title":"Home", "link":"/" }]
+  "name": "about.html"
 }
 $end
 

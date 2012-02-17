@@ -7,7 +7,12 @@ markdown = (require 'markdown').markdown
 
 # Return a new locals object from the provided source object. The returned 
 # locals object is used by jade to populate fields in the template.
-getJadeLocals = (src) ->
+getLocals = (srcOrFile, paths) ->
+  if paths?
+    src = blake.getSource srcOrFile.content, srcOrFile.name, paths
+  else 
+    src = srcOrFile
+
   title: src.header.title
   description: src.header.description
   content: markdown.toHTML src.body
@@ -15,12 +20,6 @@ getJadeLocals = (src) ->
   date: src.date
   time: src.date.getTime()
   dateString: src.dateString
-
-# Get the source object for the specified file and return the according Jade
-# locals object, representing this blog post.
-getItem = (file, paths) ->
-  src = blake.getSource file.content, file.name, paths
-  locals = getJadeLocals src
 
 # Create a options object for Jade with the filename property set to the path
 # to our template. Get a Jade compile function with template and options. 
@@ -31,12 +30,11 @@ bake = (src, callback) ->
     pretty: true
 
   jadeCompile = jade.compile src.template, options
-  result = jadeCompile getJadeLocals src
+  result = jadeCompile getLocals src
 
   callback null, src.path, src.name, result
 
 # Export API.
 module.exports = 
   bake: bake
-  getJadeLocals: getJadeLocals,
-  getItem: getItem
+  getLocals: getLocals

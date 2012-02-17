@@ -13,7 +13,6 @@
     };
     jadeCompile = jade.compile(src.template, options);
     result = jadeCompile({
-      mainNavigationItems: src.header.menu,
       title: src.header.title,
       description: src.header.description,
       content: markdown.toHTML(src.body),

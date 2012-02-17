@@ -366,16 +366,15 @@ a#understated, #page_footer  {
   padding: 1em;
 }
 
-
 #smallprint {
   font-size: 0.7em; 
   font-style: normal;
   color: #657b83;
-
 }
 
-
-
+#rss {
+  margin-top: -0.3em;
+}
 
 /* ==|== non-semantic helper classes ========================================
    Please define your styles before this section.

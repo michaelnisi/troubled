@@ -60,4 +60,3 @@ bake = (src, callback) ->
 # Export API.
 module.exports = 
   bake: bake
-  getItem: getItem

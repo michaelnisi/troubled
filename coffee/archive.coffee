@@ -18,7 +18,6 @@ compile = (src, items, callback) ->
   toArchive = jade.compile src.template, options
 
   locals = 
-    mainNavigationItems: src.header.menu
     title: src.header.title
     items: items
     dateString: items[0].dateString
@@ -36,7 +35,7 @@ bake = (src, callback) ->
     throw err if err
     
     items = []
-    items.push article.getItem(file, src.paths) for file in files
+    items.push article.getLocals(file, src.paths) for file in files
     items.sort (a, b) ->
       (a.time - b.time)* -1
     

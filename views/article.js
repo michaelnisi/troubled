@@ -1,5 +1,5 @@
 (function() {
-  var bake, blake, getItem, getJadeLocals, jade, markdown;
+  var bake, blake, getLocals, jade, markdown;
 
   jade = require('jade');
 
@@ -7,7 +7,13 @@
 
   markdown = (require('markdown')).markdown;
 
-  getJadeLocals = function(src) {
+  getLocals = function(srcOrFile, paths) {
+    var src;
+    if (paths != null) {
+      src = blake.getSource(srcOrFile.content, srcOrFile.name, paths);
+    } else {
+      src = srcOrFile;
+    }
     return {
       title: src.header.title,
       description: src.header.description,
@@ -19,12 +25,6 @@
     };
   };
 
-  getItem = function(file, paths) {
-    var locals, src;
-    src = blake.getSource(file.content, file.name, paths);
-    return locals = getJadeLocals(src);
-  };
-
   bake = function(src, callback) {
     var jadeCompile, options, result;
     options = {
@@ -32,14 +32,13 @@
       pretty: true
     };
     jadeCompile = jade.compile(src.template, options);
-    result = jadeCompile(getJadeLocals(src));
+    result = jadeCompile(getLocals(src));
     return callback(null, src.path, src.name, result);
   };
 
   module.exports = {
     bake: bake,
-    getJadeLocals: getJadeLocals,
-    getItem: getItem
+    getLocals: getLocals
   };
 
 }).call(this);

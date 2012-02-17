@@ -59,8 +59,7 @@
   };
 
   module.exports = {
-    bake: bake,
-    getItem: getItem
+    bake: bake
   };
 
 }).call(this);

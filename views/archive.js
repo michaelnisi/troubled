@@ -15,7 +15,6 @@
     };
     toArchive = jade.compile(src.template, options);
     locals = {
-      mainNavigationItems: src.header.menu,
       title: src.header.title,
       items: items,
       dateString: items[0].dateString
@@ -31,7 +30,7 @@
       items = [];
       for (_i = 0, _len = files.length; _i < _len; _i++) {
         file = files[_i];
-        items.push(article.getItem(file, src.paths));
+        items.push(article.getLocals(file, src.paths));
       }
       items.sort(function(a, b) {
         return (a.time - b.time) * -1;
