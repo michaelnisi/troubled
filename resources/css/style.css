@@ -293,7 +293,7 @@ nav a, section#likes  {
 .summary {
   font-style: italic;
   margin-top: -.2em;
-  min-height: 2em;
+  min-height: 3em;
 }
 
 #container, #page_footer p {
