@@ -229,7 +229,7 @@ h1, h2, h3 {
   font-family: Futura, sans-serif;
   font-weight: 500;
   letter-spacing: .1em; 
-  display: inline;
+  display: inline-block;
   text-transform: uppercase; 
 }
 
@@ -280,7 +280,7 @@ nav ul li, #page_footer ul#smallprint li {
   padding-right: 1em;
 }
 
-nav a, section#likes  {
+nav a, section#likes ul li a  {
   font-family: futura-pt-1, futura-pt-2, sans-serif;
   font-weight: 500;
   font-size: 1.154em;
@@ -327,6 +327,7 @@ section#likes {
 
 section#likes ul li {
   margin-bottom: 1em;
+  text-transform: uppercase;
 }
 
 p#title {
