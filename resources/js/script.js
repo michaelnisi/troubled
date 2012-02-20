@@ -4,7 +4,8 @@ var troubled = troubled || {};
 
 troubled.moveFooter = function () {
 	// TODO: Remove concrete pixel value
-	$('#container').css({ 'min-height':$(window).height() - 32 - $('#page_footer').height() });
+	$('#container').css({ 'min-height':$(window).height() -  168 });
+  $('#page_footer').show();
 }
 
 $(document).ready(function () { 

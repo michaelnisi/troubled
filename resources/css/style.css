@@ -228,7 +228,9 @@ a h1 {
 h1, h2, h3 {
   font-family: Futura, sans-serif;
   font-weight: 500;
-  letter-spacing: .1em;  
+  letter-spacing: .1em; 
+  display: inline;
+  text-transform: uppercase; 
 }
 
 h1 {
@@ -292,7 +294,6 @@ nav a, section#likes  {
 
 .summary, #summary {
   font-style: italic;
-  margin-top: -.2em;
 }
 
 #summary {
@@ -363,6 +364,7 @@ a#understated, #page_footer  {
   padding-bottom: 2em;
   background-image: url('/img/page_footer_top_grad.png');
   background-repeat: repeat-x;
+  display: none;
 }
 
 #page_footer p {
