@@ -294,6 +294,7 @@ nav a, section#likes ul li a  {
 
 .summary, #summary {
   font-style: italic;
+  margin-top: -.2em;
 }
 
 #summary {
