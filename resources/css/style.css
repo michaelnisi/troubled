@@ -214,6 +214,7 @@ td { vertical-align: top; }
 body {
   font-family: Minion Pro, serif;
   color: #343838;
+  background-image: url('/img/tile.png');
 }
 
 a, a:visited, a:hover {  
@@ -230,7 +231,8 @@ h1, h2, h3 {
   font-weight: 500;
   letter-spacing: .1em; 
   display: inline-block;
-  text-transform: uppercase; 
+  text-transform: uppercase;
+  text-shadow: 1px 1px #fff;
 }
 
 h1 {
