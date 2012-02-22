@@ -270,6 +270,7 @@ li {
 code {
   font-family: Menlo, monospace;
   font-size: 1.154em;
+  /* opacity: 0.8; */
 }
 
 nav ul, ul#smallprint {
@@ -338,7 +339,7 @@ p#portrait {
   padding-top: 2em;
   padding-bottom: 2em;
   text-align: center;
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
 #page_footer {
@@ -428,7 +429,7 @@ a#understated, #page_footer  {
   }
 
   #container {
-    max-width: 53em;
+    max-width: 56em;
   }
 
   #page_footer p {
