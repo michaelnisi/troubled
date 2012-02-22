@@ -270,7 +270,7 @@ li {
 code {
   font-family: Menlo, monospace;
   font-size: 1.154em;
-  /* opacity: 0.8; */
+  opacity: 0.8;
 }
 
 nav ul, ul#smallprint {
