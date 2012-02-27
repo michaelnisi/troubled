@@ -4,7 +4,7 @@
   "template": "article.jade",
   "date": "2012-01-07"
 }
-$end
+
 It is a rainy Saturday afternoon and I have just created a new user for myself on this machine, the lofty 13-Inch MacBook Air of my dear mother. Yes, she is almost 70 and impossible cool. To actually do something with this beautiful machine, I have to setup the environment. I figured it could be fun to write down the steps while I take them. Maybe you want to follow along. 
 
 First things first: the Terminal. I prefer [iTerm 2] (http://iterm2.com) over the included Terminal. Download it from the [website](http://code.google.com/p/iterm2/downloads/list), move it to the Applications directory and launch it.

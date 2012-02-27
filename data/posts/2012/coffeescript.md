@@ -4,7 +4,6 @@
   "template": "article.jade",
   "date": "2012-02-12"
 }
-$end
 
 In the end CoffeeScript is just JavaScript, but along the way of writing code it is much more.
 
