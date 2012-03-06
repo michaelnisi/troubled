@@ -402,7 +402,8 @@ a#understated, #page_footer  {
 }
 
 #smallprint {
-  font-size: 0.7em; 
+  font-family: Verdana, sans-serif;
+  font-size: 0.625em; 
   font-style: normal;
   color: #657b83;
 }
