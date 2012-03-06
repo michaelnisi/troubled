@@ -3,7 +3,7 @@
 
   jade = require('jade');
 
-  markdown = (require('markdown')).markdown;
+  markdown = require('markdown').markdown;
 
   bake = function(src, callback) {
     var jadeCompile, options, result;

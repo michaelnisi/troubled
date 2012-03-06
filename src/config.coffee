@@ -2,10 +2,10 @@
 
 # Path conventions to use for input data.
 exports.paths =
-  data: '/data',
-  templates: '/templates/',
-  resources: '/resources/',
-  posts: '/data/posts'
+  data: 'data',
+  templates: 'templates',
+  resources: 'resources',
+  posts: 'data/posts'
 
 # Export map with bake functions by template names.
 exports.bakeFunctions =

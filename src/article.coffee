@@ -3,7 +3,7 @@
 # Require external dependencies.
 jade = require 'jade'
 blake = require 'blake'
-markdown = (require 'markdown').markdown
+{ markdown } = require 'markdown'
 
 # Return a new locals object from the provided source object. The returned 
 # locals object is used by jade to populate fields in the template.

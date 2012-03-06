@@ -12,8 +12,8 @@
 
 
 /* =============================================================================
-   HTML5 display definitions
-   ========================================================================== */
+HTML5 display definitions
+========================================================================== */
 
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
 audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
@@ -21,8 +21,8 @@ audio:not([controls]) { display: none; }
 [hidden] { display: none; }
 
 /* =============================================================================
-   Base
-   ========================================================================== */
+Base
+========================================================================== */
 
 /*
  * 1. Correct text resizing oddly in IE6/7 when body font-size is set using em units
@@ -47,8 +47,8 @@ body, button, input, select, textarea { font-family: sans-serif; color: #222; }
 
 
 /* =============================================================================
-   Links
-   ========================================================================== */
+Links
+========================================================================== */
 
 a { color: #00e; }
 a:visited { color: #551a8b; }
@@ -60,8 +60,8 @@ a:hover, a:active { outline: 0; }
 
 
 /* =============================================================================
-   Typography
-   ========================================================================== */
+Typography
+========================================================================== */
 
 abbr[title] { border-bottom: 1px dotted; }
 
@@ -95,8 +95,8 @@ sub { bottom: -0.25em; }
 
 
 /* =============================================================================
-   Lists
-   ========================================================================== */
+Lists
+========================================================================== */
 
 ul, ol { margin: 1em 0; padding: 0 0 0 40px; }
 dd { margin: 0 0 0 40px; }
@@ -104,8 +104,8 @@ nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0
 
 
 /* =============================================================================
-   Embedded content
-   ========================================================================== */
+Embedded content
+========================================================================== */
 
 /*
  * 1. Improve image quality when scaled in IE7: h5bp.com/d
@@ -122,15 +122,15 @@ svg:not(:root) { overflow: hidden; }
 
 
 /* =============================================================================
-   Figures
-   ========================================================================== */
+Figures
+========================================================================== */
 
 figure { margin: 0; }
 
 
 /* =============================================================================
-   Forms
-   ========================================================================== */
+Forms
+========================================================================== */
 
 form { margin: 0; }
 fieldset { border: 0; margin: 0; padding: 0; }
@@ -200,21 +200,33 @@ input:invalid, textarea:invalid { background-color: #f0dddd; }
 
 
 /* =============================================================================
-   Tables
-   ========================================================================== */
+Tables
+========================================================================== */
 
 table { border-collapse: collapse; border-spacing: 0; }
 td { vertical-align: top; }
 
 
 /* ==|== primary styles =====================================================
-   Author: Michael Nisi (mail@michaelnisi.com) 
-   ========================================================================== */
+Author: Michael Nisi (mail@michaelnisi.com) 
+========================================================================== */
+
+/* Fonts */
+
+h1, h2, h3, h4, nav a, section#likes ul li a {
+  font-family: "futura-pt", Futura, sans-serif;
+}
+
+body  {
+  font-family: "adobe-caslon-pro", Georgia, serif;
+}
+
+/* ----- */
 
 body {
-  font-family: Minion Pro, serif;
   color: #343838;
-  background-image: url('/img/tile.png');
+  background-image: url('/img/Noise.png');
+  background-color: #fffdf9;
 }
 
 a, a:visited, a:hover {  
@@ -226,13 +238,15 @@ a h1 {
   color: #343838;
 }
 
-h1, h2, h3 {
-  font-family: Futura, sans-serif;
+h1, h2, h3, h4 {
   font-weight: 500;
   letter-spacing: .1em; 
-  display: inline-block;
   text-transform: uppercase;
   text-shadow: 1px 1px #fff;
+}
+
+article ul {
+  font-size: 1.5em;
 }
 
 h1 {
@@ -243,15 +257,18 @@ h2 {
   font-size: 2.5em;
 }
 
-h3 {
+h3, h4 {
   font-size: 1.5em;
+}
+
+h4 {
+  padding-top: 1em;
 }
 
 header {
   text-align: center;
-  padding: 1em;
-  padding-top: 0;
   width: 100%;
+  padding-bottom: 1em;
 }
 
 article {
@@ -264,13 +281,12 @@ ul {
 }
 
 li {
-	list-style: none;
+  list-style: none;
 }
 
 code {
   font-family: Menlo, monospace;
   font-size: 1.154em;
-  opacity: 0.8;
 }
 
 nav ul, ul#smallprint {
@@ -279,12 +295,11 @@ nav ul, ul#smallprint {
 } 
 
 nav ul li, #page_footer ul#smallprint li {
-	display: inline;
+  display: inline;
   padding-right: 1em;
 }
 
 nav a, section#likes ul li a  {
-  font-family: futura-pt-1, futura-pt-2, sans-serif;
   font-weight: 500;
   font-size: 1.154em;
   letter-spacing: .1em;  
@@ -297,7 +312,11 @@ nav a, section#likes ul li a  {
 
 .summary, #summary {
   font-style: italic;
-  margin-top: -.2em;
+}
+
+#summary {
+  margin-top: -1em;
+  padding-bottom: 1em;
 }
 
 #container, #page_footer p {
@@ -305,11 +324,10 @@ nav a, section#likes ul li a  {
 }
 
 section#cover, section#articles, section#likes {
-  width: 100%;
-  padding: 1em;
   border-top-color: #cccccc;
   border-top-width: 1px;
   border-top-style: solid;
+  padding: 1em;
 }
 
 section#articles {
@@ -335,11 +353,15 @@ p#title {
   font-size: 2em;
 }  		
 
+
 p#portrait {
   padding-top: 2em;
   padding-bottom: 2em;
   text-align: center;
-  opacity: 0.8;
+}
+
+#portrait img {
+  box-shadow: 0 0 5px #ccc;
 }
 
 #page_footer {
@@ -361,12 +383,18 @@ a#understated, #page_footer  {
 }
 
 #page_footer {
-  background-color: #002b36;
   padding: 1em;
   padding-bottom: 2em;
-  background-image: url('/img/page_footer_top_grad.png');
-  background-repeat: repeat-x;
-  display: none;
+  display: none;  
+}
+
+.no-js #page_footer,
+.no-cssgradients #page_footer {
+  background-color: #002b36;
+}
+
+.cssgradients #page_footer {
+  background-image: linear-gradient(top, #000 0, #002b36 10px, #002b36); 
 }
 
 #page_footer p {
@@ -383,9 +411,10 @@ a#understated, #page_footer  {
   margin-top: -0.3em;
 }
 
+
 /* ==|== non-semantic helper classes ========================================
-   Please define your styles before this section.
-   ========================================================================== */
+Please define your styles before this section.
+========================================================================== */
 
 /* For image replacement */
 .ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; }
@@ -411,10 +440,10 @@ a#understated, #page_footer  {
 
 
 /* ==|== media queries ======================================================
-   PLACEHOLDER Media Queries for Responsive Design.
-   These override the primary ('mobile first') styles
-   Modify as content requires.
-   ========================================================================== */
+PLACEHOLDER Media Queries for Responsive Design.
+These override the primary ('mobile first') styles
+Modify as content requires.
+========================================================================== */
 
 @media only screen and (min-width: 480px) {
   /* Style adjustments for viewports 480px and over go here */
@@ -425,7 +454,6 @@ a#understated, #page_footer  {
 
   section#articles {
     overflow: hidden;
-    width: 100%;
   }
 
   #container {
@@ -437,12 +465,12 @@ a#understated, #page_footer  {
   }
   
   section#articles ul {
-    width: 25em;
+    width: 26em;
     float: left;
-    padding-right: 1em;
+    margin-right: 1em;
   }
 
-  #summary {
+  .summary {
     min-height: 2.8em;
   }
 }

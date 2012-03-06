@@ -16,13 +16,13 @@ html(lang="en")
               li
                 a(href= firstColumnItem.link)
                   h3= firstColumnItem.title.toUpperCase()
-                  p#summary= firstColumnItem.description
+                  p.summary= firstColumnItem.description
           ul
             each secondColumnItem in secondColumnItems
               li
                 a(href= secondColumnItem.link)
                   h3= secondColumnItem.title.toUpperCase()
-                  p#summary= secondColumnItem.description
+                  p.summary= secondColumnItem.description
       
     include footer
     include scripts

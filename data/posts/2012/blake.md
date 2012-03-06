@@ -6,35 +6,67 @@
   "path": "2012/02"
 }
 
-There's no shortage of static website generators these days. After years of storing every single bit in databases, we apparently came to the conclusion that, when it comes to personal sites and blogs, filesystems aren't that bad after all. Of course this is nothing new, initially the web consisted of static files, but in the first part of the last decade every tiny little blog ran a database.
-
-I always found the static approach charming, I think it first caught my attention when I first learned Ruby and encountered [Hobix](http://hobix.github.com/hobix/) 8 years ago or so. Later I was fascinated by an [article](http://www.martinfowler.com/articles/rake.html) written by [Martin Fowler](http://www.martinfowler.com), in which he describes how he build his site with [Rake](http://rake.rubyforge.org/). Also I was aware that [ongoing](http://www.tbray.org/ongoing/) was a static site. 
-
-I think the latest boom of static websites started with [Tom Preston-Werner's](http://tom.preston-werner.com/) [Blogging like a hacker](http://tom.preston-werner.com/2008/11/17/blogging-like-a-hacker.html) piece he wrote for his site. Another reason for this trend might be that writing a tool to generate your personal website is a nice little programming project and that's exactly the reason why I wrote one too.
-
-Today static website generators come in all flavors.
-
--    [Jekyll](http://jekyllrb.com/)
--    [Octopress](http://octopress.org/)
--    [Mynt](http://mynt.mirroredwhite.com/)
--    [Middleman](http://awardwinningfjords.com/2009/10/22/middleman.html)
--    [Stasis](http://stasis.me/)
--    [Nesta](http://nestacms.com/)
-
-Even [Marco](http://www.marco.org) wrote [one](http://www.marco.org/secondcrack).
-
-#### Blake
-To build this website I wrote Blake; a small Node.js module, that provides a simple infrastructure to generate static sites. Blake  leaves the actual transformation from input to output to you, which makes it rather flexible. Blake takes advantage of Node's non-blocking IO capabilities and runs its tasks in parallel. It makes minimal assumptions and doesn't limit your choices of markup language and template engine. To be honest, it doesn't do terribly much. Blake drives the generation process and stays out of the way. It can be used from the command-line or as library.
+[Blake](http://michaelnisi.github.com/blake/) is a small [Node.js](http://nodejs.org/) module that provides a simple, blog aware and view agnostic infrastructure to generate static websites. It makes very little assumptions and stays out of the way. Blake delegates the actual transformation, from input data to output artifact, to views written by you. It can be used from the command-line or as library.
 
 #### Install
 	npm install -g blake
 
-#### Command-line usage
-	blake input output [input/file …]
+#### Usage
+	blake path/to/input path/to/output [path/to/input/file …]
 
-#### How it works
+The first parameter is the path to your input directory.
+
+The second parameter is the path to your output directory. *Please be warned that this directory is deleted everytime a full generation of your site starts.* You better not point it at your home directory—Blake doesn't provide a safety net. Blake creates the output directory if it doesn't exist.
+
+	blake input output
+
+The optional third parameter is a list of filenames. While writing, you often times just want to quickly preview the page you're currently working on, thus you don't necessarily want to render your whole site. Let's say you're tweaking your about page and want to see it in the browser.
+
+	blake input output input/about.md
+
+Or you may just want to compile your home and archive pages.
+
+	blake input output input/home.md input/archive.md
+
+#### Overview
 ...
 
+#### Process
+When Blake starts it requires a configuration module, which it expects to find at:
+
+	input/view/config.js
+
+The configuration defines the conventions for accessing input data and exports a map of bake functions with a template name as identifier. Each of your views has to implement a bake function.
+
+The following examples are written in CoffeeScript, which is not optimal for this README, I should provide examples in plain JavaScript. I hope you don't mind. OK, here is the config.coffee file of my site.
+
+	# This module covers configuration.
+
+	# Path conventions to use for input data.
+	exports.paths =
+	  data: '/data',
+	  templates: '/templates/',
+	  resources: '/resources/',
+	  posts: '/data/posts'
+
+	# Export map with bake functions by template names.
+	exports.bakeFunctions =
+	  'rss.jade': require('./rss.js').bake,
+	  'article.jade': require('./article.js').bake,
+	  'home.jade': require('./home.js').bake,
+	  'about.jade': require('./about.js').bake,
+	  'archive.jade': require('./archive.js').bake
+
+The config module makes the few assumptions Blake actually makes rather obvious. 
+
+In the paths object you see the four paths required in your input directory to generate a site with Blake. The data path contains the input data for your site and from templates Blake loads your templates. All files in resources are considered as static files and are just copied over to your output directory as they are. The posts path is used by Blake to distinguish blog posts from other input files contained in data.
+
 #### Deployment
-Of course you could build your site locally and upload it to your webserver manually, but obviously the recommended approach is to run Blake on your server and use [post-receive hooks](http://help.github.com/post-receive-hooks/) to automatically generate your site on the server everytime you're pushing to your input data repository.
+Of course you can always build your site locally and upload it to your webserver manually, but I recommend to run Blake on your server and use [post-receive hooks](http://help.github.com/post-receive-hooks/) to automatically generate your site on your server everytime you're pushing to your input data repository.
+
+#### License
+See [LICENSE](https://raw.github.com/michaelnisi/blake/master/LICENSE).
+
+
+
 

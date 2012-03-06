@@ -3,7 +3,7 @@
 # Require external dependencies.
 jade = require 'jade'
 blake = require 'blake'
-markdown = (require 'markdown').markdown
+{ markdown } = require 'markdown'
 
 # Get source object for input file from blake and return a new RSS feed item
 # populated with the values from the source object. 

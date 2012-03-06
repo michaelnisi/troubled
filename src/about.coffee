@@ -2,7 +2,7 @@
 
 # Require external dependencies.
 jade = require 'jade'
-markdown = (require 'markdown').markdown
+{ markdown } = require 'markdown'
 
 # Create jade options with filename set to template, which is required for 
 # template includes and template inheritance. Setup Jade compile function with

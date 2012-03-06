@@ -5,7 +5,7 @@
 
   blake = require('blake');
 
-  markdown = (require('markdown')).markdown;
+  markdown = require('markdown').markdown;
 
   getLocals = function(srcOrFile, paths) {
     var src;

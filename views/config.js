@@ -1,10 +1,10 @@
 (function() {
 
   exports.paths = {
-    data: '/data',
-    templates: '/templates/',
-    resources: '/resources/',
-    posts: '/data/posts'
+    data: 'data',
+    templates: 'templates',
+    resources: 'resources',
+    posts: 'data/posts'
   };
 
   exports.bakeFunctions = {
