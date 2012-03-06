@@ -49,7 +49,7 @@ server = http.createServer(function (request, response) {
 		// Analyze payload, bake granuarly.
 
 		gits.git(INPUT, ['pull'], function (error) {
-			blake.bake(INPUT, OUTPUT, function(error) {
+			blake.bake([INPUT, OUTPUT], function(error) {
 				reflect(TEMPLATES, OUTPUT);
 			});
 		});
