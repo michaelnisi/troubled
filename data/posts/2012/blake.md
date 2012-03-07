@@ -57,7 +57,7 @@ The following examples are written in CoffeeScript, which is not optimal for thi
 	  'about.jade': require('./about.js').bake,
 	  'archive.jade': require('./archive.js').bake
 
-The config module makes the few assumptions Blake actually makes rather obvious. 
+This config module illustrates the few assumptions Blake actually does make.
 
 In the paths object you see the four paths required in your input directory to generate a site with Blake. The data path contains the input data for your site and from templates Blake loads your templates. All files in resources are considered as static files and are just copied over to your output directory as they are. The posts path is used by Blake to distinguish blog posts from other input files contained in data.
 
