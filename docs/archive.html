@@ -9,7 +9,6 @@ Apply callback with resulting html result.</p>             </td>             <td
   <span class="nv">toArchive = </span><span class="nx">jade</span><span class="p">.</span><span class="nx">compile</span> <span class="nx">src</span><span class="p">.</span><span class="nx">template</span><span class="p">,</span> <span class="nx">options</span>
 
   <span class="nv">locals = </span>
-    <span class="nv">mainNavigationItems: </span><span class="nx">src</span><span class="p">.</span><span class="nx">header</span><span class="p">.</span><span class="nx">menu</span>
     <span class="nv">title: </span><span class="nx">src</span><span class="p">.</span><span class="nx">header</span><span class="p">.</span><span class="nx">title</span>
     <span class="nv">items: </span><span class="nx">items</span>
     <span class="nv">dateString: </span><span class="nx">items</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">dateString</span>
@@ -24,7 +23,7 @@ items array. Sort the items by date, compile the html page with the latest
     <span class="k">throw</span> <span class="nx">err</span> <span class="k">if</span> <span class="nx">err</span>
     
     <span class="nv">items = </span><span class="p">[]</span>
-    <span class="nx">items</span><span class="p">.</span><span class="nx">push</span> <span class="nx">article</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="nx">file</span><span class="p">,</span> <span class="nx">src</span><span class="p">.</span><span class="nx">paths</span><span class="p">)</span> <span class="k">for</span> <span class="nx">file</span> <span class="k">in</span> <span class="nx">files</span>
+    <span class="nx">items</span><span class="p">.</span><span class="nx">push</span> <span class="nx">article</span><span class="p">.</span><span class="nx">getLocals</span><span class="p">(</span><span class="nx">file</span><span class="p">,</span> <span class="nx">src</span><span class="p">.</span><span class="nx">paths</span><span class="p">)</span> <span class="k">for</span> <span class="nx">file</span> <span class="k">in</span> <span class="nx">files</span>
     <span class="nx">items</span><span class="p">.</span><span class="nx">sort</span> <span class="nf">(a, b) -&gt;</span>
       <span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">time</span> <span class="o">-</span> <span class="nx">b</span><span class="p">.</span><span class="nx">time</span><span class="p">)</span><span class="o">*</span> <span class="o">-</span><span class="mi">1</span>
     

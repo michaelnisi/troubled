@@ -1,8 +1,5 @@
 This is the input data of my site.
 
-### Website
-See [Website](http://michaelnisi.com)
-
 ### Documentation
 See [Documentation](http://michaelnisi.github.com/michaelnisi/article.html)
 
