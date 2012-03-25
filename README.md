@@ -1,4 +1,4 @@
-This is the input data of my site.
+These are the input data and the views of my site.
 
 ### Documentation
 See [Documentation](http://michaelnisi.github.com/michaelnisi/article.html)
