@@ -1,6 +1,4 @@
-# This is the data for my blog
-
-I use this data to bake a static blog.
+This is the input data of my site.
 
 ### Website
 See [Website](http://michaelnisi.com)
