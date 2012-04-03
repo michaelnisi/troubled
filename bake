@@ -1,5 +1,5 @@
 #!/bin/bash
 
 coffee -o views -c src/*
-blake . ~/workspace/webstorm/website/output 
+blake . output 
 

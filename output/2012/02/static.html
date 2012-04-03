@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Static Websites
+    </title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="Michael Nisi is an independent software developer.">
+    <meta name="author" content="Michael Nisi">
+    <meta name="viewport" content="initial-scale=1">
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/css/solarized_light.css" type="text/css">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml">
+    <link rel="shortcut icon" href="/img/favicon.png">
+    <script src="http://use.typekit.com/mah2jjl.js"></script>
+    <script>try{Typekit.load();}catch(e){}
+
+</script>
+    <script src="/js/libs/modernizr-2.5.3.min.js"></script>
+  </head>
+  <body>
+    <div id="container">
+      <header>
+        <section id="tweet">
+          <p>Loading … 
+          </p>
+        </section><a href="/">
+          <h1>THE TROUBLED PROGRAMMER
+          </h1></a>
+        <p>Tue Feb 28 2012
+        </p>
+        <nav>
+          <ul>
+            <li><a href="/">HOME</a>
+            </li>
+            <li><a href="/about">ABOUT</a>
+            </li>
+            <li><a href="/archive">ARCHIVE</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <section id="cover">
+        <article><a href="2012/02/static">
+            <h2>STATIC WEBSITES
+            </h2></a>
+          <p id="summary">Hacking like a blogger
+          </p><p>There&#39;s no shortage of static website generators these days. After years of storing every single bit in databases, we apparently came to the conclusion that, when it comes to personal sites and blogs, filesystems aren&#39;t that bad after all. Of course this is nothing new, initially the web consisted of static files, but in the first part of the last decade every tiny little blog ran a database.</p>
+
+<p>I always found the static approach charming, I think it first caught my attention when I first learned Ruby and encountered <a href="http://hobix.github.com/hobix/">Hobix</a> 8 years ago or so. Later I was fascinated by an <a href="http://www.martinfowler.com/articles/rake.html">article</a> written by <a href="http://www.martinfowler.com">Martin Fowler</a>, in which he describes how he build his site with <a href="http://rake.rubyforge.org/">Rake</a>. Also I was aware that <a href="http://www.tbray.org/ongoing/">ongoing</a> was a static site. </p>
+
+<p>I think a relevant catalyst for the current boom of static websites has been a blog post by <a href="http://tom.preston-werner.com/">Tom Preston-Werner</a>: <a href="http://tom.preston-werner.com/2008/11/17/blogging-like-a-hacker.html">Blogging like a hacker</a>. Another reason for this trend might be that writing a tool to generate your personal website is a nice little programming project and that&#39;s exactly the reason why I wrote one too.</p>
+
+<p>Today static website generators come in all flavors: <a href="http://jekyllrb.com/">Jekyll</a>, <a href="http://octopress.org/">Octopress</a>, <a href="http://mynt.mirroredwhite.com/">Mynt</a>, <a href="http://awardwinningfjords.com/2009/10/22/middleman.html">Middleman</a>, <a href="http://stasis.me/">Stasis</a>, <a href="http://nestacms.com/">Nesta</a>. Even <a href="http://www.marco.org">Marco</a> wrote <a href="http://www.marco.org/secondcrack">one</a>.</p>
+
+<h4>Blake</h4>
+
+<p>To build this website I wrote Blake; a small Node.js module, that provides a simple infrastructure to generate static sites. Blake  leaves the actual transformation from input to output to you, which makes it rather flexible. Blake takes advantage of Node&#39;s non-blocking IO capabilities and runs its tasks in parallel. It makes minimal assumptions and doesn&#39;t limit your choices of markup language and template engine. To be honest, it doesn&#39;t do terribly much. Blake drives the generation process and stays out of the way. It can be used from the command-line or as library.</p>
+
+<h4>Install</h4>
+
+<pre><code>npm install -g blake</code></pre>
+
+<h4>Command-line usage</h4>
+
+<pre><code>blake input output [input/file …]</code></pre>
+
+<h4>How it works</h4>
+
+<p>...</p>
+
+<h4>Deployment</h4>
+
+<p>Of course you could build your site locally and upload it to your webserver manually, but obviously the recommended approach is to run Blake on your server and use <a href="http://help.github.com/post-receive-hooks/">post-receive hooks</a> to automatically generate your site on your server everytime you&#39;re pushing to your input data repository.</p>
+
+        </article>
+      </section>
+    </div>
+    <footer id="page_footer"><p>Thank you for reading. You find me on <a href="http://twitter.com/michaelnisi">Twitter</a> and <a href="https://github.com/michaelnisi">GitHub</a>.</p>
+      <ul id="smallprint">
+        <li>
+          <Copyright>&copy; 2011–2012 Michael Nisi
+          </Copyright>
+        </li>
+        <li><a href="/rss.xml"><img id="rss" src="/img/rss.png"></a>
+        </li>
+      </ul>
+    </footer>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/js/libs/jquery-1.7.1.min.js"><\/script>')
+</script>
+    <script src="/js/libs/prefixfree.min.js"></script>
+    <script src="/js/libs/highlight.pack.js"></script>
+    <script src="/js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rss version="2.0">
+  <channel>
+    <title>Michael Nisi
+    </title>
+    <description>The Troubled Programmer
+    </description>
+    <language>en-us
+    </language>
+    <link>http://michaelnisi.com/
+    </link>
+    <lastBuildDate>Fri Mar 30 2012
+    </lastBuildDate>
+    <pubDate>Fri Mar 30 2012
+    </pubDate>
+    <item>
+      <title>CoffeeScript
+      </title>
+      <description>&lt;h4&gt;It's just JavaScript, but sweeter&lt;/h4&gt;&lt;p&gt;After I wrote Blake, a Node.js module for generating static websites, implementing the views for this site offered a good opportunity to evaluate CoffeeScript.&lt;/p&gt;
+
+&lt;p&gt;What are the advantages of CoffeeScript?
+Does writing CoffeeScript outweigh the extra step of transcompilation and how does this extra step influence the workflow?
+Who should use it for what?&lt;/p&gt;
+
+&lt;p&gt;As CoffeeScript transcompiles to JavaScript, I briefly reintroduce JavaScript first. JavaScript is a lightweight, object-oriented language, most known as the scripting language for web pages, but used in many non-browser environments as well. JavaScript was created in 1995 by Brendan Eich at Netscape. His objective was to make it look like Java, but he subversivly made it look like C. The name was a marketing stunt to free ride the &lt;a href=&quot;http://en.wikipedia.org/wiki/Java_(programming_language)&quot;&gt;Java&lt;/a&gt; hype of the time. The language however has nothing in common with Java, its idiotic name has been contributing to JavaScript&amp;#39;s misinterpretation until today. JavaScript is the Cinderella of programming languages. I enjoy to write JavaScript, hence I love Node, but its syntax is pierced with curly braces and semicolons, not to mention the lack of expressivness of its implicit powers.&lt;/p&gt;
+
+&lt;p&gt;Popular JavaScript engines are: Google&amp;#39;s V8, which is used in the Google Chrome browser; The JavaScriptCore (SquirrelFish/Nitro) used in some WebKit browsers such as Apple Safari; and Mozilla&amp;#39;s SpiderMonkey.&lt;/p&gt;
+
+&lt;p&gt;CoffeeScript is the little mystery programming language, written by Jeremy Ashkenas. The language is inspired by Ruby, Python and Haskell; it adds features like array comprehension and pattern matching.&lt;/p&gt;
+
+&lt;p&gt;I never been fond of transcompilation, but CoffeeScript&amp;#39;s elegance seduced me to try it. With my first sips of CoffeeScript my skepticism transformed into enthusiasm, writing plain JavaScript just doesn&amp;#39;t cut it anymore. It has this stale taste of something that was great in the past, but when revisited, isn&amp;#39;t that great anymore. Don&amp;#39;t get me wrong, I appreciate JavaScript. ActionScript, an ECMAScript derivate, had been my bread and butter language for the longest time, so my relationship with JavaScript is rather intimate, which is probably one of the reasons why I&amp;#39;m embracing CoffeeScript. So, what are the main advantages?&lt;/p&gt;
+
+&lt;p&gt;No global variables, CommonJS modules&lt;/p&gt;
+
+&lt;p&gt;I was always hesitant in regards of meaningful whitespace, but when I came to think about it again I realized that it solves the problem of sane formatting. With meaningful whitespace you no longer have to argue about why expressing once individuality in code formatting isn&amp;#39;t cool. Less discussions about things that are not relevant to user experience are good.&lt;/p&gt;
+
+&lt;p&gt;Less lines, less code&lt;/p&gt;
+
+&lt;p&gt;The last expression in a function is returned&lt;/p&gt;
+
+&lt;p&gt;splats and default arguments&lt;/p&gt;
+
+&lt;p&gt;comprehensions&lt;/p&gt;
+
+&lt;p&gt;strings&lt;/p&gt;
+
+&lt;p&gt;fat arrow function&lt;/p&gt;
+
+&lt;p&gt;myFunction(item) for item in items&lt;/p&gt;
+
+&lt;p&gt;Destructuring assignments&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{a, b} = { a:&amp;#39;a&amp;#39;, b:&amp;#39;b&amp;#39; }
+console.log &quot;a is &amp;#39;#{a}&amp;#39;, b is &amp;#39;#{b}&amp;#39;&quot;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In the wild &lt;/p&gt;
+
+&lt;p&gt;Rails. DHH: &quot;Looking at CoffeeScript was the first time I got a little bit of language envy.&quot; &lt;/p&gt;
+
+&lt;p&gt;Ward Cunningham&lt;/p&gt;
+
+&lt;p&gt;The CoffeeScript compiler itself is written in CoffeeScript.&lt;/p&gt;
+
+&lt;p&gt;It&amp;#39;s just JavaScript, but with more sugar.&lt;/p&gt;
+      </description>
+      <link>/2012/coffeescript
+      </link>
+      <pubDate>Wed Mar 21 2012
+      </pubDate>
+    </item>
+    <item>
+      <title>Static Websites
+      </title>
+      <description>&lt;h4&gt;Hacking like a blogger&lt;/h4&gt;&lt;p&gt;There&amp;#39;s no shortage of static website generators these days. After years of storing every single bit in databases, we apparently came to the conclusion that, when it comes to personal sites and blogs, filesystems aren&amp;#39;t that bad after all. Of course this is nothing new, initially the web consisted of static files, but in the first part of the last decade every tiny little blog ran a database.&lt;/p&gt;
+
+&lt;p&gt;I always found the static approach charming, I think it first caught my attention when I first learned Ruby and encountered &lt;a href=&quot;http://hobix.github.com/hobix/&quot;&gt;Hobix&lt;/a&gt; 8 years ago or so. Later I was fascinated by an &lt;a href=&quot;http://www.martinfowler.com/articles/rake.html&quot;&gt;article&lt;/a&gt; written by &lt;a href=&quot;http://www.martinfowler.com&quot;&gt;Martin Fowler&lt;/a&gt;, in which he describes how he build his site with &lt;a href=&quot;http://rake.rubyforge.org/&quot;&gt;Rake&lt;/a&gt;. Also I was aware that &lt;a href=&quot;http://www.tbray.org/ongoing/&quot;&gt;ongoing&lt;/a&gt; was a static site. &lt;/p&gt;
+
+&lt;p&gt;I think a relevant catalyst for the current boom of static websites has been a blog post by &lt;a href=&quot;http://tom.preston-werner.com/&quot;&gt;Tom Preston-Werner&lt;/a&gt;: &lt;a href=&quot;http://tom.preston-werner.com/2008/11/17/blogging-like-a-hacker.html&quot;&gt;Blogging like a hacker&lt;/a&gt;. Another reason for this trend might be that writing a tool to generate your personal website is a nice little programming project and that&amp;#39;s exactly the reason why I wrote one too.&lt;/p&gt;
+
+&lt;p&gt;Today static website generators come in all flavors: &lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;, &lt;a href=&quot;http://octopress.org/&quot;&gt;Octopress&lt;/a&gt;, &lt;a href=&quot;http://mynt.mirroredwhite.com/&quot;&gt;Mynt&lt;/a&gt;, &lt;a href=&quot;http://awardwinningfjords.com/2009/10/22/middleman.html&quot;&gt;Middleman&lt;/a&gt;, &lt;a href=&quot;http://stasis.me/&quot;&gt;Stasis&lt;/a&gt;, &lt;a href=&quot;http://nestacms.com/&quot;&gt;Nesta&lt;/a&gt;. Even &lt;a href=&quot;http://www.marco.org&quot;&gt;Marco&lt;/a&gt; wrote &lt;a href=&quot;http://www.marco.org/secondcrack&quot;&gt;one&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h4&gt;Blake&lt;/h4&gt;
+
+&lt;p&gt;To build this website I wrote Blake; a small Node.js module, that provides a simple infrastructure to generate static sites. Blake  leaves the actual transformation from input to output to you, which makes it rather flexible. Blake takes advantage of Node&amp;#39;s non-blocking IO capabilities and runs its tasks in parallel. It makes minimal assumptions and doesn&amp;#39;t limit your choices of markup language and template engine. To be honest, it doesn&amp;#39;t do terribly much. Blake drives the generation process and stays out of the way. It can be used from the command-line or as library.&lt;/p&gt;
+
+&lt;h4&gt;Install&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;npm install -g blake&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4&gt;Command-line usage&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;blake input output [input/file …]&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4&gt;How it works&lt;/h4&gt;
+
+&lt;p&gt;...&lt;/p&gt;
+
+&lt;h4&gt;Deployment&lt;/h4&gt;
+
+&lt;p&gt;Of course you could build your site locally and upload it to your webserver manually, but obviously the recommended approach is to run Blake on your server and use &lt;a href=&quot;http://help.github.com/post-receive-hooks/&quot;&gt;post-receive hooks&lt;/a&gt; to automatically generate your site on your server everytime you&amp;#39;re pushing to your input data repository.&lt;/p&gt;
+      </description>
+      <link>2012/02/static
+      </link>
+      <pubDate>Tue Feb 28 2012
+      </pubDate>
+    </item>
+    <item>
+      <title>Tools
+      </title>
+      <description>&lt;h4&gt;Making oneself at home&lt;/h4&gt;&lt;p&gt;It is a rainy Saturday afternoon and I have just created a new user for myself on this machine, the lofty 13-Inch MacBook Air of my dear mother. Yes, she is almost 70 and impossible cool. To actually do something with this beautiful machine, I have to setup the environment. I figured it could be fun to write down the steps while I take them. Maybe you want to follow along. &lt;/p&gt;
+
+&lt;p&gt;First things first: the Terminal. I prefer &lt;a href=&quot;http://iterm2.com&quot;&gt;iTerm 2&lt;/a&gt; over the included Terminal. Download it from the &lt;a href=&quot;http://code.google.com/p/iterm2/downloads/list&quot;&gt;website&lt;/a&gt;, move it to the Applications directory and launch it.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Rhea:~ michael$&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Snippet 1: At the beginning&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;I do not want to install everything manually, therefor it might be sensible to get a package manager now. The missing package manager for OS X is &lt;a href=&quot;http://mxcl.github.com/homebrew/&quot;&gt;Homebrew&lt;/a&gt;, which requires &lt;a href=&quot;http://developer.apple.com/xcode/&quot;&gt;Xcode&lt;/a&gt; and Java Developer Update 3.&lt;/p&gt;
+
+&lt;p&gt;Xcode is available in the App Store. After I click Install, an installer is downloaded. Once the download is complete head to the Launchpad, launch the installer and click Install. To see if it went well, I check for &lt;a href=&quot;http://clang.llvm.org/&quot;&gt;Clang&lt;/a&gt;, the frontend for &lt;a href=&quot;http://www.llvm.org/&quot;&gt;LLVM&lt;/a&gt;, the compiler integrated in Xcode.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Rhea:~ michael$ clang -v
+Apple clang version 3.0 (tags/Apple/clang-211.12) (based on LLVM 3.0svn)
+Target: x86_64-apple-darwin11.2.0
+Thread model: posix&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Snippet 2: Clang version&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;I should be able to compile C, C++ and Objective-C now.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Rhea:~ michael$ vim hello.c
+
+1 #include &lt;stdio.h&gt;                                                          
+2 
+3 int main() {
+4     printf(&quot;hello, world\n&quot;);
+5 }
+
+Rhea:~ michael$ clang hello.c
+Rhea:~ michael$ ./a.out
+Rhea:~ michael$ hello, world&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Snippet 3: hello, world&lt;/em&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;&lt;em&gt;While small test programs existed since the development of programmable computers, the tradition of using the phrase &quot;Hello, world!&quot; as a test message was influenced by an example program in the seminal book The C Programming Language. The example program from that book prints &quot;hello, world&quot; (without capital letters or exclamation mark), and was inherited from a 1974 Bell Laboratories internal memorandum by Brian Kernighan, Programming in C: A Tutorial, which contains the first known version.&lt;/em&gt;—&lt;a href=&quot;http://en.wikipedia.org/wiki/Hello_world_program&quot;&gt;Wikipedia&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;If you are unfamiliar with Clang, you should introduce some errors and recompile to peep the expressive warnings and errors provided by Clang.&lt;/p&gt;
+
+&lt;p&gt;Next up, our beloved aunty Java, which is not preinstalled in OS X, but an installer is executed automatically, when you first request for Java.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Rhea:~ michael$ java -version
+No Java runtime present, requesting install.
+Rhea:~ michael$ java -version
+java version &quot;1.6.0_29&quot;
+Java(TM) SE Runtime Environment (build 1.6.0_29-b11-402-11M3527)
+Java HotSpot(TM) 64-Bit Server VM (build 20.4-b02-402, mixed mode)&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Snippet 4: Java version&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Ready to install Homebrew now by executing this &lt;a href=&quot;https://raw.github.com/gist/323731&quot;&gt;script&lt;/a&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Rhea:~ michael$ /usr/bin/ruby -e &quot;$(curl -fsSL https://raw.github.com/gist/323731)&quot;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Snippet 5: Installing Homebrew&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;I am not sure if the above way to install Java is sufficient and I do not know which brews actually require Java Developer Tools. The Java compiler is there at least.&lt;/p&gt;
+
+&lt;p&gt;javac -v&lt;/p&gt;
+
+&lt;p&gt;Hm, although my interest is rather dimmed, let me try to install Scala.&lt;/p&gt;
+
+&lt;p&gt;brew install scala&lt;/p&gt;
+
+&lt;p&gt;What next? &lt;a href=&quot;http://www.gnu.org/software/wget/&quot;&gt;Wget&lt;/a&gt;, a package for retrieving files using HTTP, HTTPS and FTP; could prove useful in the near future.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Rhea:~ michael$ brew install wget&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Snippet 6: Installing Wget&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;I just realised that it may be more elegant to just alias curl. To apply that I could do the following.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Rhea:~ michael$ brew uninstall wget
+Rhea:~ michael$ alias wget=&quot;curl -O&quot;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Snippet 7: Aliasing Curl&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Next up: the shell. I prefer &lt;a href=&quot;http://www.zsh.org/&quot;&gt;Z shell&lt;/a&gt;, which comes with &lt;a href=&quot;http://en.wikipedia.org/wiki/Darwin_(operating_system)&quot;&gt;Darwin&lt;/a&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Rhea:~ michael$ zsh --version
+zsh 4.3.11 (i386-apple-darwin11.0)&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Snippet 8: Z shell version&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;I switch the default shell from &lt;a href=&quot;http://www.gnu.org/software/bash/&quot;&gt;bash&lt;/a&gt; to zsh by installing &lt;a href=&quot;https://github.com/robbyrussell/oh-my-zsh&quot;&gt;oh-my-zsh&lt;/a&gt;, a community-driven framework for managing your zsh configuration.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Rhea:~ michael$ curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Snippet 9: Installing oh-my-zsh&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Start zsh by opening a new terminal.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Last login: Sat Jan  7 15:49:53 on ttys000
+➜  ~&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Snippet 10: Default oh-my-zsh prompt&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Homelike! Making progress. &lt;/p&gt;
+
+&lt;p&gt;The default &lt;a href=&quot;https://github.com/robbyrussell/oh-my-zsh/wiki/themes&quot;&gt;theme&lt;/a&gt; is solid, but I relish &lt;a href=&quot;http://ethanschoonover.com/solarized&quot;&gt;Solarized&lt;/a&gt;, a sixteen color palette, designed by &lt;a href=&quot;http://ethanschoonover.com/&quot;&gt;Ethan Schoonover&lt;/a&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;➜  ~ vim .zshrc&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Change ZSH&lt;em&gt;THEME=&quot;robbyrussell&quot; to ZSH&lt;/em&gt;THEME=&quot;blinks&quot;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;➜  ~ git clone git://github.com/altercation/solarized.git&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Snippet 12: Cloning Solarized&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Navigate in the iTerm menu to iTerm &gt; Preferences &gt; Profiles. Duplicate Default profile, name it Solarized Dark. Select Color tab and select Import… in the Load Presets ComboBox at the bottom. Import ~/solarized/iterm2-colors-solarized/Solarized Dark.itermcolors.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;➜  ~. ~/.zshrc &lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Snippet 12: Reloading Z shell configuration&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;OK! As the terminal is adequate for my needs, it is time to get a proper editor, the second important tool in my toolset after the terminal. The editor of my choice is MacVim.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;michael@Rhea ~
+  % brew install macvim&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Snippet 13: Installing MacVim&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Solarize mvim.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;michael@Rhea ~
+  % mkdir -p ~/.vim/autoload ~/.vim/bundle
+
+michael@Rhea ~
+  % curl -so ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/HEAD/autoload/pathogen.vim&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Snippet 13: Installing Pathogen&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;michael@Rhea ~
+  % cd .vim  
+
+michael@Rhea ~/.vim
+  % git clone git://git.wincent.com/command-t.git bundle/command-t 
+
+michael@Rhea ~/.vim
+  % cd bundle/command-t 
+
+michael@Rhea ~/.vim/bundle/command-t [master]
+± % rake make&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Snippet 13: Installing Command-t&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;I spare you further details of Vim configuration and leave the editor with a link to my actual &lt;a href=&quot;https://github.com/michaelnisi/mnconfig/blob/master/.vimrc&quot;&gt;.vimrc file&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I am learning Erlang these days.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;michael@Rhea ~
+  % brew install erlang&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Snippet 13: Installing Erlang&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;michael@Rhea ~
+  % erl                                                                     !69
+Erlang R14B04 (erts-5.8.5) [source] [64-bit] [smp:4:4] [rq:4] [async-threads:0] [hipe] [kernel-poll:false]
+
+Eshell V5.8.5  (abort with ^G)
+1&gt; 6*7.
+42
+2&gt; q().
+ok
+3&gt; %  &lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Snippet 13: The Erlang shell&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;And most importantly I need Node.js.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;michael@Rhea ~
+  % brew install node&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Snippet 13: Installing Node&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;michael@Rhea ~
+  % . ~/.zshrc                                                              !93
+
+michael@Rhea ~
+  % node                                                                    !94
+&gt; 6*7
+42
+&gt; process.exit()&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Next up: NPM, a packet manager for Node.&lt;/p&gt;
+
+&lt;p&gt;CoffeeScript is so intriguing.&lt;/p&gt;
+
+&lt;p&gt;npm install coffeescript&lt;/p&gt;
+
+&lt;p&gt;What next? Wouldn&amp;#39;t a database and a webserver be nice?&lt;/p&gt;
+
+&lt;p&gt;A database.
+brew install mongodb&lt;/p&gt;
+
+&lt;p&gt;A webserver.
+brew install nginx&lt;/p&gt;
+
+&lt;p&gt;Done! It is getting dark by now and teatime is overdue. Good to have another machine setup, although my mother will probably never let me use it, I just grabbed this rare occassion by the horns to sneak in this installation. I hope you find it useful or maybe even entertaining.&lt;/p&gt;
+      </description>
+      <link>/2012/01/tools
+      </link>
+      <pubDate>Sat Jan 07 2012
+      </pubDate>
+    </item>
+    <item>
+      <title>Step
+      </title>
+      <description>&lt;h4&gt;Painless parallel execution, serial execution, and error handling&lt;/h4&gt;&lt;p&gt;The step library exports a single function I call step. It accepts any number of functions as arguments and runs them in serial order using the passed in this context as the callback to the next step.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;step(
+    function() {
+        fs.readFile(filename, &amp;#39;utf8&amp;#39;, this.parallel());
+        fs.readdir(dir, this.parallel());
+    },
+    function(err, data, names) {
+        if (err) throw err;
+        rss = jade.compile(data, { filename:filename, pretty:true });
+        var group = this.group();
+        names.forEach(function(name) {
+            addItem(dir + &amp;#39;/&amp;#39; + name, items, group());
+        });
+    },
+    function(err, files) {
+        if (err) throw err;
+        result = rss({ items:items });
+        var filename = target + &amp;#39;/rss.xml&amp;#39;;
+        console.log(&amp;#39;Write &amp;#39; + filename);
+        fs.writeFile(filename, result, this);
+    },
+    function(err) {
+        callback(err, true);
+    }
+);&lt;/code&gt;&lt;/pre&gt;
+      </description>
+      <link>/2011/10/step
+      </link>
+      <pubDate>Tue Oct 25 2011
+      </pubDate>
+    </item>
+    <item>
+      <title>Closure
+      </title>
+      <description>&lt;h4&gt;A function together with a referencing environment&lt;/h4&gt;&lt;p&gt;A closure is a function together with a referencing environment for the non-local variables of that function. A closure allows a function to access variables outside its typical scope. Such a function is said to be &lt;em&gt;closed over&lt;/em&gt; its free variables. The referencing environment binds the nonlocal names to the corresponding variables in scope at the time the closure is created, additionally extending their lifetime to at least as long as the lifetime of the closure itself. &lt;/p&gt;
+
+&lt;p&gt;When the closure is entered at a later time, possibly from a different scope, the function is executed with its non-local variables referring to the ones captured by the closure.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;var myObject = function() {
+    var value = 0;
+
+    return {
+        increment: function(inc) {
+            value += typeof inc === &amp;#39;number&amp;#39; ? inc : 1;
+        },
+        getValue: function() {
+            return value;
+        }
+    };
+}();&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Snippet 1: Closures in JavaScript&lt;/em&gt;&lt;/p&gt;
+      </description>
+      <link>/2011/10/closures
+      </link>
+      <pubDate>Tue Oct 18 2011
+      </pubDate>
+    </item>
+    <item>
+      <title>The Troubled Craftsman
+      </title>
+      <description>&lt;h4&gt;The emotional rewards of craftmanship&lt;/h4&gt;&lt;p&gt;The craftsman summons an immediate image. Peering through a window into a carpenter&amp;#39;s shop, you see inside an elderly man surrounded by his apprentices and his tools. Order reigns within, parts of chairs are clamped neatly together, the fresh smell of wood shavings fills the room, the carpenter bends over his bench to make a fine incision for marquetry: The is menaced by a furniture factory down the road.&lt;/p&gt;
+      </description>
+      <link>/2011/12/craftsman
+      </link>
+      <pubDate>Tue Oct 18 2011
+      </pubDate>
+    </item>
+    <item>
+      <title>Solarized
+      </title>
+      <description>&lt;h4&gt;Colorscheme with precise CIELAB lightness relationships&lt;/h4&gt;&lt;p&gt;&lt;a href=&quot;http://ethanschoonover.com/solarized&quot;&gt;Solarized&lt;/a&gt; is a sixteen color palette (eight monotones, eight accent colors) designed for use with terminal and gui applications. It has several unique properties. Ethan Schoonover designed this colorscheme with both precise &lt;a href=&quot;http://en.wikipedia.org/wiki/Lab_color_space&quot;&gt;CIELAB&lt;/a&gt; lightness relationships and a refined set of hues based on fixed color wheel relationships.&lt;/p&gt;
+
+&lt;p&gt;The things with which we are surrounding us day in day out are of the utmost importance, accordingly the asthetics of a programmer&amp;#39;s trusty editor cannot be overstated. Solarized makes you feel like coding in the shadow under a walnut tree on a bright summer&amp;#39;s day. You can almost feel the fresh summer breeze on your skin. It is available for lots of editors, I am using it with &lt;a href=&quot;http://www.vim.org/&quot;&gt;Vim&lt;/a&gt;, &lt;a href=&quot;http://developer.apple.com/xcode/&quot;&gt;XCode&lt;/a&gt; and &lt;a href=&quot;http://www.jetbrains.com/idea/&quot;&gt;IntelliJ&lt;/a&gt;, which is providing the nice convenience, that all my editors have the same uplifting looks. Well, the colors at least.&lt;/p&gt;
+      </description>
+      <link>/2011/10/solarized
+      </link>
+      <pubDate>Sat Oct 15 2011
+      </pubDate>
+    </item>
+    <item>
+      <title>Homebrew
+      </title>
+      <description>&lt;h4&gt;The missing package manager for OS X&lt;/h4&gt;&lt;p&gt;The Homebrew Computer Club was an informal group of electronic enthusiasts and technically-minded hobbyists who gathered to trade parts, circuits, and information pertaining to DIY construction of computing devices.[1] It was started by Gordon French and Fred Moore who met at the Community Computer Center in Menlo Park. They both were interested in maintaining a regular, open forum for people to get together to work on making computers more accessible to everyone.[2] The first meeting was held in March 1975 in Gordon French&amp;#39;s garage in Menlo Park, San Mateo County, California, on the occasion of the arrival in the area of the first Micro Instrumentation and Telemetry Systems Altair microcomputer, a unit sent for review by People&amp;#39;s Computer Company. Subsequent meetings were held at an auditorium at the Stanford Linear Accelerator Center.[3]&lt;/p&gt;
+      </description>
+      <link>/2011/10/homebrew
+      </link>
+      <pubDate>Mon Oct 10 2011
+      </pubDate>
+    </item>
+  </channel>
+</rss>
