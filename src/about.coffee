@@ -8,7 +8,7 @@ jade = require 'jade'
 # template includes and template inheritance. Setup Jade compile function with
 # the template and the options. And finally compile jade template with
 # according locals.
-bake = (src, callback) ->
+exports.bake = (src, callback) ->
 	options = 
 		filename: src.templatePath
 		pretty: true
@@ -21,8 +21,4 @@ bake = (src, callback) ->
 		content: markdown.toHTML src.body
 		dateString: src.dateString
 
-	callback null, src.path, src.name, result
-
-# Export API.
-module.exports = 
-	bake: bake
+	callback null, src, result

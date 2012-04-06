@@ -30,7 +30,7 @@ compile = (src, items, callback) ->
 # Iterate over the loaded files and store the resulting post item in the
 # items array. Sort the items by date, compile the html page with the latest
 # 7 posts and apply the callback.
-bake = (src, callback) ->
+exports.bake = (src, callback) ->
   blake.readFiles src.paths.posts, (err, files) ->
     throw err if err
     
@@ -40,8 +40,4 @@ bake = (src, callback) ->
       (a.time - b.time)* -1
     
     compile src, items, (err, html) ->
-      callback null, src.path, src.name, html
-
-# Export API.
-module.exports = 
-  bake: bake
+      callback err, src, html

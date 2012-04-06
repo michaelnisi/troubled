@@ -45,7 +45,7 @@ compile = (src, items, callback) ->
 # feed. Iterate over posts and add a feed item per post to the items array.
 # Sort the items descending by date (newest entry first). Compile the RSS feed
 # and apply the callback.
-bake = (src, callback) ->
+exports.bake = (src, callback) ->
   blake.readFiles src.paths.posts, (err, files) ->
     throw err if err
     
@@ -55,8 +55,4 @@ bake = (src, callback) ->
       (a.time - b.time) * -1
 
     compile src, items, (err, xml) ->
-      callback null, src.path, src.name, xml
-
-# Export API.
-module.exports = 
-  bake: bake
+      callback err, src, xml

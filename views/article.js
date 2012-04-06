@@ -33,7 +33,7 @@
     };
     jadeCompile = jade.compile(src.template, options);
     result = jadeCompile(getLocals(src));
-    return callback(null, src.path, src.name, result);
+    return callback(null, src, result);
   };
 
   module.exports = {

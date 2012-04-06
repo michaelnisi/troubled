@@ -1,5 +1,5 @@
 (function() {
-  var bake, blake, compile, getItem, jade, markdown;
+  var blake, compile, getItem, jade, markdown;
 
   jade = require('jade');
 
@@ -40,7 +40,7 @@
     return callback(null, result);
   };
 
-  bake = function(src, callback) {
+  exports.bake = function(src, callback) {
     return blake.readFiles(src.paths.posts, function(err, files) {
       var file, items, _i, _len;
       if (err) throw err;
@@ -53,13 +53,9 @@
         return (a.time - b.time) * -1;
       });
       return compile(src, items, function(err, xml) {
-        return callback(null, src.path, src.name, xml);
+        return callback(err, src, xml);
       });
     });
-  };
-
-  module.exports = {
-    bake: bake
   };
 
 }).call(this);

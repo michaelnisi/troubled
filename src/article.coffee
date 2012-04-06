@@ -32,7 +32,7 @@ bake = (src, callback) ->
   jadeCompile = jade.compile src.template, options
   result = jadeCompile getLocals src
 
-  callback null, src.path, src.name, result
+  callback null, src, result
 
 # Export API.
 module.exports = 

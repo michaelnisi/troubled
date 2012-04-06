@@ -11,9 +11,5 @@ archive = require './archive.js'
 # Iterate over the loaded files and store the resulting post item in the
 # items array. Sort the items by date, compile the html page with the latest
 # 7 posts and apply the callback.
-bake = (src, callback) ->
+exports.bake = (src, callback) ->
   archive.bake src, callback
-
-# Export API.
-module.exports =
-  bake: bake
