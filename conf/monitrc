@@ -6,7 +6,7 @@ set daemon 60
 check process nodejs with pidfile "/var/run/troubled.pid"
 	start program = "/sbin/start troubled"
 	stop program  = "/sbin/stop troubled"
-	if failed port 3000 protocol HTTP
+	if failed port 80 protocol HTTP
 		request /
 		with timeout 10 seconds
 		then restart

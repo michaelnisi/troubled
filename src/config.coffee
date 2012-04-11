@@ -13,4 +13,6 @@ exports.bakeFunctions =
   'article.jade': require('./article.js').bake,
   'home.jade': require('./home.js').bake,
   'about.jade': require('./about.js').bake,
-  'archive.jade': require('./archive.js').bake
+  'archive.jade': require('./archive.js').bake,
+  'likes.jade': require('./likes.js').bake,
+  'tweet.jade': require('./tweet.js').bake
