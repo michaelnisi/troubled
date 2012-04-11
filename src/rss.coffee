@@ -5,8 +5,8 @@ jade = require 'jade'
 blake = require 'blake'
 { markdown } = require 'markdown'
 
-# Get source object for input file from blake and return a new RSS feed item
-# populated with the values from the source object. 
+# Get source object for input file from blake and return a new RSS feed 
+# item populated with the values from the source object.
 getItem = (file, paths) ->
   src = blake.getSource file.content, file.name, paths
 
@@ -41,14 +41,14 @@ compile = (src, items, callback) ->
 
   callback null, result
 
-# Read all posts and initialize an array to store the final items of the RSS
-# feed. Iterate over posts and add a feed item per post to the items array.
-# Sort the items descending by date (newest entry first). Compile the RSS feed
-# and apply the callback.
-exports.bake = (src, callback) ->
+# Read all posts and initialize an array to store the final items of the 
+# RSS feed. Iterate over posts and add a feed item per post to the items 
+# array. Sort the items descending by date (newest entry first). Compile 
+# the RSS feed and apply the callback.
+bake = (src, callback) ->
   blake.readFiles src.paths.posts, (err, files) ->
     throw err if err
-    
+
     items = []
     items.push getItem(file, src.paths) for file in files
     items.sort (a, b) ->
@@ -56,3 +56,6 @@ exports.bake = (src, callback) ->
 
     compile src, items, (err, xml) ->
       callback err, src, xml
+
+# Export API.
+exports.bake = bake

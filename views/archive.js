@@ -1,5 +1,5 @@
 (function() {
-  var article, blake, compile, jade;
+  var article, bake, blake, compile, jade;
 
   jade = require('jade');
 
@@ -23,7 +23,7 @@
     return callback(null, html);
   };
 
-  exports.bake = function(src, callback) {
+  bake = function(src, callback) {
     return blake.readFiles(src.paths.posts, function(err, files) {
       var file, items, _i, _len;
       if (err) throw err;
@@ -40,5 +40,7 @@
       });
     });
   };
+
+  exports.bake = bake;
 
 }).call(this);

@@ -12,7 +12,7 @@ bake = (src, callback) ->
   parser = new FeedParser
   likes = request src.header.url
   articles = []
- 
+
   likes.on 'error', (err) ->
     callback err
 
@@ -20,7 +20,7 @@ bake = (src, callback) ->
     articles.push article
   
   parser.on 'end', () ->
-    options = 
+    options =
       filename: src.templatePath
       pretty: true
 

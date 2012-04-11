@@ -5,10 +5,10 @@ jade = require 'jade'
 { markdown } = require 'markdown'
 
 # Create jade options with filename set to template, which is required for 
-# template includes and template inheritance. Setup Jade compile function with
-# the template and the options. And finally compile jade template with
+# template include and template inheritance. Setup Jade compile function
+# with the template and the options. And finally compile jade template with
 # according locals.
-exports.bake = (src, callback) ->
+bake = (src, callback) ->
 	options = 
 		filename: src.templatePath
 		pretty: true
@@ -22,3 +22,6 @@ exports.bake = (src, callback) ->
 		dateString: src.dateString
 
 	callback null, src, result
+  
+# Export API.
+exports.bake = bake

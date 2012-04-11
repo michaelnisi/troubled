@@ -1,5 +1,5 @@
 (function() {
-  var archive, blake, jade;
+  var archive, bake, blake, jade;
 
   jade = require('jade');
 
@@ -7,8 +7,10 @@
 
   archive = require('./archive.js');
 
-  exports.bake = function(src, callback) {
+  bake = function(src, callback) {
     return archive.bake(src, callback);
   };
+
+  exports.bake = bake;
 
 }).call(this);

@@ -1,11 +1,11 @@
 (function() {
-  var jade, markdown;
+  var bake, jade, markdown;
 
   jade = require('jade');
 
   markdown = require('markdown').markdown;
 
-  exports.bake = function(src, callback) {
+  bake = function(src, callback) {
     var jadeCompile, options, result;
     options = {
       filename: src.templatePath,
@@ -20,5 +20,7 @@
     });
     return callback(null, src, result);
   };
+
+  exports.bake = bake;
 
 }).call(this);

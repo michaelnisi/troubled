@@ -29,9 +29,11 @@ module.exports = function (config) {
     var file = path.resolve(config.output + req.url);
     var ext = file.split('.')[1];
     var isPublish = req.url == '/publish';   
-    
+
     if (isPublish) {
-      return publish(config, req, resp);
+      return publish(config, req, resp, function (err) {
+        console.log(err || 'Published on %s', new Date()); 
+      });
     }
 
     if (req.url != '/' && !ext) {
@@ -42,19 +44,10 @@ module.exports = function (config) {
 
     req.pipe(filed(file)).pipe(resp);
   }).listen(config.port, config.ip); 
-  
-  reflect(config);
 };
 
-var reflect = function (config) {
-  return config.callback ? config.callback(null) : null;
-};
-
-var publish = function (config, request, response, callback) {
-  if (request.method !== 'POST') {
-    response.end();
-    return;
-  }
+var parse = function (request, callback) {
+  console.log(request);
 
   var data = '';
 
@@ -64,34 +57,56 @@ var publish = function (config, request, response, callback) {
 
   request.on('end', function () {
     if (!data) {
-      return;
+      return callback(false);
     }
 
     var value = data.split('payload=')[1];
 
     if (!value) {
-      return;
+      return callback(false);
     }
 
     try {
       var payload = JSON.parse(unescape(value) || null);
     } catch(err) {
-      return;
+      return callback(false);
     }
 
     if (!payload) {
-      return;
+      return callback(false);
     }
 
     console.log(payload);
 
-    pull(config.input, function (error) {
-      bake(config.input, config.output, function (error) {
-        reflect(config);
-      });
-    });
+    return callback(true);
   });
+};
 
+var validate = function (request, callback) {
+  var isPost = request.method === 'POST';
+
+  if (isPost) {
+    parse(request, function (isGitHub) {
+      callback(isGitHub);
+    });    
+  } else {
+    callback(false);
+  }
+};
+
+var publish = function (config, request, response, callback) {
   response.writeHead(200);
   response.end();
+
+  validate(request, function (isValid) {
+    if (!isValid) {
+      return callback(new Error('Invalid post-receive request'));
+    } else {
+      pull(config.input, function (error) {
+        bake(config.input, config.output, function (err) {
+          callback(err);
+        });
+      });    
+    }
+  });
 };
