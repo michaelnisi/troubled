@@ -71,11 +71,15 @@ module.exports = function (config, request, response, callback) {
     if (!isValid) {
       return callback(new Error('Invalid post-receive request'));
     } else {
-      pull(config.input, function (error) {
+      pull(config.input, function (err) {
+        if (err) {
+          return callback(err);
+        }
+
         bake(config.input, config.output, function (err) {
           callback(err);
         });
-      });    
+      });
     }
   });
 };
