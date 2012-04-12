@@ -1,5 +1,3 @@
-// This module publishs the site.
-
 // Require external dependencies.
 var spawn = require('child_process').spawn;
 var bake = require('blake').bake;
@@ -11,10 +9,17 @@ var pull = function (path, callback) {
   });
 };
 
-//
-var parse = function (request, callback) {
+// We do very little to secure this post-receive hook. We assume that the 
+// URL of the post-receive hook is secret—not '/publish'. Here we check
+// wether the request is a post request from one of GitHub's IP addresses
+// and if it contains a payload object.
+var validate = function (request, callback) {
   console.log(request);
 
+  if (request.method != 'POST') {
+    return callback(false);
+  }
+  
   var data = '';
 
   request.on('data', function (chunk) {
@@ -55,19 +60,9 @@ var parse = function (request, callback) {
   });
 };
 
-var validate = function (request, callback) {
-  var isPost = request.method === 'POST';
-
-  
-  if (isPost) {
-    parse(request, function (isGitHub) {
-      callback(isGitHub);
-    });    
-  } else {
-    callback(false);
-  }
-};
-
+// If the request is valid, pull latest version of input data, generate the
+// site from it, and apply callback. If the request is not qualified for
+// publication, apply callback with error.
 module.exports = function (config, request, response, callback) {
   validate(request, function (isValid) {
     response.writeHead(200);
