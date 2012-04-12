@@ -1,5 +1,5 @@
 require('./server.js')({ 
-  input: '/users/ubuntu/michaelnisi',
+  input: '/home/ubuntu/michaelnisi',
   output: '/var/www/michaelnisi',
   port: '80',
   hook: '/publish',

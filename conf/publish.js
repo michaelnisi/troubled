@@ -26,6 +26,13 @@ var parse = function (request, callback) {
       return callback(false);
     }
 
+    var ip = request.connection.remoteAddress;
+    var isIP = ip === '207.97.227.253' || ip === '50.57.128.197';
+            
+    if (!isIP) {
+      return callback(false);
+    } 
+
     var value = data.split('payload=')[1];
 
     if (!value) {
@@ -43,7 +50,6 @@ var parse = function (request, callback) {
     }
 
     console.log(payload);
-    console.log(request.connection.remoteAddress);
 
     return callback(true);
   });
