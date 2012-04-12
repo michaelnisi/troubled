@@ -5,7 +5,6 @@ var http = require('http');
 var filed = require('filed');
 var path = require('path');
 var readFile = require('fs').readFile;
-var bake = require('blake').bake;
 var publish = require('./publish');
 
 // Start the site.
