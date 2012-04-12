@@ -11,6 +11,8 @@ I mainly write JavaScript, C, Objective-C and Erlang. The two platforms I'm most
 
 I love the web; therefore I am a great believer in [web standards](http://www.webstandards.org) and [responsive design](http://www.alistapart.com/articles/responsive-web-design). Here I write to learn and to share.
 
+Test.
+
 If you are interested you could follow me on [Twitter](http://twitter.com/michaelnisi), fork me on [GitHub](https://github.com/michaelnisi) or have a look at my photos on [Flickr](http://flickr.com/photos/michaelnisi). Also you could watch images and videos I like on [Zootool](http://zoo.tl/u/michaelnisi/) and [Vimeo](http://www.vimeo.com/user5635710/likes).
 
 Please send comments to [@michaelnisi](http://twitter.com/michaelnisi) or <michael.nisi@gmail.com>.
