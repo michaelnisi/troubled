@@ -5,27 +5,31 @@ request = require 'request'
 jade = require 'jade'
 twitter = require 'twitter-text'
 
-# Request url and parse body as JSON. If request returns error, apply
-# callback with error. Otherwise apply jade compile with auto linked
-# text of first tweet and apply callback.
+# Request url. If request returns error, apply callback with error. Parse
+# body as JSON and get first tweet. If there's no tweet or the tweet 
+# contains no text return callback with error. Else apply jade compile with
+# auto linked text of first tweet and apply callback with src and result.
 bake = (src, callback) ->
   request src.header.url, (err, resp, body) ->
-    if err
-      callback err
-    else
-      tweets = JSON.parse body
-      text = twitter.autoLink tweets[0].text
-
-      options =
-        filename: src.templatePath
-        pretty: true
+    return callback err if err
       
-      jadeCompile = jade.compile src.template, options
-      
-      result = jadeCompile
-        text: text
+    tweets = JSON.parse body
+    tweet = tweets[0]
 
-      callback null, src, result
+    return callback new Error 'No tweet' unless tweet or tweet.text
 
-# Exports API.
+    text = twitter.autoLink tweet.text
+
+    options =
+      filename: src.templatePath
+      pretty: true
+    
+    jadeCompile = jade.compile src.template, options
+    
+    result = jadeCompile
+      text: text
+
+    callback null, src, result
+
+# Export API.
 exports.bake = bake
