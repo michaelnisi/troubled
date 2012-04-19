@@ -1,5 +1,0 @@
-#!/bin/bash
-
-coffee -o views -c src/*
-blake . output 
-

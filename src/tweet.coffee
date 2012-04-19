@@ -12,7 +12,7 @@ twitter = require 'twitter-text'
 bake = (src, callback) ->
   request src.header.url, (err, resp, body) ->
     return callback err if err
-      
+
     tweets = JSON.parse body
     tweet = tweets[0]
 
@@ -23,9 +23,9 @@ bake = (src, callback) ->
     options =
       filename: src.templatePath
       pretty: true
-    
+
     jadeCompile = jade.compile src.template, options
-    
+
     result = jadeCompile
       text: text
 
