@@ -38,13 +38,13 @@ module.exports = function (config) {
     req.pipe(filed(file)).pipe(resp);
   }).listen(config.port, config.ip);
 
- // Retrieve latest tweet and instapaper likes.
- var tweet = path.resolve(config.input, 'data', 'tweet.json');
- var likes = path.resolve(config.input, 'data', 'likes.json');
+  // Retrieve latest tweet and instapaper likes.
+  var tweet = path.resolve(config.input, 'data', 'tweet.json');
+  var likes = path.resolve(config.input, 'data', 'likes.json');
 
- setInterval(function () {
-   bake(config.input, config.output, tweet, likes, function (err) {
-     console.log('Published tweet and likes on %s', new Date());
-   });
- }, 3600000);
+  setInterval(function () {
+    bake(config.input, config.output, tweet, likes, function (err) {
+      console.log('Published tweet and likes on %s', new Date());
+    });
+  }, 3600000);
 };

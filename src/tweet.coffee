@@ -16,7 +16,7 @@ bake = (src, callback) ->
     tweets = JSON.parse body
     tweet = tweets[0]
 
-    return callback new Error 'No tweet' unless tweet or tweet.text
+    return callback new Error 'No tweet' unless tweet? and tweet.text?
 
     text = twitter.autoLink tweet.text
 

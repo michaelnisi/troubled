@@ -13,7 +13,7 @@
       if (err) return callback(err);
       tweets = JSON.parse(body);
       tweet = tweets[0];
-      if (!(tweet || tweet.text)) return callback(new Error('No tweet'));
+      if (!(tweet && tweet.text)) return callback(new Error('No tweet'));
       text = twitter.autoLink(tweet.text);
       options = {
         filename: src.templatePath,
