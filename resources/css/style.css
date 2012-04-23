@@ -213,11 +213,11 @@ Author: Michael Nisi (mail@michaelnisi.com)
 
 /* Fonts */
 
-h1, h2, h3, h4, nav a, section#likes ul li a {
+h1, nav a, section#likes ul li a {
   font-family: "futura-pt", Futura, sans-serif;
 }
 
-body  {
+body, h2, h3, h4 {
   font-family: "adobe-caslon-pro", Georgia, serif;
 }
 
@@ -238,31 +238,38 @@ a h1 {
   color: #343838;
 }
 
-h1, h2, h3, h4 {
+h1 {
+  font-size: 2em;
   font-weight: 500;
   letter-spacing: .1em; 
   text-transform: uppercase;
   text-shadow: 1px 1px #fff;
 }
 
-article ul {
-  font-size: 1.5em;
-}
-
-h1 {
-  font-size: 2em;
-}
-
 h2 {
   font-size: 2.5em;
+  font-weight: 500;
+  letter-spacing: .1em; 
+  text-shadow: 1px 1px #fff;
+  text-align: center;
 }
 
-h3, h4 {
+h3 {
   font-size: 1.5em;
+  font-weight: 500;
+  letter-spacing: .1em; 
+  text-transform: uppercase;
+  text-shadow: 1px 1px #fff;
 }
 
 h4 {
-  padding-top: 1em;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+}
+
+article ul {
+  font-size: 1.5em;
 }
 
 header {
@@ -315,7 +322,6 @@ nav a, section#likes ul li a  {
 }
 
 #summary {
-  margin-top: -1em;
   padding-bottom: 1em;
 }
 

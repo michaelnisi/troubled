@@ -15,7 +15,7 @@ html(lang="en")
         section#cover
           article
             a(href= latestItem.link)
-              h2= latestItem.title.toUpperCase()
+              h2= latestItem.title
             p#summary= latestItem.description
             !{latestItem.content}
       - if (hasItems)
