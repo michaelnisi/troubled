@@ -43,7 +43,6 @@ I was always hesitant in regards of meaningful whitespace, but when I came to th
 
 Less lines, less code
 
-
 #### Debugging
 How about debugging? As one of CoffeeScript's design principles is to maintain the order of instructions in the compiled JavaScript code, it is rather easy to relate JavaScript stack traces back to CoffeeScript code—almost matching line numbers. I expected it to be much worse; debugging hasn't been an issue for me so far. 
 But without any doubt, one cannot deny the necessary extra step of translation, when it comes to analyse problems. The generated code is readable and novice JavaScript programmers might be able to draw inspiration from it.
