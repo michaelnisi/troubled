@@ -5,8 +5,6 @@
   "date": "2012-03-21"
 }
 
-Disclaimer: Work in progress.
-
 I TREASURE JAVASCRIPT for its flexibility; its Syntax isn't great, but I don't mind; its quirks, those of a longtime companion. That said—I'm intrigued by CoffeeScript and its appeal increased, when I heard that [Ward Cunningham](http://en.wikipedia.org/wiki/Ward_Cunningham) uses it in his new [Wiki](https://github.com/WardCunningham/Smallest-Federated-Wiki). The [views](http://michaelnisi.github.com/michaelnisi/home.html) of this quiet site offered a favorable opportunity to finally try it.
 
 JavaScript is a lightweight, object-oriented language, most known as the scripting language for web pages, but used in many non-browser environments as well. JavaScript was created in 1995 by Brendan Eich at Netscape. His objective was to make it look like Java, but he subversivly made it look like C. The name was a marketing stunt to free ride the [Java](http://en.wikipedia.org/wiki/Java_(programming_language)) hype of the time. The language however has nothing in common with Java, its idiotic name has been contributing to JavaScript's misinterpretation until today. JavaScript is the Cinderella of programming languages. Long time abused and underrated. At the moment JavaScript is the top language on [github](https://github.com/languages).

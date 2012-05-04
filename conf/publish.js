@@ -2,6 +2,9 @@
 var spawn = require('child_process').spawn;
 var bake = require('blake').bake;
 
+// The Public IP addresses of the GitHub hooks
+var ADDRESSES = ['207.97.227.253', '50.57.128.197', '108.171.174.178'];
+
 // Spawn child process with specified path and execute git pull.
 var pull = function (path, callback) {
   spawn('git', ['pull'], { cwd: path }).on('exit', function (code) {
@@ -31,10 +34,15 @@ var validate = function (request, callback) {
       return callback(false);
     }
 
-    var ip = request.connection.remoteAddress;
-    var isIP = ip === '207.97.227.253' || ip === '50.57.128.197';
-            
-    if (!isIP) {
+    var isGitHub = function (remoteAdress) {
+      ADDRESSES.forEach(function (address) {
+        if (remoteAddress === address) return true;            
+      });
+
+      return false;
+    };
+
+    if (!isGitHub(request.connection.remoteAddress)) {
       return callback(false);
     } 
 
