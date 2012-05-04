@@ -2,9 +2,6 @@
 var spawn = require('child_process').spawn;
 var bake = require('blake').bake;
 
-// The Public IP addresses of the GitHub hooks
-var ADDRESSES = ['207.97.227.253', '50.57.128.197', '108.171.174.178'];
-
 // Spawn child process with specified path and execute git pull.
 var pull = function (path, callback) {
   spawn('git', ['pull'], { cwd: path }).on('exit', function (code) {
@@ -16,7 +13,7 @@ var pull = function (path, callback) {
 // URL of the post-receive hook is secret—not '/publish'. Here we check
 // wether the request is a post request from one of GitHub's IP addresses
 // and if it contains a payload object.
-var validate = function (request, callback) {
+var validate = function (addresses, request, callback) {
   console.log(request);
 
   if (request.method != 'POST') {
@@ -35,10 +32,14 @@ var validate = function (request, callback) {
     }
 
     var isGitHub = function (remoteAddress) {
-      ADDRESSES.forEach(function (address) {
-        if (remoteAddress === address) return true;            
-      });
-
+      var length = addresses.length;
+      var address;
+      
+      for (var i = 0; i <= length; i++) {
+        address = addresses[i];
+        if (remoteAddress == address) return true;
+      }
+     
       return false;
     };
 
@@ -72,7 +73,7 @@ var validate = function (request, callback) {
 // site from it, and apply callback. If the request is not qualified for
 // publication, apply callback with error.
 module.exports = function (config, request, response, callback) {
-  validate(request, function (isValid) {
+  validate(config.addresses, request, function (isValid) {
     response.writeHead(200);
     response.end();
     
