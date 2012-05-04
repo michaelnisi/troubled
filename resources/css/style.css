@@ -217,7 +217,7 @@ h1, nav a, section#likes ul li a {
   font-family: "futura-pt", Futura, sans-serif;
 }
 
-body, h2, h3, h4 {
+body, h2, h3, h4, h5 {
   font-family: "adobe-caslon-pro", Georgia, serif;
 }
 
@@ -267,6 +267,13 @@ h4 {
   font-weight: bold;
   text-align: center;
 }
+
+h5 {
+  font-size: 1.5em;
+  font-style: italic;
+  text-align: center;
+}
+
 
 article ul {
   font-size: 1.5em;
