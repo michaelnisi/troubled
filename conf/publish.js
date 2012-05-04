@@ -34,7 +34,7 @@ var validate = function (request, callback) {
       return callback(false);
     }
 
-    var isGitHub = function (remoteAdress) {
+    var isGitHub = function (remoteAddress) {
       ADDRESSES.forEach(function (address) {
         if (remoteAddress === address) return true;            
       });
