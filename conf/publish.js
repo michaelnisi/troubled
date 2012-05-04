@@ -32,12 +32,12 @@ var validate = function (addresses, request, callback) {
     }
 
     var isGitHub = function (remoteAddress) {
-      var length = addresses.length;
+      var i = addresses.length;
       var address;
-      
-      for (var i = 0; i <= length; i++) {
+
+      while (i--) {
         address = addresses[i];
-        if (remoteAddress == address) return true;
+        if (remoteAddress === address) return true;
       }
      
       return false;
