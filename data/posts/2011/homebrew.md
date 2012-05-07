@@ -15,9 +15,7 @@ Wikipedia:
 
 Basically Homebrew is a [Git](http://git-scm.com/) repository, installed into `/usr/local`, this location obviates sudo to install packages; it's self contained and may be [removed](https://gist.github.com/1173223) any time.
 
-Homebrew installs to `/usr/local/Cellar` and symlinks some of the installation into `/usr/local`.
-
-Packages are installed according to their formulas, which are plain Ruby classes, located in `/usr/local/Library/formula`.
+Homebrew installs packages to `/usr/local/Cellar` and symlinks some of the installation into `/usr/local`. The packages are installed according to their formulas, which are plain Ruby classes, located in `/usr/local/Library/formula`.
 
 Driven by the community, with some 4.000 forks on GitHub, the formulas seem to be self healing. The ease to contribute to Homebrew almost forces its users to contribute, resulting in frequently updated formulas. 
 
