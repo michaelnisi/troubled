@@ -19,7 +19,7 @@ Homebrew installs packages to `/usr/local/Cellar` and symlinks some of the insta
 
 Driven by the community, with some 4.000 forks on [GitHub](https://github.com/mxcl/homebrew), the formulas seem to be self healing. The ease to contribute to Homebrew almost forces its users to contribute, resulting in frequently updated formulas. 
 
-*To provide a simple usage example,* say, after we [installed](https://github.com/mxcl/homebrew/wiki/installation) Homebrew, we fancy to try [Erlang](http://smyck.net/2012/04/22/why-erlang/). We'd search Homebrew to check if there's a [formula](https://github.com/mxcl/homebrew/blob/master/Library/Formula/erlang.rb) to install it:
+*To provide a simple usage example:* Say, after we [installed](https://github.com/mxcl/homebrew/wiki/installation) Homebrew, we fancy to try [Erlang](http://smyck.net/2012/04/22/why-erlang/); we'd search Homebrew to check if there's a [formula](https://github.com/mxcl/homebrew/blob/master/Library/Formula/erlang.rb) to install it:
 
     % brew search erlang
 
@@ -31,4 +31,4 @@ Done. Ready to run the Erlang shell:
 
     % erl
  
-By now I consider Homebrew part of OS X and rely on it, in fact, I tend to abandon software installation entirely, when prompted for sudo. Homebrew isn't the missing packet manager, it's *the* packet manager for OS X. And yes; it runs this cute beer name theme with cellar, kegs and formula—Cheers!
+By now I consider Homebrew part of OS X and rely on it, in fact, I tend to abandon software installation entirely, when prompted for sudo. Homebrew isn't the missing packet manager, it's *the* packet manager for OS X. And yes; it runs this cute beer name theme with cellar, kegs and formulas—Cheers!
