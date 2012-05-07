@@ -13,11 +13,11 @@ Wikipedia:
 
 [Homebrew](http://mxcl.github.com/homebrew/) is a OS X package manager created by [Max Howell](https://github.com/mxcl) to make UNIX tools more accessible to every OS X user. It's one of these simple applications that just work.
 
-Basically Homebrew is a [Git](http://git-scm.com/) repository, installed into `/usr/local`, this location obviates sudo to install packages; it's self contained and may be [removed](https://gist.github.com/1173223) any time.
+Basically Homebrew is a [Git](http://git-scm.com/) repository, cloned to `/usr/local` to avoid sudo during installation; it's self contained, doesn't alter the system and may be [removed](https://gist.github.com/1173223) at any time.
 
-Homebrew installs packages to `/usr/local/Cellar` and symlinks some of the installation into `/usr/local`. The packages are installed according to their formulas, which are plain Ruby classes, located in `/usr/local/Library/formula`.
+Homebrew installs packages to `/usr/local/Cellar` and symlinks some of the installation into `/usr/local`. The packages are installed according to their formulas, which are plain Ruby classes, located in `/usr/local/Library/Formula`.
 
-Driven by the community, with some 4.000 forks on GitHub, the formulas seem to be self healing. The ease to contribute to Homebrew almost forces its users to contribute, resulting in frequently updated formulas. 
+Driven by the community, with some 4.000 forks on [GitHub](https://github.com/mxcl/homebrew), the formulas seem to be self healing. The ease to contribute to Homebrew almost forces its users to contribute, resulting in frequently updated formulas. 
 
 *To provide a simple usage example,* say, after we [installed](https://github.com/mxcl/homebrew/wiki/installation) Homebrew, we fancy to try [Erlang](http://smyck.net/2012/04/22/why-erlang/). We'd search Homebrew to check if there's a [formula](https://github.com/mxcl/homebrew/blob/master/Library/Formula/erlang.rb) to install it:
 
@@ -31,4 +31,4 @@ Done. Ready to run the Erlang shell:
 
     % erl
  
-By now I consider Homebrew part of OS X and use it regularly, in fact I tend to resign to install software entirely, when prompted for sudo by its installer. Homebrew isn't the missing packet manager, it's *the* packet manager for OS X. And yes; it runs this cute beer name theme with cellar, kegs and formula—Cheers!
+By now I consider Homebrew part of OS X and rely on it, in fact, I tend to abandon software installation entirely, when prompted for sudo. Homebrew isn't the missing packet manager, it's *the* packet manager for OS X. And yes; it runs this cute beer name theme with cellar, kegs and formula—Cheers!
