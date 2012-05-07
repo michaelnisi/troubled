@@ -11,7 +11,7 @@ THE FIRST MEETING of [The Homebrew Computer Club](http://en.wikipedia.org/wiki/H
 Wikipedia:
 > The Homebrew Computer Club was an early computer hobbyist users' group in Silicon Valley, which met (under that name) from March 5, 1975 to December 1986. Several very high-profile hackers and IT entrepreneurs emerged from its ranks, including the founders of Apple Inc.
 
-[Homebrew](http://mxcl.github.com/homebrew/) is a OS X package manager created by [Max Howell](https://github.com/mxcl) to make UNIX tools more accessible to every OS X user. It's one of these simple applications that just work.
+[Homebrew](http://mxcl.github.com/homebrew/) is a package manager created by [Max Howell](https://github.com/mxcl) to make UNIX tools more accessible to every OS X user. It's one of these simple applications that just work.
 
 Basically Homebrew is a [Git](http://git-scm.com/) repository, cloned to `/usr/local` to avoid sudo during installation; it's self contained, doesn't alter the system and may be [removed](https://gist.github.com/1173223) at any time.
 
@@ -19,7 +19,7 @@ Homebrew installs packages to `/usr/local/Cellar` and symlinks some of the insta
 
 Driven by the community, with some 4.000 forks on [GitHub](https://github.com/mxcl/homebrew), the formulas seem to be self healing. The ease to contribute to Homebrew almost forces its users to contribute, resulting in frequently updated formulas. 
 
-*To provide a simple usage example:* Say, after we [installed](https://github.com/mxcl/homebrew/wiki/installation) Homebrew, we fancy to try [Erlang](http://smyck.net/2012/04/22/why-erlang/); we'd search Homebrew to check if there's a [formula](https://github.com/mxcl/homebrew/blob/master/Library/Formula/erlang.rb) to install it:
+*To provide a simple usage example,* say, after we [installed](https://github.com/mxcl/homebrew/wiki/installation) Homebrew, we fancy to try [Erlang](http://smyck.net/2012/04/22/why-erlang/); we'd search Homebrew to check if there's a [formula](https://github.com/mxcl/homebrew/blob/master/Library/Formula/erlang.rb) to install it:
 
     % brew search erlang
 
