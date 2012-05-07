@@ -303,6 +303,10 @@ code {
   font-size: 1.154em;
 }
 
+p code {
+  font-size: 0.846em;
+}
+
 nav ul, ul#smallprint {
   display: inline;
   width: 100%;
