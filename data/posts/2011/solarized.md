@@ -2,7 +2,8 @@
   "title": "Solarized",
   "description": "The palette of this popular color scheme for terminal and GUI applications aims to maximize sixteen colors, providing contrast on both dark and light backgrounds.",
   "template": "article.jade",
-  "date": "2011-10-15"
+  "date": "2011-10-15",
+  "path": "2011/10"
 }
 
 THE AESTHETICS OF EVERYDAY THINGS are of the utmost importance; the psychological effects of beauty are fundamental. As programmers we look at our text editors and IDEs for hours every day, thus most of us are particular in regards of color schemes. We want them to be practical, beautiful and easy on the eyes—beautiful things are created with beautiful tools.
