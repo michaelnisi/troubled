@@ -6,9 +6,9 @@
   "path": "2011/10"
 }
 
-THE AESTHETICS OF EVERYDAY THINGS are of the utmost importance; the psychological effects of beauty are fundamental. As programmers we look at our text editors and IDEs for hours every day, thus most of us are particular in regards of color schemes. We want them to be practical, beautiful and easy on the eyes—beautiful things are created with beautiful tools.
+HUMANS CAN PERCEIVE over 2.8 million different hues, the number of possible color combinations is virtually infinite, to assemble a color theme for code editors is tedious. The combination has to be practical, beautiful and easy on the eyes.
 
-[Solarized](http://ethanschoonover.com/solarized) is a sixteen color palette (eight monotones, eight accent colors) designed for use with terminal and GUI applications. It has several unique properties. [Ethan Schoonover](http://ethanschoonover.com/) designed this colorscheme with both precise [CIELAB](http://en.wikipedia.org/wiki/Lab_color_space) lightness relationships and a refined set of hues based on fixed color wheel relationships:
+[Solarized](http://ethanschoonover.com/solarized) is a sixteen color palette (eight monotones, eight accent colors) designed for use with terminal and GUI applications. [Ethan Schoonover](http://ethanschoonover.com/) designed this colorscheme with both precise [CIELAB](http://en.wikipedia.org/wiki/Lab_color_space) lightness relationships and a refined set of hues based on fixed color wheel relationships:
 
 > On a sunny summer day I love to read a book outside. Not right in the sun; that’s too bright. I’ll hunt for a shady spot under a tree. The shaded paper contrasts with the crisp text nicely. If you were to actually measure the contrast between the two, you’d find it is much lower than black text on a white background (or white on black) on your display device of choice. Black text on white from a computer display is akin to reading a book in direct sunlight and tires the eye.
 
