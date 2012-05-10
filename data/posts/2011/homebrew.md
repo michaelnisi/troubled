@@ -13,10 +13,6 @@ Wikipedia:
 
 [Homebrew](http://mxcl.github.com/homebrew/) is a package manager created by [Max Howell](https://github.com/mxcl) to make UNIX tools more accessible to every OS X user. It's one of these simple applications that just work.
 
-The trick is `/usr/local`:
-
-    sudo chown -R $USER /usr/local
-
 Basically Homebrew is a [Git](http://git-scm.com/) repository, cloned to `/usr/local` to avoid sudo during installation; it's self contained, doesn't alter the system and may be [removed](https://gist.github.com/1173223) at any time.
 
 Homebrew installs packages to `/usr/local/Cellar` and symlinks some of the installation into `/usr/local`. The packages are installed according to their formulas, which are plain Ruby classes, located in `/usr/local/Library/Formula`.
