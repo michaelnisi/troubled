@@ -12,6 +12,8 @@ getLocals = (srcOrFile, paths) ->
     src = blake.getSource srcOrFile.content, srcOrFile.name, paths
   else 
     src = srcOrFile
+    name = src.name
+    src.link = name.substr 0, name.lastIndexOf '.'
 
   title: src.header.title
   description: src.header.description

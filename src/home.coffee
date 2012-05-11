@@ -1,4 +1,4 @@
-# The home.js module renders the home page.
+# The module generates home.
 
 # Require external dependencies.
 jade = require 'jade'

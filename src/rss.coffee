@@ -1,4 +1,4 @@
-# The rss.js module generates the RSS feed.
+# The module generates the RSS feed.
 
 # Require external dependencies.
 jade = require 'jade'
