@@ -8,13 +8,12 @@
   markdown = require('markdown').markdown;
 
   getLocals = function(srcOrFile, paths) {
-    var name, src;
+    var src;
     if (paths != null) {
       src = blake.getSource(srcOrFile.content, srcOrFile.name, paths);
     } else {
       src = srcOrFile;
-      name = src.name;
-      src.link = name.substr(0, name.lastIndexOf('.')) || src.link;
+      src.link = src.name.substr(0, src.name.lastIndexOf('.')) || src.link;
     }
     return {
       title: src.header.title,
