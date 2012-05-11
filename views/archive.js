@@ -8,16 +8,22 @@
   article = require('./article.js');
 
   compile = function(src, items, callback) {
-    var html, locals, options, toArchive;
+    var hasItems, html, locals, options, threshold, toArchive;
     options = {
       filename: src.templatePath,
       pretty: true
     };
     toArchive = jade.compile(src.template, options);
+    hasItems = (items != null) && items.length > 0;
+    threshold = (items.length / 2) + 1;
     locals = {
       title: src.header.title,
       items: items,
-      dateString: items[0].dateString
+      dateString: items[0].dateString,
+      hasItems: hasItems,
+      latestItem: hasItems ? items[0] : null,
+      firstColumnItems: items.slice(0, threshold),
+      secondColumnItems: items.slice(threshold)
     };
     html = toArchive(locals);
     return callback(null, html);
