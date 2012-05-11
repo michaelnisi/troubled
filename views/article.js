@@ -14,7 +14,7 @@
     } else {
       src = srcOrFile;
       name = src.name;
-      src.link = name.substr(0, name.lastIndexOf('.'));
+      src.link = name.substr(0, name.lastIndexOf('.')) || src.link;
     }
     return {
       title: src.header.title,

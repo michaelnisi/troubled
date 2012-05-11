@@ -13,7 +13,7 @@ getLocals = (srcOrFile, paths) ->
   else 
     src = srcOrFile
     name = src.name
-    src.link = name.substr 0, name.lastIndexOf '.'
+    src.link = name.substr(0, name.lastIndexOf '.') or src.link
 
   title: src.header.title
   description: src.header.description
