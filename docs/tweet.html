@@ -6,20 +6,20 @@ contains no text return callback with error. Else apply jade compile with
 auto linked text of first tweet and apply callback with src and result.</p>             </td>             <td class="code">               <div class="highlight"><pre><span class="nv">bake = </span><span class="nf">(src, callback) -&gt;</span>
   <span class="nx">request</span> <span class="nx">src</span><span class="p">.</span><span class="nx">header</span><span class="p">.</span><span class="nx">url</span><span class="p">,</span> <span class="nf">(err, resp, body) -&gt;</span>
     <span class="k">return</span> <span class="nx">callback</span> <span class="nx">err</span> <span class="k">if</span> <span class="nx">err</span>
-      
+
     <span class="nv">tweets = </span><span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span> <span class="nx">body</span>
     <span class="nv">tweet = </span><span class="nx">tweets</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
-    <span class="k">return</span> <span class="nx">callback</span> <span class="k">new</span> <span class="nb">Error</span> <span class="s">&#39;No tweet&#39;</span> <span class="nx">unless</span> <span class="nx">tweet</span> <span class="o">or</span> <span class="nx">tweet</span><span class="p">.</span><span class="nx">text</span>
+    <span class="k">return</span> <span class="nx">callback</span> <span class="k">new</span> <span class="nb">Error</span> <span class="s">&#39;No tweet&#39;</span> <span class="nx">unless</span> <span class="nx">tweet</span><span class="o">?</span> <span class="o">and</span> <span class="nx">tweet</span><span class="p">.</span><span class="nx">text</span><span class="o">?</span>
 
     <span class="nv">text = </span><span class="nx">twitter</span><span class="p">.</span><span class="nx">autoLink</span> <span class="nx">tweet</span><span class="p">.</span><span class="nx">text</span>
 
     <span class="nv">options =</span>
       <span class="nv">filename: </span><span class="nx">src</span><span class="p">.</span><span class="nx">templatePath</span>
       <span class="nv">pretty: </span><span class="kc">true</span>
-    
+
     <span class="nv">jadeCompile = </span><span class="nx">jade</span><span class="p">.</span><span class="nx">compile</span> <span class="nx">src</span><span class="p">.</span><span class="nx">template</span><span class="p">,</span> <span class="nx">options</span>
-    
+
     <span class="nv">result = </span><span class="nx">jadeCompile</span>
       <span class="nv">text: </span><span class="nx">text</span>
 

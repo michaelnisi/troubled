@@ -6,6 +6,8 @@ locals object is used by jade to populate fields in the template.</p>           
     <span class="nv">src = </span><span class="nx">blake</span><span class="p">.</span><span class="nx">getSource</span> <span class="nx">srcOrFile</span><span class="p">.</span><span class="nx">content</span><span class="p">,</span> <span class="nx">srcOrFile</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span> <span class="nx">paths</span>
   <span class="k">else</span> 
     <span class="nv">src = </span><span class="nx">srcOrFile</span>
+    <span class="nv">name = </span><span class="nx">src</span><span class="p">.</span><span class="nx">name</span>
+    <span class="nv">src.link = </span><span class="nx">name</span><span class="p">.</span><span class="nx">substr</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">name</span><span class="p">.</span><span class="nx">lastIndexOf</span> <span class="s">&#39;.&#39;</span><span class="p">)</span> <span class="o">or</span> <span class="nx">src</span><span class="p">.</span><span class="nx">link</span>
 
   <span class="nv">title: </span><span class="nx">src</span><span class="p">.</span><span class="nx">header</span><span class="p">.</span><span class="nx">title</span>
   <span class="nv">description: </span><span class="nx">src</span><span class="p">.</span><span class="nx">header</span><span class="p">.</span><span class="nx">description</span>

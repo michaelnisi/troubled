@@ -1,4 +1,4 @@
-# This module renders a archive page, displaying all blog posts.
+# This module generates the archive page, displaying all blog posts.
 
 # Require external dependencies.
 jade = require 'jade'

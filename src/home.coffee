@@ -1,4 +1,4 @@
-# The module generates home.
+# This module generates home.
 
 # Require external dependencies.
 jade = require 'jade'

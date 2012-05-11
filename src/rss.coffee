@@ -1,4 +1,4 @@
-# The module generates the RSS feed.
+# This module generates the RSS feed.
 
 # Require external dependencies.
 jade = require 'jade'
