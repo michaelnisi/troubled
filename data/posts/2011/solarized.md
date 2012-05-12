@@ -6,7 +6,7 @@
   "path": "2011/10"
 }
 
-HUMANS CAN PERCEIVE over 2.8 million different hues, the number of possible combinations is virtually infinite, to assemble a color theme for code editors is tedious. The combination has to be practical, beautiful and easy on the eyes.
+HUMANS CAN PERCEIVE over 2.8 million different hues, the number of possible combinations is virtually infinite; to assemble a color theme for code editors is tedious. The combination has to be practical, beautiful and easy on the eyes.
 
 [Solarized](http://ethanschoonover.com/solarized) is a sixteen color palette (eight monotones, eight accent colors) designed for use with terminal and GUI applications. [Ethan Schoonover](http://ethanschoonover.com/) designed this colorscheme with both precise [CIELAB](http://en.wikipedia.org/wiki/Lab_color_space) lightness relationships and a refined set of hues based on fixed color wheel relationships:
 
