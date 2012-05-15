@@ -1,6 +1,6 @@
 {
   "title": "Double Negative",
-  "description": "In JavaScript we cannot not apply double negation to check if an object exists.",
+  "description": "In JavaScript we can apply double negation to check if an  object exists, which isn't inelegant.",
   "date": "2012-05-15",
   "template": "article.jade",
   "path": "2012/05"
