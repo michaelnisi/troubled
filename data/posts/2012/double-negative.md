@@ -12,7 +12,7 @@ TO CHECK IF a thing is a thing I used to write something like this:
       return obj[key] ? true : false
     }
 
-Recently I realized the obvious; we can combine two logical NOTs to check for NOT `undefined` AND NOT `null`:
+Recently I realized the obvious; we can combine two logical NOTs to check for not `undefined` and not `null`:
 
     var tap = require('tap')
     
