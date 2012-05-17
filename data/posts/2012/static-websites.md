@@ -6,7 +6,7 @@
   "path": "2012/05"
 }
 
-THERE'S NO SHORTAGE of static website generators these days. After years of storing every single bit in databases, we evidently came to the conclusion that, when it comes to personal sites and blogs, filesystems aren't that bad after all. Nothing new of course, initially the web consisted of static files, but in the first part of the last decade every tiny little blog ran a database. In the midst of the transition to the [real-time web](http://en.wikipedia.org/wiki/Real-time_web), we bethink ourselves of static files.
+THERE'S NO SHORTAGE of static website generators these days. After years of storing every single bit in databases, we evidently came to the conclusion that—when it comes to personal sites and blogs—filesystems aren't that bad after all. Nothing new of course, initially the web consisted of static files, but in the first part of the last decade every tiny little blog ran a database. In the midst of the transition to the [real-time web](http://en.wikipedia.org/wiki/Real-time_web), we reconsider static files.
 
 I always found the static approach charming, I think it first caught my attention when I learned Ruby and encountered [Hobix](http://hobix.github.com/hobix/). Later I was fascinated by an [article](http://www.martinfowler.com/articles/rake.html) from [Martin Fowler](http://www.martinfowler.com), in which he describes how he builds his site with [Rake](http://rake.rubyforge.org/). I've also been aware that [ongoing](http://www.tbray.org/ongoing/) has been a static site. A more recent example is Marco Arment's [blog](http://www.marco.org), generated with his own thing: [Second Crack](http://www.marco.org/secondcrack).
 
