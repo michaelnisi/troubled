@@ -1,6 +1,6 @@
 {
   "title": "Static Websites",
-  "description": "Static websites are easy to maintain, fast and search engine friendly, harnessing GitHub, they can provide a sufficiently pleasant publishing experience.",
+  "description": "Static websites are easy to maintain, fast and search engine friendly; harnessing GitHub, they can provide a sufficiently pleasant publishing experience.",
   "template": "article.jade",
   "date": "2012-05-17",
   "path": "2012/05"
