@@ -1,16 +1,16 @@
 (function() {
-  var FeedParser, bake, jade, request;
+  var FeedParser, bake, compile, request;
 
   request = require('request');
 
-  jade = require('jade');
+  compile = require('./compile.js');
 
   FeedParser = require('feedparser');
 
-  bake = function(src, callback) {
+  bake = function(item, callback) {
     var articles, likes, parser;
     parser = new FeedParser;
-    likes = request(src.header.url);
+    likes = request(item.header.url);
     articles = [];
     likes.on('error', function(err) {
       return callback(err);
@@ -19,16 +19,12 @@
       return articles.push(article);
     });
     parser.on('end', function() {
-      var jadeCompile, options, result;
-      options = {
-        filename: src.templatePath,
-        pretty: true
-      };
-      jadeCompile = jade.compile(src.template, options);
+      var jadeCompile, result;
+      jadeCompile = compile(item);
       result = jadeCompile({
         articles: articles
       });
-      return callback(null, src, result);
+      return callback(null, result);
     });
     return likes.pipe(parser.stream);
   };

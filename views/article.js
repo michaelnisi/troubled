@@ -1,40 +1,30 @@
 (function() {
-  var bake, blake, getLocals, jade, markdown;
+  var bake, blake, compile, getLocals, markdown;
 
-  jade = require('jade');
+  compile = require('./compile.js');
 
   blake = require('blake');
 
   markdown = require('markdown').markdown;
 
-  getLocals = function(srcOrFile, paths) {
-    var src;
-    if (paths != null) {
-      src = blake.getSource(srcOrFile.content, srcOrFile.name, paths);
-    } else {
-      src = srcOrFile;
-      src.link = src.name.substr(0, src.name.lastIndexOf('.')) || src.link;
-    }
+  getLocals = function(item) {
     return {
-      title: src.header.title,
-      description: src.header.description,
-      content: markdown.toHTML(src.body),
-      link: src.link,
-      date: src.date,
-      time: src.date.getTime(),
-      dateString: src.dateString
+      title: item.header.title,
+      description: item.header.description,
+      content: markdown.toHTML(item.body),
+      link: item.link,
+      date: item.date,
+      time: item.date.getTime(),
+      dateString: item.dateString
     };
   };
 
-  bake = function(src, callback) {
-    var jadeCompile, options, result;
-    options = {
-      filename: src.templatePath,
-      pretty: true
-    };
-    jadeCompile = jade.compile(src.template, options);
-    result = jadeCompile(getLocals(src));
-    return callback(null, src, result);
+  bake = function(item, callback) {
+    var jadeCompile, result;
+    item.link = item.name.substr(0, item.name.lastIndexOf('.'));
+    jadeCompile = compile(item);
+    result = jadeCompile(getLocals(item));
+    return callback(null, result);
   };
 
   module.exports = {

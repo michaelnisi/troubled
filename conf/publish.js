@@ -1,94 +1,87 @@
-// Require external dependencies.
-var spawn = require('child_process').spawn;
-var bake = require('blake').bake;
+module.exports = publish
 
-// Spawn child process with specified path and execute git pull.
-var pull = function (path, callback) {
+var spawn = require('child_process').spawn
+  , blake = require('blake')
+
+function publish (config, request, response, callback) {
+  validate(config.addresses, request, function (isValid) {
+    response.writeHead(200)
+    response.end()
+    
+    if (!isValid) {
+      return callback(new Error('Invalid post-receive request'))
+    } else {
+      pull(config.input, function (err) {
+        if (err) return callback(err)
+
+        blake(config.input, config.output, function (err) {
+          callback(err)
+        })
+      })
+    }
+  })
+}
+
+function pull (path, callback) {
   spawn('git', ['pull'], { cwd: path }).on('exit', function (code) {
-    return callback(code === 0 ? null : new Error(code));
-  });
-};
+    return callback(code === 0 ? null : new Error(code))
+  })
+}
 
-// We do very little to secure this post-receive hook. We assume that the 
-// URL of the post-receive hook is secret—not '/publish'. Here we check
-// wether the request is a post request from one of GitHub's IP addresses
-// and if it contains a payload object.
-var validate = function (addresses, request, callback) {
-  console.log(request);
+function validate (addresses, request, callback) {
+  console.log(request)
 
-  if (request.method != 'POST') {
-    return callback(false);
-  }
-  
-  var data = '';
+  if (request.method != 'POST') return callback(false)
+ 
+  var data = ''
 
   request.on('data', function (chunk) {
-    data += chunk;
-  });
+    data += chunk
+  })
 
   request.on('end', function () {
-    if (!data) {
-      return callback(false);
-    }
+    if (!data) return callback(false)
 
-    var isGitHub = function (remoteAddress) {
-      var i = addresses.length;
-      var address;
+    function isGitHub(remoteAddress) {
+      var i = addresses.length
+        , address
 
       while (i--) {
-        address = addresses[i];
-        if (remoteAddress === address) return true;
+        address = addresses[i]
+        if (remoteAddress === address) return true
       }
      
-      return false;
-    };
+      return false
+    }
 
     if (!isGitHub(request.connection.remoteAddress)) {
-      return callback(false);
+      return callback(false)
     } 
 
-    var value = data.split('payload=')[1];
+    var value = data.split('payload=')[1]
 
     if (!value) {
-      return callback(false);
+      return callback(false)
     }
 
     try {
-      var payload = JSON.parse(unescape(value) || null);
+      var payload = JSON.parse(unescape(value) || null)
     } catch(err) {
-      return callback(false);
+      return callback(false)
     }
 
     if (!payload) {
-      return callback(false);
+      return callback(false)
     }
 
-    console.log(payload);
+    console.log(payload)
 
-    return callback(true);
-  });
-};
+    return callback(true)
+  })
+}
 
-// If the request is valid, pull latest version of input data, generate the
-// site from it, and apply callback. If the request is not qualified for
-// publication, apply callback with error.
-module.exports = function (config, request, response, callback) {
-  validate(config.addresses, request, function (isValid) {
-    response.writeHead(200);
-    response.end();
-    
-    if (!isValid) {
-      return callback(new Error('Invalid post-receive request'));
-    } else {
-      pull(config.input, function (err) {
-        if (err) {
-          return callback(err);
-        }
 
-        bake(config.input, config.output, function (err) {
-          callback(err);
-        });
-      });
-    }
-  });
-};
+
+
+
+

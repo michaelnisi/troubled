@@ -1,59 +1,47 @@
 (function() {
-  var bake, blake, compile, getItem, jade, markdown;
+  var bake, compile, getItem, markdown, process;
 
-  jade = require('jade');
-
-  blake = require('blake');
+  compile = require('./compile.js');
 
   markdown = require('markdown').markdown;
 
   getItem = function(file, paths) {
-    var src;
-    src = blake.getSource(file.content, file.name, paths);
+    var item;
+    item = blake.getSource(file.content, file.name, paths);
     return {
-      title: src.header.title,
-      description: src.header.description,
-      content: "<h4>" + src.header.description + "</h4>" + (markdown.toHTML(src.body)),
-      link: src.link,
-      date: src.dateString,
-      time: src.date.getTime()
+      title: item.header.title,
+      description: item.header.description,
+      content: "<h4>" + item.header.description + "</h4>" + (markdown.toHTML(item.body)),
+      link: item.link,
+      date: item.dateString,
+      time: item.date.getTime()
     };
   };
 
-  compile = function(src, items, callback) {
-    var locals, options, result, rss;
-    options = {
-      filename: src.templatePath,
-      pretty: true
-    };
-    rss = jade.compile(src.template, options);
+  process = function(item, items, callback) {
+    var locals, result, rss;
+    rss = compile(item);
     locals = {
       items: items,
       channel: {
-        date: src.dateString,
-        title: src.header.title,
-        link: src.header.link,
-        description: src.header.description
+        date: item.dateString,
+        title: item.header.title,
+        link: item.header.link,
+        description: item.header.description
       }
     };
     result = rss(locals);
     return callback(null, result);
   };
 
-  bake = function(src, callback) {
-    return blake.readFiles(src.paths.posts, function(err, files) {
-      var file, items, _i, _len;
-      if (err) throw err;
-      items = [];
-      for (_i = 0, _len = files.length; _i < _len; _i++) {
-        file = files[_i];
-        items.push(getItem(file, src.paths));
-      }
+  bake = function(item, callback) {
+    return item.read(item.paths.posts, function(err, items) {
+      if (err != null) return callback(err);
       items.sort(function(a, b) {
         return (a.time - b.time) * -1;
       });
-      return compile(src, items, function(err, xml) {
-        return callback(err, src, xml);
+      return process(item, items, function(err, xml) {
+        return callback(err, xml);
       });
     });
   };

@@ -1,14 +1,10 @@
 (function() {
-  var archive, bake, blake, jade;
-
-  jade = require('jade');
-
-  blake = require('blake');
+  var archive, bake;
 
   archive = require('./archive.js');
 
-  bake = function(src, callback) {
-    return archive.bake(src, callback);
+  bake = function(item, callback) {
+    return archive.bake(item, callback);
   };
 
   exports.bake = bake;

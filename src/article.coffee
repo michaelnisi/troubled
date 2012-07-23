@@ -1,41 +1,25 @@
-# This module is used to bake a single article.
-
-# Require external dependencies.
-jade = require 'jade'
+compile = require './compile.js'
 blake = require 'blake'
 { markdown } = require 'markdown'
 
-# Return a new locals object from the provided source object. The returned 
-# locals object is used by jade to populate fields in the template.
-getLocals = (srcOrFile, paths) ->
-  if paths?
-    src = blake.getSource srcOrFile.content, srcOrFile.name, paths
-  else 
-    src = srcOrFile
-    src.link = src.name.substr(0, src.name.lastIndexOf '.') or src.link
+getLocals = (item) ->
+  title: item.header.title
+  description: item.header.description
+  content: markdown.toHTML item.body
+  link: item.link
+  date: item.date
+  time: item.date.getTime()
+  dateString: item.dateString
 
-  title: src.header.title
-  description: src.header.description
-  content: markdown.toHTML src.body
-  link: src.link
-  date: src.date
-  time: src.date.getTime()
-  dateString: src.dateString
+bake = (item, callback) ->
+  # Override link on article page
+  item.link = item.name.substr(0, item.name.lastIndexOf '.')
+  
+  jadeCompile = compile item
+  result = jadeCompile getLocals item
 
-# Create options object for Jade with the filename property set to the path
-# to our template. Get a Jade compile function with template and options. 
-# Apply Jade compile function with Jade locals created from our source.
-bake = (src, callback) ->
-  options = 
-    filename: src.templatePath
-    pretty: true
+  callback null, result
 
-  jadeCompile = jade.compile src.template, options
-  result = jadeCompile getLocals src
-
-  callback null, src, result
-
-# Export API.
 module.exports = 
   bake: bake
   getLocals: getLocals

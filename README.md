@@ -1,7 +1,6 @@
-These are the input data and the views of my site.
+# troubled-data 
 
-### Documentation
-See [Documentation](http://michaelnisi.github.com/michaelnisi/article.html)
+The data of my personal [site](http://michaelnisi.com).
 
 ### License
-See [LICENSE](https://raw.github.com/michaelnisi/michaelnisi:/master/LICENSE).
+See [LICENSE](https://raw.github.com/michaelnisi/michaelnisi:/master/LICENSE)

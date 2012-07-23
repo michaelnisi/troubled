@@ -1,24 +1,20 @@
 (function() {
-  var bake, jade, markdown;
+  var bake, compile, markdown;
 
-  jade = require('jade');
+  compile = require('./compile.js');
 
   markdown = require('markdown').markdown;
 
-  bake = function(src, callback) {
-    var jadeCompile, options, result;
-    options = {
-      filename: src.templatePath,
-      pretty: true
-    };
-    jadeCompile = jade.compile(src.template, options);
+  bake = function(item, callback) {
+    var jadeCompile, result;
+    jadeCompile = compile(item);
     result = jadeCompile({
-      title: src.header.title,
-      description: src.header.description,
-      content: markdown.toHTML(src.body),
-      dateString: src.dateString
+      title: item.header.title,
+      description: item.header.description,
+      content: markdown.toHTML(item.body),
+      dateString: item.dateString
     });
-    return callback(null, src, result);
+    return callback(null, result);
   };
 
   exports.bake = bake;

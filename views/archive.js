@@ -1,23 +1,17 @@
 (function() {
-  var article, bake, blake, compile, jade;
+  var article, bake, compile, process;
 
-  jade = require('jade');
-
-  blake = require('blake');
+  compile = require('./compile.js');
 
   article = require('./article.js');
 
-  compile = function(src, items, callback) {
-    var hasItems, html, locals, options, threshold, toArchive;
-    options = {
-      filename: src.templatePath,
-      pretty: true
-    };
-    toArchive = jade.compile(src.template, options);
+  process = function(item, items, callback) {
+    var hasItems, html, locals, threshold, toArchive;
+    toArchive = compile(item);
     hasItems = (items != null) && items.length > 0;
     threshold = (items.length / 2) + 1;
     locals = {
-      title: src.header.title,
+      title: item.header.title,
       items: items,
       dateString: items[0].dateString,
       hasItems: hasItems,
@@ -29,20 +23,20 @@
     return callback(null, html);
   };
 
-  bake = function(src, callback) {
-    return blake.readFiles(src.paths.posts, function(err, files) {
-      var file, items, _i, _len;
-      if (err) throw err;
-      items = [];
-      for (_i = 0, _len = files.length; _i < _len; _i++) {
-        file = files[_i];
-        items.push(article.getLocals(file, src.paths));
+  bake = function(item, callback) {
+    return item.read(item.paths.posts, function(err, items) {
+      var articles, it, _i, _len;
+      if (err != null) return callback(err);
+      articles = [];
+      for (_i = 0, _len = items.length; _i < _len; _i++) {
+        it = items[_i];
+        articles.push(article.getLocals(it));
       }
-      items.sort(function(a, b) {
+      articles.sort(function(a, b) {
         return (a.time - b.time) * -1;
       });
-      return compile(src, items, function(err, html) {
-        return callback(err, src, html);
+      return process(item, articles, function(err, html) {
+        return callback(err, html);
       });
     });
   };

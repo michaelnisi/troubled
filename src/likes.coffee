@@ -1,16 +1,10 @@
-# This module bakes the likes snippet.
-
-# Require external dependencies.
 request = require 'request'
-jade = require 'jade'
+compile = require './compile.js'
 FeedParser = require 'feedparser'
 
-# Initialize feed parser, likes request and articles array. Pipe likes 
-# request to feed parser and apply callback. If something goes wrong
-# apply callback with error.
-bake = (src, callback) ->
+bake = (item, callback) ->
   parser = new FeedParser
-  likes = request src.header.url
+  likes = request item.header.url
   articles = []
 
   likes.on 'error', (err) ->
@@ -18,20 +12,15 @@ bake = (src, callback) ->
 
   parser.on 'article', (article) ->
     articles.push article
-  
-  parser.on 'end', () ->
-    options =
-      filename: src.templatePath
-      pretty: true
 
-    jadeCompile = jade.compile src.template, options
+  parser.on 'end', () ->
+    jadeCompile = compile item
 
     result = jadeCompile
       articles: articles
 
-    callback null, src, result
-  
+    callback null, result
+
   likes.pipe parser.stream
 
-# Export API.
 exports.bake = bake

@@ -1,27 +1,15 @@
-# This module bakes the about page.
-
-# Require external dependencies.
-jade = require 'jade'
+compile = require './compile.js'
 { markdown } = require 'markdown'
 
-# Create jade options with filename set to template, which is required for 
-# template include and template inheritance. Setup Jade compile function
-# with the template and the options. And finally compile jade template with
-# according locals.
-bake = (src, callback) ->
-	options = 
-		filename: src.templatePath
-		pretty: true
-	
-	jadeCompile = jade.compile src.template, options
-	
-	result = jadeCompile
-		title: src.header.title
-		description: src.header.description
-		content: markdown.toHTML src.body
-		dateString: src.dateString
+bake = (item, callback) ->
+  jadeCompile = compile item
 
-	callback null, src, result
-  
-# Export API.
+  result = jadeCompile
+    title: item.header.title
+    description: item.header.description
+    content: markdown.toHTML item.body
+    dateString: item.dateString
+
+  callback null, result
+
 exports.bake = bake
