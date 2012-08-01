@@ -1,7 +1,7 @@
 {
   "title": "About The Troubled Programmer",
   "template": "about.jade",
-  "date": "2012-04-08",
+  "date": "2012-08-01",
   "name": "about.html"
 }
 
