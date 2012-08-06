@@ -11,7 +11,7 @@ bake = (item, callback) ->
 
     return callback new Error 'No tweet' unless tweet? and tweet.text?
 
-    text = twitter.autoLink tweet.text
+    text = twitter.autoLink tweet.text, { urlEntities: tweet.entities.urls }
     jadeCompile = compile item
     result = jadeCompile
       text: text
