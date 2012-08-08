@@ -14,3 +14,8 @@ exports.views = {
 , 'likes.jade': require('./views/likes.js').bake
 , 'tweet.jade': require('./views/tweet.js').bake
 }
+
+if (module === require.main) {
+  console.log(exports)
+  process.exit(0)
+}

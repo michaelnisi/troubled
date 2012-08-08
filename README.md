@@ -1,6 +1,6 @@
-# troubled-data 
+# troubled
 
-The data of my personal [site](http://michaelnisi.com).
+Data, resources, views, and templates of my [blog](http://michaelnisi.com).
 
 ### License
 See [LICENSE](https://raw.github.com/michaelnisi/michaelnisi:/master/LICENSE)
