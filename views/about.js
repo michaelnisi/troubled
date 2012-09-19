@@ -1,11 +1,11 @@
 (function() {
-  var bake, compile, markdown;
+  var compile, markdown;
 
   compile = require('./compile.js');
 
   markdown = require('markdown').markdown;
 
-  bake = function(item, callback) {
+  module.exports = function(item, callback) {
     var jadeCompile, result;
     jadeCompile = compile(item);
     result = jadeCompile({
@@ -16,7 +16,5 @@
     });
     return callback(null, result);
   };
-
-  exports.bake = bake;
 
 }).call(this);

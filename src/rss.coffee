@@ -26,7 +26,7 @@ process = (item, items, callback) ->
 
   callback null, result
 
-bake = (item, callback) ->
+module.exports = (item, callback) ->
   item.read item.paths.posts, (err, items) ->
     return callback err if err?
 
@@ -35,5 +35,3 @@ bake = (item, callback) ->
 
     process item, items, (err, xml) ->
       callback err, xml
-
-exports.bake = bake

@@ -6,13 +6,13 @@ exports.paths = {
 }
 
 exports.views = {
-  'rss.jade': require('./views/rss.js').bake
-, 'article.jade': require('./views/article.js').bake
-, 'home.jade': require('./views/home.js').bake
-, 'about.jade': require('./views/about.js').bake
-, 'archive.jade': require('./views/archive.js').bake
-, 'likes.jade': require('./views/likes.js').bake
-, 'tweet.jade': require('./views/tweet.js').bake
+  'rss.jade': require('./views/rss.js')
+, 'article.jade': require('./views/article.js')
+, 'home.jade': require('./views/home.js')
+, 'about.jade': require('./views/about.js')
+, 'archive.jade': require('./views/archive.js')
+, 'likes.jade': require('./views/likes.js')
+, 'tweet.jade': require('./views/tweet.js')
 }
 
 if (module === require.main) {

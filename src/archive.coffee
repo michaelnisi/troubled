@@ -1,5 +1,5 @@
 compile = require './compile.js'
-article = require './article.js'
+getLocals = require './getLocals.js'
 
 process = (item, items, callback) ->
   toArchive = compile item 
@@ -20,17 +20,15 @@ process = (item, items, callback) ->
 
   callback null, html
 
-bake = (item, callback) ->
+module.exports = (item, callback) ->
   item.read item.paths.posts, (err, items) ->
     return callback err if err?
     
     articles = []
-    articles.push article.getLocals it for it in items
+    articles.push getLocals it for it in items
 
     articles.sort (a, b) ->
       (a.time - b.time)* -1
     
     process item, articles, (err, html) ->
       callback err, html
-
-exports.bake = bake

@@ -1,5 +1,5 @@
 (function() {
-  var bake, compile, request, twitter;
+  var compile, request, twitter;
 
   request = require('request');
 
@@ -7,7 +7,7 @@
 
   twitter = require('twitter-text');
 
-  bake = function(item, callback) {
+  module.exports = function(item, callback) {
     return request(item.header.url, function(err, resp, body) {
       var jadeCompile, result, text, tweet, tweets;
       if (err != null) return callback(err);
@@ -26,7 +26,5 @@
       return callback(null, result);
     });
   };
-
-  exports.bake = bake;
 
 }).call(this);

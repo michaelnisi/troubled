@@ -2,7 +2,7 @@ request = require 'request'
 compile = require './compile.js'
 FeedParser = require 'feedparser'
 
-bake = (item, callback) ->
+module.exports = (item, callback) ->
   parser = new FeedParser
   likes = request item.header.url
   articles = []
@@ -22,5 +22,3 @@ bake = (item, callback) ->
     callback null, result
 
   likes.pipe parser.stream
-
-exports.bake = bake

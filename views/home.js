@@ -1,12 +1,10 @@
 (function() {
-  var archive, bake;
+  var archive;
 
   archive = require('./archive.js');
 
-  bake = function(item, callback) {
-    return archive.bake(item, callback);
+  module.exports = function(item, callback) {
+    return archive(item, callback);
   };
-
-  exports.bake = bake;
 
 }).call(this);

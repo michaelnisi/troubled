@@ -1,5 +1,5 @@
 (function() {
-  var FeedParser, bake, compile, request;
+  var FeedParser, compile, request;
 
   request = require('request');
 
@@ -7,7 +7,7 @@
 
   FeedParser = require('feedparser');
 
-  bake = function(item, callback) {
+  module.exports = function(item, callback) {
     var articles, likes, parser;
     parser = new FeedParser;
     likes = request(item.header.url);
@@ -28,7 +28,5 @@
     });
     return likes.pipe(parser.stream);
   };
-
-  exports.bake = bake;
 
 }).call(this);

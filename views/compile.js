@@ -1,9 +1,9 @@
 (function() {
-  var compile, jade;
+  var jade;
 
   jade = require('jade');
 
-  compile = function(item) {
+  module.exports = function(item) {
     var options;
     options = {
       filename: item.templatePath,
@@ -11,7 +11,5 @@
     };
     return jade.compile(item.template, options);
   };
-
-  module.exports = compile;
 
 }).call(this);

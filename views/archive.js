@@ -1,9 +1,9 @@
 (function() {
-  var article, bake, compile, process;
+  var compile, getLocals, process;
 
   compile = require('./compile.js');
 
-  article = require('./article.js');
+  getLocals = require('./getLocals.js');
 
   process = function(item, items, callback) {
     var hasItems, html, locals, threshold, toArchive;
@@ -23,14 +23,14 @@
     return callback(null, html);
   };
 
-  bake = function(item, callback) {
+  module.exports = function(item, callback) {
     return item.read(item.paths.posts, function(err, items) {
       var articles, it, _i, _len;
       if (err != null) return callback(err);
       articles = [];
       for (_i = 0, _len = items.length; _i < _len; _i++) {
         it = items[_i];
-        articles.push(article.getLocals(it));
+        articles.push(getLocals(it));
       }
       articles.sort(function(a, b) {
         return (a.time - b.time) * -1;
@@ -40,7 +40,5 @@
       });
     });
   };
-
-  exports.bake = bake;
 
 }).call(this);

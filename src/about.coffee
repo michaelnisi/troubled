@@ -1,7 +1,7 @@
 compile = require './compile.js'
 { markdown } = require 'markdown'
 
-bake = (item, callback) ->
+module.exports = (item, callback) ->
   jadeCompile = compile item
 
   result = jadeCompile
@@ -11,5 +11,3 @@ bake = (item, callback) ->
     dateString: item.dateString
 
   callback null, result
-
-exports.bake = bake

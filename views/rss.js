@@ -1,5 +1,5 @@
 (function() {
-  var bake, compile, getItem, markdown, process;
+  var compile, getItem, markdown, process;
 
   compile = require('./compile.js');
 
@@ -34,7 +34,7 @@
     return callback(null, result);
   };
 
-  bake = function(item, callback) {
+  module.exports = function(item, callback) {
     return item.read(item.paths.posts, function(err, items) {
       if (err != null) return callback(err);
       items.sort(function(a, b) {
@@ -45,7 +45,5 @@
       });
     });
   };
-
-  exports.bake = bake;
 
 }).call(this);

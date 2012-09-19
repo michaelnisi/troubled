@@ -2,7 +2,7 @@ request = require 'request'
 compile = require './compile.js'
 twitter = require 'twitter-text'
 
-bake = (item, callback) ->
+module.exports = (item, callback) ->
   request item.header.url, (err, resp, body) ->
     return callback err if err?
 
@@ -17,5 +17,3 @@ bake = (item, callback) ->
       text: text
 
     callback null, result
-
-exports.bake = bake
