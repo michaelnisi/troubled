@@ -1,16 +1,6 @@
 compile = require './compile.js'
 { markdown } = require 'markdown'
 
-getItem = (file, paths) ->
-  item = blake.getSource file.content, file.name, paths
-
-  title: item.header.title
-  description: item.header.description
-  content: "<h4>#{item.header.description}</h4>#{markdown.toHTML item.body}"
-  link: item.link
-  date: item.dateString
-  time: item.date.getTime()
-
 process = (item, items, callback) ->
   rss = compile item 
 
