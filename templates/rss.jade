@@ -1,11 +1,12 @@
 doctype xml
-rss(version='2.0')
+rss(version='2.0', xmlns:atom='http://www.w3.org/2005/Atom')
   channel
+    atom:link(href='http://michaelnisi.com.s3-website-eu-west-1.amazonaws.com/rss.xml', rel='self', type='application/rss+xml')
     title= channel.title
     description= channel.description
     language en-us
     link= channel.link 
-    lastBuildDate= channel.date
+    lastBuildDate= channel.pubDate
     pubDate= channel.pubDate
 
     each item in items
@@ -14,3 +15,4 @@ rss(version='2.0')
         description= item.content
         link= channel.link + item.link
         pubDate= item.pubDate
+        guid(isPermaLink='true')= channel.link + item.link
