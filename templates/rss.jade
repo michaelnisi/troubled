@@ -6,11 +6,11 @@ rss(version='2.0')
     language en-us
     link= channel.link 
     lastBuildDate= channel.date
-    pubDate= channel.date
+    pubDate= channel.pubDate
 
     each item in items
       item
         title= item.title
         description= item.content
-        link= item.link
-        pubDate= item.date
+        link= channel.link + item.link
+        pubDate= item.pubDate

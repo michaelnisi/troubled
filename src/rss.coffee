@@ -1,5 +1,5 @@
 compile = require './compile.js'
-{ markdown } = require 'markdown'
+getArticles = require './getArticles.js'
 
 process = (item, items, callback) ->
   rss = compile item 
@@ -7,7 +7,7 @@ process = (item, items, callback) ->
   locals = 
     items: items
     channel: 
-      date: item.dateString
+      pubDate: item.pubDate
       title: item.header.title
       link: item.header.link
       description: item.header.description
@@ -17,11 +17,7 @@ process = (item, items, callback) ->
   callback null, result
 
 module.exports = (item, callback) ->
-  item.read item.paths.posts, (err, items) ->
+  getArticles item, 1, (err, articles) ->
     return callback err if err?
-
-    items.sort (a, b) ->
-      (a.time - b.time) * -1
-
-    process item, items, (err, xml) ->
-      callback err, xml
+    process item, articles, (err, html) ->
+      callback err, html

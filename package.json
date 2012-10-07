@@ -1,0 +1,26 @@
+{
+  "name": "troubled",
+  "version": "0.0.0",
+  "description": "the data of my blog",
+  "main": "config.js",
+  "scripts": {
+    "test": "tap test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/michaelnisi/troubled.git"
+  },
+  "dependencies": {
+    "markdown": "",
+    "feedparser": "",
+    "twitter-text": "",
+    "jade": "",
+    "request": ""
+  },
+  "author": {
+    "name": "Michael Nisi",
+    "email": "michael.nisi@gmail.com",
+    "url": "http://michaelnisi.com"
+  },
+  "license": "MIT"
+}

@@ -1,22 +1,9 @@
 (function() {
-  var compile, getItem, markdown, process;
+  var compile, getArticles, process;
 
   compile = require('./compile.js');
 
-  markdown = require('markdown').markdown;
-
-  getItem = function(file, paths) {
-    var item;
-    item = blake.getSource(file.content, file.name, paths);
-    return {
-      title: item.header.title,
-      description: item.header.description,
-      content: "<h4>" + item.header.description + "</h4>" + (markdown.toHTML(item.body)),
-      link: item.link,
-      date: item.dateString,
-      time: item.date.getTime()
-    };
-  };
+  getArticles = require('./getArticles.js');
 
   process = function(item, items, callback) {
     var locals, result, rss;
@@ -24,7 +11,7 @@
     locals = {
       items: items,
       channel: {
-        date: item.dateString,
+        pubDate: item.pubDate,
         title: item.header.title,
         link: item.header.link,
         description: item.header.description
@@ -35,13 +22,10 @@
   };
 
   module.exports = function(item, callback) {
-    return item.read(item.paths.posts, function(err, items) {
+    return getArticles(item, 1, function(err, articles) {
       if (err != null) return callback(err);
-      items.sort(function(a, b) {
-        return (a.time - b.time) * -1;
-      });
-      return process(item, items, function(err, xml) {
-        return callback(err, xml);
+      return process(item, articles, function(err, html) {
+        return callback(err, html);
       });
     });
   };

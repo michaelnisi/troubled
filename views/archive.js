@@ -1,9 +1,11 @@
 (function() {
-  var compile, getLocals, process;
+  var compile, getArticles, getLocals, process;
 
   compile = require('./compile.js');
 
   getLocals = require('./getLocals.js');
+
+  getArticles = require('./getArticles.js');
 
   process = function(item, items, callback) {
     var hasItems, html, locals, threshold, toArchive;
@@ -24,17 +26,8 @@
   };
 
   module.exports = function(item, callback) {
-    return item.read(item.paths.posts, function(err, items) {
-      var articles, it, _i, _len;
+    return getArticles(item, -1, function(err, articles) {
       if (err != null) return callback(err);
-      articles = [];
-      for (_i = 0, _len = items.length; _i < _len; _i++) {
-        it = items[_i];
-        articles.push(getLocals(it));
-      }
-      articles.sort(function(a, b) {
-        return (a.time - b.time) * -1;
-      });
       return process(item, articles, function(err, html) {
         return callback(err, html);
       });

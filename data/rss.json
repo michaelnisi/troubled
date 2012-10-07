@@ -1,6 +1,6 @@
 {
-  "title": "Michael Nisi",
-  "description": "The Troubled Programmer",
+  "title": "The Troubled Programmer",
+  "description": "Notes about programming and such",
   "link": "http://michaelnisi.com/",
   "template": "rss.jade",
   "name": "rss.xml"
