@@ -1,12 +1,11 @@
 compile = require './compile.js'
-getLocals = require './getLocals.js'
 getArticles = require './getArticles.js'
 
 process = (item, items, callback) ->
   toArchive = compile item 
   
   hasItems = items? and items.length > 0
-  threshold = (items.length / 2) + 1
+  threshold = Math.ceil items.length / 2 + 1
 
   locals = 
     title: item.header.title
@@ -15,7 +14,7 @@ process = (item, items, callback) ->
     hasItems: hasItems 
     latestItem: if hasItems then items[0] else null
     firstColumnItems: items.slice 0, threshold
-    secondColumnItems: items.slice threshold
+    secondColumnItems: items.slice threshold 
 
   html = toArchive locals
 

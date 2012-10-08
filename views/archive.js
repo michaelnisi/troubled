@@ -1,9 +1,7 @@
 (function() {
-  var compile, getArticles, getLocals, process;
+  var compile, getArticles, process;
 
   compile = require('./compile.js');
-
-  getLocals = require('./getLocals.js');
 
   getArticles = require('./getArticles.js');
 
@@ -11,7 +9,7 @@
     var hasItems, html, locals, threshold, toArchive;
     toArchive = compile(item);
     hasItems = (items != null) && items.length > 0;
-    threshold = (items.length / 2) + 1;
+    threshold = Math.ceil(items.length / 2 + 1);
     locals = {
       title: item.header.title,
       items: items,
