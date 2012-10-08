@@ -15,11 +15,10 @@ html(lang="en")
         section#articles
           ul
             each firstColumnItem in firstColumnItems
-              - if (firstColumnItem != latestItem)
-                li
-                  a(href= firstColumnItem.link)
-                    h3= firstColumnItem.title.toUpperCase()
-                    p.summary= firstColumnItem.description
+              li
+                a(href= firstColumnItem.link)
+                  h3= firstColumnItem.title.toUpperCase()
+                  p.summary= firstColumnItem.description
           ul
             each secondColumnItem in secondColumnItems
               li
