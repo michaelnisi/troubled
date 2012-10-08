@@ -16,7 +16,7 @@ module.exports = (item, items, shift = false, callback) ->
   locals = 
     title: item.header.title
     items: items
-    dateString: items[0].dateString
+    dateString: latestItem.dateString
     hasItems: hasItems 
     latestItem: latestItem
     firstColumnItems: items.slice 0, threshold

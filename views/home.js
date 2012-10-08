@@ -1,14 +1,14 @@
 (function() {
-  var getArticles, process;
+  var getArticles, split;
 
   getArticles = require('./getArticles.js');
 
-  process = require('./process.js');
+  split = require('./split.js');
 
   module.exports = function(item, callback) {
     return getArticles(item, -1, function(err, articles) {
       if (err != null) return callback(err);
-      return process(item, articles, true, function(err, html) {
+      return split(item, articles, true, function(err, html) {
         return callback(err, html);
       });
     });

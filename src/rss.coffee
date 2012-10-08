@@ -1,3 +1,5 @@
+# rss - generate RSS feed
+
 compile = require './compile.js'
 getArticles = require './getArticles.js'
 
