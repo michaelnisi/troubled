@@ -14,11 +14,7 @@
     } else {
       latestItem = null;
     }
-    if (length % 2 === 0) {
-      threshold = length / 2;
-    } else {
-      threshold = Math.ceil(length / 2);
-    }
+    threshold = Math.ceil(length / 2);
     locals = {
       title: item.header.title,
       items: items,
