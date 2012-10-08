@@ -1,3 +1,5 @@
+# likes - generate likes snippet from instapaper likes
+
 request = require 'request'
 compile = require './compile.js'
 FeedParser = require 'feedparser'

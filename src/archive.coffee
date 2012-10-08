@@ -1,3 +1,5 @@
+# archive - generate archive page
+
 getArticles = require './getArticles.js'
 split = require './split.js'
 

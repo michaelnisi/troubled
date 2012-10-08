@@ -1,3 +1,5 @@
+# getLocals - get jade template locals for item
+
 { markdown } = require 'markdown'
 
 module.exports = (item) ->

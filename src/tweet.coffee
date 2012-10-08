@@ -1,3 +1,5 @@
+# tweet - generate tweet snippet from latest tweet
+
 request = require 'request'
 compile = require './compile.js'
 twitter = require 'twitter-text'

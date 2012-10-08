@@ -1,3 +1,5 @@
+# about - generate about page
+
 compile = require './compile.js'
 { markdown } = require 'markdown'
 

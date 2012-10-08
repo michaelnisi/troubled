@@ -1,3 +1,5 @@
+# home - generate home page
+
 getArticles = require './getArticles.js'
 split = require './split.js'
 

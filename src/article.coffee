@@ -1,3 +1,5 @@
+# article - generate article
+
 compile = require './compile.js'
 getLocals = require './getLocals.js'
 

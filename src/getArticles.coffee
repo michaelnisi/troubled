@@ -1,3 +1,5 @@
+# getArticles - get posts sorted by date
+
 getLocals = require './getLocals.js'
 
 module.exports = (item, direction, callback) ->

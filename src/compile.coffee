@@ -1,3 +1,5 @@
+# compile - compile jade template
+
 jade = require 'jade'
 
 module.exports = (item) ->
