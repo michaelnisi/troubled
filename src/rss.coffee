@@ -11,6 +11,7 @@ process = (item, items, callback) ->
     channel: 
       pubDate: item.pubDate
       title: item.header.title
+      href: item.header.link + item.header.name
       link: item.header.link
       description: item.header.description
 
@@ -19,7 +20,7 @@ process = (item, items, callback) ->
   callback null, result
 
 module.exports = (item, callback) ->
-  getArticles item, 1, (err, articles) ->
+  getArticles item, -1, (err, articles) ->
     return callback err if err?
     process item, articles, (err, html) ->
       callback err, html

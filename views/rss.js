@@ -13,6 +13,7 @@
       channel: {
         pubDate: item.pubDate,
         title: item.header.title,
+        href: item.header.link + item.header.name,
         link: item.header.link,
         description: item.header.description
       }
@@ -22,7 +23,7 @@
   };
 
   module.exports = function(item, callback) {
-    return getArticles(item, 1, function(err, articles) {
+    return getArticles(item, -1, function(err, articles) {
       if (err != null) return callback(err);
       return process(item, articles, function(err, html) {
         return callback(err, html);
