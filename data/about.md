@@ -11,6 +11,6 @@ I mainly write [JavaScript](https://developer.mozilla.org/en/JavaScript), [C](ht
 
 I love the web; therefore I am a great believer in [web standards](http://www.webstandards.org) and [responsive design](http://www.alistapart.com/articles/responsive-web-design). Here I write to learn and to share.
 
-If you are interested you could follow me on [Twitter](http://twitter.com/michaelnisi), fork me on [GitHub](https://github.com/michaelnisi) or have a look at my photos on [Flickr](http://flickr.com/photos/michaelnisi). And you might frown at images and videos I like on [Zootool](http://zoo.tl/u/michaelnisi/) and [Vimeo](http://www.vimeo.com/user5635710/likes).
+If you are interested you could follow me on [Twitter](http://twitter.com/michaelnisi), fork me on [GitHub](https://github.com/michaelnisi) or have a look at my photos on [Flickr](http://flickr.com/photos/michaelnisi). Or you might frown at images and videos I like on [Zootool](http://zoo.tl/u/michaelnisi/) and [Vimeo](http://www.vimeo.com/user5635710/likes).
 
 Please send comments to [@michaelnisi](http://twitter.com/michaelnisi) or <michael.nisi@gmail.com>.
