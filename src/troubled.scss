@@ -171,7 +171,13 @@ p#portrait {
   text-align: center;
 }
 
-#portrait img {
+#portrait a {
+  display:block;
+  background-image: url(/img/michael.jpg);
+  width: 285px;
+  height: 200px;
+  margin:0px auto;
+  background-repeat: no-repeat;
   box-shadow: 0 0 5px #ccc;
 }
 
@@ -244,5 +250,13 @@ a#understated, #page_footer  {
 
   .summary {
     min-height: 2.8em;
+  }
+}
+
+@media only screen and (min-device-pixel-ratio: 2) {
+  #portrait a {
+    background-image: url(/img/michael@2x.jpg);
+    width: 570px;
+    height: 400px;
   }
 }
