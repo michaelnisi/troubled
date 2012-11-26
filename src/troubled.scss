@@ -174,8 +174,8 @@ p#portrait {
 #portrait a {
   display:block;
   background-image: url(/img/michael.jpg);
-  width: 285px;
-  height: 200px;
+  width: 286px;
+  height: 215px;
   margin:0px auto;
   background-repeat: no-repeat;
   box-shadow: 0 0 5px #ccc;
@@ -253,10 +253,11 @@ a#understated, #page_footer  {
   }
 }
 
-@media only screen and (min-device-pixel-ratio: 2) {
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+       only screen and (min-resolution: 144dpi) {
   #portrait a {
     background-image: url(/img/michael@2x.jpg);
-    width: 570px;
-    height: 400px;
+    width: 573px;
+    height: 430px;
   }
 }
