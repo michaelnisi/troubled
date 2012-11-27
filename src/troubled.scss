@@ -177,6 +177,7 @@ p#portrait {
   width: 286px;
   height: 215px;
   margin:0px auto;
+  background-size: cover;
   background-repeat: no-repeat;
   box-shadow: 0 0 5px #ccc;
 }
@@ -224,7 +225,7 @@ a#understated, #page_footer  {
 }
 
 #rss {
-  margin-top: -0.2em;
+  margin-top: -0.4em;
 }
 
 /* Media Queries */
@@ -253,15 +254,10 @@ a#understated, #page_footer  {
   }
 }
 
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
        only screen and (min-resolution: 144dpi) {
   
   #portrait a {
-    display:block;
-    background-image: url(/img/michael@2x.jpg);
-    margin:0px auto;
-    background-size: 286px 215px;
-    background-repeat: no-repeat;
-    box-shadow: 0 0 5px #ccc;
+    background-image: url(/img/michael_2x.jpg);
   }
 }
