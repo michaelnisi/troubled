@@ -1,0 +1,32 @@
+
+/* media - media queries */
+
+@media only screen and (min-width: 48em) {
+  section#articles {
+    overflow: hidden;
+  }
+
+  #container {
+    max-width:46em;
+  }
+
+  #page_footer p {
+    max-width: 33em;
+  }
+  
+  section#articles ul {
+    width: 21em;
+    float: left;
+    margin-right: 1em;
+  }
+
+  .summary {
+    min-height: 2.8em;
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+       only screen and (min-resolution: 144dpi) {
+  #portrait a {
+    background-image: url(/img/michael_2x.jpg);
+  }
+}
