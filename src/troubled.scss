@@ -165,7 +165,7 @@ p#title {
   text-align:center;
 }
 
-p#portrait {
+div#portrait {
   padding-top: 2em;
   padding-bottom: 2em;
   text-align: center;
@@ -173,10 +173,10 @@ p#portrait {
 
 #portrait a {
   display:block;
-  background-image: url(/img/michael.jpg);
   width: 286px;
   height: 215px;
   margin:0px auto;
+  background-image: url(/img/michael.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   box-shadow: 0 0 5px #ccc;
@@ -227,4 +227,3 @@ a#understated, #page_footer  {
 #rss {
   margin-top: -0.4em;
 }
-
