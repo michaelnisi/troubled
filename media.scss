@@ -24,11 +24,3 @@
     min-height: 2.8em;
   }
 }
-
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
-       only screen and (min-resolution: 144dpi) {
-  
-  #portrait a {
-    background-image: url(/img/michael_2x.jpg);
-  }
-}

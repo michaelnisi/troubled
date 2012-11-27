@@ -171,14 +171,9 @@ div#portrait {
   text-align: center;
 }
 
-a#michael {
-  display: block;
+#portrait img {
   width: 286px;
   height: 215px;
-  margin:0px auto;
-  background-image: url(/img/michael.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
   box-shadow: 0 0 5px #ccc;
 }
 
@@ -225,5 +220,7 @@ a#understated, #page_footer  {
 }
 
 #rss {
+  width: 20px;
+  height: 20px;
   margin-top: -0.4em;
 }
