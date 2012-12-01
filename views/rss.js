@@ -11,7 +11,7 @@
     locals = {
       items: items,
       channel: {
-        pubDate: item.pubDate,
+        pubDate: items[0].pubDate,
         title: item.header.title,
         href: item.header.link + item.header.name,
         link: item.header.link,

@@ -1,3 +1,4 @@
+
 # rss - generate RSS feed
 
 compile = require './compile.js'
@@ -8,8 +9,8 @@ process = (item, items, callback) ->
 
   locals = 
     items: items
-    channel: 
-      pubDate: item.pubDate
+    channel:
+      pubDate: items[0].pubDate
       title: item.header.title
       href: item.header.link + item.header.name
       link: item.header.link
