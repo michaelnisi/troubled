@@ -12,7 +12,7 @@ I TREASURE JAVASCRIPT for its flexibility. Its syntax isn't great, and it defini
 
 Popular JavaScript engines are: [V8](http://code.google.com/p/v8/), [JavaScriptCore](http://www.webkit.org/projects/javascript/index.html), and [SpiderMonkey](https://developer.mozilla.org/en/docs/SpiderMonkey).
 
-CoffeeScript is a little programming language written by [Jeremy Ashkenas](https://twitter.com/jashkenas). The language is inspired by [Ruby](http://www.ruby-lang.org/en/), [Python](http://www.python.org/), and Haskell; it adds features like comprehensions and pattern matching. The self hosted [source-to-source compiler](http://en.wikipedia.org/wiki/Source-to-source_compiler) (written in CoffeeScript) uses the [jison] (http://zaach.github.com/jison/) JavaScript parser generator to translate CoffeeScript to JavaScript.
+CoffeeScript is a little programming language written by [Jeremy Ashkenas](https://twitter.com/jashkenas). The language is inspired by [Ruby](http://www.ruby-lang.org/en/), [Python](http://www.python.org/), and [Haskell](http://www.haskell.org/); it adds features like comprehensions and pattern matching. The self hosted [source-to-source compiler](http://en.wikipedia.org/wiki/Source-to-source_compiler) (written in CoffeeScript) uses the [jison] (http://zaach.github.com/jison/) JavaScript parser generator to translate CoffeeScript to JavaScript.
 
 Jeremy Ashkenas, known through [backbone](http://documentcloud.github.com/backbone) and [underscore](http://documentcloud.github.com/underscore) fame, began the CoffeeScript experiment in 2010 to answer a simple question:
 > What would JavaScript look like, if it could like anything you wanted it to look like?
