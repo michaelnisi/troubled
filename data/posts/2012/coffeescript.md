@@ -145,4 +145,4 @@ Any new language pushes the envelope (even by just fueling conversations), and a
 
 JavaScript is the English of the web: *we use it because we use it.*
 
-My objections are merely practical concerns; I enjoy the elegance of CoffeeScript, and find it delightful that [Michael Ficarra](https://github.com/michaelficarra) secured [funding](http://www.kickstarter.com/projects/michaelficarra/make-a-better-coffeescript-compiler) to make a better compiler. Programming languages need independent influence from outside committees and corporations. We should be open to all language developments by independent parties.
+My objections are merely based on practical concerns; I enjoy the elegance of CoffeeScript, and find it delightful that [Michael Ficarra](https://github.com/michaelficarra) secured [funding](http://www.kickstarter.com/projects/michaelficarra/make-a-better-coffeescript-compiler) to make a better compiler. Programming languages need independent influence from outside committees and corporations. We should be open to all language developments by independent parties.
