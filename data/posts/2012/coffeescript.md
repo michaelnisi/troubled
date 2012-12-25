@@ -115,7 +115,7 @@ Details aside, the three most significant features of CoffeeScript are: meaningf
 
 *How about debugging?* As one of CoffeeScript's design principles is to maintain the order of instructions in the compiled JavaScript code, it's fairly easy to relate JavaScript stack traces back to CoffeeScript code. I had expected it to be much harder; debugging hasn't been an issue for me so far. But although the generated code is readable, and potentially inspiring for some, one cannot deny the additional layer of complexity caused by the extra step of translation.
 
-Since 3.1 [Rails](http://rubyonrails.org/) ships with CoffeeScript, introducing it at [RailsConf 2011](http://www.rubyinside.com/dhh-keynote-streaming-live-from-railsconf-2011-right-here-right-now-4769.html), [DHH](http://david.heinemeierhansson.com/) stated:
+Since 3.1 [Rails](http://rubyonrails.org/) ships with CoffeeScript—introducing it at [RailsConf 2011](http://www.rubyinside.com/dhh-keynote-streaming-live-from-railsconf-2011-right-here-right-now-4769.html), [DHH](http://david.heinemeierhansson.com/) stated:
 > Looking at CoffeeScript was the first time I got a little bit of language envy. 
 
 Dreaming about [JavaScript Harmony](https://mail.mozilla.org/pipermail/es-discuss/2008-August/006837.html), Brendan Eich wrote:
