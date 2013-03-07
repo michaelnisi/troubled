@@ -34,5 +34,3 @@ Trying to express similar in JavaScript, I wrote:
 
 In his highly recommended book: [Learn You Some Erlang for Great Good!](http://learnyousomeerlang.com/)—from where the above quicksort stems—Fred Hébert writes:
 > Recursion coupled with pattern matching is sometimes an optimal solution to the problem of writing concise algorithms that are easy to understand. By subdividing each part of a problem into separate functions until they can no longer be simplified, the algorithm becomes nothing but assembling a bunch of correct answers coming from short routines.
-
-Clearly, these fancy implementations are practically bootless and of mere educational value.
