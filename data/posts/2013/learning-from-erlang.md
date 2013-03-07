@@ -6,7 +6,7 @@
   "path": "2013/03"
 }
 
-In the process of learning Erlang I find myself mesmerized by particularly concise (yet rich) pieces of code which make me pause to contemplate:
+In the process of learning [Erlang](http://www.erlang.org/) I find myself mesmerized by particularly concise (yet rich) pieces of code which make me pause to contemplate:
 
     quicksort([]) -> [];
     quicksort([Pivot|Rest]) -> 
@@ -34,7 +34,7 @@ Trying to express similar in JavaScript, I wrote:
 
 Which looks suprisingly well and reminds me that recursion is underused in JavaScript (due to its missing [tail call optimization](http://en.wikipedia.org/wiki/Tail_call)).
 
-In his highly recommended book: [Learn You Some Erlang for Great Good!](http://learnyousomeerlang.com/)—from where the above quicksort stems—Fred Hébert writes:
+In his highly recommended book: [Learn You Some Erlang for Great Good!](http://learnyousomeerlang.com/)—from where the above quicksort stems—[Fred Hébert](http://ferd.ca/) writes:
 > Recursion coupled with pattern matching is sometimes an optimal solution to the problem of writing concise algorithms that are easy to understand. By subdividing each part of a problem into separate functions until they can no longer be simplified, the algorithm becomes nothing but assembling a bunch of correct answers coming from short routines.
 
 Contemplate—for Great Good!
