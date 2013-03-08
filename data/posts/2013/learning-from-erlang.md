@@ -32,7 +32,7 @@ Trying to express similar in JavaScript, I wrote:
       return quicksort(smaller).concat(pivot, quicksort(larger))
     }
 
-Which looks suprisingly well and reminds me that recursion is underused in JavaScript (due to its missing [tail call optimization](http://en.wikipedia.org/wiki/Tail_call)).
+This, of course, only works for small arrays due to the lack of [tail call optimization](https://code.google.com/p/v8/issues/detail?id=457) in current JavaScript engines. [See](https://code.google.com/p/v8/source/browse/branches/bleeding_edge/src/array.js#797) v8's quicksort implementation.
 
 In his highly recommended book: [Learn You Some Erlang for Great Good!](http://learnyousomeerlang.com/)—from where the above quicksort stems—[Fred Hébert](http://ferd.ca/) writes:
 > Recursion coupled with pattern matching is sometimes an optimal solution to the problem of writing concise algorithms that are easy to understand. By subdividing each part of a problem into separate functions until they can no longer be simplified, the algorithm becomes nothing but assembling a bunch of correct answers coming from short routines.
