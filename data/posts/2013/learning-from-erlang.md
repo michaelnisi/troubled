@@ -6,7 +6,7 @@
   "path": "2013/03"
 }
 
-In the process of learning [Erlang](http://www.erlang.org/) I find myself mesmerized by particularly concise (yet rich) pieces of code which make me pause to contemplate:
+IN THE PROCESS of learning [Erlang](http://www.erlang.org/) I find myself mesmerized by particularly concise (yet rich) pieces of code which make me pause to contemplate:
 
     quicksort([]) -> [];
     quicksort([Pivot|Rest]) -> 
