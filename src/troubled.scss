@@ -206,9 +206,8 @@ a#understated, #page_footer  {
 }
 
 .cssgradients #page_footer {
-  // TODO: WTF!
+  background-color: #002b36;
   background-image: -webkit-linear-gradient(top, #000 0, #002b36 10px, #002b36); 
-  background-image: linear-gradient(top, #000 0, #002b36 10px, #002b36); 
 }
 
 #page_footer p {
