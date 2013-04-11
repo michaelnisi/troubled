@@ -14,12 +14,12 @@ troubled.moveFooter = function () {
   $('#page_footer').show();
 }
 
-$(document).ready(function () { 
+$(function () {
   $('#likes').load('/likes.html');
   $('#tweet').load('/tweet.html');
 
   $('pre code').each(function (i, e) {
-    if (e.innerText.length > 80) {
+    if (e.textContent.length > 80) {
       hljs.highlightBlock(e, '    ');
     }
   });
