@@ -1,5 +1,4 @@
 {
   "template": "tweet.jade",
-  "name": "tweet.html",
-  "url": "http://api.twitter.com/1/statuses/user_timeline.json?screen_name=michaelnisi&trim_user=true&include_entities=true&count=1"
+  "name": "tweet.html"
 }
