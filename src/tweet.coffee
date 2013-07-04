@@ -4,31 +4,24 @@ request = require 'request'
 compile = require './compile.js'
 twitter = require 'twitter-text'
 qs = require 'querystring'
-assert = require 'assert'
 
 module.exports = (item, callback) ->
-  oauth = { 
+  oauth = 
     consumer_key: process.env.CONSUMER_KEY
-  , consumer_secret: process.env.CONSUMER_SECRET
-  , token: process.env.ACCESS_TOKEN
-  , token_secret: process.env.ACCESS_TOKEN_SECRET
-  }
+    consumer_secret: process.env.CONSUMER_SECRET
+    token: process.env.ACCESS_TOKEN
+    token_secret: process.env.ACCESS_TOKEN_SECRET
 
-  assert process.env.CONSUMER_SECRET
+  params =
+    screen_name: item.header.screen_name
+    count: 1
 
-  url = 'https://api.twitter.com/1.1/statuses/user_timeline.json?'
-  params = { 
-    screen_name: 'michaelnisi'
-  , count: 1
-  }
-  
-  url += qs.stringify(params)
+  url = item.header.url += qs.stringify params
 
-  options = {
+  options =
     url: url
-  , oauth: oauth
-  }
-  
+    oauth: oauth
+
   request options, (err, resp, body) ->
     return callback err if err?
 
