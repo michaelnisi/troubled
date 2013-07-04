@@ -11,20 +11,22 @@
   qs = require('querystring');
 
   module.exports = function(item, callback) {
-    var oauth, options, params;
+    var ACCESS_TOKEN, ACCESS_TOKEN_SECRET, CONSUMER_KEY, CONSUMER_SECRET, oauth, options, params, screen_name, url, _ref, _ref1;
 
+    _ref = item.header, url = _ref.url, screen_name = _ref.screen_name;
+    _ref1 = process.env, CONSUMER_KEY = _ref1.CONSUMER_KEY, CONSUMER_SECRET = _ref1.CONSUMER_SECRET, ACCESS_TOKEN = _ref1.ACCESS_TOKEN, ACCESS_TOKEN_SECRET = _ref1.ACCESS_TOKEN_SECRET;
     oauth = {
-      consumer_key: process.env.CONSUMER_KEY,
-      consumer_secret: process.env.CONSUMER_SECRET,
-      token: process.env.ACCESS_TOKEN,
-      token_secret: process.env.ACCESS_TOKEN_SECRET
+      consumer_key: CONSUMER_KEY,
+      consumer_secret: CONSUMER_SECRET,
+      token: ACCESS_TOKEN,
+      token_secret: ACCESS_TOKEN_SECRET
     };
     params = {
-      screen_name: item.header.screen_name,
+      screen_name: screen_name,
       count: 1
     };
     options = {
-      url: item.header.url += qs.stringify(params),
+      url: url += qs.stringify(params),
       oauth: oauth
     };
     return request(options, function(err, resp, body) {
