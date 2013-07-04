@@ -40,6 +40,6 @@ module.exports = (item, callback) ->
     text = twitter.autoLink tweet.text, { urlEntities: tweet.entities.urls }
     jadeCompile = compile item
     result = jadeCompile
-    text: text
+    text: tweet.text
 
     callback null, result

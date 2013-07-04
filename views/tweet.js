@@ -49,7 +49,7 @@
       jadeCompile = compile(item);
       result = jadeCompile;
       ({
-        text: text
+        text: tweet.text
       });
       return callback(null, result);
     });
