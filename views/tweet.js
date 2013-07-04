@@ -47,9 +47,8 @@
         urlEntities: tweet.entities.urls
       });
       jadeCompile = compile(item);
-      result = jadeCompile;
-      ({
-        text: tweet.text
+      result = jadeCompile({
+        text: text
       });
       return callback(null, result);
     });
