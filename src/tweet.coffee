@@ -16,10 +16,8 @@ module.exports = (item, callback) ->
     screen_name: item.header.screen_name
     count: 1
 
-  url = item.header.url += qs.stringify params
-
   options =
-    url: url
+    url: item.header.url += qs.stringify params
     oauth: oauth
 
   request options, (err, resp, body) ->

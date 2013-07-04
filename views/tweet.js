@@ -11,7 +11,7 @@
   qs = require('querystring');
 
   module.exports = function(item, callback) {
-    var oauth, options, params, url;
+    var oauth, options, params;
 
     oauth = {
       consumer_key: process.env.CONSUMER_KEY,
@@ -23,9 +23,8 @@
       screen_name: item.header.screen_name,
       count: 1
     };
-    url = item.header.url += qs.stringify(params);
     options = {
-      url: url,
+      url: item.header.url += qs.stringify(params),
       oauth: oauth
     };
     return request(options, function(err, resp, body) {
