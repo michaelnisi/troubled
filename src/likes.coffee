@@ -1,26 +1,25 @@
+
 # likes - generate likes snippet from instapaper likes
 
-request = require 'request'
+http = require 'http'
 compile = require './compile.js'
-FeedParser = require 'feedparser'
+pickup = require 'pickup'
 
 module.exports = (item, callback) ->
-  parser = new FeedParser
-  likes = request item.header.url
+  url = item.header.url
+  parser = pickup()
   articles = []
-
-  likes.on 'error', (err) ->
-    callback err
-
-  parser.on 'article', (article) ->
+  
+  http.get url, (res) ->
+    res.pipe parser
+  
+  parser.on 'entry', (article) ->
     articles.push article
 
-  parser.on 'end', () ->
+  parser.on 'finish', () ->
     jadeCompile = compile item
 
     result = jadeCompile
       articles: articles
 
     callback null, result
-
-  likes.pipe parser.stream

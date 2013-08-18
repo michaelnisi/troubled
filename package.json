@@ -11,11 +11,11 @@
     "url": "git://github.com/michaelnisi/troubled.git"
   },
   "dependencies": {
+    "pickup": "",
     "markdown": "",
-    "feedparser": "",
-    "twitter-text": "1.6.x",
     "jade": "",
-    "request": ""
+    "request": "",
+    "twitter-text": "1.6.x"
   },
   "author": {
     "name": "Michael Nisi",
