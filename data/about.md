@@ -9,8 +9,6 @@
 
 I write [JavaScript](https://developer.mozilla.org/en/JavaScript), [C](http://en.wikipedia.org/wiki/C_(programming_language)), [Objective-C](http://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/ObjectiveC/Introduction/introObjectiveC.html) and some [Erlang](http://www.erlang.org/). The two platforms I'm most excited about are [Node.js](http://nodejs.org/), [iOS](https://developer.apple.com/technologies/ios/), and [Erlang/OTP](http://learnyousomeerlang.com/what-is-otp).
 
-I love the web; therefore I am a great believer in [web standards](http://www.webstandards.org) and [responsive design](http://www.alistapart.com/articles/responsive-web-design). Here I write to learn and to share.
-
 If you are interested you could follow me on [Twitter](http://twitter.com/michaelnisi), fork me on [GitHub](https://github.com/michaelnisi) or check my packages on [npm](https://npmjs.org/~michaelnisi). You could also browse my photos on [Flickr](http://flickr.com/photos/michaelnisi) or frown at videos I like on [Vimeo](http://www.vimeo.com/user5635710/likes).
 
 Please send comments to [@michaelnisi](http://twitter.com/michaelnisi) or <michael.nisi@gmail.com>.
