@@ -13,6 +13,8 @@ I write [JavaScript](https://developer.mozilla.org/en/JavaScript), [C](http://en
 
 >—*Edsger Dijkstra*, The Humble Programmer
 
+I attempt to realize Dijkstra's vision through [TDD](http://en.wikipedia.org/wiki/Test-driven_development).
+
 If you are interested you could follow me on [Twitter](http://twitter.com/michaelnisi), fork me on [GitHub](https://github.com/michaelnisi), or check my packages on [npm](https://npmjs.org/~michaelnisi). You could also browse my photos on [Flickr](http://flickr.com/photos/michaelnisi), or frown upon the videos I like on [Vimeo](http://www.vimeo.com/user5635710/likes).
 
 Please send comments to [@michaelnisi](http://twitter.com/michaelnisi) or <michael.nisi@gmail.com>.
