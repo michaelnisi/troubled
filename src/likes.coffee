@@ -5,7 +5,7 @@ http = require 'http'
 compile = require './compile.js'
 pickup = require 'pickup'
 
-module.exports = (item, callback) ->
+module.exports = (item, cb) ->
   url = item.header.url
   parser = pickup()
   articles = []
@@ -22,4 +22,4 @@ module.exports = (item, callback) ->
     result = jadeCompile
       articles: articles
 
-    callback null, result
+    cb null, result

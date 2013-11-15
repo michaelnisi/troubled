@@ -6,12 +6,12 @@
 
   getLocals = require('./getLocals.js');
 
-  module.exports = function(item, callback) {
+  module.exports = function(item, cb) {
     var jadeCompile, result;
 
     jadeCompile = compile(item);
     result = jadeCompile(getLocals(item));
-    return callback(null, result);
+    return cb(null, result);
   };
 
 }).call(this);

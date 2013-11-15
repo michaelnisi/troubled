@@ -8,7 +8,7 @@
 
   pickup = require('pickup');
 
-  module.exports = function(item, callback) {
+  module.exports = function(item, cb) {
     var articles, parser, url;
 
     url = item.header.url;
@@ -27,7 +27,7 @@
       result = jadeCompile({
         articles: articles
       });
-      return callback(null, result);
+      return cb(null, result);
     });
   };
 
