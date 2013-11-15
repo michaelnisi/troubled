@@ -12,7 +12,7 @@ rss(version='2.0', xmlns:atom='http://www.w3.org/2005/Atom')
     each item in items
       item
         title= item.title
-        description= item.content
+        description= item.header.description
         link= channel.link + item.link
         pubDate= item.pubDate
         guid(isPermaLink='true')= channel.link + item.link
