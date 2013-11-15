@@ -10,10 +10,10 @@ rss(version='2.0', xmlns:atom='http://www.w3.org/2005/Atom' xmlns:content='http:
     pubDate= channel.pubDate
 
     each entry in entries
-      entry
+      item
         title= entry.title
-        description= entry.description
-        content:encoded= entry.content 
         link= channel.link + entry.link
         pubDate= entry.pubDate
         guid(isPermaLink='true')= channel.link + entry.link
+        description= entry.description
+        content:encoded= entry.content 
