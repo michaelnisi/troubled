@@ -1,7 +1,7 @@
 {
   "title": "About The Troubled Programmer",
   "template": "about.jade",
-  "date": "2013-09-01",
+  "date": "2013-11-05",
   "name": "about.html"
 }
 
@@ -13,7 +13,7 @@ I write [JavaScript](https://developer.mozilla.org/en/JavaScript), [C](http://en
 
 >—*Edsger Dijkstra*, The Humble Programmer
 
-I attempt to realize Dijkstra's vision through [TDD](http://en.wikipedia.org/wiki/Test-driven_development).
+I humbly attempt to realize Dijkstra's vision through [TDD](http://en.wikipedia.org/wiki/Test-driven_development).
 
 If you are interested you could follow me on [Twitter](http://twitter.com/michaelnisi), fork me on [GitHub](https://github.com/michaelnisi), or check my packages on [npm](https://npmjs.org/~michaelnisi). You could also browse my photos on [Flickr](http://flickr.com/photos/michaelnisi), or frown upon the videos I like on [Vimeo](http://www.vimeo.com/user5635710/likes).
 

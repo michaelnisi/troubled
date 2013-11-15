@@ -1,34 +1,34 @@
 
-# rss - generate RSS feed
+# rss - bake RSS feed
 
 compile = require './compile.js'
-get_entries = require './getArticles.js'
-assert = require 'assert'
+get_articles = require './getArticles.js'
 
 module.exports = (item, cb) ->
-  get_entries item, -1, (er, entries) ->
+  get_articles item, -1, (er, entries) ->
     return cb er if er?
-    process item, entries, (er, html) ->
+    bake item, entries, (er, html) ->
       cb er, html
 
-fm = (entry) ->
-  entry.content = ['<![CDATA[', entry.content, ']>'].join ''
-  entry
-      
-process = (item, entries, cb) ->
-  
-  pubDate = entries[0].pubDate
-  locals = 
-    channel:
-      pubDate: pubDate
-      title: item.header.title
-      href: item.header.link + item.header.name
-      link: item.header.link
-      description: item.header.description
-    entries:
-      (fm entry for entry in entries)
+channel = (it, date) ->
+  pubDate: date
+  title: it.header.title
+  href: it.header.link + it.header.name
+  link: it.header.link
+  description: it.header.description
 
-  c = compile item 
-  res = c locals
-  assert(!locals.items)
+entry = (a) ->
+  title: a.title
+  description: a.description
+  content: ['<![CDATA[', a.content, ']>'].join ''
+  link: a.link
+  pubDate: a.pubDate
+
+locals = (item, articles) ->
+  channel: channel item, articles[0].pubDate
+  entries: (entry a for a in articles)
+
+bake = (item, articles, cb) ->
+  fun = compile item
+  res = fun locals item, articles
   cb null, res

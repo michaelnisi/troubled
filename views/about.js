@@ -6,17 +6,17 @@
 
   markdown = require('markdown').markdown;
 
-  module.exports = function(item, callback) {
-    var jadeCompile, result;
+  module.exports = function(item, cb) {
+    var fun, result;
 
-    jadeCompile = compile(item);
-    result = jadeCompile({
+    fun = compile(item);
+    result = fun({
       title: item.header.title,
       description: item.header.description,
       content: markdown.toHTML(item.body),
       dateString: item.dateString
     });
-    return callback(null, result);
+    return cb(null, result);
   };
 
 }).call(this);

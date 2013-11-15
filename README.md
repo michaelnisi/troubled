@@ -1,6 +1,6 @@
 # troubled
 
-Data, views, templates, and resources of my [blog](http://michaelnisi.com).
+Data, views, templates, and resources of my [blog](http://troubled.pro).
 
 ### License
 
