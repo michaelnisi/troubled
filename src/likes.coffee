@@ -12,6 +12,9 @@ module.exports = (item, cb) ->
   
   http.get url, (res) ->
     res.pipe parser
+
+  parser.on 'error', (er) ->
+    cb er
   
   parser.on 'entry', (article) ->
     articles.push article
