@@ -14,7 +14,8 @@ module.exports = (item, cb) ->
     res.pipe parser
 
   parser.on 'error', (er) ->
-    cb er
+    # TODO: cb er
+    cb null, []
   
   parser.on 'entry', (article) ->
     articles.push article

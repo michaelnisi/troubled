@@ -17,6 +17,9 @@
     http.get(url, function(res) {
       return res.pipe(parser);
     });
+    parser.on('error', function(er) {
+      return cb(null, []);
+    });
     parser.on('entry', function(article) {
       return articles.push(article);
     });
