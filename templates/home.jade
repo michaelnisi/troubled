@@ -10,7 +10,7 @@ html(lang="en")
             a(href= latestItem.link)
               h2= latestItem.title
             p#summary= latestItem.description
-            !{latestItem.content}
+            != latestItem.content
       - if (hasItems)
         section#articles
           ul
