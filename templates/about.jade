@@ -10,5 +10,10 @@ html(lang="en")
             a(href="http://www.flickr.com/photos/michaelnisi/sets/72157626923470332/")
               img(src="/img/michael_2x.jpg", alt='Michael Nisi')
           != content
+          ul#icons
+            each icon in icons
+              li
+                a(href= icon.href)
+                  img(src= icon.src)
     include footer
     include scripts

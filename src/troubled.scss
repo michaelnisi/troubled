@@ -112,7 +112,7 @@ nav ul, ul#smallprint {
   width: 100%;
 } 
 
-nav ul li, #page_footer ul#smallprint li {
+nav ul li, #page_footer ul#smallprint li, ul#icons li {
   display: inline;
   padding-right: 1em;
 }
@@ -171,10 +171,10 @@ div#portrait {
 }
 
 #portrait img {
-  width: 286px;
+  width: 215px;
   height: 215px;
-  margin:0px auto;
-}
+  border-radius: 215px;
+margin: 0px auto; }
 
 #page_footer {
   color: #cccccc;
@@ -225,3 +225,9 @@ a#understated, #page_footer  {
   margin-top: -0.4em;
   box-shadow: 0 0 5px #000;
 }
+
+#icons {
+text-align: center; }
+
+#icons li a img {
+height: 1.5em; }

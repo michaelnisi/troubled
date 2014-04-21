@@ -14,7 +14,8 @@
       title: item.header.title,
       description: item.header.description,
       content: markdown.toHTML(item.body),
-      dateString: item.dateString
+      dateString: item.dateString,
+      icons: item.header.icons
     });
     return cb(null, result);
   };
