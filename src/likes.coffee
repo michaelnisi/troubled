@@ -1,7 +1,7 @@
 
 # likes - generate likes snippet from instapaper likes
 
-http = require 'http'
+https = require 'https'
 compile = require './compile.js'
 pickup = require 'pickup'
 
@@ -10,12 +10,11 @@ module.exports = (item, cb) ->
   parser = pickup()
   articles = []
   
-  http.get url, (res) ->
+  https.get url, (res) ->
     res.pipe parser
 
   parser.on 'error', (er) ->
-    # TODO: cb er
-    cb null, []
+    cb er
   
   parser.on 'entry', (article) ->
     articles.push article

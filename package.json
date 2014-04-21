@@ -1,26 +1,23 @@
 {
   "name": "troubled",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "the data of my blog",
   "main": "config.js",
-  "scripts": {
-    "test": "tap test/*.js"
-  },
   "repository": {
     "type": "git",
     "url": "git://github.com/michaelnisi/troubled.git"
   },
   "dependencies": {
-    "pickup": "",
-    "markdown": "",
-    "jade": "",
-    "request": "",
-    "twitter-text": "1.6.x"
+    "pickup": "0.4.x",
+    "markdown": "0.5.x",
+    "jade": "1.3.x",
+    "request": "2.34.x",
+    "twitter-text": "1.9.x"
   },
   "author": {
     "name": "Michael Nisi",
     "email": "michael.nisi@gmail.com",
-    "url": "http://michaelnisi.com"
+    "url": "http://troubled.pro"
   },
   "license": "MIT"
 }
