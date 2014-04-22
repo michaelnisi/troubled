@@ -112,7 +112,7 @@ nav ul, ul#smallprint {
   width: 100%;
 } 
 
-nav ul li, #page_footer ul#smallprint li, ul#icons li {
+nav ul li, #page_footer ul#smallprint li {
   display: inline;
   padding-right: 1em;
 }
@@ -176,6 +176,23 @@ div#portrait {
   border-radius: 215px;
 margin: 0px auto; }
 
+/* About page icons */
+
+#icons {
+  text-align: center;
+  width: auto; }
+
+#icons li a {
+  width: 1em;
+}
+
+#icons li a img {
+  height: 1.5em;
+  padding-top: 2em;
+}
+
+/* Footer */
+
 #page_footer {
   color: #cccccc;
   text-align: center;
@@ -226,8 +243,3 @@ a#understated, #page_footer  {
   box-shadow: 0 0 5px #000;
 }
 
-#icons {
-text-align: center; }
-
-#icons li a img {
-height: 1.5em; }
