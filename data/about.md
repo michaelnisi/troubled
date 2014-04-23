@@ -18,7 +18,7 @@ I write [JavaScript](https://developer.mozilla.org/en/JavaScript), [C](http://en
 
 > Those who want really reliable software will discover that they must find means of avoiding the majority of bugs to start with, and as a result, the programming process will become cheaper. If you want more effective programmers, you will discover that they should not waste their time debugging, they should not introduce the bugs to start with.
 
->—*Edsger W. Dijkstra*, The Humble Programmer
+>—*Edsger Dijkstra*, The Humble Programmer
 
 I humbly attempt to realize Dijkstra's vision through [TDD](http://en.wikipedia.org/wiki/Test-driven_development).
 
