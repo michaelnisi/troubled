@@ -31,7 +31,7 @@ Now you can browse to `http://YourComputerName.local` with your phone or tablet 
 
 Trivial of course, but I kept forgetting. Hopefully now, as I have written it down, on the next rare occassion when I have to fiddle with CSS, I will remember.
 
-But wait! You don't really want to run Apache on your system, do you—I mean, who could possibly want that? Why not use [Node](http://nodejs.org/) to write a little server and save it to a file named `stserver.js`:
+But wait! You don't really want to have [httpd](http://httpd.apache.org/docs/2.2/programs/httpd.html) running on your system, do you—I mean, who could possibly want that? Why not use [Node](http://nodejs.org/) to write a little server and save it to a file named `stserver.js`:
 
     var http = require('http')
       , st = require('st')
