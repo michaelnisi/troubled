@@ -1,13 +1,13 @@
 
 {
   "title": "Serving static files in LAN",
-  "description": "While working on web UIs, it is often convenient to serve static files over HTTP in the local network, in order to test on different devices.",
+  "description": "While working on web UIs, it is often convenient to serve static files over HTTP in the local network, in order to test on multiple devices.",
   "template": "article.jade",
   "date": "2014-04-25",
   "path": "2014/04"
 }
 
-[OS X](https://www.apple.com/osx/) comes with `apachectl`, the Apache HTTP Server Control Interface, which lets you configure the preinstalled [Apache HTTP server](http://httpd.apache.org/) on your Mac.
+[OS X](https://www.apple.com/osx/) comes with `apachectl`, the Apache HTTP Server Control Interface, which helps to control the preinstalled [Apache HTTP server](http://httpd.apache.org/) on your Mac.
 
 To serve a particular directory on your system, you have to specify it in the Apache HTTP server configuration file located at:
 
