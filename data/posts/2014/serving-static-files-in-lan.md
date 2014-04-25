@@ -1,7 +1,7 @@
 
 {
-  "title": "Static files over HTTP locally",
-  "description": "While working on web UIs, it is often convenient to serve static files over HTTP in the local network in order to test on different devices.",
+  "title": "Serving static files in LAN",
+  "description": "While working on web UIs, it is often convenient to serve static files over HTTP in the local network, in order to test on different devices.",
   "template": "article.jade",
   "date": "2014-04-25",
   "path": "2014/04"
@@ -29,9 +29,9 @@ Start the server:
 
 Now you can browse to `http://YourComputerName.local` with your phone or tablet to check your responsive design (located at `/path/to/your/site` on your Mac).
 
-Trivial of course, but I kept forgetting. Hopefully now, as I have written it down, on the next rare occassion when I have to fiddle with CSS, I will remember.
+Trivial of course, but I kept forgetting. Maybe now, as I have written it down, on the next rare occassion when I have to fiddle with CSS, I will remember.
 
-But wait! You don't really want to have [httpd](http://httpd.apache.org/docs/2.2/programs/httpd.html) running on your system, do you—I mean, who could possibly want that? Why not use [Node](http://nodejs.org/) to write a little server and save it to a file named `stserver.js`:
+But wait! You don't really want to have [httpd](http://httpd.apache.org/docs/2.2/programs/httpd.html) running on your system, do you—I mean, who could possibly want that? Why not use [Node](http://nodejs.org/) to write a little server and save it to a file named `stserver.js`?
 
     var http = require('http')
       , st = require('st')
@@ -44,7 +44,7 @@ Start the server (as `root` because of port 80):
 
 Browse to `http://YourComputerName.local` to test.
 
-*Less fluff, more buff!* The [st](https://github.com/isaacs/st) module serves static files, does etags, caching, etc. In fact, it also comes with a CLI. So, if installed globally:
+*Less fluff, more buff!* The [st](https://github.com/isaacs/st) module serves static files, does etags, caching, etc. In fact, it also comes with a CLI—so, if installed globally:
 
     npm install -g st
 
