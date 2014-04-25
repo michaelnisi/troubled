@@ -7,7 +7,7 @@
   "path": "2014/04"
 }
 
-OSX comes with `apachectl`, the Apache HTTP Server Control Interface, which lets you configure the preinstalled [Apache HTTP server](http://httpd.apache.org/) on your Mac.
+[OS X](https://www.apple.com/osx/) comes with `apachectl`, the Apache HTTP Server Control Interface, which lets you configure the preinstalled [Apache HTTP server](http://httpd.apache.org/) on your Mac.
 
 To serve a particular directory on your system, you have to specify it in the Apache HTTP server configuration file located at:
 
@@ -18,7 +18,7 @@ Change these two lines (170 and 197 in my case):
     DocumentRoot "/Library/WebServer/Documents"
     <Directory "/Library/WebServer/Documents">
 
-to point to your desired path:
+… to point to your desired path:
 
     DocumentRoot "/path/to/your/site"
     <Directory "/path/to/your/site">
@@ -42,11 +42,13 @@ Start the server (sudo because of access rights to port 80):
     
     sudo node stserver.js
 
-Browse to `http://YourComputerName.local` to test. Less fluff, more buff! The [st](https://github.com/isaacs/st) module serves static files, does etags, caching, etc. In fact, it also comes with a CLI. So, if installed globally:
+Browse to `http://YourComputerName.local` to test.
+
+*Less fluff, more buff!* The [st](https://github.com/isaacs/st) module serves static files, does etags, caching, etc. In fact, it also comes with a CLI. So, if installed globally:
 
     npm install -g st
 
-You can spawn a server from the command-line like so:
+… you can spawn a server from the command-line:
 
     sudo st -p 80 -d /path/to/your/site
 
