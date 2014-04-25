@@ -38,7 +38,7 @@ But wait! You don't really want to have [httpd](http://httpd.apache.org/docs/2.2
 
     http.createServer(st('/path/to/your/site')).listen(80)
 
-Start the server (sudo because of access rights to port 80):
+Start the server (as `root` because of port 80):
     
     sudo node stserver.js
 
@@ -52,5 +52,5 @@ Browse to `http://YourComputerName.local` to test.
 
     sudo st -p 80 -d /path/to/your/site
 
-Anyhow, what was my point? I forgot.
+Anyhow, what was my point again? I forgot.
 
