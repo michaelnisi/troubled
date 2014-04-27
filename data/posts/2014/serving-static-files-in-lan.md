@@ -1,6 +1,5 @@
-
 {
-  "title": "Serving static files in LAN",
+  "title": "Serving Static Files in LAN",
   "description": "While working on web UIs, it is often convenient to serve static files over HTTP in the local network, in order to test on multiple devices.",
   "template": "article.jade",
   "date": "2014-04-25",

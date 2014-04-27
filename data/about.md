@@ -4,11 +4,8 @@
   "date": "2014-04-23",
   "name": "about.html",
   "icons": [
-    {"src": "/img/twitter.svg", "href": "https://twitter.com/michaelnisi"}, 
-    {"src": "/img/github.svg", "href": "https://github.com/michaelnisi"}, 
-    {"src": "/img/npm.svg", "href": "https://www.npmjs.org/~michaelnisi"},
-    {"src": "/img/flickr.svg", "href": "https://www.flickr.com/photos/michaelnisi/"}, 
-    {"src": "/img/vimeo.svg", "href": "http://www.vimeo.com/user5635710/likes"}
+    {"src": "/img/octocat.svg", "href": "https://github.com/michaelnisi"}, 
+    {"src": "/img/npm.svg", "href": "https://www.npmjs.org/~michaelnisi"}
   ]
 }
 

@@ -10,7 +10,7 @@ var _gaq = [['_setAccount','UA-1076490-1'], ['_trackPageview']];
 var troubled = troubled || {};
 
 troubled.moveFooter = function () {
-  $('#container').css({ 'min-height':$(window).height() -  168 });
+  $('#container').css({ 'min-height':$(window).height() -  138 });
   $('#page_footer').show();
 }
 
