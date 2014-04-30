@@ -8,7 +8,6 @@ var _gaq = [['_setAccount','UA-1076490-1'], ['_trackPageview']];
 
 // Refine site.
 var troubled = troubled || {};
-
 troubled.moveFooter = function () {
   $('#container').css({ 'min-height':$(window).height() -  138 });
   $('#page_footer').show();
@@ -17,13 +16,11 @@ troubled.moveFooter = function () {
 $(function () {
   $('#likes').load('/likes.html');
   $('#tweet').load('/tweet.html');
-
   $('pre code').each(function (i, e) {
     if (e.textContent.length > 80) {
       hljs.highlightBlock(e, '    ');
     }
   });
-
   troubled.moveFooter();
 });
 

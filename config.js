@@ -1,3 +1,6 @@
+
+// config - configure blake
+
 exports.paths = {
   data: 'data'
 , templates: 'templates'
@@ -6,14 +9,14 @@ exports.paths = {
 }
 
 exports.views = {
-  'rss.jade': require('./views/rss.js')
-, 'article.jade': require('./views/article.js')
-, 'home.jade': require('./views/home.js')
-, 'about.jade': require('./views/about.js')
-, 'error.jade': require('./views/about.js')
-, 'archive.jade': require('./views/archive.js')
-, 'likes.jade': require('./views/likes.js')
-, 'tweet.jade': require('./views/tweet.js')
+  'rss.jade': require('./src/rss.js')
+, 'article.jade': require('./src/article.js')
+, 'home.jade': require('./src/home.js')
+, 'about.jade': require('./src/about.js')
+, 'error.jade': require('./src/about.js')
+, 'archive.jade': require('./src/archive.js')
+, 'likes.jade': require('./src/likes.js')
+, 'tweet.jade': require('./src/tweet.js')
 }
 
 if (module === require.main) {

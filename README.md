@@ -2,8 +2,8 @@
 
 [![David DM](https://david-dm.org/michaelnisi/troubled.png)](http://david-dm.org/michaelnisi/troubled)
 
-Data, views, templates, and resources of my [blog](http://troubled.pro).
+This is the content of my [blog](http://troubled.pro).
 
 ### License
 
-See [LICENSE](https://raw.github.com/michaelnisi/michaelnisi:/master/LICENSE)
+[MIT](https://raw.githubusercontent.com/michaelnisi/troubled/master/LICENSE)

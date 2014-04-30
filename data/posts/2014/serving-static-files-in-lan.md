@@ -51,5 +51,8 @@ Browse to `http://YourComputerName.local` to test.
 
     sudo st -p 80 -d /path/to/your/site
 
-Anyhow, what was my point again? I forgot.
+*But what about Python?* I cannot withhold the simplest way to serve the current working directory on OSX: 
+    
+    sudo python -m SimpleHTTPServer 80
 
+[Python](https://www.python.org/) is preinstalled on OSX and I should use it more often—not only in [LLDB](http://lldb.llvm.org/) once in a blue moon.

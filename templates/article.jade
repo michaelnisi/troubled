@@ -5,8 +5,8 @@ html(lang="en")
     div#container
       include header
       section#cover
-        article
-          a(href= name)
+        article(itemscope itemtype="http://schema.org/Article")
+          a(href= name itemprop="name")
             h2= title
           p#summary= description
           != content
