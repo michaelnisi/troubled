@@ -6,9 +6,9 @@ html(lang="en")
       include header
       section#cover
         article(itemscope itemtype="http://schema.org/Article")
-          a(href= name itemprop="name")
-            h2= title
-          p#summary= description
+          a(href= name itemprop="url")
+            h2(itemprop="name")= title
+          p#summary(itemprop="about")= description
           != content
     include footer
     include scripts

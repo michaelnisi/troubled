@@ -1,9 +1,9 @@
 header
   section#tweet
-    p Making is thinking. 
+    p Making is thinking.
   a(href='/')
    h1 THE TROUBLED PROGRAMMER
-  p#headerDate= dateString
+  time#headerDate(itemprop="dateModified")= dateString
   nav
     ul
       li
@@ -12,6 +12,3 @@ header
         a(href='/about.html') ABOUT
       li
         a(href='/archive.html') ARCHIVE
-
-
-

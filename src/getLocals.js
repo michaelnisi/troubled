@@ -1,13 +1,13 @@
 
 // locals - make locals object
 
-var markdown = require('markdown').markdown
+var marked = require('marked')
 
 module.exports = function (item) {
   return {
     title: item.header.title
   , description: item.header.description
-  , content: markdown.toHTML(item.body)
+  , content: marked(item.body)
   , name: item.name
   , link: item.link
   , date: item.date

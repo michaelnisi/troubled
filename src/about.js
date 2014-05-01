@@ -2,7 +2,6 @@
 // about - generate about page
 
 var compile = require('./compile')
-  , markdown = require('markdown').markdown
   , getLocals = require('./getLocals')
 
 function locals (item) {
