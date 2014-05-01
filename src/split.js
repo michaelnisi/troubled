@@ -1,5 +1,5 @@
 
-// split - make two columns of articles
+// split - add two columns of articles
 
 var compile = require('./compile')
 
@@ -9,15 +9,15 @@ function locals (item, items, shift) {
     , hasItems = items.length > 0
     , firstColumnItems = hasItems ? items.slice(0, threshold) : null
     , secondColumnItems = hasItems ? items.slice(threshold) : null
-  return {
-    title: item.header.title
-  , items: items
-  , dateString: items[0].dateString
-  , hasItems: hasItems
-  , latestItem: latestItem
-  , firstColumnItems: firstColumnItems
-  , secondColumnItems: secondColumnItems
-  }
+
+  item.description = item.header.description
+  item.items = items
+  item.hasItems = hasItems
+  item.latestItem = latestItem
+  item.firstColumnItems = firstColumnItems
+  item.secondColumnItems = secondColumnItems
+
+  return item
 }
 
 module.exports = function (item, items, shift, cb) {
