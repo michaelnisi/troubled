@@ -6,26 +6,13 @@ html(lang="en")
       include header
       - if (latestItem)
         section#cover
-          article
-            a(href= latestItem.link)
-              h2= latestItem.title
-            p#summary= latestItem.description
+          article(itemscope itemtype="http://schema.org/Article")
+            a(itemprop="url" href= latestItem.link)
+              h2(itemprop="headline")= latestItem.title
+            p#summary(itemprop="about")= latestItem.description
             != latestItem.content
       - if (hasItems)
-        section#articles
-          ul
-            each firstColumnItem in firstColumnItems
-              li
-                a(href= firstColumnItem.link)
-                  h3= firstColumnItem.title.toUpperCase()
-                  p.summary= firstColumnItem.description
-          ul
-            each secondColumnItem in secondColumnItems
-              li
-                a(href= secondColumnItem.link)
-                  h3= secondColumnItem.title.toUpperCase()
-                  p.summary= secondColumnItem.description
-      
+        include articles
       section#likes
     include footer
     include scripts

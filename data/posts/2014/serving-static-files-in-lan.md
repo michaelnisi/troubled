@@ -30,7 +30,7 @@ Now you can browse to `http://YourComputerName.local` with your phone or tablet 
 
 Trivial of course, but I kept forgetting. Maybe now, as I have written it down, on the next rare occassion when I have to fiddle with CSS, I will remember.
 
-But wait! You don't really want to have [httpd](http://httpd.apache.org/docs/2.2/programs/httpd.html) running on your system, do you—I mean, who could possibly want that? Why not use [Node](http://nodejs.org/) to write a little server and save it to a file named `stserver.js`?
+*But wait!* You don't really want to have [httpd](http://httpd.apache.org/docs/2.2/programs/httpd.html) running on your system, do you—I mean, who could possibly want that? Why not use [Node](http://nodejs.org/) to write a little server and save it to a file named `stserver.js`?
 
     var http = require('http')
       , st = require('st')
@@ -51,8 +51,8 @@ Browse to `http://YourComputerName.local` to test.
 
     sudo st -p 80 -d /path/to/your/site
 
-*But what about Python?* I cannot withhold the simplest way to serve the current working directory on OSX: 
+*What about Python?* I cannot withhold the simplest way to serve the current working directory on OSX: 
     
     sudo python -m SimpleHTTPServer 80
 
-[Python](https://www.python.org/) is preinstalled on OSX and I should use it more often—not only in [LLDB](http://lldb.llvm.org/) once in a blue moon.
+[Python](https://www.python.org/) is preinstalled on OSX; I should use it more often—not only in [LLDB](http://lldb.llvm.org/) once in a blue moon.

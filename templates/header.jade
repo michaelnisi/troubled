@@ -3,7 +3,7 @@ header
     p Making is thinking.
   a(href='/')
    h1 THE TROUBLED PROGRAMMER
-  time#headerDate(itemprop="dateModified")= dateString
+  time(itemprop="dateModified" datetime= date.toISOString())= dateString
   nav
     ul
       li

@@ -2,6 +2,6 @@ h3 Recommendations
 
 ul
   each article in articles
-    li
-      a(href= article.link)
-       != article.title.toUpperCase()
+    li(itemscope itemtype="http://schema.org/Article")
+      a(itemprop="url" href= article.link)
+        span(itemprop="name")= article.title.toUpperCase()

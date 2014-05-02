@@ -1,9 +1,8 @@
-/* Fonts */
 
+/* Fonts */
 h1, nav a, section#likes ul li a {
   font-family: "futura-pt", Futura, sans-serif;
 }
-
 body, h2, h3, h4, h5 {
   font-family: "adobe-caslon-pro", Georgia, serif;
 }
@@ -11,12 +10,13 @@ body, h2, h3, h4, h5 {
 /* Colors */
 $copy-color: #343838;
 $link-color: #00B4CC;
+$more-color: #999;
+$less-color: #CCC;
 
 /* All */
-
 body {
   color: $copy-color;
-  background-color: #ffffff;
+  background-color: #fff;
 }
 
 a, a:visited, a:hover {  
@@ -67,14 +67,21 @@ h5 {
   font-style: italic;
 }
 
+time {
+  display: block;
+  padding-bottom: 1em;
+  font-size: 0.813em;
+  color: $more-color;
+}
+
 header {
   text-align: center;
   width: 100%;
   padding-bottom: 1em;
 }
 
-#headerDate {
-  font-size: 0.813em;
+header p {
+  font-size: 1em;
 }
 
 article {
@@ -83,10 +90,6 @@ article {
 
 article p {
   font-size: 1.25em;
-}
-
-header p {
-  font-size: 1em;
 }
 
 ul {
@@ -137,7 +140,7 @@ nav a, section#likes ul li a  {
 }
 
 section#cover, section#articles, section#likes {
-  border-top-color: #cccccc;
+  border-top-color: $less-color;
   border-top-width: 1px;
   border-top-style: solid;
   padding: 1em;
@@ -194,7 +197,7 @@ margin: 0px auto; }
 /* Footer */
 
 #page_footer {
-  color: #cccccc;
+  color: $less-color;
   text-align: center;
 }
 
@@ -209,6 +212,8 @@ a#understated, #page_footer  {
   color: #ccc;
 }
 
+
+$footer-color: #002b36; 
 #page_footer {
   padding: 1em;
   padding-bottom: 2em;
@@ -217,12 +222,12 @@ a#understated, #page_footer  {
 
 .no-js #page_footer,
 .no-cssgradients #page_footer {
-  background-color: #002b36;
+  background-color: $footer-color;
 }
 
 .cssgradients #page_footer {
-  background-color: #002b36;
-  background-image: -webkit-linear-gradient(top, #000 0, #002b36 10px, #002b36); 
+  background-color: $footer-color;
+  background-image: -webkit-linear-gradient(top, #000 0, $footer-color 10px, $footer-color); 
 }
 
 #page_footer p {

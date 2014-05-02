@@ -1,0 +1,14 @@
+section#articles
+  ul
+    each firstColumnItem in firstColumnItems
+      li(itemscope itemtype="http://schema.org/Article")
+        a(itemprop="url" href= firstColumnItem.link)
+          h3(itemprop="name")= firstColumnItem.title.toUpperCase()
+          p.summary(itemprop="about")= firstColumnItem.description
+  ul
+    each secondColumnItem in secondColumnItems
+      li(itemscope itemtype="http://schema.org/Article")
+        a(itemprop="url" href= secondColumnItem.link)
+          h3(itemprop="name")= secondColumnItem.title.toUpperCase()
+          p.summary(itemprop="about")= secondColumnItem.description
+

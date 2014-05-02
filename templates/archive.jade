@@ -5,19 +5,6 @@ html(lang="en")
     div#container
       include header
       - if (hasItems)
-        section#articles
-          ul
-            each firstColumnItem in firstColumnItems
-              li
-                a(href= firstColumnItem.link)
-                  h3= firstColumnItem.title.toUpperCase()
-                  p.summary= firstColumnItem.description
-          ul
-            each secondColumnItem in secondColumnItems
-              li
-                a(href= secondColumnItem.link)
-                  h3= secondColumnItem.title.toUpperCase()
-                  p.summary= secondColumnItem.description
-      
+        include articles
     include footer
     include scripts

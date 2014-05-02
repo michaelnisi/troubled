@@ -7,13 +7,13 @@ html(lang="en")
       section#cover
         article(itemscope itemtype="http://schema.org/Person")
           #portrait
-            a(href="http://www.flickr.com/photos/michaelnisi/sets/72157626923470332/")
-              img(src="/img/michael_2x.jpg", alt='Michael Nisi')
+            a(itemprop="url" href="http://www.flickr.com/photos/michaelnisi/sets/72157626923470332/")
+              img(itemprop="image" src="/img/michael_2x.jpg" alt='Michael Nisi')
           != content
           ul#icons
             each icon in icons
               li
-                a(href= icon.href)
+                a(itemprop="url" href= icon.href)
                   img(src= icon.src)
     include footer
     include scripts
