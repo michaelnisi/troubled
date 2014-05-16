@@ -1,7 +1,7 @@
 {
   "title": "About The Troubled Programmer",
   "template": "about.jade",
-  "date": "2014-04-23",
+  "date": "2014-05-16",
   "name": "about.html",
   "icons": [
     {"src": "/img/octocat.svg", "href": "https://github.com/michaelnisi"}, 
