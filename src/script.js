@@ -16,14 +16,11 @@ troubled.moveFooter = function () {
 $(function () {
   $('#likes').load('/likes.html');
   $('#tweet').load('/tweet.html');
-  $('pre code').each(function (i, e) {
-    if (e.textContent.length > 80) {
-      hljs.highlightBlock(e, '    ');
-    }
-  });
   troubled.moveFooter();
 });
 
 $(window).resize(function () {
   troubled.moveFooter();
 });
+
+hljs.initHighlightingOnLoad();
