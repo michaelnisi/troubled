@@ -55,4 +55,4 @@ Browse to `http://YourComputerName.local` to test.
     
     sudo python -m SimpleHTTPServer 80
 
-[Python](https://www.python.org/) is preinstalled on OSX; I should use it more often—not only in [LLDB](http://lldb.llvm.org/) once in a blue moon.
+[Python](https://www.python.org/) is preinstalled on OS X; I should use it more often—not only in [LLDB](http://lldb.llvm.org/) once in a blue moon.

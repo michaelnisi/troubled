@@ -12,7 +12,7 @@ I TREASURE JAVASCRIPT for its flexibility. Even though its syntax isn't great, a
 
 Popular JavaScript engines are: [V8](http://code.google.com/p/v8/), [JavaScriptCore](http://www.webkit.org/projects/javascript/index.html), and [SpiderMonkey](https://developer.mozilla.org/en/docs/SpiderMonkey).
 
-CoffeeScript is a programming language written by [Jeremy Ashkenas](https://twitter.com/jashkenas). Its syntax is inspired by [Ruby](http://www.ruby-lang.org/en/), [Python](http://www.python.org/), and [Haskell](http://www.haskell.org/); it adds features like comprehensions and pattern matching. The self hosted [source-to-source compiler](http://en.wikipedia.org/wiki/Source-to-source_compiler) (written in CoffeeScript) uses the [jison] (http://zaach.github.com/jison/) JavaScript parser generator to translate CoffeeScript to JavaScript.
+CoffeeScript is a programming language written by [Jeremy Ashkenas](https://twitter.com/jashkenas). Its syntax is inspired by [Ruby](http://www.ruby-lang.org/en/), [Python](http://www.python.org/), and [Haskell](http://www.haskell.org/); it adds features like comprehensions and pattern matching. The self hosted [source-to-source compiler](http://en.wikipedia.org/wiki/Source-to-source_compiler) (written in CoffeeScript) uses the [jison](http://zaach.github.com/jison/) JavaScript parser generator to translate CoffeeScript to JavaScript.
 
 Jeremy Ashkenas, distinguished through [backbone](http://documentcloud.github.com/backbone) and [underscore](http://documentcloud.github.com/underscore), began the CoffeeScript experiment in 2010 to answer a simple question:
 > What would JavaScript look like, if it could like anything you wanted it to look like?
@@ -121,7 +121,7 @@ Since 3.1 [Rails](http://rubyonrails.org/) ships with CoffeeScript—introducing
 Dreaming about [JavaScript Harmony](https://mail.mozilla.org/pipermail/es-discuss/2008-August/006837.html) Brendan Eich wrote:
 > CoffeeScript is well done and more convenient to use than JS, provided you buy into the Python-esque significant space and the costs of generating JS from another source language. But semantically it’s still JS.
 
-There has been an amusing [discourse](http://procbits.com/2012/05/18/why-do-all-the-great-node-js-developers-hate-coffeescript/) about CoffeeScript's usefulness in the [Node](http://nodejs.org) community. Most protagonists wrinkle their nose, but [Mikeal Rogers] (http://www.mikealrogers.com) downright [loves] (http://www.mikealrogers.com/posts/survey-why-are-you-using-coffeescript.html) CoffeeScript.
+There has been an amusing [discourse](http://procbits.com/2012/05/18/why-do-all-the-great-node-js-developers-hate-coffeescript/) about CoffeeScript's usefulness in the [Node](http://nodejs.org) community. Most protagonists wrinkle their nose, but [Mikeal Rogers](http://www.mikealrogers.com) downright [loves](http://www.mikealrogers.com/posts/survey-why-are-you-using-coffeescript.html) CoffeeScript.
 
 [Isaac Schlueter](http://blog.izs.me/) is right:
 > CoffeeScript does not offer an order of magnitude difference in expressiveness. I’m not using “expressiveness” as some fuzzy term to mean “how happy you are expressing yourself in X language”, but the more mathy technical meaning of “how many relevant program tokens are required to do X task.” CoffeeScript may require fewer tokens, sure, but not 10 to 1 fewer.
