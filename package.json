@@ -1,23 +1,28 @@
 {
   "name": "troubled",
-  "version": "0.2.1",
+  "version": "1.0.0",
   "description": "the content of my blog",
   "main": "config.js",
   "repository": {
     "type": "git",
     "url": "git://github.com/michaelnisi/troubled.git"
   },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/michaelnisi/troubled/issues"
+  },
+  "homepage": "https://github.com/michaelnisi/troubled",
   "dependencies": {
-    "pickup": "0.4.x",
-    "marked": "0.3.x",
     "jade": "1.3.x",
-    "request": "2.34.x",
-    "twitter-text": "1.9.x"
+    "marked": "^0.3.2",
+    "pickup": "^1.0.2",
+    "request": "^2.40.0",
+    "twitter-text": "^1.9.4"
   },
-  "author": {
-    "name": "Michael Nisi",
-    "email": "michael.nisi@gmail.com",
-    "url": "http://troubled.pro"
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "license": "MIT"
+  "keywords": [],
+  "author": "Michael Nisi <michael.nisi@gmail.com> (http://michaelnisi.com/)"
 }

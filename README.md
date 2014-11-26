@@ -1,6 +1,4 @@
-# troubled
-
-[![David DM](https://david-dm.org/michaelnisi/troubled.png)](http://david-dm.org/michaelnisi/troubled)
+# troubled - making is thinking
 
 This is the content of my [blog](http://troubled.pro).
 

@@ -6,7 +6,7 @@
   "path": "2012/05"
 }
 
-THERE'S NO SHORTAGE of static website generators these days. After years of storing every single bit in databases, we evidently came to the conclusion that—when it comes to personal sites and blogs—filesystems aren't that bad after all. Nothing new of course, initially the web consisted of static files, but in the first part of the last decade every tiny little blog ran a database. Now, in the midst of the transition to a [real-time web](http://en.wikipedia.org/wiki/Real-time_web), we see a renaissance of static sites.
+THERE IS NO SHORTAGE of static website generators these days. After years of storing every single bit in databases, we evidently came to the conclusion that—when it comes to personal sites and blogs—filesystems aren't that bad after all. Nothing new of course, initially the web consisted of static files, but in the first part of the last decade every tiny little blog ran a database. Now, in the midst of the transition to a [real-time web](http://en.wikipedia.org/wiki/Real-time_web), we see a renaissance of static sites.
 
 I always found the static approach charming, it first caught my attention when I was learning Ruby and encountered [Hobix](http://hobix.github.com/hobix/). Later I was fascinated by an [article](http://www.martinfowler.com/articles/rake.html) from [Martin Fowler](http://www.martinfowler.com), in which he describes how he builds his site with [Rake](http://rake.rubyforge.org/). I've also been aware that [ongoing](http://www.tbray.org/ongoing/) has been a static site. A more recent example is Marco Arment's [blog](http://www.marco.org), generated with his own thing: [Second Crack](http://www.marco.org/secondcrack).
 
@@ -18,10 +18,10 @@ Another reason for this trend might be, that writing a little tool to generate y
 
 I wrote [Blake](http://michaelnisi.github.com/blake/) to kick the tires with [Node.js](http://nodejs.org/) and to drive this site. The objective has been to build a blog aware infrastructure that implements IO and template routing; without restricting input data formats, selection of template languages, and view implementations. Blake is meant to run on a server; and to generate the site, triggered by a post-receive hook, which is called when we push changes to a git repository that controls the data of the site. This approach provides version control for content and lets us write in our editor of choice.
 
-##### Other flavors
+#### Other flavors
 
 [Octopress](http://octopress.org/) is the all-inclusive package for [Jekyll](http://jekyllrb.com/), the original tool by Tom Preston-Werner.
 
 [Nesta](http://nestacms.com/) is a lightweight Content Management System, written in Ruby using the Sinatra web framework. Nesta has the simplicity of a static site generator, but (being a fully fledged Rack application) allows you to serve dynamic content on demand.
 
-More: [Mynt](http://mynt.mirroredwhite.com/), [Middleman](http://awardwinningfjords.com/2009/10/22/middleman.html), [Stasis](http://stasis.me/), etc. 
+More: [Mynt](http://mynt.mirroredwhite.com/), [Middleman](http://awardwinningfjords.com/2009/10/22/middleman.html), [Stasis](http://stasis.me/), etc.
