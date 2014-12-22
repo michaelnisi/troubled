@@ -2,128 +2,64 @@
 /* troubled.scss */
 
 @font-face {
-  /* latin-ext */
-  font-family: 'Fira Sans';
-  font-style: normal;
-  font-weight: 300;
-  src: local('Fira Sans Light'), local('FiraSans-Light'), url(http://fonts.gstatic.com/s/firasans/v5/VTBnrK42EiOBncVyQXZ7j4joYw3YTyktCCer_ilOlhE.woff2) format('woff2');
-  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF; }
-
-@font-face {
-  /* latin */
-  font-family: 'Fira Sans';
-  font-style: normal;
-  font-weight: 300;
-  src: local('Fira Sans Light'), local('FiraSans-Light'), url(http://fonts.gstatic.com/s/firasans/v5/VTBnrK42EiOBncVyQXZ7jxVuXpl7XtNjpLlhhhGlVqc.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000; }
-
-@font-face {
-  /* latin-ext */
-  font-family: 'Source Code Pro';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Source Code Pro'), local('SourceCodePro-Regular'), url(http://fonts.gstatic.com/s/sourcecodepro/v6/mrl8jkM18OlOQN8JLgasD4a1YDtoarzwSXxTHggEXMw.woff2) format('woff2');
-  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF; }
-
-@font-face {
-  /* latin */
-  font-family: 'Source Code Pro';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Source Code Pro'), local('SourceCodePro-Regular'), url(http://fonts.gstatic.com/s/sourcecodepro/v6/mrl8jkM18OlOQN8JLgasD_ytCVloACqnDHJwh-em2k8.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000; }
-
-@font-face {
-  /* latin-ext */
-  font-family: 'Source Serif Pro';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Source Serif Pro'), local('SourceSerifPro-Regular'), url(http://fonts.gstatic.com/s/sourceserifpro/v4/CeUM4np2c42DV49nanp55bjTNMXmj3xV6BEVxFZkUvg.woff2) format('woff2');
-  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF; }
-
-@font-face {
-  /* latin */
-  font-family: 'Source Serif Pro';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Source Serif Pro'), local('SourceSerifPro-Regular'), url(http://fonts.gstatic.com/s/sourceserifpro/v4/CeUM4np2c42DV49nanp55cdzFcWc78LXjE3kOFeCUQo.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000; }
-
-@font-face {
-  /* latin-ext */
-  font-family: 'Source Serif Pro';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Source Serif Pro Bold'), local('SourceSerifPro-Bold'), url(http://fonts.gstatic.com/s/sourceserifpro/v4/yd5lDMt8Sva2PE17yiLarE5N2csRB8rYAZNd6M3fKwH2Ot9t5h1GRSTIE78Whtoh.woff2) format('woff2');
-  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF; }
-
-@font-face {
-  /* latin */
-  font-family: 'Source Serif Pro';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Source Serif Pro Bold'), local('SourceSerifPro-Bold'), url(http://fonts.gstatic.com/s/sourceserifpro/v4/yd5lDMt8Sva2PE17yiLarCvJGqcBDANLN63v33eIcBX2Ot9t5h1GRSTIE78Whtoh.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000; }
-
-@font-face {
   font-family: 'Fira Sans';
   font-style: normal;
   font-weight: 100;
-src: local("Fira Sans Hair"), url("http://code.cdn.mozilla.net/fonts/woff/FiraSans-Hair.woff") format("woff"); }
+  src: local("Fira Sans Hair"), url("http://code.cdn.mozilla.net/fonts/woff/FiraSans-Hair.woff") format("woff"); }
 
 @font-face {
+  /* TODO: Render in Safari */
   font-family: 'Source Serif Pro';
   font-style: italic;
   font-weight: 400;
-src: url("http://fonts.gstatic.com/s/vollkorn/v6/Oiz0tNwvC-Nd29SBQWfWTAsYbbCjybiHxArTLjt7FRU.woff2") format("woff2"); }
+  src: local("Vollkorn"), url("http://fonts.gstatic.com/s/vollkorn/v6/Oiz0tNwvC-Nd29SBQWfWTAsYbbCjybiHxArTLjt7FRU.woff2") format("woff2"); }
 
 body {
   color: #343838;
   background-color: #fff;
-font-family: 'Source Serif Pro', serif; }
+  font-family: 'Source Serif Pro', serif; }
 
 h1, h2, h3, h4, h5, h6, nav {
-  font-weight: 200;
-font-family: "Fira Sans", sans-serif; }
+  font-weight: 300;
+  font-family: 'Fira Sans', sans-serif; }
 
 h1 {
-  font-size:1.625em;
-  font-weight:100;
-  letter-spacing:.1em;
-text-transform:uppercase; }
+  font-size: 1.625em;
+  font-weight: 100;
+  letter-spacing: .1em;
+  text-transform: uppercase; }
 
 h2 {
-  font-size:2em;
-  letter-spacing:.1em;
-  text-align:center;
-text-align: center; }
+  font-size: 2em;
+  letter-spacing: .1em;
+  text-align: center;
+  text-align: center; }
 
-h3{
-  font-size:1.25em;
-  font-weight:300;
-letter-spacing:.1em; }
+h3 {
+  font-size: 1.25em;
+  letter-spacing: .1em; }
 
 h4 {
   font-family: 'Source Serif Pro', serif;
   font-size: 1.25em;
   font-style: italic;
   font-weight: 400;
-text-align: center; }
+  text-align: center; }
 
 code {
   font-family: 'Source Code Pro', monospace;
   background: #fdf6e3;
-color: #657b83; }
+  color: #657b83; }
 
 p code {
-font-size: 0.813em; }
+  font-size: 0.813em; }
 
 a, a:visited, a:hover {
   text-decoration: none;
-color: #00b4cc; }
+  color: #00b4cc; }
 
 a h1 {
-color: #343838; }
+  color: #343838; }
 
 time {
   font-family: "Fira Sans", sans-serif;
@@ -131,135 +67,135 @@ time {
   display: block;
   padding-bottom: 1em;
   font-size: 0.813em;
-color: #999999; }
+  color: #999999; }
 
 header {
   text-align: center;
   width: 100%;
-padding-bottom: 1em; }
+  padding-bottom: 1em; }
 
 header p {
   color: #999999;
-font-size: 1em; }
+  font-size: 1em; }
 
 article {
-padding-bottom: 1em; }
+  padding-bottom: 1em; }
 
 article p {
-font-size: 1.25em; }
+  font-size: 1.25em; }
 
 ul {
   padding: 0;
-width: 100%; }
+  width: 100%; }
 
 li {
-list-style: none; }
+  list-style: none; }
 
 nav ul, ul#smallprint {
   display: inline;
-width: 100%; }
+  width: 100%; }
 
 nav ul li, #page_footer ul#smallprint li {
   display: inline;
-padding-right: 1em; }
+  padding-right: 1em; }
 
 nav a, section#likes ul li a {
-letter-spacing: .1em; }
+  letter-spacing: .1em; }
 
 .summary, #summary {
   font-family: "Fira Sans", sans-serif;
   font-size: 1.25em;
-color: #00b4cc; }
+  color: #00b4cc; }
 
 #summary {
-padding-bottom: 1em; }
+  padding-bottom: 1em; }
 
 #container, #page_footer p {
-margin: 0 auto; }
+  margin: 0 auto; }
 
 section#cover, section#articles, section#likes {
   border-top-color: #cccccc;
   border-top-width: 1px;
   border-top-style: solid;
-padding: 1em; }
+  padding: 1em; }
 
 section#articles {
-padding-bottom: 0; }
+  padding-bottom: 0; }
 
 section#articles li {
-padding-bottom: 1em; }
+  padding-bottom: 1em; }
 
 section#likes {
-padding-bottom: 2em; }
+  padding-bottom: 2em; }
 
 section#likes ul li {
   margin-bottom: 0.5em;
-text-transform: uppercase; }
+  text-transform: uppercase; }
 
 p#title {
-text-align: center; }
+  text-align: center; }
 
 div#portrait {
   padding-top: 2em;
   padding-bottom: 2em;
-text-align: center; }
+  text-align: center; }
 
 #portrait img {
   width: 215px;
   height: 215px;
   border-radius: 215px;
-margin: 0px auto; }
+  margin: 0px auto; }
 
 /* About page icons */
 #icons {
   text-align: center;
-width: auto; }
+  width: auto; }
 
 #icons li a {
-width: 1em; }
+  width: 1em; }
 
 #icons li a img {
   width: 7em;
-padding-top: 2em; }
+  padding-top: 2em; }
 
 /* Footer */
 #page_footer {
   color: #cccccc;
-text-align: center; }
+  text-align: center; }
 
 section#tweet {
   padding-bottom: 0.5em;
   padding-right: 3em;
-padding-left: 3em; }
+  padding-left: 3em; }
 
 a#understated, #page_footer {
   font-style: italic;
-color: #ccc; }
+  color: #ccc; }
 
 #page_footer {
   padding: 1em;
   padding-bottom: 2em;
-display: none; }
+  display: none; }
 
 .no-js #page_footer,
 .no-cssgradients #page_footer {
-background-color: #002b36; }
+  background-color: #002b36; }
 
 .cssgradients #page_footer {
   background-color: #002b36;
-background-image: -webkit-linear-gradient(top, black 0, #002b36 10px, #002b36); }
+  background-image: -webkit-linear-gradient(top, black 0, #002b36 10px, #002b36); }
 
 #page_footer p {
   font-size: 1.25em;
-padding: 1em; }
+  padding: 1em; }
 
 #smallprint {
   font-family: Verdana, sans-serif;
   font-size: 0.750em;
-font-style: normal; }
+  font-style: normal; }
 
 #rss {
   width: 20px;
   height: 20px;
   margin-top: -0.4em;
-box-shadow: 0 0 5px #000; }
+  box-shadow: 0 0 5px #000; }
