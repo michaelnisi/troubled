@@ -8,7 +8,6 @@
   src: local("Fira Sans Hair"), url("http://code.cdn.mozilla.net/fonts/woff/FiraSans-Hair.woff") format("woff"); }
 
 @font-face {
-  /* TODO: Render in Safari */
   font-family: 'Source Serif Pro';
   font-style: italic;
   font-weight: 400;
@@ -83,6 +82,11 @@ article {
 
 article p {
   font-size: 1.25em; }
+
+article em {
+  font-family: 'Vollkorn';
+  font-style: italic;
+}
 
 ul {
   padding: 0;
@@ -170,6 +174,7 @@ section#tweet {
 
 a#understated, #page_footer {
   font-style: italic;
+  font-family: 'Vollkorn';
   color: #ccc; }
 
 #page_footer {
