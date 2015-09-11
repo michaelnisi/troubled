@@ -43,7 +43,7 @@ module.exports = function(item, cb) {
     if (er) return cb(er)
     var tweet = parse(body)
     if (!((tweet != null) && (tweet.text != null))) {
-      return cb(new Error('No tweet'))
+      return cb(new Error('troubled: no tweet'))
     }
     var text = twitter.autoLink(tweet.text, {
       urlEntities: tweet.entities.urls
