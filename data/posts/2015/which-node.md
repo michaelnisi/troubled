@@ -14,6 +14,6 @@ But which version of Node should I use? My current project has been targeting >0
 
 I cloned the new Node [repo](https://github.com/nodejs/node), freshly emerged from the [fork](http://hueniverse.com/2014/12/04/before-the-drama/), checked out the v0.12.7 tag, and after a successful build, to my surprise, found the tests failing. Well, no big deal, I thought. This is Node after all! Something has to be wrong with the fork. I went to download the official [tarball](https://nodejs.org/dist/v0.12.7/node-v0.12.7.tar.gz) from the [website](https://nodejs.org/en/), and built it, just to find that its tests were also failing.
 
-Back on GitHub I filed an [issue](https://github.com/nodejs/node/issues/2759), and observed this—probably unrelated but not reassuring—[issue](https://github.com/nodejs/node/issues/2683). I decided to try 0.12.6 instead, which, as it turned out, has been just fine.
+Back on GitHub I filed an [issue](https://github.com/nodejs/node/issues/2759), and observed this, probably unrelated but not reassuring, [issue](https://github.com/nodejs/node/issues/2683). I decided to try 0.12.6 instead, which, as it turned out, has been just fine.
 
 So, twelve six it is. To confirm my findings I checked the latest [SmartOS Node.js image](https://docs.joyent.com/public-cloud/instances/infrastructure/images/smartos/node-js) by Joyent, which should provide reasonable guidance on which Node version to use, and sure enough, the image from September 2nd ships with version 0.12.6.
