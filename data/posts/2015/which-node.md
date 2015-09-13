@@ -10,7 +10,7 @@ SOMETIMES IT CAN be instructive to start with a clean slate. When I recently dec
 
 After the basics—I wrote a better setup script for my [dotfiles](https://github.com/michaelnisi/dotfiles), which, among other things, conveniently compiles [Command-T](https://wincent.com/products/command-t), a Vim plugin I cannot pass on—had been set up, it was time to install [Node](https://nodejs.org).
 
-But which version of Node should I use? My current project has been targeting >0.12, ignoring the newer [iojs](https://iojs.org/en/) versions, which I cannot enjoy quite yet, because a major motivation for me to use Node is V8 postmortem debugging with [mdb](http://www.joyent.com/developers/node/debug/mdb), which is still [converging](https://github.com/nodejs/node/issues/2517).
+But which version of Node should I use? My current project has been targeting >=0.12, ignoring the newer [iojs](https://iojs.org/en/) versions, which I cannot enjoy quite yet, because a major motivation for me to use Node is V8 postmortem debugging with [mdb](http://www.joyent.com/developers/node/debug/mdb), which is still [converging](https://github.com/nodejs/node/issues/2517).
 
 I cloned the new Node [repo](https://github.com/nodejs/node), freshly emerged from the [fork](http://hueniverse.com/2014/12/04/before-the-drama/), checked out the v0.12.7 tag, and after a successful build, to my surprise, found the tests failing. Well, no big deal, I thought. This is Node after all! Something has to be wrong with the fork. I went to download the official [tarball](https://nodejs.org/dist/v0.12.7/node-v0.12.7.tar.gz) from the website, and built it, just to find that its tests were also failing.
 
