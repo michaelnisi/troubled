@@ -6,7 +6,7 @@ rss(version='2.0', xmlns:atom='http://www.w3.org/2005/Atom' xmlns:content='http:
     atom:link(rel='self' type='application/rss+xml' title='The Troubled Programmer' href= channel.href)
     description= channel.description
     language en-us
-    lastBuildDate= channel.pubDate
+    lastBuildDate= channel.lastBuildDate
     pubDate= channel.pubDate
 
     each entry in entries
@@ -16,4 +16,4 @@ rss(version='2.0', xmlns:atom='http://www.w3.org/2005/Atom' xmlns:content='http:
         pubDate= entry.pubDate
         guid(isPermaLink='true')= channel.link + entry.link
         description= entry.description
-        content:encoded= entry.content 
+        content:encoded= entry.content

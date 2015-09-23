@@ -1,6 +1,6 @@
 {
   "title": "The Troubled Programmer",
-  "description": "Notes about programming and such",
+  "description": "Notes on Software Making",
   "link": "http://troubled.pro/",
   "template": "rss.jade",
   "name": "rss.xml"

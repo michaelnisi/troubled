@@ -1,12 +1,12 @@
 {
   "title": "Which Node",
-  "description": "How I picked a version in these revolving times of convergence in the Node project.",
+  "description": "How I picked a version, in these revolving times of convergence in the Node project.",
   "template": "article.jade",
   "date": "2015-09-13",
   "path": "2015/09"
 }
 
-SOMETIMES IT CAN be instructive to start with a clean slate. When I recently decided to finally update my MacBook Air to Yosemite—timely for the upcoming [El Capitan](https://www.apple.com/osx/elcapitan-preview/) release—I opted for a clean install. A hassle I accept every third or so major release to verify my setup, which, as I learn time and time over, is still too multifarious.
+SOMETIMES IT can be instructive to start with a clean slate. When I recently decided to finally update my MacBook Air to Yosemite—timely for the upcoming [El Capitan](https://www.apple.com/osx/elcapitan-preview/) release—I opted for a clean install. A hassle I accept every third or so major release to verify my setup, which, as I learn time and time over, is too multifarious still.
 
 After the basics—I wrote a better setup script for my [dotfiles](https://github.com/michaelnisi/dotfiles), which, among other things, conveniently compiles [Command-T](https://wincent.com/products/command-t), a Vim plugin I cannot pass on—had been set up, it was time to install [Node](https://nodejs.org).
 

@@ -1,6 +1,6 @@
 # troubled - making is thinking
 
-This is the content of my [blog](http://troubled.pro).
+The [blake](https://github.com/michaelnisi/blake) source module of my [site](http://troubled.pro/).
 
 ### License
 
