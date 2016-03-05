@@ -1,6 +1,6 @@
 {
   "name": "troubled",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "The content of my site",
   "main": "index.js",
   "dependencies": {

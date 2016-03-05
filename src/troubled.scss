@@ -2,12 +2,6 @@
 /* troubled.scss */
 
 @font-face {
-  font-family: 'Fira Sans';
-  font-style: normal;
-  font-weight: 100;
-  src: local("Fira Sans Hair"), url("http://code.cdn.mozilla.net/fonts/woff/FiraSans-Hair.woff") format("woff"); }
-
-@font-face {
   font-family: 'Source Serif Pro';
   font-style: italic;
   font-weight: 400;
@@ -24,7 +18,6 @@ h1, h2, h3, h4, h5, h6, nav {
 
 h1 {
   font-size: 1.625em;
-  font-weight: 100;
   letter-spacing: .1em;
   text-transform: uppercase; }
 
@@ -62,7 +55,6 @@ a h1 {
 
 time {
   font-family: "Fira Sans", sans-serif;
-  font-weight: 200;
   display: block;
   padding-bottom: 1em;
   font-size: 0.813em;
