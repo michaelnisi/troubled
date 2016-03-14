@@ -18,14 +18,18 @@ exports.views = {
   'tweet.jade': tweet
 }
 
+var clean = require('property-ttl')
+var highlights = require('highlights')
 var https = require('https')
 var jade = require('jade')
-var marked = require('marked')
+var markdown = require('markdown-it')
+var pickBy = require('lodash.pickby')
 var pickup = require('pickup')
 var qs = require('querystring')
 var request = require('request')
 var strftime = require('prettydate').strftime
 var twitter = require('twitter-text')
+var util = require('util')
 
 function compile (item) {
   var opts = {
@@ -44,11 +48,6 @@ function oauth (env) {
   }
 }
 
-function latestTweet (body) {
-  var tweets = JSON.parse(body)
-  return tweets[0]
-}
-
 function tweet (item, cb) {
   var header = item.header
   var url = header.url
@@ -61,10 +60,28 @@ function tweet (item, cb) {
     oauth: oauth(process.env)
   }
   request(opts, function (er, res, body) {
-    if (er) return cb(er)
-    var tweet = latestTweet(body)
+    if (er) {
+      return cb(er)
+    }
+    var json
+    try {
+      json = JSON.parse(body)
+    } catch(ex) {
+      return cb(ex)
+    }
+    if (json.errors instanceof Array) {
+      var first = json.errors[0]
+      var er = new Error(first.message)
+      er.code = first.code
+      return cb(er)
+    }
+    if (!(json instanceof Array)) {
+      return cb(new Error('unexpected data: ' + json))
+    }
+    var tweet = json[0]
     if (!((tweet != null) && (tweet.text != null))) {
-      return cb(new Error('troubled: no tweet'))
+      var er = new Error('no tweet')
+      return cb(er)
     }
     var text = twitter.autoLink(tweet.text, {
       urlEntities: tweet.entities.urls
@@ -127,11 +144,72 @@ function channel (item, articles) {
   }
 }
 
+function cleanup (grammars) {
+  var managed = 0
+  var stops = []
+  scan()
+  return function stopAll () {
+    while (stops.length) stops.shift()()
+  }
+  function scan () {
+    while (managed < grammars.length - 1) {
+      stops.push(
+        clean(grammars[managed], 'repository', 2000, function () {
+          scan() // start watching new grammars if they are added later.
+        }),
+        clean(grammars[managed++], 'initialRule', 2000)
+      )
+    }
+  }
+}
+
+var hl = new highlights()
+cleanup(hl.registry.grammars)
+
+var languages = [
+  'language-erlang',
+]
+
+languages.forEach(function (language) {
+  hl.requireGrammarsSync({
+    modulePath: require.resolve(language + '/package.json')
+  })
+})
+
+var mappings = {
+  sh: 'source.shell',
+  markdown: 'source.gfm',
+  erb: 'text.html.erb'
+}
+
+function scopeNameFromLang (highlighter, lang) {
+  if (mappings[lang]) return mappings[lang]
+  var grammar = pickBy(hl.registry.grammarsByScopeName, function (val, key) {
+    return val.name.toLowerCase() === lang
+  })
+  if (Object.keys(grammar).length) {
+    return Object.keys(grammar)[0]
+  }
+  var name = 'source.' + lang
+  // mappings[lang] = name
+  return name
+}
+
+var md = markdown({
+  highlight: function (str, lang) {
+    var scope = scopeNameFromLang(hl, lang)
+    return hl.highlightSync({
+      fileContents: str,
+      scopeName: scope
+    })
+  }
+})
+
 function localsWithItem (item) {
   return {
     title: item.header.title,
     description: item.header.description,
-    content: marked(item.body),
+    content: md.render(item.body),
     name: item.name,
     link: item.link,
     date: item.date,

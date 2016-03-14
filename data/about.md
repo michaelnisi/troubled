@@ -1,5 +1,5 @@
 {
-  "title": "The Troubled Programmer",
+  "title": "Hello, I'm Michael",
   "template": "about.jade",
   "name": "about.html",
   "icons": [
@@ -8,14 +8,12 @@
   ]
 }
 
-*Oh hey, thanks for your interest.* [The Troubled Programmer](/) is written by me, my name is <span itemprop="name">Michael Nisi</span>, I make software. After a decade of [OOP](http://en.wikipedia.org/wiki/Object-oriented_programming), I am now more given to [functional programming](http://en.wikipedia.org/wiki/Functional_programming).
+*Oh hey, thanks for your interest.* [The Troubled Programmer](/) is written by me, my name is Michael Nisi, I make software. After a decade of [OOP](http://en.wikipedia.org/wiki/Object-oriented_programming), I am now more given to [functional programming](http://en.wikipedia.org/wiki/Functional_programming).
 
 I love [Erlang](http://erlang.org/), but mostly write [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript), and [Swift](https://developer.apple.com/swift/) to build mobile applications with [iOS](http://apple.com/ios/) and [Node](https://nodejs.org/).
 
-> Those who want really reliable software will discover that they must find means of avoiding the majority of bugs to start with, and as a result, the programming process will become cheaper. If you want more effective programmers, you will discover that they should not waste their time debugging, they should not introduce the bugs to start with.
+> Sing clearvoice Muse of Hephaestus famed for skill. With bright-eyed Athena he taught men glorious crafts throughout the world—men who before used to dwell in caves in the mountains like wild beasts. But now that they have leared crafts through Hephaestus famous for his art they live a peaceful life in their own houses the whole year round.
 
->—*Edsger W. Dijkstra*, The Humble Programmer
+>—*Homer*
 
-I humbly attempt to realize Dijkstra's vision through [TDD](http://en.wikipedia.org/wiki/Test-driven_development).
-
-Please address any comments to [@michaelnisi](http://twitter.com/michaelnisi) or <michael.nisi@gmail.com>.
+Looking forward to hear from you [@michaelnisi](http://twitter.com/michaelnisi) or <michael.nisi@gmail.com>.

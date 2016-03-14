@@ -1,5 +1,4 @@
-
-/* troubled.scss */
+/* troubled - the main styles */
 
 @font-face {
   font-family: 'Source Serif Pro';
@@ -38,12 +37,11 @@ h4 {
   font-weight: 400;
   text-align: center; }
 
-code {
+pre, code {
   font-family: 'Source Code Pro', monospace;
-  background: #fdf6e3;
   color: #657b83; }
 
-p code {
+p pre, p code {
   font-size: 0.813em; }
 
 a, a:visited, a:hover {
@@ -71,6 +69,10 @@ header p {
 
 article {
   padding-bottom: 1em; }
+
+.editor {
+  background: #f7f7f7;
+  padding: 1em; }
 
 article p {
   font-size: 1.25em; }
@@ -192,7 +194,6 @@ a#understated, #page_footer {
   font-style: normal; }
 
 #rss {
-  width: 20px;
-  height: 20px;
-  margin-top: -0.4em;
+  width: 1.750em;
+  height: 1.750em;
   box-shadow: 0 0 5px #000; }

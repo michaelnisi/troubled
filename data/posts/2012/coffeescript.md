@@ -20,103 +20,116 @@ Jeremy Ashkenas, distinguished through [backbone](http://documentcloud.github.co
 #### Selected CoffeeScript Features
 
 ##### Splats and Default Arguments
-    { test } = require('tap')
 
-    add = (sum, values...) ->
-      sum += value for value in values
-      sum
+```coffee
+{ test } = require('tap')
 
-    test 'add', (t) ->
-      t.equal add(1, 2, 3), 6, 'should be 6'
-      t.end()
+add = (sum, values...) ->
+  sum += value for value in values
+  sum
 
-    say = (what = 'Hello') ->
-      what
+test 'add', (t) ->
+  t.equal add(1, 2, 3), 6, 'should be 6'
+  t.end()
 
-    test 'say', (t) ->
-      t.equal say(), 'Hello', 'should be Hello'
-      t.equal say('Ciao'), 'Ciao', 'should be Ciao'
-      t.end()
+say = (what = 'Hello') ->
+  what
+
+test 'say', (t) ->
+  t.equal say(), 'Hello', 'should be Hello'
+  t.equal say('Ciao'), 'Ciao', 'should be Ciao'
+  t.end()
+```
 
 ##### String Interpolations
-    { test } = require 'tap'
-    name = 'Coltrane'
 
-    test 'string', (t) ->
-      t.equal "John #{ name }", 'John Coltrane', 'should be John Coltrane'
-      t.equal "1 + 2 = #{ 1 + 2 }", '1 + 2 = 3', 'should be 1 + 2 = 3'
-      t.end()
+```coffee
+{ test } = require 'tap'
+name = 'Coltrane'
+
+test 'string', (t) ->
+  t.equal "John #{ name }", 'John Coltrane', 'should be John Coltrane'
+  t.equal "1 + 2 = #{ 1 + 2 }", '1 + 2 = 3', 'should be 1 + 2 = 3'
+  t.end()
+```
 
 ##### Destructuring Assignments
 
-    { test } = require('tap')
-    { name } = name: 'Moe'
+```coffee
+{ test } = require('tap')
+{ name } = name: 'Moe'
 
-    test 'assignment', (t) ->
-      t.equal name, 'Moe', 'should be Moe'
-      t.end()       
+test 'assignment', (t) ->
+  t.equal name, 'Moe', 'should be Moe'
+  t.end()
+```
 
 ##### Array Comprehensions
 
-    { test } = require('tap')
+```coffee
+{ test } = require('tap')
 
-    getItem = (name) ->
-      name: name
+getItem = (name) ->
+  name: name
 
-    moe = getItem 'Moe'
-    larry = getItem 'Larry'
-    curly = getItem 'Curly'
+moe = getItem 'Moe'
+larry = getItem 'Larry'
+curly = getItem 'Curly'
 
-    items = [moe, larry, curly]
+items = [moe, larry, curly]
 
-    test 'iterate', (t) ->
-      i = 0
-      (i++) for item in items
-      t.equal i, 3, 'should be 3'
-      t.end()
+test 'iterate', (t) ->
+  i = 0
+  (i++) for item in items
+  t.equal i, 3, 'should be 3'
+  t.end()
 
-    test 'map', (t) ->
-      names = (item.name for item in items) 
-      t.equal typeof name, 'string', 'should be string' for name in names
-      t.equal names.length, 3, 'should be 3'
-      t.end()
+test 'map', (t) ->
+  names = (item.name for item in items)
+  t.equal typeof name, 'string', 'should be string' for name in names
+  t.equal names.length, 3, 'should be 3'
+  t.end()
 
-    test 'filter', (t) ->
-      item = (item for item in items when item.name is 'Curly')[0]
-      t.same item, curly, 'should be curly'
-      t.end()
+test 'filter', (t) ->
+  item = (item for item in items when item.name is 'Curly')[0]
+  t.same item, curly, 'should be curly'
+  t.end()
+```
 
 ##### Classes and Inheritance
-    { test } = require 'tap'
 
-    class Animal
-      constructor: (@name) ->
-      
-    class Dog extends Animal
-      greet: () ->
-        'Woof!'
+```coffee
+{ test } = require 'tap'
 
-    class Beagle extends Dog
-      greet: () ->
-        super + ' Woof!'
+class Animal
+  constructor: (@name) ->
 
-    test 'dogs', (t) ->
-      cheech = new Dog 'Cheech'
-      t.equal cheech.name, 'Cheech', 'should be Cheech'
-      t.equal cheech.greet(), 'Woof!', 'should be Woof!'
-      
-      chong = new Beagle 'Chong'
-      t.equal chong.name, 'Chong', 'should be Chong'
-      t.equal chong.greet(), 'Woof! Woof!', 'should be Woof! Woof!'
-      
-      t.end()  
+class Dog extends Animal
+  greet: () ->
+    'Woof!'
+
+class Beagle extends Dog
+  greet: () ->
+    super + ' Woof!'
+
+test 'dogs', (t) ->
+  cheech = new Dog 'Cheech'
+  t.equal cheech.name, 'Cheech', 'should be Cheech'
+  t.equal cheech.greet(), 'Woof!', 'should be Woof!'
+
+  chong = new Beagle 'Chong'
+  t.equal chong.name, 'Chong', 'should be Chong'
+  t.equal chong.greet(), 'Woof! Woof!', 'should be Woof! Woof!'
+
+  t.end()
+```
 
 But details aside, the three most significant features of CoffeeScript are: meaningful whitespace, implicit function returns, and less code. Meaningful whitespace prevents boring discussions about code formatting (semicolons anyone?), implicit function returns cultivate functional programming style, and less code is less code.
 
 *How about debugging?* As one of CoffeeScript's design principles is to maintain the order of instructions in the compiled JavaScript code, it's fairly easy to relate JavaScript stack traces back to CoffeeScript code. I had expected it to be much harder; debugging hasn't been an issue for me so far. But although the generated code is readable, and potentially inspiring for some, one cannot deny the additional layer of complexity caused by the extra step of translation.
 
 Since 3.1 [Rails](http://rubyonrails.org/) ships with CoffeeScript—introducing it at [RailsConf 2011](http://www.rubyinside.com/dhh-keynote-streaming-live-from-railsconf-2011-right-here-right-now-4769.html) [DHH](http://david.heinemeierhansson.com/) stated:
-> Looking at CoffeeScript was the first time I got a little bit of language envy. 
+> Looking at CoffeeScript was the first time I got a little bit of language envy.
 
 Dreaming about [JavaScript Harmony](https://mail.mozilla.org/pipermail/es-discuss/2008-August/006837.html) Brendan Eich wrote:
 > CoffeeScript is well done and more convenient to use than JS, provided you buy into the Python-esque significant space and the costs of generating JS from another source language. But semantically it’s still JS.
@@ -130,16 +143,16 @@ Transpilers are inherently divisive. People who are fluent in the target languag
 
 [Most](http://blog.floriancargoet.com/2012/03/brainfuck-part-1-what-is-it/) transpilers are valuable. Not only can they inspire further progress, but they also draw new people to their respective target language. CoffeeScript pulls Ruby programmers on board of the [Black Pearl](http://en.wikipedia.org/wiki/Black_Pearl).
 
-*It's just JavaScript.* CoffeeScript waives instruction reordering to stay close to JavaScript. 
-Evidently too close for [Max Krohn](https://twitter.com/maxtaco), he [forked](https://github.com/maxtaco/coffee-script) CoffeeScript to write [IcedCoffeeScript](http://maxtaco.github.com/coffee-script/), which adds synchronous control flow mimicry by introducing two new keywords: `await` and `defer`. 
-[Coco](https://github.com/satyr/coco) is another more radical CoffeeScript dialect. 
+*It's just JavaScript.* CoffeeScript waives instruction reordering to stay close to JavaScript.
+Evidently too close for [Max Krohn](https://twitter.com/maxtaco), he [forked](https://github.com/maxtaco/coffee-script) CoffeeScript to write [IcedCoffeeScript](http://maxtaco.github.com/coffee-script/), which adds synchronous control flow mimicry by introducing two new keywords: `await` and `defer`.
+[Coco](https://github.com/satyr/coco) is another more radical CoffeeScript dialect.
 The CoffeeScript [wiki](https://github.com/jashkenas/coffee-script/wiki) provides an extensive [list](https://github.com/jashkenas/coffee-script/wiki/List-of-languages-that-compile-to-JS) of languages that transpile to JavaScript.
 
 Unrelated to CoffeeScript, but nevertheless interesting: [Six](https://github.com/matthewrobb/six), a transpiler that enables new syntactic features from [ECMAScript 6](http://addyosmani.com/blog/ecmascript-6-resources-for-the-curious-javascripter/) today.
 
-Any new language pushes the envelope (even by just fueling conversations), and any new language you learn makes you a better programmer. But quite frankly, despite this glamorous variety, I prefer to write vanilla JavaScript—as implemented by V8 which is [ECMA-262](http://www.ecma-international.org/publications/standards/Ecma-262.htm), 5th edition. The reason for this is that I mainly write Node modules. Node is about small open source modules written by the community. Writing Node modules in CoffeeScript artificially limits the number of users and contributors; it corrodes transparency, and makes the code base harder to manage. At [LXJS](http://2012.lxjs.org/) [Owen Barnes](https://github.com/owenb) mentioned plans to rewrite his popular [Socket Stream](http://www.socketstream.org/) framework in JavaScript. 
+Any new language pushes the envelope (even by just fueling conversations), and any new language you learn makes you a better programmer. But quite frankly, despite this glamorous variety, I prefer to write vanilla JavaScript—as implemented by V8 which is [ECMA-262](http://www.ecma-international.org/publications/standards/Ecma-262.htm), 5th edition. The reason for this is that I mainly write Node modules. Node is about small open source modules written by the community. Writing Node modules in CoffeeScript artificially limits the number of users and contributors; it corrodes transparency, and makes the code base harder to manage. At [LXJS](http://2012.lxjs.org/) [Owen Barnes](https://github.com/owenb) mentioned plans to rewrite his popular [Socket Stream](http://www.socketstream.org/) framework in JavaScript.
 
-Ĉu vi parolas [Esperanton](http://en.wikipedia.org/wiki/Esperanto)? [Donald Knuth](http://en.wikipedia.org/wiki/Donald_Knuth) neither: 
+Ĉu vi parolas [Esperanton](http://en.wikipedia.org/wiki/Esperanto)? [Donald Knuth](http://en.wikipedia.org/wiki/Donald_Knuth) neither:
 
 > I’m not motivated to learn Esperanto even though it might be preferable to English and German and French and Russian (if everybody switched).
 

@@ -1,8 +1,8 @@
+// script - place footer and load snippets
 
-// Refine site.
 var troubled = troubled || {};
 troubled.moveFooter = function () {
-  $('#container').css({ 'min-height':$(window).height() -  138 });
+  $('#container').css({ 'min-height': $(window).height() -  138 });
   $('#page_footer').show();
 }
 
@@ -15,5 +15,3 @@ $(function () {
 $(window).resize(function () {
   troubled.moveFooter();
 });
-
-hljs.initHighlightingOnLoad();
