@@ -8,6 +8,7 @@ SCRIPT=resources/js/script.min.js
 STYLE=resources/css/style.css
 SYNTAX=resources/css/syntax.css
 
+.PHONY: all
 all: $(BUILD)
 
 $(SCRIPT):
@@ -31,8 +32,7 @@ $(RESPOND):
 $(BUILD): $(SCRIPT) $(STYLE) $(NORMALIZE) $(MODERNIZE) $(RESPOND) $(SYNTAX)
 	blake $(BUILD)
 
+.PHONY: clean
 clean:
 	rm $(SCRIPT) $(STYLE) $(NORMALIZE) $(MODERNIZE) $(RESPOND) $(SYNTAX)
 	rm -rf $(BUILD)
-
-.PHONY: all clean

@@ -8,12 +8,14 @@
   ]
 }
 
-*Oh hey, thanks for your interest.* [The Troubled Programmer](/) is written by me, my name is Michael Nisi, I make software. After a decade of [OOP](http://en.wikipedia.org/wiki/Object-oriented_programming), I am now more given to [functional programming](http://en.wikipedia.org/wiki/Functional_programming).
+*Oh hey, thanks for your interest.* [The Troubled Programmer](/) is written by Michael Nisi, this is me—I make software. One foot on [OOP](http://en.wikipedia.org/wiki/Object-oriented_programming), the other on [functional programming](http://en.wikipedia.org/wiki/Functional_programming), I steer my test cases—dolphins rather—through the troubled waters of software development.
 
 I love [Erlang](http://erlang.org/), but mostly write [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript), and [Swift](https://developer.apple.com/swift/) to build mobile applications with [iOS](http://apple.com/ios/) and [Node](https://nodejs.org/).
 
-> Sing clearvoice Muse of Hephaestus famed for skill. With bright-eyed Athena he taught men glorious crafts throughout the world—men who before used to dwell in caves in the mountains like wild beasts. But now that they have leared crafts through Hephaestus famous for his art they live a peaceful life in their own houses the whole year round.
+> Sing clearvoice Muse, of Hephaestus famed for skill. With bright-eyed Athena he taught men glorious crafts throughout the world—men who before used to dwell in caves in the mountains like wild beasts. But now that they have leared crafts through Hephaestus famous for his art they live a peaceful life in their own houses the whole year round.
 
 >—*Homer*
+
+If you need HTTP services for your app, hit me up!
 
 Looking forward to hear from you [@michaelnisi](http://twitter.com/michaelnisi) or <michael.nisi@gmail.com>.

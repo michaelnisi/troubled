@@ -18,8 +18,8 @@ exports.views = {
   'tweet.jade': tweet
 }
 
+var Highlights = require('highlights')
 var clean = require('property-ttl')
-var highlights = require('highlights')
 var https = require('https')
 var jade = require('jade')
 var markdown = require('markdown-it')
@@ -29,7 +29,6 @@ var qs = require('querystring')
 var request = require('request')
 var strftime = require('prettydate').strftime
 var twitter = require('twitter-text')
-var util = require('util')
 
 function compile (item) {
   var opts = {
@@ -66,22 +65,22 @@ function tweet (item, cb) {
     var json
     try {
       json = JSON.parse(body)
-    } catch(ex) {
+    } catch (ex) {
       return cb(ex)
     }
     if (json.errors instanceof Array) {
       var first = json.errors[0]
-      var er = new Error(first.message)
-      er.code = first.code
-      return cb(er)
+      var jsonError = new Error(first.message)
+      jsonError.code = first.code
+      return cb(jsonError)
     }
     if (!(json instanceof Array)) {
       return cb(new Error('unexpected data: ' + json))
     }
     var tweet = json[0]
     if (!((tweet != null) && (tweet.text != null))) {
-      var er = new Error('no tweet')
-      return cb(er)
+      var tweetError = new Error('no tweet')
+      return cb(tweetError)
     }
     var text = twitter.autoLink(tweet.text, {
       urlEntities: tweet.entities.urls
@@ -163,11 +162,12 @@ function cleanup (grammars) {
   }
 }
 
-var hl = new highlights()
+var hl = new Highlights()
 cleanup(hl.registry.grammars)
 
 var languages = [
   'language-erlang',
+  'language-swift'
 ]
 
 languages.forEach(function (language) {
@@ -191,7 +191,7 @@ function scopeNameFromLang (highlighter, lang) {
     return Object.keys(grammar)[0]
   }
   var name = 'source.' + lang
-  // mappings[lang] = name
+  mappings[lang] = name
   return name
 }
 

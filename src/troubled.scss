@@ -1,5 +1,7 @@
 /* troubled - the main styles */
 
+$color: #08c;
+
 @font-face {
   font-family: 'Source Serif Pro';
   font-style: italic;
@@ -39,6 +41,7 @@ h4 {
 
 pre, code {
   font-family: 'Source Code Pro', monospace;
+  background-color: #f7f7f7;
   color: #657b83; }
 
 p pre, p code {
@@ -46,7 +49,7 @@ p pre, p code {
 
 a, a:visited, a:hover {
   text-decoration: none;
-  color: #00b4cc; }
+  color: $color }
 
 a h1 {
   color: #343838; }
@@ -103,7 +106,7 @@ nav a, section#likes ul li a {
 .summary, #summary {
   font-family: "Fira Sans", sans-serif;
   font-size: 1.25em;
-  color: #00b4cc; }
+  color: $color; }
 
 #summary {
   padding-bottom: 1em; }
