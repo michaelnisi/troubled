@@ -18,4 +18,4 @@ I use Solarized in [iTerm2](http://www.iterm2.com/), [Vim](http://www.vim.org/) 
 
 In [Changelog Episode 0.7.7](http://thechangelog.com/post/20168759748/episode-0-7-7-solarized-and-linux-on-the-desktop-with-et): [Wynn Netherland](http://wynnnetherland.com/) sat down with Ethan Schoonover to talk about the science and design behind the wildly popular color scheme as well as his love for [Arch Linux](http://www.archlinux.org/).
 
-I delight in my editor, it allows me to be a programmer, Solarized is the color scheme I was looking for. Come join us in the shade.
+I delight in my editor, it allows me to be a programmer, Solarized is the color scheme I was looking for. Come, join us in the shade!
