@@ -23,7 +23,7 @@
     "prettydate": "0.0.1",
     "property-ttl": "^1.0.0",
     "request": "^2.63.0",
-    "twitter-text": "^1.13.2"
+    "twitter-text": "^1.13.4"
   },
   "keywords": [],
   "author": "Michael Nisi <michael.nisi@gmail.com> (http://michaelnisi.com/)",
