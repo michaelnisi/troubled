@@ -1,5 +1,15 @@
 // blake - blake file to generate my site
 
+// TODO: Reduce caching
+//
+// Assuming this runs only once in a while--which is true for generating a
+// static site, at least in this case--this isn't well designed, because it
+// keeps everything in memory. A good design would keep the user, a sleeping
+// (HTTP server) process, as lean as possible by not caching anything. Run
+// time is of no concern here, there's a sole user running every few hours
+// or days even. Would be interesting to see how much memory could be shaved
+// off by reducing. It might be best to disable caching entirely.
+
 exports.paths = {
   data: 'data',
   templates: 'templates',
