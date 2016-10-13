@@ -1,7 +1,7 @@
 {
   "title": "Which Node",
   "description": "How I picked a version, in these revolving times of convergence in the Node project.",
-  "template": "article.jade",
+  "template": "article.pug",
   "date": "2015-09-13",
   "path": "2015/09"
 }

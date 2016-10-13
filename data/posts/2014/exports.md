@@ -1,7 +1,7 @@
 {
   "title": "Exports",
   "description": "Node Module's exports and module.exports are the same, except when they are not.",
-  "template": "article.jade",
+  "template": "article.pug",
   "date": "2014-07-14",
   "path": "2014/07"
 }

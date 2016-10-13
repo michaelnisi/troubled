@@ -2,13 +2,13 @@
 
 // TODO: Reduce caching
 //
-// Assuming this runs only once in a while--which is true for generating a
-// static site, at least in this case--this isn't well designed, because it
-// keeps everything in memory. A good design would keep the user, a sleeping
+// Assuming this runs only once in a while-, which is true for generating a
+// static site, at least in this case, this isn't well designed, because it
+// keeps everything in memory. Good design would keep the user, a sleeping
 // (HTTP server) process, as lean as possible by not caching anything. Run
-// time is of no concern here, there's a sole user running every few hours
-// or days even. Would be interesting to see how much memory could be shaved
-// off by reducing. It might be best to disable caching entirely.
+// time is no concern here, there's a sole user running every few hours or
+// days even. Would be interesting to see how much memory could be shaved
+// off by minimizing—and finally disabling—caching.
 
 exports.paths = {
   data: 'data',
@@ -18,34 +18,35 @@ exports.paths = {
 }
 
 exports.views = {
-  'rss.jade': rss,
-  'article.jade': article,
-  'home.jade': home,
-  'about.jade': article,
-  'error.jade': article,
-  'archive.jade': archive,
-  'likes.jade': likes,
-  'tweet.jade': tweet
+  'rss.pug': rss,
+  'article.pug': article,
+  'home.pug': home,
+  'about.pug': article,
+  'error.pug': article,
+  'archive.pug': archive,
+  'likes.pug': likes,
+  'tweet.pug': tweet
 }
 
-var Highlights = require('highlights')
-var clean = require('property-ttl')
-var https = require('https')
-var jade = require('jade')
-var markdown = require('markdown-it')
-var pickBy = require('lodash.pickby')
-var pickup = require('pickup')
-var qs = require('querystring')
-var request = require('request')
-var strftime = require('prettydate').strftime
-var twitter = require('twitter-text')
+const Highlights = require('highlights')
+const clean = require('property-ttl')
+const https = require('https')
+const markdown = require('markdown-it')
+const pickBy = require('lodash.pickby')
+const pickup = require('pickup')
+const pug = require('pug')
+const qs = require('querystring')
+const request = require('request')
+const strftime = require('prettydate').strftime
+const twitter = require('twitter-text')
 
 function compile (item) {
-  var opts = {
+  const opts = {
     filename: item.templatePath,
     cache: true
   }
-  return jade.compile(item.template, opts)
+  const f = pug.compile(item.template, opts)
+  return f
 }
 
 function oauth (env) {
@@ -172,10 +173,10 @@ function cleanup (grammars) {
   }
 }
 
-var hl = new Highlights()
+const hl = new Highlights()
 cleanup(hl.registry.grammars)
 
-var languages = [
+const languages = [
   'language-erlang',
   'language-swift'
 ]
@@ -186,7 +187,7 @@ languages.forEach(function (language) {
   })
 })
 
-var mappings = {
+const mappings = {
   sh: 'source.shell',
   markdown: 'source.gfm',
   erb: 'text.html.erb'
@@ -194,18 +195,18 @@ var mappings = {
 
 function scopeNameFromLang (highlighter, lang) {
   if (mappings[lang]) return mappings[lang]
-  var grammar = pickBy(hl.registry.grammarsByScopeName, function (val, key) {
+  const grammar = pickBy(hl.registry.grammarsByScopeName, function (val, key) {
     return val.name.toLowerCase() === lang
   })
   if (Object.keys(grammar).length) {
     return Object.keys(grammar)[0]
   }
-  var name = 'source.' + lang
+  const name = 'source.' + lang
   mappings[lang] = name
   return name
 }
 
-var md = markdown({
+const md = markdown({
   highlight: function (str, lang) {
     var scope = scopeNameFromLang(hl, lang)
     return hl.highlightSync({

@@ -1,7 +1,7 @@
 {
   "title": "Homebrew",
   "description": "This unintrusive packet manager, with a Git foundation, evolved to de facto standard, and is the easiest way to install UNIX tools on OS X.",
-  "template": "article.jade",
+  "template": "article.pug",
   "date": "2011-10-10",
   "path": "2011/10"
 }

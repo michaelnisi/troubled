@@ -1,7 +1,7 @@
 {
   "title": "CoffeeScript is just JavaScript",
   "description": "The syntax of CoffeeScript, a programming language that transpiles to JavaScript, is elegant; but transpilers, although influential to future development of languages, are traditionally not well received.",
-  "template": "article.jade",
+  "template": "article.pug",
   "date": "2012-12-23",
   "path": "2012/12"
 }

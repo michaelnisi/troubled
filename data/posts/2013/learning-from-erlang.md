@@ -1,7 +1,7 @@
 {
   "title": "Learning from Erlang",
   "description": "Fascinated by the use of recursion and pattern matching in Erlang, I marvel at a quicksort implementation.",
-  "template": "article.jade",
+  "template": "article.pug",
   "date": "2013-03-06",
   "path": "2013/03"
 }

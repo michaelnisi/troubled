@@ -1,7 +1,7 @@
 {
   "title": "Serving Static Files in LAN",
   "description": "While working on web UIs, it is often convenient to serve static files over HTTP in the local network, in order to test on multiple devices.",
-  "template": "article.jade",
+  "template": "article.pug",
   "date": "2014-04-25",
   "path": "2014/04"
 }

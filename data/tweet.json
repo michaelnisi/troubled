@@ -1,5 +1,5 @@
 {
-  "template": "tweet.jade",
+  "template": "tweet.pug",
   "name": "tweet.html",
   "url": "https://api.twitter.com/1.1/statuses/user_timeline.json?",
   "screen_name": "michaelnisi"

@@ -1,5 +1,5 @@
 {
-  "template": "likes.jade",
+  "template": "likes.pug",
   "name": "likes.html",
   "url": "https://www.instapaper.com/starred/rss/1790226/iSWSpsZh42ITow1aMRwts5bZurI"
 }

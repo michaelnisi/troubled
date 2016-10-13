@@ -15,7 +15,7 @@ $(SCRIPT):
 	uglifyjs src/script.js -o $(SCRIPT) --compress
 
 $(STYLE):
-	sass src/style.scss $(STYLE) --sourcemap=none -t compressed
+	sassc src/style.scss $(STYLE) -t compressed
 
 $(NORMALIZE):
 	npm run normalize

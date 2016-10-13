@@ -1,6 +1,6 @@
 {
   "title": "Hello, I'm Michael",
-  "template": "about.jade",
+  "template": "about.pug",
   "name": "about.html",
   "icons": [
     {"src": "/img/octocat.svg", "href": "https://github.com/michaelnisi"},
