@@ -19,9 +19,3 @@ I love [Erlang](http://erlang.org/), but mostly write [JavaScript](https://devel
 If you need web services for your app, hit me up!
 
 Looking forward to hear from you [@michaelnisi](http://twitter.com/michaelnisi) or <michael.nisi@gmail.com>.
-
-Testing a list:
-
-- A thing
-- Another thing
-- And yet a third thing
