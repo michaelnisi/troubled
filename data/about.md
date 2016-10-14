@@ -8,7 +8,7 @@
   ]
 }
 
-OH HEY, thanks for your interest. [The Troubled Programmer](/) is written by Michael Nisi, that’s me—I make software. One foot on [OOP](http://en.wikipedia.org/wiki/Object-oriented_programming), the other on [functional programming](http://en.wikipedia.org/wiki/Functional_programming), I test my way through the troubled waters of software development.
+OHAI, thanks for your interest. [The Troubled Programmer](/) is written by Michael Nisi, that’s me—I make software. One foot on [OOP](http://en.wikipedia.org/wiki/Object-oriented_programming), the other on [functional programming](http://en.wikipedia.org/wiki/Functional_programming), I test my way through the troubled waters of software development.
 
 I love [Erlang](http://erlang.org/), but mostly write [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript), and [Swift](https://developer.apple.com/swift/) to build mobile applications with [iOS](http://apple.com/ios/) and [Node.js](https://nodejs.org/).
 

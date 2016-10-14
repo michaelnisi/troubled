@@ -69,7 +69,7 @@ function tweet (item, cb) {
     url: url += qs.stringify(params),
     oauth: oauth(process.env)
   }
-  request(opts, function (er, res, body) {
+  request(opts, function onRequest (er, res, body) {
     if (er) {
       return cb(er)
     }
@@ -126,16 +126,16 @@ function likes (item, cb) {
   var url = item.header.url
   var parser = pickup({ eventMode: true })
   var articles = []
-  https.get(url, function (res) {
+  https.get(url, function onGet (res) {
     res.pipe(parser)
   })
-  parser.on('error', function (er) {
+  parser.on('error', function onError (er) {
     cb(er)
   })
-  parser.on('entry', function (article) {
+  parser.on('entry', function onEntry (article) {
     articles.push(article)
   })
-  parser.on('finish', function () {
+  parser.on('finish', function onFinish () {
     var result = compile(item)({
       articles: articles
     })
@@ -164,7 +164,7 @@ function cleanup (grammars) {
   function scan () {
     while (managed < grammars.length - 1) {
       stops.push(
-        clean(grammars[managed], 'repository', 2000, function () {
+        clean(grammars[managed], 'repository', 2000, () => {
           scan() // start watching new grammars if they are added later.
         }),
         clean(grammars[managed++], 'initialRule', 2000)
@@ -181,7 +181,7 @@ const languages = [
   'language-swift'
 ]
 
-languages.forEach(function (language) {
+languages.forEach((language) => {
   hl.requireGrammarsSync({
     modulePath: require.resolve(language + '/package.json')
   })
@@ -195,7 +195,7 @@ const mappings = {
 
 function scopeNameFromLang (highlighter, lang) {
   if (mappings[lang]) return mappings[lang]
-  const grammar = pickBy(hl.registry.grammarsByScopeName, function (val, key) {
+  const grammar = pickBy(hl.registry.grammarsByScopeName, (val, key) => {
     return val.name.toLowerCase() === lang
   })
   if (Object.keys(grammar).length) {
@@ -207,7 +207,7 @@ function scopeNameFromLang (highlighter, lang) {
 }
 
 const md = markdown({
-  highlight: function (str, lang) {
+  highlight: (str, lang) => {
     var scope = scopeNameFromLang(hl, lang)
     return hl.highlightSync({
       fileContents: str,
@@ -253,10 +253,10 @@ function entry (a) {
 }
 
 function posts (item, direction, cb) {
-  item.read(item.paths.posts, function (er, items) {
+  item.read(item.paths.posts, (er, items) => {
     if (er) return cb(er)
     var articles = items.map(localsWithItem)
-    articles.sort(function (a, b) {
+    articles.sort((a, b) => {
       return (a.date - b.date) * direction
     })
     return cb(er, articles)
@@ -264,7 +264,7 @@ function posts (item, direction, cb) {
 }
 
 function rss (item, cb) {
-  posts(item, -1, function (er, articles) {
+  posts(item, -1, (er, articles) => {
     if (er) return cb(er)
     var locals = {
       channel: channel(item, articles),
@@ -284,23 +284,23 @@ function article (item, cb) {
 function lastDate (articles) {
   if (!Array.isArray(articles)) return null
   const first = articles[0]
-  return first.date // undefined will default to now
+  return first.date // undefined is fine
 }
 
 function home (item, cb) {
-  posts(item, -1, function (er, articles) {
+  posts(item, -1, (er, articles) => {
     item.date = lastDate(articles)
     if (er) return cb(er)
-    split(item, articles.slice(0, 5), true, function (er, html) {
+    split(item, articles.slice(0, 5), true, (er, html) => {
       cb(er, html)
     })
   })
 }
 
 function archive (item, cb) {
-  posts(item, -1, function (er, articles) {
+  posts(item, -1, (er, articles) => {
     if (er) return cb(er)
-    split(item, articles, false, function (er, html) {
+    split(item, articles, false, (er, html) => {
       cb(er, html)
     })
   })
