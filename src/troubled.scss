@@ -2,10 +2,15 @@
 
 $color: #08c;
 
+@font-face {
+  font-family: 'Source Serif Pro';
+  font-style: italic;
+  font-weight: 400;
+  src: local("Vollkorn"), url("http://fonts.gstatic.com/s/vollkorn/v6/Oiz0tNwvC-Nd29SBQWfWTAsYbbCjybiHxArTLjt7FRU.woff2") format("woff2"); }
+
 body {
   color: #343838;
   background-color: #fff;
-  line-height: 2em;
   font-family: 'Source Serif Pro', serif; }
 
 h1, h2, h3, h4, h5, h6, nav {
@@ -73,12 +78,11 @@ article {
   padding: 1em; }
 
 article p {
+  line-height: 1.5em;
   font-size: 1.25em; }
 
 article em {
-  font-family: 'Vollkorn';
-  font-style: italic;
-}
+  font-style: italic; }
 
 ul {
   padding: 0;

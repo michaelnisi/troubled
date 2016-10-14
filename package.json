@@ -17,7 +17,7 @@
     "less-plugin-clean-css": "^1.5.1",
     "lodash.pickby": "^4.2.1",
     "markdown-it": "^6.0.0",
-    "one-light-syntax": "github:atom/one-light-syntax",
+    "one-light-syntax": "michaelnisi/one-light-syntax",
     "pickup": "^3.0.1",
     "prettydate": "0.0.1",
     "property-ttl": "^1.0.0",
