@@ -1,14 +1,6 @@
-// blake - blake file to generate my site
+'use strict'
 
-// TODO: Reduce caching
-//
-// Assuming this runs only once in a while-, which is true for generating a
-// static site, at least in this case, this isn't well designed, because it
-// keeps everything in memory. Good design would keep the user, a sleeping
-// (HTTP server) process, as lean as possible by not caching anything. Run
-// time is no concern here, there's a sole user running every few hours or
-// days even. Would be interesting to see how much memory could be shaved
-// off by minimizing—and finally disabling—caching.
+// blake - blake file to generate my site
 
 exports.paths = {
   data: 'data',
@@ -59,13 +51,13 @@ function oauth (env) {
 }
 
 function tweet (item, cb) {
-  var header = item.header
-  var url = header.url
-  var params = {
+  const header = item.header
+  let url = header.url
+  const params = {
     screen_name: header.screen_name,
     count: 1
   }
-  var opts = {
+  const opts = {
     url: url += qs.stringify(params),
     oauth: oauth(process.env)
   }
@@ -73,73 +65,85 @@ function tweet (item, cb) {
     if (er) {
       return cb(er)
     }
-    var json
+    let json
     try {
       json = JSON.parse(body)
     } catch (ex) {
       return cb(ex)
     }
     if (json.errors instanceof Array) {
-      var first = json.errors[0]
-      var jsonError = new Error(first.message)
+      const first = json.errors[0]
+      const jsonError = new Error(first.message)
       jsonError.code = first.code
       return cb(jsonError)
     }
     if (!(json instanceof Array)) {
       return cb(new Error('unexpected data: ' + json))
     }
-    var tweet = json[0]
+    const tweet = json[0]
     if (!((tweet != null) && (tweet.text != null))) {
-      var tweetError = new Error('no tweet')
+      const tweetError = new Error('no tweet')
       return cb(tweetError)
     }
-    var text = twitter.autoLink(tweet.text, {
+    const text = twitter.autoLink(tweet.text, {
       urlEntities: tweet.entities.urls
     })
-    var result = compile(item)({ text: text })
+    const result = compile(item)({ text: text })
     return cb(null, result)
   })
 }
 
 function splitLocals (item, items, shift) {
-  var latestItem = shift ? items.shift() : null
-  var threshold = Math.ceil(items.length / 2)
-  var hasItems = items.length > 0
-  var firstColumnItems = hasItems ? items.slice(0, threshold) : null
-  var secondColumnItems = hasItems ? items.slice(threshold) : null
+  const latestItem = shift ? items.shift() : null
+  const threshold = Math.ceil(items.length / 2)
+  const hasItems = items.length > 0
+  const firstColumnItems = hasItems ? items.slice(0, threshold) : null
+  const secondColumnItems = hasItems ? items.slice(threshold) : null
 
-  var locals = localsWithItem(item)
+  const locals = localsWithItem(item)
   locals.items = items
   locals.hasItems = hasItems
   locals.latestItem = latestItem
   locals.firstColumnItems = firstColumnItems
   locals.secondColumnItems = secondColumnItems
+
   return locals
 }
 
 function split (item, items, shift, cb) {
-  var html = compile(item)(splitLocals(item, items, !!shift))
+  const html = compile(item)(splitLocals(item, items, !!shift))
   cb(null, html)
 }
 
 function likes (item, cb) {
-  var url = item.header.url
-  var parser = pickup({ eventMode: true })
-  var articles = []
+  const url = item.header.url
+
   https.get(url, function onGet (res) {
+    const parser = pickup({ eventMode: true })
+
+    function done (er, result) {
+      res.unpipe(parser)
+      parser.removeListener('error', onError)
+      parser.removeListener('entry', onEntry)
+      parser.removeListener('finish', onFinish)
+      cb(er, result)
+    }
+
+    function onError (er) { done(er) }
+
+    let articles = []
+    function onEntry (article) { articles.push(article) }
+
+    function onFinish () {
+      const result = compile(item)({ articles: articles })
+      done(null, result)
+    }
+
+    parser.once('error', onError)
+    parser.on('entry', onEntry)
+    parser.once('finish', onFinish)
+
     res.pipe(parser)
-  })
-  parser.on('error', function onError (er) {
-    cb(er)
-  })
-  parser.on('entry', function onEntry (article) {
-    articles.push(article)
-  })
-  parser.on('finish', function onFinish () {
-    var result = compile(item)({
-      articles: articles
-    })
-    cb(null, result)
   })
 }
 
@@ -155,8 +159,8 @@ function channel (item, articles) {
 }
 
 function cleanup (grammars) {
-  var managed = 0
-  var stops = []
+  let managed = 0
+  const stops = []
   scan()
   return function stopAll () {
     while (stops.length) stops.shift()()
@@ -208,7 +212,7 @@ function scopeNameFromLang (highlighter, lang) {
 
 const md = markdown({
   highlight: (str, lang) => {
-    var scope = scopeNameFromLang(hl, lang)
+    const scope = scopeNameFromLang(hl, lang)
     return hl.highlightSync({
       fileContents: str,
       scopeName: scope
@@ -255,7 +259,7 @@ function entry (a) {
 function posts (item, direction, cb) {
   item.read(item.paths.posts, (er, items) => {
     if (er) return cb(er)
-    var articles = items.map(localsWithItem)
+    const articles = items.map(localsWithItem)
     articles.sort((a, b) => {
       return (a.date - b.date) * direction
     })
@@ -266,18 +270,18 @@ function posts (item, direction, cb) {
 function rss (item, cb) {
   posts(item, -1, (er, articles) => {
     if (er) return cb(er)
-    var locals = {
+    const locals = {
       channel: channel(item, articles),
       entries: articles.map(entry)
     }
-    var xml = compile(item)(locals)
+    const xml = compile(item)(locals)
     return cb(null, xml)
   })
 }
 
 function article (item, cb) {
-  var locals = localsWithItem(item)
-  var html = compile(item)(locals)
+  const locals = localsWithItem(item)
+  const html = compile(item)(locals)
   cb(null, html)
 }
 
