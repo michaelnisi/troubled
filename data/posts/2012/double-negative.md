@@ -1,6 +1,6 @@
 {
   "title": "Double Negative",
-  "description": "In JavaScript we can apply double negation to check if an  object exists, which isn't inelegant.",
+  "description": "In JavaScript we can apply double negation to check if an  object exists, which isn’t inelegant.",
   "date": "2012-05-15",
   "template": "article.pug",
   "path": "2012/05"
@@ -32,4 +32,4 @@ tap.test('has', function (t) {
 })
 ```
 
-You don't know what you don't know.
+You don’t know what you don’t know.

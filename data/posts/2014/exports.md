@@ -1,6 +1,6 @@
 {
   "title": "Exports",
-  "description": "Node Module's exports and module.exports are the same, except when they are not.",
+  "description": "Node Module’s exports and module.exports are the same, except when they are not.",
   "template": "article.pug",
   "date": "2014-07-14",
   "path": "2014/07"
@@ -26,8 +26,8 @@ function Something () {
 
 Folks assign `module.exports` and `exports` simultaneously to allow continious use of the `exports` alias.
 
-`module.exports` is the `Object` received by requiring your module, while `exports` is an alias to the `module.exports` created by the Module system—it`s one of those sugary conveniences that shouldn't exist in the first place. I recommend to ignore it entirely, complying with the [docs](http://nodejs.org/api/modules.html#modules_exports_alias):
+`module.exports` is the `Object` received by requiring your module, while `exports` is an alias to the `module.exports` created by the Module system—it`s one of those sugary conveniences that shouldn’t exist in the first place. I recommend to ignore it entirely, complying with the [docs](http://nodejs.org/api/modules.html#modules_exports_alias):
 
 > As a guideline, if the relationship between `exports` and `module.exports` seems like magic to you, ignore `exports` and only use `module.exports`.
 
-There's more to say about modules, but today I'd rather end on a tangent: Avoid cyclic dependencies! Cyclic dependencies manifest poorly designed modularity—[SoC](http://en.wikipedia.org/wiki/Separation_of_concerns).
+There’s more to say about modules, but today I’d rather end on a tangent: Avoid cyclic dependencies! Cyclic dependencies manifest poorly designed modularity—[SoC](http://en.wikipedia.org/wiki/Separation_of_concerns).

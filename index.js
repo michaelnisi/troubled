@@ -281,8 +281,15 @@ function article (item, cb) {
   cb(null, html)
 }
 
+function lastDate (articles) {
+  if (!Array.isArray(articles)) return null
+  const first = articles[0]
+  return first.date // undefined will default to now
+}
+
 function home (item, cb) {
   posts(item, -1, function (er, articles) {
+    item.date = lastDate(articles)
     if (er) return cb(er)
     split(item, articles.slice(0, 5), true, function (er, html) {
       cb(er, html)
