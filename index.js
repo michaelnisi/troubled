@@ -149,8 +149,8 @@ function likes (item, cb) {
 
 function channel (item, articles) {
   return {
-    pubDate: articles[0].pubDate,
-    lastBuildDate: new Date().toUTCString(),
+    pubDate: item.date,
+    lastBuildDate: item.date,
     title: item.header.title,
     href: item.header.link + item.header.name,
     link: item.header.link,
@@ -270,6 +270,7 @@ function posts (item, direction, cb) {
 function rss (item, cb) {
   posts(item, -1, (er, articles) => {
     if (er) return cb(er)
+    item.date = lastDate(articles)
     const locals = {
       channel: channel(item, articles),
       entries: articles.map(entry)
@@ -293,8 +294,8 @@ function lastDate (articles) {
 
 function home (item, cb) {
   posts(item, -1, (er, articles) => {
-    item.date = lastDate(articles)
     if (er) return cb(er)
+    item.date = lastDate(articles)
     split(item, articles.slice(0, 5), true, (er, html) => {
       cb(er, html)
     })
@@ -303,8 +304,8 @@ function home (item, cb) {
 
 function archive (item, cb) {
   posts(item, -1, (er, articles) => {
-    item.date = lastDate(articles)
     if (er) return cb(er)
+    item.date = lastDate(articles)
     split(item, articles, false, (er, html) => {
       cb(er, html)
     })
