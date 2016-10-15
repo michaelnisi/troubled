@@ -303,6 +303,7 @@ function home (item, cb) {
 
 function archive (item, cb) {
   posts(item, -1, (er, articles) => {
+    item.date = lastDate(articles)
     if (er) return cb(er)
     split(item, articles, false, (er, html) => {
       cb(er, html)
