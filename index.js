@@ -1,14 +1,6 @@
-// blake - blake file to generate my site
+'use strict'
 
-// TODO: Reduce caching
-//
-// Assuming this runs only once in a while--which is true for generating a
-// static site, at least in this case--this isn't well designed, because it
-// keeps everything in memory. A good design would keep the user, a sleeping
-// (HTTP server) process, as lean as possible by not caching anything. Run
-// time is of no concern here, there's a sole user running every few hours
-// or days even. Would be interesting to see how much memory could be shaved
-// off by reducing. It might be best to disable caching entirely.
+// blake - blake file to generate my site
 
 exports.paths = {
   data: 'data',
@@ -18,34 +10,35 @@ exports.paths = {
 }
 
 exports.views = {
-  'rss.jade': rss,
-  'article.jade': article,
-  'home.jade': home,
-  'about.jade': article,
-  'error.jade': article,
-  'archive.jade': archive,
-  'likes.jade': likes,
-  'tweet.jade': tweet
+  'rss.pug': rss,
+  'article.pug': article,
+  'home.pug': home,
+  'about.pug': article,
+  'error.pug': article,
+  'archive.pug': archive,
+  'likes.pug': likes,
+  'tweet.pug': tweet
 }
 
-var Highlights = require('highlights')
-var clean = require('property-ttl')
-var https = require('https')
-var jade = require('jade')
-var markdown = require('markdown-it')
-var pickBy = require('lodash.pickby')
-var pickup = require('pickup')
-var qs = require('querystring')
-var request = require('request')
-var strftime = require('prettydate').strftime
-var twitter = require('twitter-text')
+const Highlights = require('highlights')
+const clean = require('property-ttl')
+const https = require('https')
+const markdown = require('markdown-it')
+const pickBy = require('lodash.pickby')
+const pickup = require('pickup')
+const pug = require('pug')
+const qs = require('querystring')
+const request = require('request')
+const strftime = require('prettydate').strftime
+const twitter = require('twitter-text')
 
 function compile (item) {
-  var opts = {
+  const opts = {
     filename: item.templatePath,
     cache: true
   }
-  return jade.compile(item.template, opts)
+  const f = pug.compile(item.template, opts)
+  return f
 }
 
 function oauth (env) {
@@ -58,87 +51,99 @@ function oauth (env) {
 }
 
 function tweet (item, cb) {
-  var header = item.header
-  var url = header.url
-  var params = {
+  const header = item.header
+  let url = header.url
+  const params = {
     screen_name: header.screen_name,
     count: 1
   }
-  var opts = {
+  const opts = {
     url: url += qs.stringify(params),
     oauth: oauth(process.env)
   }
-  request(opts, function (er, res, body) {
+  request(opts, function onRequest (er, res, body) {
     if (er) {
       return cb(er)
     }
-    var json
+    let json
     try {
       json = JSON.parse(body)
     } catch (ex) {
       return cb(ex)
     }
     if (json.errors instanceof Array) {
-      var first = json.errors[0]
-      var jsonError = new Error(first.message)
+      const first = json.errors[0]
+      const jsonError = new Error(first.message)
       jsonError.code = first.code
       return cb(jsonError)
     }
     if (!(json instanceof Array)) {
       return cb(new Error('unexpected data: ' + json))
     }
-    var tweet = json[0]
+    const tweet = json[0]
     if (!((tweet != null) && (tweet.text != null))) {
-      var tweetError = new Error('no tweet')
+      const tweetError = new Error('no tweet')
       return cb(tweetError)
     }
-    var text = twitter.autoLink(tweet.text, {
+    const text = twitter.autoLink(tweet.text, {
       urlEntities: tweet.entities.urls
     })
-    var result = compile(item)({ text: text })
+    const result = compile(item)({ text: text })
     return cb(null, result)
   })
 }
 
 function splitLocals (item, items, shift) {
-  var latestItem = shift ? items.shift() : null
-  var threshold = Math.ceil(items.length / 2)
-  var hasItems = items.length > 0
-  var firstColumnItems = hasItems ? items.slice(0, threshold) : null
-  var secondColumnItems = hasItems ? items.slice(threshold) : null
+  const latestItem = shift ? items.shift() : null
+  const threshold = Math.ceil(items.length / 2)
+  const hasItems = items.length > 0
+  const firstColumnItems = hasItems ? items.slice(0, threshold) : null
+  const secondColumnItems = hasItems ? items.slice(threshold) : null
 
-  var locals = localsWithItem(item)
+  const locals = localsWithItem(item)
   locals.items = items
   locals.hasItems = hasItems
   locals.latestItem = latestItem
   locals.firstColumnItems = firstColumnItems
   locals.secondColumnItems = secondColumnItems
+
   return locals
 }
 
 function split (item, items, shift, cb) {
-  var html = compile(item)(splitLocals(item, items, !!shift))
+  const html = compile(item)(splitLocals(item, items, !!shift))
   cb(null, html)
 }
 
 function likes (item, cb) {
-  var url = item.header.url
-  var parser = pickup({ eventMode: true })
-  var articles = []
-  https.get(url, function (res) {
+  const url = item.header.url
+
+  https.get(url, function onGet (res) {
+    const parser = pickup({ eventMode: true })
+
+    function done (er, result) {
+      res.unpipe(parser)
+      parser.removeListener('error', onError)
+      parser.removeListener('entry', onEntry)
+      parser.removeListener('finish', onFinish)
+      cb(er, result)
+    }
+
+    function onError (er) { done(er) }
+
+    let articles = []
+    function onEntry (article) { articles.push(article) }
+
+    function onFinish () {
+      const result = compile(item)({ articles: articles })
+      done(null, result)
+    }
+
+    parser.once('error', onError)
+    parser.on('entry', onEntry)
+    parser.once('finish', onFinish)
+
     res.pipe(parser)
-  })
-  parser.on('error', function (er) {
-    cb(er)
-  })
-  parser.on('entry', function (article) {
-    articles.push(article)
-  })
-  parser.on('finish', function () {
-    var result = compile(item)({
-      articles: articles
-    })
-    cb(null, result)
   })
 }
 
@@ -154,8 +159,8 @@ function channel (item, articles) {
 }
 
 function cleanup (grammars) {
-  var managed = 0
-  var stops = []
+  let managed = 0
+  const stops = []
   scan()
   return function stopAll () {
     while (stops.length) stops.shift()()
@@ -163,7 +168,7 @@ function cleanup (grammars) {
   function scan () {
     while (managed < grammars.length - 1) {
       stops.push(
-        clean(grammars[managed], 'repository', 2000, function () {
+        clean(grammars[managed], 'repository', 2000, () => {
           scan() // start watching new grammars if they are added later.
         }),
         clean(grammars[managed++], 'initialRule', 2000)
@@ -172,21 +177,21 @@ function cleanup (grammars) {
   }
 }
 
-var hl = new Highlights()
+const hl = new Highlights()
 cleanup(hl.registry.grammars)
 
-var languages = [
+const languages = [
   'language-erlang',
   'language-swift'
 ]
 
-languages.forEach(function (language) {
+languages.forEach((language) => {
   hl.requireGrammarsSync({
     modulePath: require.resolve(language + '/package.json')
   })
 })
 
-var mappings = {
+const mappings = {
   sh: 'source.shell',
   markdown: 'source.gfm',
   erb: 'text.html.erb'
@@ -194,20 +199,20 @@ var mappings = {
 
 function scopeNameFromLang (highlighter, lang) {
   if (mappings[lang]) return mappings[lang]
-  var grammar = pickBy(hl.registry.grammarsByScopeName, function (val, key) {
+  const grammar = pickBy(hl.registry.grammarsByScopeName, (val, key) => {
     return val.name.toLowerCase() === lang
   })
   if (Object.keys(grammar).length) {
     return Object.keys(grammar)[0]
   }
-  var name = 'source.' + lang
+  const name = 'source.' + lang
   mappings[lang] = name
   return name
 }
 
-var md = markdown({
-  highlight: function (str, lang) {
-    var scope = scopeNameFromLang(hl, lang)
+const md = markdown({
+  highlight: (str, lang) => {
+    const scope = scopeNameFromLang(hl, lang)
     return hl.highlightSync({
       fileContents: str,
       scopeName: scope
@@ -252,10 +257,10 @@ function entry (a) {
 }
 
 function posts (item, direction, cb) {
-  item.read(item.paths.posts, function (er, items) {
+  item.read(item.paths.posts, (er, items) => {
     if (er) return cb(er)
-    var articles = items.map(localsWithItem)
-    articles.sort(function (a, b) {
+    const articles = items.map(localsWithItem)
+    articles.sort((a, b) => {
       return (a.date - b.date) * direction
     })
     return cb(er, articles)
@@ -263,36 +268,43 @@ function posts (item, direction, cb) {
 }
 
 function rss (item, cb) {
-  posts(item, -1, function (er, articles) {
+  posts(item, -1, (er, articles) => {
     if (er) return cb(er)
-    var locals = {
+    const locals = {
       channel: channel(item, articles),
       entries: articles.map(entry)
     }
-    var xml = compile(item)(locals)
+    const xml = compile(item)(locals)
     return cb(null, xml)
   })
 }
 
 function article (item, cb) {
-  var locals = localsWithItem(item)
-  var html = compile(item)(locals)
+  const locals = localsWithItem(item)
+  const html = compile(item)(locals)
   cb(null, html)
 }
 
+function lastDate (articles) {
+  if (!Array.isArray(articles)) return null
+  const first = articles[0]
+  return first.date // undefined is fine
+}
+
 function home (item, cb) {
-  posts(item, -1, function (er, articles) {
+  posts(item, -1, (er, articles) => {
+    item.date = lastDate(articles)
     if (er) return cb(er)
-    split(item, articles.slice(0, 5), true, function (er, html) {
+    split(item, articles.slice(0, 5), true, (er, html) => {
       cb(er, html)
     })
   })
 }
 
 function archive (item, cb) {
-  posts(item, -1, function (er, articles) {
+  posts(item, -1, (er, articles) => {
     if (er) return cb(er)
-    split(item, articles, false, function (er, html) {
+    split(item, articles, false, (er, html) => {
       cb(er, html)
     })
   })

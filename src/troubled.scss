@@ -25,19 +25,24 @@ h1 {
 h2 {
   font-size: 2em;
   letter-spacing: .1em;
-  text-align: center;
   text-align: center; }
 
 h3 {
   font-size: 1.25em;
   letter-spacing: .1em; }
 
-h4 {
+h4, h5 {
   font-family: 'Source Serif Pro', serif;
+  font-weight: 400; }
+
+h4 {
   font-size: 1.25em;
   font-style: italic;
-  font-weight: 400;
   text-align: center; }
+
+h5 {
+  text-transform: uppercase;
+  font-size: 1em; }
 
 pre, code {
   font-family: 'Source Code Pro', monospace;
@@ -73,17 +78,17 @@ header p {
 article {
   padding-bottom: 1em; }
 
+article em {
+  font-style: italic; }
+
+article p, article ul li {
+  line-height: 1.5em;
+  font-size: 1.25em;
+  list-style: inside disc; }
+
 .editor {
   background: #f7f7f7;
   padding: 1em; }
-
-article p {
-  font-size: 1.25em; }
-
-article em {
-  font-family: 'Vollkorn';
-  font-style: italic;
-}
 
 ul {
   padding: 0;
@@ -151,6 +156,10 @@ div#portrait {
 #icons {
   text-align: center;
   width: auto; }
+
+#icons li {
+  list-style: none;
+}
 
 #icons li a {
   width: 1em; }

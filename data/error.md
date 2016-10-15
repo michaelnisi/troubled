@@ -1,6 +1,6 @@
 {
   "title": "Error",
-  "template": "error.jade",
+  "template": "error.pug",
   "date": "2012-10-15",
   "name": "error.html"
 }

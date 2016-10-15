@@ -1,7 +1,7 @@
 {
   "title": "Serving Static Files in LAN",
   "description": "While working on web UIs, it is often convenient to serve static files over HTTP in the local network, in order to test on multiple devices.",
-  "template": "article.jade",
+  "template": "article.pug",
   "date": "2014-04-25",
   "path": "2014/04"
 }
@@ -38,7 +38,7 @@ Now you can browse to `http://YourComputerName.local` with your phone or tablet 
 
 Trivial, of course, but I kept forgetting. Maybe now, having it noted here, on the next, rather rare, occassion, when I have to fiddle with CSS, I will remember.
 
-*But wait!* You don't really want to have [httpd](http://httpd.apache.org/docs/2.2/programs/httpd.html) running on your system, do you—I mean, who could possibly want that? Why not use [Node](http://nodejs.org/) to write a little server and save it to a file named `stserver.js`?
+*But wait!* You don’t really want to have [httpd](http://httpd.apache.org/docs/2.2/programs/httpd.html) running on your system, do you—I mean, who could possibly want that? Why not use [Node](http://nodejs.org/) to write a little server and save it to a file named `stserver.js`?
 
 ```js
 var http = require('http')
