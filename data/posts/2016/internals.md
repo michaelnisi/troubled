@@ -50,7 +50,7 @@ With this simple regular expression, I can test without modifying the environmen
 node test/http.js
 ```
 
-And my npm manifests, forgoing the `NODE TEST=1`, look better too:
+And my npm manifests, forgoing the `NODE_TEST=1`, look better too:
 
 ```
 "scripts": {
