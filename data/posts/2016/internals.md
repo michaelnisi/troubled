@@ -1,13 +1,13 @@
 {
   "title": "Internal Affairs",
   "description": "Two ways to apply conditional exports to make internal functions testable in Node.js and why you shouldn’t.",
-  "date": "2016-12-03",
+  "date": "2016-12-07",
   "path": "2016/12"
 }
 
-TEST A LITTLE, code a litte. During development, I want to test every function I write as I go along, building a code base of small tested units. Iterating like this often requires for testing of private functions, not public to the API of the program. To not over expose the API, we need a way to conditionally export functions to extend the surface of our program during testing. I know, some people argue, that’s not what unit testing is for, because now you’re testing implementation, instead of application, but that’s exactly what I want to test: implementation. I tend to identify required functions, which is the hardest part, and develop them by oscilating between test and code, where code is the wrong word, both are code, and together with documentation they shape the program—from the inside.
+TEST A LITTLE, code a little. During development, I want to test every function I write as I go along, building up a code base of small tested units. Iterating like this often requires for testing of private functions, not public to the API of the program. To not clutter the API by overexposing, I need a way to conditionally export functions to temporarily extend the surface of my program during testing. I know, some people argue, that’s not what unit testing is for, because now you’re testing implementation, instead of application; but that’s exactly what I want to test: implementation. I tend to identify required functions, which is the hardest part, and develop them by oscilating between test and code. The smaller the units, the more flexible I am.
 
-With EUnit, a unit testing framework for Erlang, we use the `TEST` macro for conditional compilation:
+With [EUnit](http://erlang.org/doc/man/eunit.html), a unit testing framework for [Erlang](https://www.erlang.org/), we use the `TEST` macro for conditional compilation:
 
 ```erlang
 -ifdef(TEST).
@@ -15,6 +15,10 @@ some_test() ->
   1 = 2.
 -endif.
 ```
+
+If the macro is defined, the test is compiled and will be run by EUnit, it runs all functions ending in ˚_test()˚ as simple tests. Speaking of EUnit, here is its interpretion of the term **unit testing**:
+
+> Testing that a program unit behaves as it is supposed to do (in itself), according to its specifications. Unit tests have an important function as regression tests, when the program later is modified for some reason, since they check that the program still behaves according to specification.
 
 Interpreted at runtime and having no macros at command, how can we conditionally run code in JavaScript, or more precisely, export functions in Node.js? In Node, we write modules, these modules export functions, which make up the external APIs of our modules. So, how then would we test functions that are not exported?
 
