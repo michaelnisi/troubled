@@ -1,7 +1,7 @@
 {
   "title": "The Troubled Programmer",
   "description": "Notes on Software Making",
-  "link": "http://troubled.pro/",
+  "link": "https://troubled.pro/",
   "template": "rss.pug",
   "name": "rss.xml"
 }
