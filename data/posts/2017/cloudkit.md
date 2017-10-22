@@ -9,3 +9,11 @@ The CloudKit schema is structured into environments: development and production;
 The elemental unit in CloudKit is CKRecord, records can contain simple types or pointers to other records, using parental references to structure data. Records are temporary containers, from which you‘d build your domain specific structures. Think, JSON with pointers.
 
 To obtain the current user name, which is required for certain things, creating zones, for example, you can use CKFetchRecordsOperation.fetchCurrentUserRecordOperation(), CKContainer.fetchUserRecordID(), or simple the constant CKCurrentUserDefaultName.
+
+The truth is on the server.
+
+To optimize request ranges, limiting data transfer, Cloudkit uses server change tokens, you receive from and pass to the server with each request. In a typical refresh cycle you might first fetch data base changes, receiving identifiers of all zones that have been changed after a specific server change token.
+
+> This per-database CKServerChangeToken is not to be confused with the per-recordZone CKServerChangeToken from CKFetchRecordZoneChangesOperation.
+
+With the identifiers of changed zones, you‘d now fetch the changed records, including deleted ones, again, passing a server change token, except now a token per zone.
