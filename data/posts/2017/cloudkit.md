@@ -16,7 +16,9 @@ The CloudKit framework is a iCloud client for structured data, leaving local sto
 
 The CloudKit schema is structured into environments: development and production; databases: private, shared, and public; and records.
 
-The elemental unit in CloudKit is CKRecord, records can contain simple types or pointers to other records, using parental references to structure data. Records are temporary containers, from which you‘d build your domain specific structures. Think, JSON with pointers.
+The elemental unit in CloudKit is CKRecord, records can contain simple types or pointers to other records, using parental references to structure data. Records are temporary containers, from which you‘d build your domain specific structures.
+
+The server, iCloud, is the source of truth, the app maintains a local cache, CloudKit is the glue between the two. **The truth lies in the cloud** is the fundamental assumption to internalize while working with Cloudkit. Consequently, this means the app should be able to toss the local cache entirely, starting from scratch by pulling data from iCloud, while at the same time, and that’s the interesting part, the source of truth, iCloud, might not be available due to network outage, for example, or the user might not have an iCloud account, meaning the app has to be build in such a way, that it’s usable entirely without iCloud. This leaves us with: **the truth lies in the cloud, if it’s available.** Sounds like fun? :revolving_hearts:
 
 To obtain the current user name, which is required for certain things, creating zones, for example, you can use CKFetchRecordsOperation.fetchCurrentUserRecordOperation(), CKContainer.fetchUserRecordID(), or simple the constant CKCurrentUserDefaultName.
 
