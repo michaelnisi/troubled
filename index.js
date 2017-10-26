@@ -115,6 +115,17 @@ function split (item, items, shift, cb) {
   cb(null, html)
 }
 
+function updated (article) {
+  if (typeof article.updated !== 'string') {
+    return null
+  }
+  const date = new Date(article.updated)
+  if (isNaN(date.getTime())) {
+    return null
+  }
+  return date
+}
+
 function likes (item, cb) {
   const url = item.header.url
 
@@ -135,7 +146,22 @@ function likes (item, cb) {
     function onEntry (article) { articles.push(article) }
 
     function onFinish () {
-      const result = compile(item)({ articles: articles })
+      let error
+
+      const end = Math.min(10, articles.length)
+      const topTen = articles.sort((a, b) => {
+        const dateA = updated(a)
+        const dateB = updated(b)
+        if (!dateA || !dateB) {
+          error = new Error('missing date(s)')
+          return 0
+        }
+        return dateB - dateA
+      }).slice(0, end)
+
+      if (error) return cb(error)
+
+      const result = compile(item)({ articles: topTen })
       done(null, result)
     }
 
