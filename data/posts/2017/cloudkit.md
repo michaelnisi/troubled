@@ -14,11 +14,23 @@ Apple‘s CloudKit enables you to store structured data in iCloud, leveraging Ap
 
 The CloudKit framework is a iCloud client for structured data, leaving local storage to its users, decoupling local and remote data structures, while providing efficient diffing between the two.
 
-The CloudKit schema is structured into environments: development and production; databases: private, shared, and public; and records.
+The CloudKit schema is structured into environments: development and production; databases: private, shared, and public; zones, and records.
+
+TODO: Database
+
+TODO: Zone
 
 The elemental unit in CloudKit is CKRecord, records can contain simple types or pointers to other records, using parental references to structure data. Records are temporary containers, from which you‘d build your domain specific structures. Records are identified by CKRecordID, using a zone ID, CKRecordZoneID, and a record name, which, for automatically created records, is a UUID, and is therefore unique across zones. Custom names must be unique per-zone.
 
-The server, iCloud, is the source of truth, the app maintains a local cache, CloudKit is the glue between the two. **The truth lies in the cloud** is the fundamental assumption to internalize while working with Cloudkit. Consequently, this means the app should be able to toss the local cache entirely, starting from scratch by pulling data from iCloud, while at the same time, and that’s the interesting part, the source of truth, iCloud, might not be available due to network outage, for example, or the user might not have an iCloud account, meaning the app has to be build in such a way, that it’s usable entirely without iCloud. This leaves us with: **the truth lies in the cloud, if it’s available.** Sounds like fun? :revolving_hearts:
+TRUTH is a multifaceted, in life and in distributed systems. In a iCloud based system, the iCloud server is the source of truth, while the app maintains a local cache, and CloudKit is the glue between the two. **The truth lies in the cloud** is the fundamental assumption to internalize when working with CloudKit. Consequently, this means the app should be able to toss the local cache entirely, starting from scratch by pulling data from iCloud. While at the same time, and that’s the interesting part, the source of truth, iCloud, might not be available due to network outage, for example, or the user might not have an iCloud account at all, meaning the app has to be build in such a way, that it’s usable without iCloud, ergo **the truth lies in the cloud, if it’s available.** Sounds like fun? 💞
+
+The stateful access point of the CloudKit API is CKContainer. It owns an operation queue, to which you add operation to interact with a iCloud database.
+
+TODO: Operations
+
+While pushing data to the server with CKModifyRecordsOperation you can pass client change token, probably a UUID. The server will include this in the result of your next fetch as means for you to check if your last push went through. It doesn’t really help much, of course, but at least you can adjust your assumptions. Contrary to the server change tokens, which are per database and per zone, there’s only one client change token per database. I just mention this, because it tripped me up, during my first experiments with this API.
+
+Comparing server change tokens, I’ve noticed that they, database change tokens at least, are updated with each request, wether data on the server changed or not. Probably to track time between requests on the server.
 
 To obtain the current user name, which is required for certain things, creating zones, for example, you can use CKFetchRecordsOperation.fetchCurrentUserRecordOperation(), CKContainer.fetchUserRecordID(), or simple the constant CKCurrentUserDefaultName.
 
