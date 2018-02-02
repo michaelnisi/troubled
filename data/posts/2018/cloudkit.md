@@ -23,7 +23,7 @@ The CloudKit framework is a iCloud client for structured data, leaving local sto
 
 The CloudKit schema is structured into environments: development and production; databases: private, shared, and public; zones, and records.
 
-For a quick conceptual refresher, watch the first part of this presentation from WWDC 2017, [Build Better Apps with CloudKit Dashboard](https://developer.apple.com/videos/play/wwdc2017/226/), Session 226, Dan Browning, CloudKit:
+For a quick conceptual refresher, watch the first part of this presentation from WWDC 2017, [Build Better Apps with CloudKit Dashboard](https://developer.apple.com/videos/play/wwdc2017/226/), Session 226, [@djbrowning](https://twitter.com/djbrowning), CloudKit:
 
 TODO: Database
 
@@ -31,7 +31,7 @@ TODO: Zone
 
 The elemental unit in CloudKit is `CKRecord`, records can contain simple types or pointers to other records, using parental references to structure data. Records are temporary containers, from which you’d build your domain specific structures. Records are identified by `CKRecordID`, using a zone ID, `CKRecordZoneID`, and a record name, which, for automatically created records, is a UUID, and is therefore unique across zones. Custom names must be unique per-zone.
 
-Truth is multifaceted, in life and computing, especially in distributed systems. Sync, synchronization of state between different computers, is one of those classic computer science problems. [Paxos](https://lamport.azurewebsites.net/pubs/lamport-paxos.pdf), et al. Where’s truth? For CloudKit sync, truth is on the server. In a iCloud based system, the iCloud server is the source of truth, while the app maintains a local cache, and CloudKit is the glue between the two. **The truth lies in the cloud** is the fundamental assumption to internalize when working with CloudKit. Consequently, this means the app should be able to toss the local cache entirely, starting from scratch by pulling data from iCloud. While at the same time, and that’s the interesting part, the source of truth, iCloud, might not be available due to network outage, for example, or the user might not have an iCloud account at all, meaning the app has to be build in such a way, that it’s usable without iCloud, ergo **the truth lies in the cloud, if it’s available.**
+Truth is multifaceted, in life and computing, especially in distributed systems. Sync, synchronization of state between different computers, is one of those classic computer science problems. [Paxos](https://lamport.azurewebsites.net/pubs/lamport-paxos.pdf), et al. What is true? Or better, where is truth? For CloudKit sync, truth is on the server. In a iCloud based system, the iCloud server is the source of truth, while the app maintains a local cache, and CloudKit is the glue between the two. **The truth lies in the cloud** is the fundamental assumption to internalize when working with CloudKit. Consequently, this means the app should be able to toss the local cache entirely, starting from scratch by pulling data from iCloud. While at the same time, and that’s the interesting part, the source of truth, iCloud, might not be available due to network outage, for example, or the user might not have an iCloud account at all, meaning the app has to be build in such a way, that it’s usable without iCloud, ergo **the truth lies in the cloud, if it’s available.**
 
 Sounds like fun? 😌
 
