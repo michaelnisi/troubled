@@ -10,14 +10,14 @@
 
 Apple’s CloudKit enables you to store structured data in iCloud, leveraging Apple’s vast infrastructure for free, given you have a developer account, of course. Implicit authentication, little operational effort, and low costs make CloudKit the obvious choice for synchronized data storage on Apple platforms.
 
-Low costs, you say? 🤑
+But wait, how much exactly does it cost?
 
 > Simply put: you're not going to be paying for CloudKit. Period.
 —[@guilhermerambo](https://medium.com/@guilhermerambo/synchronizing-data-with-cloudkit-94c6246a3fda).
 
 Selling multiple device types to its users, who often own more than one Apple device, Apple must provide a somewhat integrated user experience across macOS, iOS, watchOS, and tvOS. They can impossibly rely on their developer community alone, to get sync right, a reasonably hard but repetitive problem—again and again, for each and every app.
 
-**Apple has to provide a default route for data synchronization.** And they have implemented and iterated on ways to store, with [CloudKit](https://developer.apple.com/documentation/cloudkit), and review, with [CloudKit Dashboard](https://developer.apple.com/library/content/documentation/DataManagement/Conceptual/CloudKitQuickStart/EditingSchemesUsingCloudKitDashboard/EditingSchemesUsingCloudKitDashboard.html), structured data in [iCloud](https://www.apple.com/lae/icloud/), making sync easier—not trivial, it never will be, but manageable—even pleasant, I have to say.
+**Apple has to carve a well-trodden path for data synchronization.** And they have been implementing, dog-fooding, and iterating on ways to store, with [CloudKit](https://developer.apple.com/documentation/cloudkit), and review, with [CloudKit Dashboard](https://developer.apple.com/library/content/documentation/DataManagement/Conceptual/CloudKitQuickStart/EditingSchemesUsingCloudKitDashboard/EditingSchemesUsingCloudKitDashboard.html), structured data in [iCloud](https://www.apple.com/lae/icloud/), making sync easier—not trivial, of course—it never will be—but manageable, even pleasant, I have to say. If CloudKit is ready for production in Apple’s own apps, like Music, Photos, and Notes; chances are it might be ready for your app.
 
 The CloudKit framework is a iCloud client for structured data, leaving local storage to its users, decoupling local and remote data structures, while providing efficient diffing between the two.
 
@@ -32,8 +32,6 @@ TODO: Zone
 The elemental unit in CloudKit is `CKRecord`, records can contain simple types or pointers to other records, using parental references to structure data. Records are temporary containers, from which you’d build your domain specific structures. Records are identified by `CKRecordID`, using a zone ID, `CKRecordZoneID`, and a record name, which, for automatically created records, is a UUID, and is therefore unique across zones. Custom names must be unique per-zone.
 
 Truth is multifaceted, in life and computing, especially in distributed systems. Sync, synchronization of state between different computers, is one of those classic computer science problems. [Paxos](https://lamport.azurewebsites.net/pubs/lamport-paxos.pdf), et al. What is true? Or better, where is truth? For CloudKit sync, truth is on the server. In a iCloud based system, the iCloud server is the source of truth, while the app maintains a local cache, and CloudKit is the glue between the two. **The truth lies in the cloud** is the fundamental assumption to internalize when working with CloudKit. Consequently, this means the app should be able to toss the local cache entirely, starting from scratch by pulling data from iCloud. While at the same time, and that’s the interesting part, the source of truth, iCloud, might not be available due to network outage, for example, or the user might not have an iCloud account at all, meaning the app has to be build in such a way, that it’s usable without iCloud, ergo **the truth lies in the cloud, if it’s available.**
-
-Sounds like fun? 😌
 
 The stateful access point of the CloudKit API is `CKContainer`. It owns an operation queue, to which you add operation to interact with a iCloud database.
 
@@ -55,5 +53,5 @@ To minimize data transfer, CloudKit uses change tokens. In a typical refresh cyc
 
 With the identifiers of changed zones, you’d now fetch the changed records, including deleted ones, again, passing a token, except now, the per-recordZone server change token.
 
-As with all network programming—and although conveniently high level, that’s what it is—pessimistic error handling, expecting the worst, is paramount, when using CloudKit.
+As with all network programming, although conveniently high level, pessimistic error handling—anticipating the worst—is paramount, when using CloudKit. Attachment to expectation causes suffering.
 
