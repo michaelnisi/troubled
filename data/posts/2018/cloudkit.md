@@ -19,7 +19,7 @@ Selling multiple device types to its users, who often own more than one Apple de
 
 Apple has been carving a well-trodden path for data synchronization, implementing, dog-fooding with their own apps, and iterating on ways to store, with [CloudKit](https://developer.apple.com/documentation/cloudkit), and review, with [CloudKit Dashboard](https://developer.apple.com/library/content/documentation/DataManagement/Conceptual/CloudKitQuickStart/EditingSchemesUsingCloudKitDashboard/EditingSchemesUsingCloudKitDashboard.html), structured data in [iCloud](https://www.apple.com/lae/icloud/), making sync easier—not trivial, of course—it never will be—but manageable, even pleasant, I have to say. If CloudKit is ready for production apps like Music, Photos, and Notes; chances are it might be ready for your app as well.
 
-The CloudKit framework is a iCloud client for structured data, decoupling local and remote data structures, while providing efficient diffing between the two. Local storage is left to its users.
+The CloudKit framework implements an iCloud client for structured data, decoupling local and remote data structures, while providing efficient diffing between the two. Local storage is left to us, its users.
 
 Data in iCloud is segregated and encapsulated in containers, owned by developers—apps of other developers cannot access your containers.
 
@@ -37,7 +37,7 @@ While pushing data to the server with CKModifyRecordsOperation you can pass clie
 
 Comparing server change tokens, I’ve noticed that they, database change tokens at least, are updated with each request, wether data on the server changed or not. Probably to track time between requests on the server.
 
-To obtain the current user name, which is required for certain things, creating zones, for example, you can use CKFetchRecordsOperation.fetchCurrentUserRecordOperation(), `CKContainer`.fetchUserRecordID(), or simple the constant CKCurrentUserDefaultName.
+To obtain the current user name, which is required for certain things, creating zones, for example, use the global constant `CKCurrentUserDefaultName`.
 
 A powerful feature of CloudKit is change tracking. Being able to limit data transfers to just actual changes since the last request, including deletions, obviously, makes all the difference. Depending on your app, CloudKit request-response-cycles can be designed to be neglectably short, transferring tiny chunks of data to provide a seemless user experience.
 
