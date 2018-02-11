@@ -13,7 +13,7 @@
 
 As an application developer, my objective is to build meaningful mobile applications for end users, while improving software reliability and maintainability.
 
-In this blog, I write about software making, open source, and quality. With my background in art and design, I hope to bring a holistic perspective to the field.
+In this blog, I write about software making, open source, and quality. With my background in art and design, I bring a holistic perspective to the field.
 
 > Sing clearvoice Muse, of Hephaestus famed for skill. With bright-eyed Athena he taught men glorious crafts throughout the world—men who before used to dwell in caves in the mountains like wild beasts. But now that they have learned crafts through Hephaestus famous for his art they live a peaceful life in their own houses the whole year round.
 >—*Homer*
