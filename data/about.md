@@ -18,5 +18,4 @@ In this blog, I write about software making, open source, and quality. With my b
 > Sing clearvoice Muse, of Hephaestus famed for skill. With bright-eyed Athena he taught men glorious crafts throughout the world—men who before used to dwell in caves in the mountains like wild beasts. But now that they have learned crafts through Hephaestus famous for his art they live a peaceful life in their own houses the whole year round.
 >—*Homer*
 
-
 If you have any questions, reach me by email at <michael.nisi@gmail.com>.
