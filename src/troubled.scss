@@ -159,6 +159,7 @@ div#portrait {
   width: auto; }
 
 #icons li {
+  margin-top: 3em;
   list-style: none;
 }
 
@@ -166,8 +167,8 @@ div#portrait {
   width: 1em; }
 
 #icons li a img {
-  width: 7em;
-  padding-top: 2em; }
+  max-width: 7em;
+  max-height: 7em; }
 
 /* Footer */
 #page_footer {
