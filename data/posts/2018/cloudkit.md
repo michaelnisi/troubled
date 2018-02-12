@@ -6,7 +6,7 @@
   "path": "2018/02"
 }
 
-[CloudKit](https://developer.apple.com/icloud/cloudkit/) is one of Apple’s three [iCloud](https://developer.apple.com/icloud/) app services—the other two are key-value storage and iCloud documents. CloudKit enables you to store structured data in iCloud, leveraging Apple’s vast infrastructure for free, given you have a developer account, of course.
+[CloudKit](https://developer.apple.com/icloud/cloudkit/) is Apple’s cloud backend service and application development framework for structured data. It lets developers leverage Apple’s vast infrastructure, basically for free, given you have a developer account, of course.
 
 But wait, how much exactly does it cost?
 
@@ -15,9 +15,9 @@ But wait, how much exactly does it cost?
 
 Selling multiple device types to its users, who often own more than one Apple device, Apple must provide a somewhat integrated user experience across macOS, iOS, watchOS, and tvOS. They can impossibly rely on their developer community alone, to get sync right, a reasonably hard and repetitive problem, for each and every app.
 
-Apple has been carving a well-trodden path for data synchronization, implementing, dog-fooding with their own apps, and iterating on ways to store, with [CloudKit](https://developer.apple.com/documentation/cloudkit), and review, with [CloudKit Dashboard](https://developer.apple.com/library/content/documentation/DataManagement/Conceptual/CloudKitQuickStart/EditingSchemesUsingCloudKitDashboard/EditingSchemesUsingCloudKitDashboard.html), structured data in [iCloud](https://www.apple.com/lae/icloud/), making sync easier—not trivial, of course—it never will be—but manageable, even pleasant, I have to say. If CloudKit is ready for production apps like Music, Photos, and Notes; chances are it might be ready for your app as well.
+Apple has been carving a well-trodden path for data synchronization, implementing, dog-fooding with their own apps, and iterating on ways to store, with [CloudKit](https://developer.apple.com/documentation/cloudkit), and review, with [CloudKit Dashboard](https://developer.apple.com/library/content/documentation/DataManagement/Conceptual/CloudKitQuickStart/EditingSchemesUsingCloudKitDashboard/EditingSchemesUsingCloudKitDashboard.html), structured data in [iCloud](https://www.apple.com/lae/icloud/), making sync easier—not trivial, of course—it never will be—but manageable, even pleasant, I have to say. If CloudKit is ready for production apps like [iCloud Drive](https://www.apple.com/lae/icloud/icloud-drive/), [Photos](https://www.apple.com/ios/photos/), and Notes; chances are it might be ready for your app as well.
 
-While I’m writing this, Apple released this [paper](www.vldb.org/pvldb/vol11/p540-shraer.pdf), which I have to go read now, before continuing.
+While I’m writing this, Apple released this [paper](http://www.vldb.org/pvldb/vol11/p540-shraer.pdf), which I have to go read now, before continuing.
 
 [Maintaining a local cache of CloudKit Records](https://developer.apple.com/library/content/documentation/DataManagement/Conceptual/CloudKitQuickStart/MaintainingaLocalCacheofCloudKitRecords/MaintainingaLocalCacheofCloudKitRecords.html#//apple_ref/doc/uid/TP40014987-CH12-SW1) is well documented, I won’t go into details here, but I will try to provide a conceptual overview and point out stepping stones, I found implementing sync with CloudKit.
 
