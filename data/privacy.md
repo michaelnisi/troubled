@@ -1,6 +1,7 @@
 {
   "title": "Privacy Policy",
   "template": "article.pug",
+  "description": "The Troubled Privacy Policy was updated on June 16, 2018.",
   "name": "privacy.html",
   "date": "2018-06-15"
 }
