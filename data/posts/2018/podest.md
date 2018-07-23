@@ -12,11 +12,17 @@ While I’m busy releasing my new podcast app on the App Store, I’m reminded o
 
 I remember listening to my first podcasts on my computer, which sounds weird now, like eating soup with a fork. Among the first shows I’ve followed, come the iPhone, were [StackOverflow](https://stackoverflow.blog/2008/04/17/podcast-1/), [The Book Review Podcast](https://www.nytimes.com/column/book-review-podcast) by [The Times](https://www.nytimes.com), and, Chris Lydon’s, true founding father of podcasting, [Radio Open Source](http://radioopensource.org). I fondly remember immersing myself into [Chaos Radio Express](https://cre.fm) and my beloved [Küchenradio](https://www.kuechenstud.io/kuechenradio/), pioneering German shows, back in 2010. Podcasts are a personal medium, indeed.
 
-Today, podcasts are blooming, [The Daily](https://www.nytimes.com/podcasts/the-daily) quickly became a household name, [The New Yorker Radio Hour](https://www.newyorker.com/podcast/the-new-yorker-radio-hour) is a classic by now, and Britain’s [Monocle](https://monocle.com) has its own [radio station](https://monocle.com/radio/). Dedicated podcast labels flourish: [Radiotopia](https://www.radiotopia.fm), [Gimlet](https://www.gimletmedia.com), [Panoply](https://panoply.fm), to name a few. For me, no week goes by without [Slate’s Culture Gabfest](http://www.slate.com/articles/podcasts/culturegabfest.html) and [Still Processing](https://www.nytimes.com/podcasts/still-processing), another fine [Pineapple](http://pineapple.fm) production.
+Today, podcasts are in bloom—again. [The Daily](https://www.nytimes.com/podcasts/the-daily) quickly became a household name, [The New Yorker Radio Hour](https://www.newyorker.com/podcast/the-new-yorker-radio-hour) is a classic by now, and Britain’s [Monocle](https://monocle.com) has its own [radio station](https://monocle.com/radio/). Dedicated podcast labels flourish: [Radiotopia](https://www.radiotopia.fm), [Gimlet](https://www.gimletmedia.com), [Crooked Media](https://crooked.com) to name a few. For me, no week goes by without [Slate’s Culture Gabfest](http://www.slate.com/articles/podcasts/culturegabfest.html) and [Still Processing](https://www.nytimes.com/podcasts/still-processing), another fine [Pineapple](http://pineapple.fm) production.
+
+#### Apps are made of priorities and compromises
+
+I forget how I listened first, on the Mac, *iTunes*, I guess. On the phone, I used [Podcasts](https://itunes.apple.com/us/app/podcasts/id525463029) and [Downcast](https://itunes.apple.com/us/app/downcast/id393858566), which is still around, as I just saw, scanning the App Store search results for the term 'Podcasts'. After [Instacast](https://itunes.apple.com/us/app/instacast-core/id108386833), the one with the lifted name and problems with too many subscriptions, I returned to *Podcasts*. For a moment, I tried [Overcast](https://overcast.fm), but soon fell back on *Podcasts*, which got worse with each update. Apps are made of priorities and compromises. Occassionally, I tried one of the newer apps coming out, but I find them bloated and confusing. [Castro](https://itunes.apple.com/us/app/castro-podcasts/id1080840241), for example, a super well made app, but too much for me.
+
+The long and short of it, I never had a podcast app I liked, at least in this decade, before, I was stoked carrying podcasts in my pocket in the first place.
 
 #### because I can
 
-![alt text](/img/0x0ss.png "Logo Title Text 1")
+![alt text](/img/0x0ss.png "Podest App Icon")
 
 ## Podest
 
