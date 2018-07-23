@@ -1,6 +1,6 @@
 {
   "name": "troubled",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "The content of my site",
   "main": "index.js",
   "scripts": {
@@ -37,6 +37,7 @@
     "modernizr": "^3.3.1",
     "normalize.css": "^3.0.3",
     "respond.js": "^1.4.2",
-    "standard": "^8.4.0"
+    "standard": "^8.4.0",
+    "uglify-js": "^3.4.5"
   }
 }
