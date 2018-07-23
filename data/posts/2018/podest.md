@@ -10,6 +10,10 @@ While I’m busy releasing my new podcast app on the App Store, I’m reminded o
 
 ## I 💜 Podcasts
 
+I remember listening to my first podcasts on my computer, which sounds weird now, like eating soup with a fork. Among the first shows I’ve followed, come the iPhone, were [StackOverflow](https://stackoverflow.blog/2008/04/17/podcast-1/), [The Book Review Podcast](https://www.nytimes.com/column/book-review-podcast) by [The Times](https://www.nytimes.com), and, Chris Lydon’s, true founding father of podcasting, [Radio Open Source](http://radioopensource.org). I fondly remember immersing myself into [Chaos Radio Express](https://cre.fm) and my beloved [Küchenradio](https://www.kuechenstud.io/kuechenradio/), pioneering German shows, back in 2010. Podcasts are a personal medium, indeed.
+
+Today, podcasts are blooming, [The Daily](https://www.nytimes.com/podcasts/the-daily) quickly became a household name, [The New Yorker Radio Hour](https://www.newyorker.com/podcast/the-new-yorker-radio-hour) is a classic by now, and Britain’s [Monocle](https://monocle.com) has its own [radio station](https://monocle.com/radio/). Dedicated podcast labels flourish: [Radiotopia](https://www.radiotopia.fm), [Gimlet](https://www.gimletmedia.com), [Panoply](https://panoply.fm), to name a few. For me, no week goes by without [Slate’s Culture Gabfest](http://www.slate.com/articles/podcasts/culturegabfest.html) and [Still Processing](https://www.nytimes.com/podcasts/still-processing), another fine [Pineapple](http://pineapple.fm) production.
+
 #### because I can
 
 ![alt text](/img/0x0ss.png "Logo Title Text 1")
@@ -33,11 +37,12 @@ Here is a quick rundown of features in this first release.
 - Synced Playback Resuming
 - iCloud Sync of Queue and Subscriptions
 
-Visit the App Store for details. Cool to finally being able to say that for my own app 🤗
+Visit the App Store for details. Feels good to finally say that for my own app 🤗
 
-What a ride.
+Was it easy? Hell no!
 
 Diversity results in progress. Always reinvent the wheel! That’s how we learn.
 
 There were plenty podcast players, but no podcast browser. Try it and tell me what you think.
 
+Vive les podcasters.
