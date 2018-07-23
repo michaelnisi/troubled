@@ -16,9 +16,11 @@ Today, podcasts are in bloom—again. [The Daily](https://www.nytimes.com/podcas
 
 #### Apps are made of priorities and compromises
 
-I forget how I listened first, on the Mac, *iTunes*, I guess. On the phone, I used [Podcasts](https://itunes.apple.com/us/app/podcasts/id525463029) and [Downcast](https://itunes.apple.com/us/app/downcast/id393858566), which is still around, as I just saw, scanning the App Store search results for the term 'Podcasts'. After [Instacast](https://itunes.apple.com/us/app/instacast-core/id108386833), the one with the lifted name and problems with too many subscriptions, I returned to *Podcasts*. For a moment, I tried [Overcast](https://overcast.fm), but soon fell back on *Podcasts*, which got worse with each update. Apps are made of priorities and compromises. Occassionally, I tried one of the newer apps coming out, but I find them bloated and confusing. [Castro](https://itunes.apple.com/us/app/castro-podcasts/id1080840241), for example, a super well made app, but too much for me.
+I forget how I listened first, on the Mac, *iTunes*, I guess. On the phone, I used [Podcasts](https://itunes.apple.com/us/app/podcasts/id525463029) and [Downcast](https://itunes.apple.com/us/app/downcast/id393858566), which is still around, as I just saw, scanning the App Store search results for the term 'Podcasts'. After [Instacast](https://itunes.apple.com/us/app/instacast-core/id108386833), the one with the lifted name and problems with too many subscriptions, I returned to *Podcasts*. For a moment I tried [Overcast](https://overcast.fm), but fell back on *Podcasts*, which got worse with each update. Apps are made of priorities and compromises. Occassionally, I try one of the newer apps coming out, but I find them bloated and confusing. [Castro](https://itunes.apple.com/us/app/castro-podcasts/id1080840241), for example, a super well made app, but too much for me.
 
 The long and short of it, I never had a podcast app I liked, at least in this decade, before, I was stoked carrying podcasts in my pocket in the first place.
+
+But why is that? How come all podcast apps feel off-center to me? Could I build something better?
 
 #### because I can
 
