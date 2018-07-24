@@ -36,7 +36,7 @@ The user interface of a podcast app is challenging, it has to communicate two na
 
 #### And so I made
 
-![alt text](/img/0x0ss.png "Podest App Icon")
+[![Podest](/img/0x0ss.png "Podest App Icon")](https://itunes.apple.com/us/app/podest/id794983364)
 
 ## Podest
 
@@ -55,17 +55,17 @@ Here is a quick rundown of features in this first release.
 - Synced Playback Resuming
 - iCloud Sync of Queue and Subscriptions
 
-Check the App Store for details. 🤗🎉
+Check the [App Store](https://itunes.apple.com/us/app/podest/id794983364) for details. 🤗🎉
 
 ## Open Source
 
-Much of this app is open source and I plan to release more.
+Key modules of this app are open source and I plan to release more.
 
-- Download Manager: [fileproxy](https://github.com/michaelnisi/fileproxy)
-- Feed Cache: [manger](https://github.com/michaelnisi/manger)
-- Feed Parser: [pickup](https://github.com/michaelnisi/pickup)
-- Reachability: [ola](https://github.com/michaelnisi/ola)
-- Search Cache: [fanboy](https://github.com/michaelnisi/fanboy)
+- Download Manager, [fileproxy](https://github.com/michaelnisi/fileproxy)
+- Feed Cache, [manger](https://github.com/michaelnisi/manger)
+- Feed Parser, [pickup](https://github.com/michaelnisi/pickup)
+- Reachability, [ola](https://github.com/michaelnisi/ola)
+- Search Cache, [fanboy](https://github.com/michaelnisi/fanboy)
 
 For image caching I use the excellent [Nuke](https://github.com/kean/Nuke) by [Alexander Grebenyuk](https://kean.github.io).
 
@@ -74,5 +74,4 @@ For image caching I use the excellent [Nuke](https://github.com/kean/Nuke) by [A
 Back to the initial question. Does it make sense to build something that already exists? If you think you can improve something, of course, but even if not. If you can, you should build all the things. Diversity produces progress. Always reinvent the wheel! That’s how we learn.
 
 **There were plenty podcast players, but no podcast browser. Try it and tell me what you think.**
-
-![alt text](/img/app_store.svg "App Store Badge")
+[![App Store](/img/app_store.svg "App Store Badge")](https://itunes.apple.com/us/app/podest/id794983364)
