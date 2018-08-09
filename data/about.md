@@ -11,6 +11,8 @@
 
 [The Troubled Programmer](/) is written by me, Michael Nisi. I make software.
 
+Recently, I premiered as an indie developer on the App Store with [Podest](https://itunes.apple.com/us/app/podest/id794983364), my take on podcast apps.
+
 As an application developer, my objective is to build meaningful mobile applications for end users, while improving software reliability and maintainability.
 
 In this blog, I write about software making, open source, and quality. With my background in art and design, I bring a holistic perspective to the field.
