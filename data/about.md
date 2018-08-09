@@ -2,7 +2,7 @@
   "title": "About The Troubled Programmer",
   "template": "about.pug",
   "name": "about.html",
-  "date": "2018-02-11",
+  "date": "2018-08-09",
   "icons": [
     {"src": "/img/octocat.svg", "href": "https://github.com/michaelnisi"},
     {"src": "/img/npm.svg", "href": "https://www.npmjs.org/~michaelnisi"}
@@ -11,7 +11,7 @@
 
 [The Troubled Programmer](/) is written by me, Michael Nisi. I make software.
 
-Recently, I premiered as an indie developer on the App Store with [Podest](https://itunes.apple.com/us/app/podest/id794983364), my take on podcast apps.
+Recently, I celebrated my debut as an indie developer on the App Store with [Podest](https://itunes.apple.com/us/app/podest/id794983364), my take on podcast apps.
 
 As an application developer, my objective is to build meaningful mobile applications for end users, while improving software reliability and maintainability.
 
