@@ -72,7 +72,7 @@ Inherently, these change tokens are coupled with the state of your local cache. 
 
 #### Hm…
 
-As with all network programming, when using CloudKit, although conveniently high level, pessimistic error handling, anticipating the worst, is paramount approaching [fail-safe](https://en.wikipedia.org/wiki/Fail-safe).
+As with all network programming, when using CloudKit, although conveniently high level, pessimistic error handling, anticipating the worst, is paramount for reaching [fail-safe](https://en.wikipedia.org/wiki/Fail-safe) operations.
 
 #### CloudKit is the obvious choice for synchronized storage of structured data
 
