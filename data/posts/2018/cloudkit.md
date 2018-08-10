@@ -54,7 +54,7 @@ While pushing data to the server with CKModifyRecordsOperation you can pass clie
 
 Comparing server change tokens, I’ve noticed that they, database change tokens at least, are updated with each request, wether data on the server changed or not. Probably to track time between requests on the server.
 
-To obtain the current user name, which is required for certain things, creating zones, for example, use the global constant `CKCurrentUserDefaultName`.
+To obtain the current user name, which is required for certain things, creating zones, for example, use the global constant [`CKCurrentUserDefaultName`](https://developer.apple.com/documentation/cloudkit/ckcurrentuserdefaultname).
 
 #### CloudKit lets you ask for only what has changed
 
@@ -64,12 +64,16 @@ A powerful feature of CloudKit is change tracking. Being able to limit data tran
 
 To minimize data transfer, CloudKit uses change tokens. In a typical refresh cycle you might first fetch data base changes, receiving identifiers of all zones that have been changed, since a specific server change token, you might have received with an earlier request, or, without token, starting from scratch. Notice the distinction between database and zone tokens, from the [docs](https://developer.apple.com/documentation/cloudkit/ckfetchdatabasechangesoperation/1640502-init):
 
-> This per-database CKServerChangeToken is not to be confused with the per-recordZone CKServerChangeToken from CKFetchRecordZoneChangesOperation.
+> This per-database [`CKServerChangeToken`](https://developer.apple.com/documentation/cloudkit/ckserverchangetoken) is not to be confused with the per-recordZone [`CKServerChangeToken`](https://developer.apple.com/documentation/cloudkit/ckserverchangetoken) from [`CKFetchRecordZoneChangesOperation`](https://developer.apple.com/documentation/cloudkit/ckfetchrecordzonechangesoperation).
 
 With the identifiers of changed zones, you’d now fetch the changed records, including deleted ones, again, passing a token, except now, the per-recordZone server change token.
 
-As with all network programming, when using CloudKit, although conveniently high level, pessimistic error handling, anticipating the worst, is paramount—[fail-safe](https://en.wikipedia.org/wiki/Fail-safe).
+Inherently, these change tokens are coupled with the state of your local cache. Don’t store them separately, but within the cache, guaranteeing synchronized deletion. Otherwise you are at risk of false assumptions about your sync state, which can be hard to recover from, except for starting over—deleting all tokens and requesting a full load.
+
+#### Hm…
+
+As with all network programming, when using CloudKit, although conveniently high level, pessimistic error handling, anticipating the worst, is paramount for [fail-safe](https://en.wikipedia.org/wiki/Fail-safe).
 
 #### CloudKit is the obvious choice for synchronized storage of structured data
 
-Implicit authentication, little operational effort, and low costs make CloudKit the obvious choice for synchronized data storage, for apps distributed through the store.
+[Implicit authentication](https://medium.com/@skreutzb/ios-onboarding-without-signup-screens-cb7a76d01d6e), little operational effort, and low costs make CloudKit the obvious choice for synchronized data storage, for apps distributed through the App Store.
