@@ -46,9 +46,9 @@ Truth is multifaceted, in life and computing, especially in distributed systems.
 
 The stateful access point of the CloudKit API is `CKContainer`. It owns an operation queue, to which you add operation to interact with a iCloud database.
 
-#### CloudKit’s API is Operation based
+#### CloudKit is Operation based
 
-CoudKit’s API is Operation based, an interesting and inspiring choice, I think. On that note, even if you are not planning to use CloudKit, I recommend to study it, as guide for modern Cocoa API design.
+CoudKit’s API is [Operation](https://developer.apple.com/documentation/cloudkit/ckoperation) based, an interesting and inspiring choice, I think. On that note, even if you are not planning to use CloudKit, I recommend to study it, as guide for modern Cocoa API design.
 
 While pushing data to the server with CKModifyRecordsOperation you can pass client change token, probably a UUID. The server will include this in the result of your next fetch as means for you to check if your last push went through. It doesn’t really help much, of course, but at least you can adjust your assumptions. Contrary to the server change tokens, which are per database and per zone, there’s only one client change token per database. I just mention this, because it tripped me up, during my first experiments with this API.
 
@@ -62,7 +62,7 @@ A powerful feature of CloudKit is change tracking. Being able to limit data tran
 
 > To use the change tracking functionality of CloudKit, you need to store your app data in a custom zone in the user's private database
 
-To minimize data transfer, CloudKit uses change tokens. In a typical refresh cycle you might first fetch data base changes, receiving identifiers of all zones that have been changed, since a specific server change token, you might have received with an earlier request, or, without token, starting from scratch. Notice the distinction between database and zone tokens, from the [docs](https://developer.apple.com/documentation/cloudkit/ckfetchdatabasechangesoperation/1640502-init):
+Practically, you’d divide your apps domain into zones of related data—in the context change tracking. To minimize data transfer, CloudKit uses change tokens. In a typical refresh cycle you might first fetch data base changes, receiving identifiers of all zones that have been changed, since a specific server change token, you might have received with an earlier request, or, without token, starting from scratch. Notice the distinction between database and zone tokens, from the [docs](https://developer.apple.com/documentation/cloudkit/ckfetchdatabasechangesoperation/1640502-init):
 
 > This per-database [`CKServerChangeToken`](https://developer.apple.com/documentation/cloudkit/ckserverchangetoken) is not to be confused with the per-recordZone [`CKServerChangeToken`](https://developer.apple.com/documentation/cloudkit/ckserverchangetoken) from [`CKFetchRecordZoneChangesOperation`](https://developer.apple.com/documentation/cloudkit/ckfetchrecordzonechangesoperation).
 
@@ -72,7 +72,7 @@ Inherently, these change tokens are coupled with the state of your local cache. 
 
 #### Hm…
 
-As with all network programming, when using CloudKit, although conveniently high level, pessimistic error handling, anticipating the worst, is paramount for [fail-safe](https://en.wikipedia.org/wiki/Fail-safe).
+As with all network programming, when using CloudKit, although conveniently high level, pessimistic error handling, anticipating the worst, is paramount approaching [fail-safe](https://en.wikipedia.org/wiki/Fail-safe).
 
 #### CloudKit is the obvious choice for synchronized storage of structured data
 
