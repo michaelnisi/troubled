@@ -15,19 +15,18 @@ But wait, how much exactly does it cost?
 
 Selling many device types to its customers, who often own multiple Apple devices, the company must provide a somewhat integrated user experience across macOS, iOS, watchOS, and tvOS. For data synchronization, this infamously hard and repetitive problem, they can impossibly rely on their developer community alone.
 
-Apple has been treading a path for making sync easier, implementing, dog-fooding, and iterating on ways for storing and managing structured data for mobile application with [CloudKit](https://developer.apple.com/documentation/cloudkit) and [CloudKit Dashboard](https://developer.apple.com/library/content/documentation/DataManagement/Conceptual/CloudKitQuickStart/EditingSchemesUsingCloudKitDashboard/EditingSchemesUsingCloudKitDashboard.html). Not trivial, of course, but manageable—pleasant even. If CloudKit is ready for production with apps like [iCloud Drive](https://www.apple.com/lae/icloud/icloud-drive/), [Photos](https://www.apple.com/ios/photos/), and Notes; chances are it’s ready for our puny apps.
 
 #### CloudKit currently scales to hundreds of millions of users
+
+Apple has been treading a path for making sync easier, implementing, dog-fooding, and iterating on ways for storing and managing structured data for mobile application with [CloudKit](https://developer.apple.com/documentation/cloudkit) and [CloudKit Dashboard](https://developer.apple.com/library/content/documentation/DataManagement/Conceptual/CloudKitQuickStart/EditingSchemesUsingCloudKitDashboard/EditingSchemesUsingCloudKitDashboard.html). Not trivial, of course, but manageable—pleasant even. If CloudKit backs [iCloud Drive](https://www.apple.com/lae/icloud/icloud-drive/), [Photos](https://www.apple.com/ios/photos/), and Notes at Apple, we should consider it for our apps.
 
 📚👓 When I’ve initially been writing this, back in February 2018, Apple just published their CloudKit paper, [CloudKit: Structured Storage for Mobile Applications](http://www.vldb.org/pvldb/vol11/p540-shraer.pdf).
 
 Isn’t this new [openess](https://hbr.org/2013/03/why-apple-is-going-have-to-bec) great? I love that the CloudKit stack employs two [Apache](http://apache.org/) projects, [Cassandra](http://cassandra.apache.org/) as storage layer and [Solr](http://lucene.apache.org/solr/) for indexing.
 
-Diving in—without losing sight of the forest for the trees, I hope.
-
 #### Local storage is your job
 
-[Maintaining a local cache of CloudKit Records](https://developer.apple.com/library/content/documentation/DataManagement/Conceptual/CloudKitQuickStart/MaintainingaLocalCacheofCloudKitRecords/MaintainingaLocalCacheofCloudKitRecords.html#//apple_ref/doc/uid/TP40014987-CH12-SW1) is well documented, I won’t go into details here, but I will try to provide a conceptual overview and point out stepping stones, I found implementing sync with CloudKit.
+[Maintaining a local cache of CloudKit Records](https://developer.apple.com/library/content/documentation/DataManagement/Conceptual/CloudKitQuickStart/MaintainingaLocalCacheofCloudKitRecords/MaintainingaLocalCacheofCloudKitRecords.html#//apple_ref/doc/uid/TP40014987-CH12-SW1) is well documented. Skipping the details, I sketch a conceptual overview and point out stepping stones, I found implementing sync with CloudKit.
 
 The CloudKit framework implements an iCloud client for structured data, decoupling local and remote data structures, while providing efficient diffing between the two. Local storage is left to us, its users.
 
@@ -35,7 +34,7 @@ Data in iCloud is segregated and encapsulated in containers, owned by developers
 
 #### Environment, Database, Zone, and Record
 
-The CloudKit schema, one of the aforementioned containers, is structured into environments (development and production), databases (private, shared, and public), zones, and records. For a quick conceptual refresher, watch the first part of this [WWDC 2017](https://developer.apple.com/videos/wwdc2017/) presentation: [Build Better Apps with CloudKit Dashboard](https://developer.apple.com/videos/play/wwdc2017/226/), Session 226, [@djbrowning](https://twitter.com/djbrowning), CloudKit.
+The CloudKit schema, one of the aforementioned containers, is structured into environments (development and production), databases (private, shared, and public), zones, and records. For a quick conceptual refresher, watch the first part of this [WWDC 2017](https://developer.apple.com/videos/wwdc2017/) presentation: [Build Better Apps with CloudKit Dashboard](https://developer.apple.com/videos/play/wwdc2017/226/), Session 226, [@djbrowning](https://twitter.com/djbrowning), CloudKit. 📺
 
 #### Records are the elemental unit in CloudKit
 
@@ -57,7 +56,7 @@ Comparing server change tokens, I’ve noticed that they, database change tokens
 
 To obtain the current user name, which is required for certain things, creating zones, for example, use the global constant `CKCurrentUserDefaultName`.
 
-#### Change tracking to minimize data transfer
+#### CloudKit lets you ask for only what has changed
 
 A powerful feature of CloudKit is change tracking. Being able to limit data transfers to just actual changes since the last request, including deletions, obviously, makes all the difference. Depending on your app, CloudKit request-response-cycles can be designed to be neglectably short, transferring tiny chunks of data to provide a seemless user experience.
 
@@ -69,9 +68,7 @@ To minimize data transfer, CloudKit uses change tokens. In a typical refresh cyc
 
 With the identifiers of changed zones, you’d now fetch the changed records, including deleted ones, again, passing a token, except now, the per-recordZone server change token.
 
-> CloudKit lets you ask for only what has changed!
-
-As with all network programming, when using CloudKit, although conveniently high level, pessimistic error handling—anticipating the worst—is paramount. Attachment to expectation causes suffering. 🐼
+As with all network programming, when using CloudKit, although conveniently high level, pessimistic error handling, anticipating the worst, is paramount—[fail-safe](https://en.wikipedia.org/wiki/Fail-safe).
 
 #### CloudKit is the obvious choice for synchronized storage of structured data
 
