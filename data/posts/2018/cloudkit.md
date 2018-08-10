@@ -62,7 +62,7 @@ A powerful feature of CloudKit is change tracking. Being able to limit data tran
 
 > To use the change tracking functionality of CloudKit, you need to store your app data in a custom zone in the user's private database
 
-Practically, you’d divide your apps domain into zones of related data—in the context change tracking. To minimize data transfer, CloudKit uses change tokens. In a typical refresh cycle you might first fetch data base changes, receiving identifiers of all zones that have been changed, since a specific server change token, you might have received with an earlier request, or, without token, starting from scratch. Notice the distinction between database and zone tokens, from the [docs](https://developer.apple.com/documentation/cloudkit/ckfetchdatabasechangesoperation/1640502-init):
+Practically, you’d divide your app’s domain into zones of related data—in the context of change tracking. Reducing data transfer, CloudKit assigns change tokens. In a typical refresh cycle you might first fetch data base changes, receiving identifiers of all zones that have been changed since a state marked by a server change token from an earlier request—or without, starting from scratch. Notice the distinction between database and zone tokens. From the [docs](https://developer.apple.com/documentation/cloudkit/ckfetchdatabasechangesoperation/1640502-init):
 
 > This per-database [`CKServerChangeToken`](https://developer.apple.com/documentation/cloudkit/ckserverchangetoken) is not to be confused with the per-recordZone [`CKServerChangeToken`](https://developer.apple.com/documentation/cloudkit/ckserverchangetoken) from [`CKFetchRecordZoneChangesOperation`](https://developer.apple.com/documentation/cloudkit/ckfetchrecordzonechangesoperation).
 
