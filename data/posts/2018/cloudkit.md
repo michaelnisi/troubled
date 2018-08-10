@@ -2,8 +2,8 @@
   "title": "Synchronizing With CloudKit",
   "description": "A conceptual overview of using Apple’s CloudKit framework to synchronize data across devices running your app.",
   "template": "article.pug",
-  "date": "2018-02-05",
-  "path": "2018/02"
+  "date": "2018-08-10",
+  "path": "2018/08"
 }
 
 [CloudKit](https://developer.apple.com/icloud/cloudkit/) is Apple’s cloud backend service and application development framework for structured storage. CloudKit lets developers leverage Apple’s vast infrastructure basically for free, given you have a developer account, of course.
@@ -62,13 +62,13 @@ A powerful feature of CloudKit is change tracking. Being able to limit data tran
 
 > To use the change tracking functionality of CloudKit, you need to store your app data in a custom zone in the user's private database
 
-Practically, you’d divide your app’s domain into zones of related data—in the context of change tracking. Reducing data transfer, CloudKit assigns change tokens. In a typical refresh cycle you might first fetch data base changes, receiving identifiers of all zones that have been changed since a state marked by a server change token from an earlier request—or without, starting from scratch. Notice the distinction between database and zone tokens. From the [docs](https://developer.apple.com/documentation/cloudkit/ckfetchdatabasechangesoperation/1640502-init):
+Practically, you’d divide your app’s domain into zones of related data—in the context of change tracking. To reduce data transfer, CloudKit assigns change tokens. In a typical refresh cycle you might first fetch data base changes, receiving identifiers of all zones that have been changed since a state marked by a server change token from an earlier request—or without, starting from scratch. Notice the distinction between database and zone tokens. From the [docs](https://developer.apple.com/documentation/cloudkit/ckfetchdatabasechangesoperation/1640502-init):
 
 > This per-database [`CKServerChangeToken`](https://developer.apple.com/documentation/cloudkit/ckserverchangetoken) is not to be confused with the per-recordZone [`CKServerChangeToken`](https://developer.apple.com/documentation/cloudkit/ckserverchangetoken) from [`CKFetchRecordZoneChangesOperation`](https://developer.apple.com/documentation/cloudkit/ckfetchrecordzonechangesoperation).
 
-With the identifiers of changed zones, you’d now fetch the changed records, including deleted ones, again, passing a token, except now, the per-recordZone server change token.
+With the identifiers of changed zones, you’d now fetch the changed records, including deleted ones, again, passing a token, except now, the per-recordZone server change token. This gives you the changed records per zone, neatly relatable, which you would now integrate into your local cache.
 
-Inherently, these change tokens are coupled with the state of your local cache. Don’t store them separately, but within the cache, guaranteeing synchronized deletion. Otherwise you are at risk of false assumptions about your sync state, which can be hard to recover from, except for starting over—deleting all tokens and requesting a full load.
+Inherently, these change tokens are coupled with the state of your local cache. Don’t store them separately, but within the cache, guaranteeing synchronized deletion. Otherwise you risk false assumptions about your sync state, which can be hard to recover from.
 
 #### Hm…
 
