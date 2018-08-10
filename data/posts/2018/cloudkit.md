@@ -15,7 +15,6 @@ But wait, how much exactly does it cost?
 
 Selling many device types to its customers, who often own multiple Apple devices, the company must provide a somewhat integrated user experience across macOS, iOS, watchOS, and tvOS. For data synchronization, this infamously hard and repetitive problem, they can impossibly rely on their developer community alone.
 
-
 #### CloudKit currently scales to hundreds of millions of users
 
 Apple has been treading a path for making sync easier, implementing, dog-fooding, and iterating on ways for storing and managing structured data for mobile application with [CloudKit](https://developer.apple.com/documentation/cloudkit) and [CloudKit Dashboard](https://developer.apple.com/library/content/documentation/DataManagement/Conceptual/CloudKitQuickStart/EditingSchemesUsingCloudKitDashboard/EditingSchemesUsingCloudKitDashboard.html). Not trivial, of course, but manageable—pleasant even. If CloudKit backs [iCloud Drive](https://www.apple.com/lae/icloud/icloud-drive/), [Photos](https://www.apple.com/ios/photos/), and Notes at Apple, we should consider it for our apps.
@@ -26,7 +25,7 @@ Isn’t this new [openess](https://hbr.org/2013/03/why-apple-is-going-have-to-be
 
 #### Local storage is your job
 
-[Maintaining a local cache of CloudKit Records](https://developer.apple.com/library/content/documentation/DataManagement/Conceptual/CloudKitQuickStart/MaintainingaLocalCacheofCloudKitRecords/MaintainingaLocalCacheofCloudKitRecords.html#//apple_ref/doc/uid/TP40014987-CH12-SW1) is well documented. Skipping the details, I sketch a conceptual overview and point out stepping stones, I found implementing sync with CloudKit.
+[Maintaining a local cache of CloudKit Records](https://developer.apple.com/library/content/documentation/DataManagement/Conceptual/CloudKitQuickStart/MaintainingaLocalCacheofCloudKitRecords/MaintainingaLocalCacheofCloudKitRecords.html#//apple_ref/doc/uid/TP40014987-CH12-SW1) is well documented. Skipping the details, I sketch a conceptual overview and point out stepping stones, I found implementing sync with CloudKit for [Podest](https://itunes.apple.com/app/podest/id794983364).
 
 The CloudKit framework implements an iCloud client for structured data, decoupling local and remote data structures, while providing efficient diffing between the two. Local storage is left to us, its users.
 
