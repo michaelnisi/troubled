@@ -25,7 +25,7 @@ Isn’t this new [openess](https://hbr.org/2013/03/why-apple-is-going-have-to-be
 
 #### Local storage is your job
 
-[Maintaining a local cache of CloudKit Records](https://developer.apple.com/library/content/documentation/DataManagement/Conceptual/CloudKitQuickStart/MaintainingaLocalCacheofCloudKitRecords/MaintainingaLocalCacheofCloudKitRecords.html#//apple_ref/doc/uid/TP40014987-CH12-SW1) is well documented. Skipping the details, I sketch a conceptual overview and point out stepping stones, I found implementing sync with CloudKit for [Podest](https://itunes.apple.com/app/podest/id794983364).
+[Maintaining a local cache of CloudKit Records](https://developer.apple.com/library/content/documentation/DataManagement/Conceptual/CloudKitQuickStart/MaintainingaLocalCacheofCloudKitRecords/MaintainingaLocalCacheofCloudKitRecords.html#//apple_ref/doc/uid/TP40014987-CH12-SW1) is well documented. Skipping the details, I’ll sketch a conceptual overview of CloudKit from my perspective, and point out stepping stones I found implementing sync with CloudKit for [Podest](https://itunes.apple.com/app/podest/id794983364), my podcast app.
 
 The CloudKit framework implements an iCloud client for structured data, decoupling local and remote data structures, while providing efficient diffing between the two. Local storage is left to us, its users.
 
@@ -49,25 +49,25 @@ The stateful access point of the CloudKit API is `CKContainer`. It owns an opera
 
 CoudKit’s API is [Operation](https://developer.apple.com/documentation/cloudkit/ckoperation) based, an interesting and inspiring choice, I think. On that note, even if you are not planning to use CloudKit, I recommend to study it, as guide for modern Cocoa API design.
 
-While pushing data to the server with CKModifyRecordsOperation you can pass client change token, probably a UUID. The server will include this in the result of your next fetch as means for you to check if your last push went through. It doesn’t really help much, of course, but at least you can adjust your assumptions. Contrary to the server change tokens, which are per database and per zone, there’s only one client change token per database. I just mention this, because it tripped me up, during my first experiments with this API.
-
-Comparing server change tokens, I’ve noticed that they, database change tokens at least, are updated with each request, wether data on the server changed or not. Probably to track time between requests on the server.
-
 To obtain the current user name, which is required for certain things, creating zones, for example, use the global constant [`CKCurrentUserDefaultName`](https://developer.apple.com/documentation/cloudkit/ckcurrentuserdefaultname).
 
-#### CloudKit lets you ask for only what has changed
+#### Only what has changed
 
 A powerful feature of CloudKit is change tracking. Being able to limit data transfers to just actual changes since the last request, including deletions, obviously, makes all the difference. Depending on your app, CloudKit request-response-cycles can be designed to be neglectably short, transferring tiny chunks of data to provide a seemless user experience.
 
-> To use the change tracking functionality of CloudKit, you need to store your app data in a custom zone in the user's private database
+> CloudKit lets you ask for only what has changed!
 
-Practically, you’d divide your app’s domain into zones of related data—in the context of change tracking. To reduce data transfer, CloudKit assigns change tokens. In a typical refresh cycle you might first fetch data base changes, receiving identifiers of all zones that have been changed since a state marked by a server change token from an earlier request—or without, starting from scratch. Notice the distinction between database and zone tokens. From the [docs](https://developer.apple.com/documentation/cloudkit/ckfetchdatabasechangesoperation/1640502-init):
+Change tracking is only available in custom zones of the user's private database. To reduce data transfer, CloudKit assigns tokens to changes on the database and the zone level. Practically, you’d divide your app’s domain into zones of related data—in the context of change tracking. In a typical refresh cycle you might first fetch data base changes, receiving identifiers of all zones that have been changed since a state marked by a server change token from an earlier request—or without, starting from scratch. Notice the distinction between database and zone tokens. From the [docs](https://developer.apple.com/documentation/cloudkit/ckfetchdatabasechangesoperation/1640502-init):
 
 > This per-database [`CKServerChangeToken`](https://developer.apple.com/documentation/cloudkit/ckserverchangetoken) is not to be confused with the per-recordZone [`CKServerChangeToken`](https://developer.apple.com/documentation/cloudkit/ckserverchangetoken) from [`CKFetchRecordZoneChangesOperation`](https://developer.apple.com/documentation/cloudkit/ckfetchrecordzonechangesoperation).
 
 With the identifiers of changed zones, you’d now fetch the changed records, including deleted ones, again, passing a token, except now, the per-recordZone server change token. This gives you the changed records per zone, neatly relatable, which you would now integrate into your local cache.
 
-Inherently, these change tokens are coupled with the state of your local cache. Don’t store them separately, but within the cache, guaranteeing synchronized deletion. Otherwise you risk false assumptions about your sync state, which can be hard to recover from.
+Comparing server change tokens, I’ve noticed that they, database change tokens at least, are updated with each request, wether data on the server changed or not. Probably to track time between requests on the server.
+
+While pushing data to the server with [`CKModifyRecordsOperation`](https://developer.apple.com/documentation/cloudkit/ckmodifyrecordsoperation) you can pass a client change token. The server will include this in the result of your next fetch as means for you to check if your last push went through. It doesn’t really help much, of course, but at least you can adjust your assumptions. Contrary to the server change tokens, which are per database and per zone, there’s only one client change token per database. I just mention this, because it tripped me up, during my first experiments with this API.
+
+Inherently, CloudKit change tokens are coupled with the state of your local cache. Don’t store them separately, but within the cache, guaranteeing synchronized deletion. You don’t want to end up deleting your local cache, while keeping the change tokens. Especially during development this can get confusing.
 
 #### Hm…
 
