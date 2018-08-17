@@ -25,7 +25,7 @@ Isn’t this new [openess](https://hbr.org/2013/03/why-apple-is-going-have-to-be
 
 #### Local storage is your job
 
-[Maintaining a local cache of CloudKit Records](https://developer.apple.com/library/content/documentation/DataManagement/Conceptual/CloudKitQuickStart/MaintainingaLocalCacheofCloudKitRecords/MaintainingaLocalCacheofCloudKitRecords.html#//apple_ref/doc/uid/TP40014987-CH12-SW1) is well documented. Skipping the details, I’ll sketch a conceptual overview of CloudKit from my perspective, and point out stepping stones I found implementing sync with CloudKit for [Podest](https://itunes.apple.com/app/podest/id794983364), my podcast app.
+[Maintaining a local cache of CloudKit Records](https://developer.apple.com/library/content/documentation/DataManagement/Conceptual/CloudKitQuickStart/MaintainingaLocalCacheofCloudKitRecords/MaintainingaLocalCacheofCloudKitRecords.html#//apple_ref/doc/uid/TP40014987-CH12-SW1) is well documented. Skipping the details, I’ll sketch a conceptual overview of CloudKit from my perspective and point out stepping stones that surfaced for me, while implementing sync with CloudKit for [Podest](https://itunes.apple.com/app/podest/id794983364), my podcast app—you should hit with some ⭐️✨
 
 The CloudKit framework implements an iCloud client for structured data, decoupling local and remote data structures, while providing efficient diffing between the two. Local storage is left to us, its users.
 
@@ -69,7 +69,9 @@ While pushing data to the server with [`CKModifyRecordsOperation`](https://devel
 
 Inherently, CloudKit change tokens are coupled with the state of your local cache. Don’t store them separately, but within the cache, guaranteeing synchronized deletion. You don’t want to end up deleting your local cache, while keeping the change tokens. Especially during development this can get confusing.
 
-#### Hm…
+Merging is app specific, getting your hands dirty, you will find that handling all edge cases, even with just a single truth, in the cloud, can become challenging. As soon as you start tinkering with elaborate merge schemes, all is lost. At least initially, I recommend implementing a version where iCloud is master that works for most of your use cases. Iterate from there.
+
+#### The network is unreliable
 
 As with all network programming, when using CloudKit, although conveniently high level, pessimistic error handling, anticipating the worst, is paramount for attaining [fail-safe](https://en.wikipedia.org/wiki/Fail-safe) operations.
 
