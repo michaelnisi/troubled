@@ -10,7 +10,7 @@
     "test": "standard index.js"
   },
   "dependencies": {
-    "highlights": "^1.4.1",
+    "highlights": "^3.1.1",
     "language-erlang": "^2.0.0",
     "language-swift": "freebroccolo/atom-language-swift",
     "less": "^2.6.1",
@@ -22,7 +22,7 @@
     "prettydate": "0.0.1",
     "property-ttl": "^1.0.0",
     "pug": "^2.0.0-beta6",
-    "request": "^2.63.0",
+    "request": "^2.88.0",
     "twitter-text": "^1.13.4"
   },
   "keywords": [],
@@ -34,7 +34,7 @@
   "license": "MIT",
   "devDependencies": {
     "min.css": "^1.3.0",
-    "modernizr": "^3.3.1",
+    "modernizr": "^3.6.0",
     "normalize.css": "^3.0.3",
     "respond.js": "^1.4.2",
     "standard": "^8.4.0",
