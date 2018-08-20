@@ -71,6 +71,12 @@ Inherently, CloudKit change tokens are coupled with the state of your local cach
 
 Merging is app specific, getting your hands dirty, you will find that handling all edge cases, even with just a single truth, in the cloud, can become challenging. As soon as you start tinkering with elaborate merge schemes, all is lost. At least initially, I recommend implementing a version where iCloud is master that works for most of your use cases. Iterate from there.
 
+#### CloudKit Dashboard
+
+Zones, records, record types, indexes, subscriptions, subscription types, security roles
+
+CloudKit lets you add and remove indexes after the fact, which is pretty damn cool. Remove indexes for production for a small footprint of your app, during development though, you should at least index recordName as QUERYABLE to be able to query your zones for records.
+
 #### The network is unreliable
 
 As with all network programming, when using CloudKit, although conveniently high level, pessimistic error handling, anticipating the worst, is paramount for attaining [fail-safe](https://en.wikipedia.org/wiki/Fail-safe) operations.
