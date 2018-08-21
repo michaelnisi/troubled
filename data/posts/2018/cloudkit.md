@@ -71,9 +71,11 @@ Inherently, CloudKit change tokens are coupled with the state of your local cach
 
 Merging is app specific, getting your hands dirty, you will find that handling all edge cases, even with just a single truth, in the cloud, can become challenging. As soon as you start tinkering with elaborate merge schemes, all is lost. At least initially, I recommend implementing a version where iCloud is master that works for most of your use cases. Iterate from there.
 
+Don’t be surprised if you are receiving the changes on a device from which you have pushed them, this kind of statefulness is irrelevant for Cloudkit. Use one code path for pulling and merging and one code path for pushing. Less state is better.
+
 #### CloudKit Dashboard
 
-Zones, records, record types, indexes, subscriptions, subscription types, security roles
+The CloudKit Dashboard is website that lets you inspect and modify your CloudKit containers. While CloudKit is schemaless and record introduction and modification is done via code, the Dashboard is priceless while iterating on sync. It lets you inspect live and historical logs, but more importantly it allows you modify all aspects of your databases, zones, records, record types, indexes, subscriptions, subscription types, and security roles—**live**, while your test devices are connected. You can go wild in the development environment and put your code into unlikely places to make sure it’s able to recover.
 
 CloudKit lets you add and remove indexes after the fact, which is pretty damn cool. Remove indexes for production for a small footprint of your app, during development though, you should at least index recordName as QUERYABLE to be able to query your zones for records.
 
