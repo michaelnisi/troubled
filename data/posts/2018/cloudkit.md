@@ -25,7 +25,7 @@ Isn’t this new [openess](https://hbr.org/2013/03/why-apple-is-going-have-to-be
 
 #### Local storage is your job
 
-[Maintaining a local cache of CloudKit Records](https://developer.apple.com/library/content/documentation/DataManagement/Conceptual/CloudKitQuickStart/MaintainingaLocalCacheofCloudKitRecords/MaintainingaLocalCacheofCloudKitRecords.html#//apple_ref/doc/uid/TP40014987-CH12-SW1) is well documented. Skipping the details, I’ll sketch a conceptual overview of CloudKit from my perspective and point out stepping stones that surfaced for me, while implementing sync with CloudKit for [Podest](https://itunes.apple.com/app/podest/id794983364), my podcast app—you should hit with some ⭐️✨
+[Maintaining a local cache of CloudKit Records](https://developer.apple.com/library/content/documentation/DataManagement/Conceptual/CloudKitQuickStart/MaintainingaLocalCacheofCloudKitRecords/MaintainingaLocalCacheofCloudKitRecords.html#//apple_ref/doc/uid/TP40014987-CH12-SW1) is well documented. Skipping the details, I’ll sketch a conceptual overview of CloudKit from my perspective and point out stepping stones that surfaced for me, while implementing sync with CloudKit for [Podest](https://itunes.apple.com/app/podest/id794983364), my new podcast app.
 
 The CloudKit framework implements an iCloud client for structured data, decoupling local and remote data structures, while providing efficient diffing between the two. Local storage is left to us, its users.
 
@@ -77,11 +77,11 @@ Don’t be surprised if you are receiving the changes on a device from which you
 
 The CloudKit Dashboard is website that lets you inspect and modify your CloudKit containers. While CloudKit is schemaless and record introduction and modification is done via code, the Dashboard is priceless while iterating on sync. It lets you inspect live and historical logs, but more importantly it allows you modify all aspects of your databases, zones, records, record types, indexes, subscriptions, subscription types, and security roles—**live**, while your test devices are connected. You can go wild in the development environment and put your code into unlikely places to make sure it’s able to recover.
 
-CloudKit lets you add and remove indexes after the fact, which is pretty damn cool. Remove indexes for production for a small footprint of your app, during development though, you should at least index recordName as QUERYABLE to be able to query your zones for records.
+CloudKit lets you add and remove indexes after the fact, which is pretty damn cool. Remove indexes for production for a small footprint of your app, during development though, you should at least index `recordName` as *QUERYABLE* to be able to query your zones for records.
 
-#### The network is unreliable
+#### Error Handling
 
-As with all network programming, when using CloudKit, although conveniently high level, pessimistic error handling, anticipating the worst, is paramount for attaining [fail-safe](https://en.wikipedia.org/wiki/Fail-safe) operations.
+As with all network programming, when using CloudKit, although conveniently high level, pessimistic error handling, anticipating the worst, is paramount for attaining [fail-safe](https://en.wikipedia.org/wiki/Fail-safe) operations. With [CKError](https://developer.apple.com/documentation/cloudkit/ckerror), CloudKit has a sophisticated error type, providing sufficient context for reasonable decisions. Errors like `.zoneNotFound` and `.userDeletedZone` are immanent in this API and among the first things you’d encounter starting out.
 
 #### CloudKit is the obvious choice for synchronized storage of structured data
 
