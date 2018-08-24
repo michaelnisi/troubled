@@ -2,7 +2,7 @@
   "title": "Synchronizing With CloudKit",
   "description": "A conceptual overview of using Apple’s CloudKit framework to synchronize data across devices running your app.",
   "template": "article.pug",
-  "date": "2018-08-10",
+  "date": "2018-08-24",
   "path": "2018/08"
 }
 
@@ -75,11 +75,15 @@ Don’t be surprised if you are receiving the changes on a device from which you
 
 #### CloudKit Dashboard
 
-The CloudKit Dashboard is website that lets you inspect and modify your CloudKit containers. While CloudKit is schemaless and record introduction and modification is done via code, the Dashboard is priceless while iterating on sync. It lets you inspect live and historical logs, but more importantly it allows you modify all aspects of your databases, zones, records, record types, indexes, subscriptions, subscription types, and security roles—**live**, while your test devices are connected. You can go wild in the development environment and put your code into unlikely places to make sure it’s able to recover.
+The CloudKit Dashboard is a convenient web UI that lets you inspect and modify your CloudKit containers. Select your container and access data, logs, telemetry, usage, and settings of your respective development and production environments. While CloudKit is schemaless and record introduction and modification is done via code, the Dashboard is priceless while iterating on sync. It lets you inspect live and historical logs, but more importantly it allows you modify all aspects of your databases, zones, records, record types, indexes, subscriptions, subscription types, and security roles—**live**, while your test devices are connected. You can go wild in the development environment and put your code into unlikely places to make sure it’s able to recover.
 
-CloudKit lets you add and remove indexes after the fact, which is pretty damn cool. Remove indexes for production for a small footprint of your app, during development though, you should at least index `recordName` as *QUERYABLE* to be able to query your zones for records.
+CloudKit lets you add and remove indexes after the fact, which is pretty damn cool. You can index fields to be `QUERYABLE`, `SORTABLE`, and `SEARCHABLE`. Remove indexes in the production environment to reduce the footprint of your app. During development, index `recordName` as *QUERYABLE* to be able to query your zones for records, add and remove indexes as needed for inspection while you’re working on your client.
 
-#### Error Handling
+I miss a way to list specific record properties for comparing. And, of course, I would generally prefer a CLI, which would let me analyze data properly. But that would be too easy, it’s Apple after all.
+
+A CloudKit CLI in Swift would be a 🔥 open source project. Email me if you are working on one.
+
+### Error Handling
 
 As with all network programming, when using CloudKit, although conveniently high level, pessimistic error handling, anticipating the worst, is paramount for attaining [fail-safe](https://en.wikipedia.org/wiki/Fail-safe) operations. With [CKError](https://developer.apple.com/documentation/cloudkit/ckerror), CloudKit has a sophisticated error type, providing sufficient context for reasonable decisions. Errors like `.zoneNotFound` and `.userDeletedZone` are immanent in this API and among the first things you’d encounter starting out.
 
