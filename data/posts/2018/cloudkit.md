@@ -11,13 +11,13 @@
 But wait, how much exactly does it cost?
 
 > Simply put: you're not going to be paying for CloudKit. Period.
-—[@guilhermerambo](https://medium.com/@guilhermerambo/synchronizing-data-with-cloudkit-94c6246a3fda).
+—[@guilhermerambo](https://medium.com/@guilhermerambo/synchronizing-data-with-cloudkit-94c6246a3fda)
 
-Selling many device types to its customers, who often own multiple Apple devices, the company must provide a somewhat integrated user experience across macOS, iOS, watchOS, and tvOS. For data synchronization, this infamously hard and repetitive problem, they can impossibly rely on their developer community alone.
+Selling many device types to its customers, who often own multiple Apple devices, the company must provide a somewhat integrated user experience across macOS, iOS, watchOS, and tvOS. For [data synchronization](https://en.wikipedia.org/wiki/Data_synchronization), this infamously hard and repetitive challenge, they can impossibly rely on their developer community alone.
 
 #### CloudKit currently scales to hundreds of millions of users
 
-Apple has been treading a path for making sync easier, implementing, dog-fooding, and iterating on ways for storing and managing structured data for mobile application with [CloudKit](https://developer.apple.com/documentation/cloudkit) and [CloudKit Dashboard](https://developer.apple.com/library/content/documentation/DataManagement/Conceptual/CloudKitQuickStart/EditingSchemesUsingCloudKitDashboard/EditingSchemesUsingCloudKitDashboard.html). Not trivial, of course, but manageable—pleasant even. If CloudKit backs [iCloud Drive](https://www.apple.com/lae/icloud/icloud-drive/), [Photos](https://www.apple.com/ios/photos/), and Notes at Apple, we should consider it for our apps.
+Apple has been treading a path for making sync easier, implementing, dog-fooding, and iterating on ways for storing and managing structured data for mobile applications with [CloudKit](https://developer.apple.com/documentation/cloudkit) and [CloudKit Dashboard](https://developer.apple.com/library/content/documentation/DataManagement/Conceptual/CloudKitQuickStart/EditingSchemesUsingCloudKitDashboard/EditingSchemesUsingCloudKitDashboard.html). Not trivial of course, but manageable—pleasant even. If CloudKit backs [iCloud Drive](https://www.apple.com/lae/icloud/icloud-drive/), [Photos](https://www.apple.com/ios/photos/), and Notes at Apple, we might consider using it for our puny apps.
 
 📚👓 When I’ve initially been writing this, back in February 2018, Apple just published their CloudKit paper, [CloudKit: Structured Storage for Mobile Applications](http://www.vldb.org/pvldb/vol11/p540-shraer.pdf).
 
@@ -33,7 +33,7 @@ Data in iCloud is segregated and encapsulated in containers, owned by developers
 
 #### Environment, Database, Zone, and Record
 
-The CloudKit schema, one of the aforementioned containers, is structured into environments (development and production), databases (private, shared, and public), zones, and records. For a quick conceptual refresher, watch the first part of this [WWDC 2017](https://developer.apple.com/videos/wwdc2017/) presentation: [Build Better Apps with CloudKit Dashboard](https://developer.apple.com/videos/play/wwdc2017/226/), Session 226, [@djbrowning](https://twitter.com/djbrowning), CloudKit. 📺
+The CloudKit schema, one of the aforementioned containers, is structured into environments (development and production), databases (private, shared, and public), zones, and records. For a quick conceptual refresher, watch the first part of this [WWDC 2017](https://developer.apple.com/videos/wwdc2017/) presentation: [Build Better Apps with CloudKit Dashboard](https://developer.apple.com/videos/play/wwdc2017/226/), Session 226, [@djbrowning](https://twitter.com/djbrowning), CloudKit.
 
 #### Records are the elemental unit in CloudKit
 
@@ -41,7 +41,7 @@ Leapfrogging [containers](https://developer.apple.com/documentation/cloudkit/ckc
 
 #### The truth lies in the cloud
 
-Truth is multifaceted, in life and computing, especially in distributed systems. Sync, synchronization of state between different computers, is one of those classic computer science problems. [Paxos](https://lamport.azurewebsites.net/pubs/lamport-paxos.pdf), et al. What is true? Or better, where is truth? For CloudKit sync, truth is on the server. In a iCloud based system, the iCloud server is the source of truth, while the app maintains a local cache, and CloudKit is the glue between the two. The truth lies in the cloud is the fundamental assumption to internalize when working with CloudKit. Consequently, this means the app should be able to toss the local cache entirely, starting from scratch by pulling data from iCloud. While at the same time, and that’s the interesting part, the source of truth, iCloud, might not be available due to network outage, for example, or the user might not have an iCloud account at all, meaning the app has to be build in such a way, that it’s usable without iCloud. The truth lies in the cloud if it’s available.
+Truth is multifaceted, in life and computing, especially in distributed systems. Sync, synchronization of state between different computers, is one of those classic computer science problems. Ever been to [Paxos](https://lamport.azurewebsites.net/pubs/lamport-paxos.pdf)? What is true? Or better, where is truth? For CloudKit sync, truth is on the server. In a iCloud based system, the iCloud server is the source of truth, while the app maintains a local cache, and CloudKit is the glue between the two. The truth lies in the cloud is the fundamental assumption to internalize when working with CloudKit. Consequently, this means the app should be able to toss the local cache entirely, starting from scratch by pulling data from iCloud. While at the same time, and that’s the interesting part, the source of truth, iCloud, might not be available due to network outage, for example, or the user might not have an iCloud account at all, meaning the app has to be build in such a way, that it’s usable without iCloud. The truth lies in the cloud if it’s available.
 
 The stateful access point of the CloudKit API is `CKContainer`. It owns an operation queue, to which you add operation to interact with a iCloud database.
 
@@ -72,6 +72,8 @@ Inherently, CloudKit change tokens are coupled with the state of your local cach
 Merging is app specific, getting your hands dirty, you will find that handling all edge cases, even with just a single truth, in the cloud, can become challenging. As soon as you start tinkering with elaborate merge schemes, all is lost. At least initially, I recommend implementing a version where iCloud is master that works for most of your use cases. Iterate from there.
 
 Don’t be surprised if you are receiving the changes on a device from which you have pushed them, this kind of statefulness is irrelevant for Cloudkit. Use one code path for pulling and merging and one code path for pushing. Less state is better.
+
+If you are new to data merging, begin thinking about synchronized deletions and [transaction logs](https://en.wikipedia.org/wiki/Transaction_log). 👀
 
 #### CloudKit Dashboard
 
