@@ -67,9 +67,9 @@ Comparing server change tokens, I’ve noticed that they, database change tokens
 
 While pushing data to the server with [`CKModifyRecordsOperation`](https://developer.apple.com/documentation/cloudkit/ckmodifyrecordsoperation) you can pass a client change token. The server will include this in the result of your next fetch as means for you to check if your last push went through. It doesn’t really help much, of course, but at least you can adjust your assumptions. Contrary to the server change tokens, which are per database and per zone, there’s only one client change token per database. I just mention this, because it tripped me up, during my first experiments with this API.
 
-Inherently, CloudKit change tokens are coupled with the state of your local cache. Don’t store them separately, but within the cache, guaranteeing synchronized deletion. You don’t want to end up deleting your local cache, while keeping the change tokens. Especially during development this can get confusing. 
+Inherently, CloudKit change tokens are coupled with the state of your local cache. Don’t store them separately, but within the cache, guaranteeing synchronized deletion. You don’t want to end up deleting your local cache, while keeping the change tokens. Especially during development this can get confusing.
 
-With that being said, by popular demand, here’s the [gist](https://gist.github.com/michaelnisi/ac0c1242db9ddb940b93f8a32c39ccf7) of persisting server change tokens and UUIDs, they make good client change tokens, with `UserDefaults`.
+With that being said, by popular demand, here’s the [gist](https://gist.github.com/michaelnisi/ac0c1242db9ddb940b93f8a32c39ccf7) of persisting server change tokens and UUIDs, for client change tokens, with `UserDefaults`.
 
 Merging is app specific, getting your hands dirty, you will find that handling all edge cases, even with just a single truth, in the cloud, can become challenging. As soon as you start tinkering with elaborate merge schemes, all is lost. At least initially, I recommend implementing a version where iCloud is master that works for most of your use cases. Iterate from there.
 
@@ -93,4 +93,4 @@ As with all network programming, when using CloudKit, although conveniently high
 
 #### CloudKit is the obvious choice for synchronized storage of structured data
 
-[Implicit authentication](https://medium.com/@skreutzb/ios-onboarding-without-signup-screens-cb7a76d01d6e), little operational effort, and low costs make CloudKit the obvious choice for synchronized data storage, for apps distributed through the App Store.
+[Implicit authentication](https://medium.com/@skreutzb/ios-onboarding-without-signup-screens-cb8a76d01d6e), little operational effort, and low costs make CloudKit the obvious choice for synchronized data storage, for apps distributed through the App Store.
