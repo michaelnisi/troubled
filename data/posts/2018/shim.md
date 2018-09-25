@@ -10,7 +10,7 @@ Being an iOS developer, I cannot fully use the [Package Manager](https://swift.o
 
 A shining facet of Swift is its interoperabiltiy with C, but [importing a C library into Swift](https://oleb.net/blog/2017/12/importing-c-library-into-swift/) has been surprisingly cumbersome before [Swift 4.2](https://swift.org/blog/swift-4-2-released/).
 
-With [system library targets](https://github.com/apple/swift-evolution/blob/master/proposals/0208-package-manager-system-library-targets.md), which move the current system-module packages feature from package to target level, describing a package dependency on a system library became much easier. Previously, we were tempted to create isolated repos for our system library shims, containing lonely and deserted [module maps](https://clang.llvm.org/docs/Modules.html)—like [so](https://github.com/michaelnisi/csqlite)—undermining the team’s original, remarkably naïve, intention of inherent standardization.
+With [system library targets](https://github.com/apple/swift-evolution/blob/master/proposals/0208-package-manager-system-library-targets.md), which move the current system-module packages feature from package to target level, describing a package dependency on a system library became much easier. Previously, we were tempted to create isolated repos for our system library shims, containing [specific module maps](https://github.com/michaelnisi/csqlite)—undermining the team’s original, remarkably naïve, intention of inherent standardization.
 
 > Our original motivation in forcing system packages to be declared as standalone packages was to encourage the ecosystem to standardize on them, their names, their repository locations, and their owners. In practice, this effort did not work out and it only made the package manager harder to use.
 
@@ -34,9 +34,9 @@ let package = Package(
 
 Here, our `ZLib` package depends on `CZLib`, a C library, we are now able to make available inside our package.
 
-Allow me to explain this with a concrete example. I’ve learned about this, when I was updating my Skull framework, the SQLite3 wrapper I like to use. This framework, of course, depends on `SQLite3`, which I had to express using a system-module package, living in its own little repo. With 4.2, this, not terribly elegant approach, has been deprecated.
+OK—what? Here’s a concrete example. I’ve learned about this, when I was updating my Skull framework, the extra thin SQLite3 wrapper I like to use. This framework, of course, depends on `SQLite3`, which I had to express using a system-module package, living in its own little repo.
 
-Now, I can describe my package like this.
+With 4.2, this, elegant—turtles all the way down—but impractical, approach has been deprecated. Now, I can describe packages with internal system library dependencies using targets.
 
 ```swift
 // swift-tools-version:4.2
@@ -48,15 +48,22 @@ let package = Package(
     .library(name: "Skull", targets: ["Skull"])
   ],
   targets: [
-    .systemLibrary(name: "CSqlite3", path: "Libraries/CSqlite3"),
-    .target(name: "Skull", dependencies: ["CSqlite3"], path: "Sources"),
-    .testTarget(name: "SkullTests", dependencies: ["Skull"])
+    .systemLibrary(
+      name: "CSqlite3",
+      path: "Libraries/CSqlite3"),
+    .target(
+      name: "Skull",
+      dependencies: ["CSqlite3"],
+      path: "Sources"),
+    .testTarget(
+      name: "SkullTests",
+      dependencies: ["Skull"])
   ],
   swiftLanguageVersions: [.v4_2]
 )
 ```
 
-And provide the module map for the system library named `CSqlite3` within the package using the `path` parameter.
+And provide the [module map](https://clang.llvm.org/docs/Modules.html) for the system library named `CSqlite3` within the package via the `path` parameter.
 
 ```
 Libraries
@@ -65,19 +72,19 @@ Libraries
     └── shim.h
 ```
 
-It works if you, after cloning into Skull, can do:
+It works if, after cloning into Skull, you are able run its tests.
 
 ```
 swift test
 ```
 
-Or trying the example, with:
+Another thing you could try is running the example, which also checks if resolving the dependencies works.
 
 ```
 cd example && swift run
 ```
 
-Which resolves dependencies, compiles, and runs, which should result in something like this:
+Which should result in something like the following.
 
 ```
 Fetching https://github.com/michaelnisi/skull
