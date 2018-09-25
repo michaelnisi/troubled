@@ -34,9 +34,9 @@ let package = Package(
 
 Here, our `ZLib` package depends on `CZLib`, a C library, we are now able to make available inside our package.
 
-OK—what? Here’s a concrete example. I’ve learned about this, when I was updating my Skull framework, the extra thin SQLite3 wrapper I like to use. This framework, of course, depends on `SQLite3`, which I had to express using a system-module package, living in its own little repo.
+OK—what? Here’s a concrete example. I’ve learned about this today, while I’ve been updating my [Skull framework](https://github.com/michaelnisi/skull), the extra thin [SQLite](https://www.sqlite.org/index.html) wrapper I like to use. This package, of course, depends on `SQLite3`, which I had to express using a system-module package, living in [its own little repo](https://github.com/michaelnisi/csqlite).
 
-With 4.2, this, elegant—turtles all the way down—but impractical, approach has been deprecated. Now, I can describe packages with internal system library dependencies using targets.
+With 4.2, this elegant, turtles all the way down, but totally impractical, approach has been deprecated. Now, I can describe packages with internal system library dependencies using targets. Yaaaay! 🎉
 
 ```swift
 // swift-tools-version:4.2
@@ -78,7 +78,7 @@ It works if, after cloning into Skull, you are able run its tests.
 swift test
 ```
 
-Another thing you could try is running the example, which also checks if resolving the dependencies works.
+Another thing you might want to try is running the example, which is slightly more interesting, for it’s also resolving dependencies.
 
 ```
 cd example && swift run
@@ -97,4 +97,6 @@ Linking ./.build/x86_64-apple-macosx10.10/debug/example
 Earth
 ```
 
-[Bon Voyage](https://www.youtube.com/watch?v=WQJ2_T24JqY) ✌️🕶
+## TIL
+
+That’s it, TIL. I hope you like it and [Bon Voyage](https://www.youtube.com/watch?v=WQJ2_T24JqY) ✌️🕶
