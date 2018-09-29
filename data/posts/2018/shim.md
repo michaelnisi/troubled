@@ -97,4 +97,4 @@ Linking ./.build/x86_64-apple-macosx10.10/debug/example
 Earth
 ```
 
-Where 🌍 comes from the database and means it worked. That’s it, nothing earth-shattering, just a thing I learned today. I hope you like it. [Bon Voyage](https://www.youtube.com/watch?v=WQJ2_T24JqY) ✌️🕶
+Where 🌍 comes from the database and means it worked. That’s it, nothing earth-shattering, just a thing I learned today. I hope you [like it raw](https://www.youtube.com/watch?v=WQJ2_T24JqY). ✌️🕶
