@@ -1,14 +1,12 @@
 {
   "title": "Introducing Podest",
-  "description": "Why another podcast app.",
+  "description": "The market for podcast apps is saturated. Why another one?",
   "template": "article.pug",
   "date": "2018-10-01",
   "path": "2018/10"
 }
 
-While I’m busy releasing my new podcast app on the App Store, I’m reminded of just how many podcast apps exist. Why exactly did I write one in the first place? Does this choir of apps, offering themselves in the search results, ask for another contender, pleading for its use? Faced with marketing blurb fabrication pressure to climb these ranks, I doubt it. Isn’t it a waste of energy, when so many developers are pouring their energy and time into similar products?
-
-## I 💜 Podcasts
+Busy releasing my new podcast app on the App Store, I’m reminded of just how many podcast apps exist. Why exactly did I write one in the first place? Does this choir of apps, offering themselves in the search results, ask for another contender, pleading for its use? Faced with marketing blurb fabrication pressure to climb these ranks, I doubt it. Isn’t it a waste of energy, when so many developers are pouring their energy and time into similar products?
 
 I remember listening to my first podcasts on my computer, which sounds weird now, like eating soup with a fork. Among the first shows I’ve followed, come the iPhone, were [StackOverflow](https://stackoverflow.blog/2008/04/17/podcast-1/), [The Book Review Podcast](https://www.nytimes.com/column/book-review-podcast) by [The Times](https://www.nytimes.com), and, Chris Lydon’s, true founding father of podcasting, [Radio Open Source](http://radioopensource.org). I fondly remember immersing myself into [Chaos Radio Express](https://cre.fm) and my beloved [Küchenradio](https://www.kuechenstud.io/kuechenradio/), pioneering German shows, back in 2010. Podcasts are a personal medium, indeed.
 
@@ -34,11 +32,11 @@ But why is that? How come all podcast apps feel off-center to me? Could I build 
 
 The user interface of a podcast app is challenging, it has to communicate two narratives, information and playback. You can look at one thing, while you are playing another thing. A browser and a player.
 
-#### Made in Germany
+## Podest
 
 [![Podest](/img/podest.svg "Podest App Icon")](https://itunes.apple.com/us/app/podest/id794983364)
 
-## Podest
+#### Streamlined Podcast Player
 
 Here is a quick rundown of features in this first release.
 
@@ -54,22 +52,11 @@ Here is a quick rundown of features in this first release.
 - Search Shows and Episodes
 - Synced Playback Resuming
 - iCloud Sync of Queue and Subscriptions
+- Open Source
 
-Check the [App Store](https://itunes.apple.com/us/app/podest/id794983364) for details. 🤗🎉
+Check the [App Store](https://itunes.apple.com/us/app/podest/id794983364) for details. Find most of the source code on my [GitHub](https://github.com/michaelnisi/).
 
-## Open Source
-
-Key modules of this app are open source and I plan to release more.
-
-- Download Manager, [fileproxy](https://github.com/michaelnisi/fileproxy)
-- Feed Cache, [manger](https://github.com/michaelnisi/manger)
-- Feed Parser, [pickup](https://github.com/michaelnisi/pickup)
-- Reachability, [ola](https://github.com/michaelnisi/ola)
-- Search Cache, [fanboy](https://github.com/michaelnisi/fanboy)
-
-For image caching I use the excellent [Nuke](https://github.com/kean/Nuke) by [Alexander Grebenyuk](https://kean.github.io).
-
-#### Was it easy? Hell no!
+#### Download on the App Store
 
 Back to the initial question. Does it make sense to build something that already exists? If you think you can improve something, of course, but even if not. If you can, you should build all the things. Diversity produces progress. Always reinvent the wheel! That’s how we learn.
 
