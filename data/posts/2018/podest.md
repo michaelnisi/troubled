@@ -32,11 +32,7 @@ But why is that? How come all podcast apps feel off-center to me? Could I build 
 
 The user interface of a podcast app is challenging, it has to communicate two narratives, information and playback. You can look at one thing, while you are playing another thing. A browser and a player.
 
-## Podest
-
-[![Podest](/img/podest.svg "Podest App Icon")](https://itunes.apple.com/us/app/podest/id794983364)
-
-#### Get your podcasts
+[![Podest](/img/podest.svg "Podest Logotype")](https://itunes.apple.com/us/app/podest/id794983364)
 
 I immediately quit using other apps, even looking at them. I wanted to go about this fresh. For a while, until I had build a somewhat working player, I stopped listening to podcasts.
 
@@ -58,7 +54,9 @@ Here is a quick rundown of features in this first release.
 
 Check the [App Store](https://itunes.apple.com/us/app/podest/id794983364) for details. Find most of the source code on my [GitHub](https://github.com/michaelnisi/).
 
-#### Download on the App Store
+[![Podest](/img/podest_app_icon.svg "Podest App Icon")](https://itunes.apple.com/us/app/podest/id794983364)
+
+#### Get your podcasts
 
 Back to the initial question. Does it make sense to build something that already exists? If you think you can improve something, of course, but even if not. If you can, you should build all the things. Diversity produces progress. Always reinvent the wheel! That’s how we learn.
 
