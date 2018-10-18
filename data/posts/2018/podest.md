@@ -8,9 +8,11 @@
 
 Promoting my new podcast app, available on the [App Store](https://itunes.apple.com/us/app/podest/id794983364), I’m reminded of just how many podcast apps there are now. Searching the term “podcast” in the store, you are faced with a wall of podcast players. I came for glory, not for squeezing my hard work into this saturated space. Does this choir of apps, blaring their unique selling propositions, need another voice in its cacophony?
 
-I remember listening to my first podcasts on my computer, which sounds weird now, like eating soup with a fork. Among the first shows I’ve followed, come the iPhone, were [StackOverflow](https://stackoverflow.blog/2008/04/17/podcast-1/), [The Book Review Podcast](https://www.nytimes.com/column/book-review-podcast) from [The New York Times](https://www.nytimes.com), and, Chris Lydon’s, true founding father of podcasting, [Radio Open Source](http://radioopensource.org). I fondly remember immersing myself into [Chaos Radio Express](https://cre.fm) and my then beloved [Küchenradio](https://www.kuechenstud.io/kuechenradio/), pioneering German shows, back in 2010. Podcasts are a personal medium, indeed.
+#### I love podcasts
 
-Today, podcasts are in bloom—again. [The Daily](https://www.nytimes.com/podcasts/the-daily) quickly became a household name, [The New Yorker Radio Hour](https://www.newyorker.com/podcast/the-new-yorker-radio-hour) is a classic by now, and Britain’s [Monocle](https://monocle.com) has its own [radio station](https://monocle.com/radio/). Dedicated podcast labels flourish: [Radiotopia](https://www.radiotopia.fm), [Gimlet](https://www.gimletmedia.com), [Crooked Media](https://crooked.com) to name a few. For me, no week goes by without [Slate’s Culture Gabfest](http://www.slate.com/articles/podcasts/culturegabfest.html) and [Still Processing](https://www.nytimes.com/podcasts/still-processing), another fine [Pineapple](http://pineapple.fm) production.
+Podcasts first clicked with, when I discovered [StackOverflow](https://stackoverflow.blog/2008/04/17/podcast-1/), back in 2008. This weekly conversation between [Joel Spolsky](https://www.joelonsoftware.com) and [Jeff Atwood](https://blog.codinghorror.com) about the progress of building the [Stackoverflow](https://stackoverflow.com) site was eye opening. Listening to human voices at close range, over headphones of device speakers, can create an intimate bubble, a feeling of connectedness between listener and hosts. I have fond memories—strangely enough—of long wintery walks with the dog listening to [John Gruber](https://daringfireball.net) and [Dan Benjamin](http://danbenjamin.com) chatting about Apple stuff on [The Talk Show](http://5by5.tv/talkshow), of wiping the wooden floors of my St. Georg apartment to [The Book Review](https://www.nytimes.com/column/book-review-podcast), or listening to [Pavel Mayer explaining C++ on CRE](https://cre.fm/cre063-die-programmiersprache-c-plus-plus) in front of the fire place with my laptop on the floor.
+
+Today, podcasts are in bloom—again. [The Daily](https://www.nytimes.com/podcasts/the-daily) quickly became a household name during the 2016 election campaign. Pioneers like Radio Open Source, 99pi, This American Life, Radio Lab are still going strong. Podcast labels are thing now, Radiotopia, Wondery, Headgum, Gimlet, Pineapple, or the German Viertausendhertz. Print publications understand that podcasts create bonds between their writes and their readers: Monocle, New York Times, New Yorker, New York Magazine. Digital natives like Slate, Vox, or The Verge feel right at home in podcast land. After merely mirroring their signals into this space, following early adopters like NPR or WYNC, traditional broadcasters like the [BBC](https://www.bbc.co.uk/podcasts) are getting serious. As we adopt talking to our machines, it kind of makes sense we are listening too. Why doesn’t Siri have a podcast?
 
 #### Apps are made of priorities and compromises
 
@@ -36,6 +38,8 @@ The user interface of a podcast app is challenging, it has to communicate two na
 
 I immediately quit using other apps, even looking at them. I wanted to go about this fresh. For a while, until I had build a somewhat working player, I stopped listening to podcasts.
 
+Podest is a simple, yet powerful podcast app. Obviously, this late in the party I’m not trying to compete with the quantity of features, but with quality.
+
 Here is a quick rundown of features in this first release.
 
 - Audio and Video Playback
@@ -56,7 +60,7 @@ Check the [App Store](https://itunes.apple.com/us/app/podest/id794983364) for de
 
 [![Podest](/img/podest_app_icon.svg "Podest App Icon")](https://itunes.apple.com/us/app/podest/id794983364)
 
-#### Get your podcasts
+#### Download on the App Store
 
 Back to the initial question. Does it make sense to build something that already exists? If you think you can improve something, of course, but even if not. If you can, you should build all the things. Diversity produces progress. Always reinvent the wheel! That’s how we learn.
 
