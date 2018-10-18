@@ -1,12 +1,12 @@
 {
   "title": "Why Another Podcast App",
-  "description": "The market for podcast apps might be saturated. Why another one?",
+  "description": "The market for podcast apps might be saturated. Why make another one?",
   "template": "article.pug",
-  "date": "2018-10-01",
+  "date": "2018-10-19",
   "path": "2018/10"
 }
 
-Busy releasing my new podcast app on the App Store, I’m reminded of just how many podcast apps exist. Why exactly did I write one in the first place? Does this choir of apps, offering themselves in the search results, ask for another contender, pleading for its use? Faced with marketing blurb fabrication pressure to climb these ranks, I doubt it. Isn’t it a waste of energy, when so many developers are pouring their energy and time into similar products? Only an idiot would go solo on a podcast app.
+Promoting my new podcast app, available on the [App Store](https://itunes.apple.com/us/app/podest/id794983364), I’m reminded of just how many podcast apps there are now. Searching the term “podcast” in the store, you are faced with a wall of podcast players. I came for glory, not for squeezing my hard work into this saturated space. Does this choir of apps, blaring their unique selling propositions, need another voice in its cacophony?
 
 I remember listening to my first podcasts on my computer, which sounds weird now, like eating soup with a fork. Among the first shows I’ve followed, come the iPhone, were [StackOverflow](https://stackoverflow.blog/2008/04/17/podcast-1/), [The Book Review Podcast](https://www.nytimes.com/column/book-review-podcast) from [The New York Times](https://www.nytimes.com), and, Chris Lydon’s, true founding father of podcasting, [Radio Open Source](http://radioopensource.org). I fondly remember immersing myself into [Chaos Radio Express](https://cre.fm) and my then beloved [Küchenradio](https://www.kuechenstud.io/kuechenradio/), pioneering German shows, back in 2010. Podcasts are a personal medium, indeed.
 
