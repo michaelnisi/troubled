@@ -248,15 +248,17 @@ const md = markdown({
 
 function localsWithItem (item) {
   return {
-    title: item.header.title,
-    description: item.header.description,
     content: md.render(item.body),
-    name: item.name,
-    link: item.link,
     date: item.date,
     dateString: strftime(item.date, '%d %B %Y'),
+    description: item.header.description,
+    icons: item.header.icons,
+    link: item.link,
+    name: item.name,
     pubDate: item.date.toUTCString(),
-    icons: item.header.icons
+    title: item.header.title,
+    url: `https://troubled.pro/${item.link}`,
+    image: `https://troubled.pro/${item.header.image || 'img/michael_2x.jpg'}`
   }
 }
 

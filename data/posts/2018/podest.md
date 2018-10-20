@@ -3,7 +3,8 @@
   "description": "The market for podcast apps on the App Store might be saturated. Why make another one?",
   "template": "article.pug",
   "date": "2018-10-22",
-  "path": "2018/10"
+  "path": "2018/10",
+  "image": "img/podest.svg"
 }
 
 Promoting my new podcast app, available on the [App Store](https://itunes.apple.com/us/app/podest/id794983364), I’m reminded of just how many podcast apps there are now, there were less when I started making the app. Searching the term “podcast” in the store, you are faced with a wall of podcast players. I came for glory, not for squeezing my hard work into this saturated space. Does this choir of apps, blaring their unique selling propositions, need another voice in its cacophony?
@@ -12,11 +13,15 @@ Promoting my new podcast app, available on the [App Store](https://itunes.apple.
 
 Podcasts first clicked with me, when I discovered [StackOverflow](https://stackoverflow.blog/2008/04/17/podcast-1/), back in 2008. This weekly conversation between [Joel Spolsky](https://www.joelonsoftware.com) and [Jeff Atwood](https://blog.codinghorror.com), about the progress of building the [Stackoverflow](https://stackoverflow.com) site, was an eye opener. Listening to human voices at close range, over headphones or device speakers, can create an intimate bubble, a feeling of connectedness between listener and hosts. I have fond memories—strangely enough—of long wintery walks with the dog listening to [John Gruber](https://daringfireball.net) and [Dan Benjamin](http://danbenjamin.com) chatting about Apple stuff on the original [Talk Show](http://5by5.tv/talkshow), of wiping the wooden floors of my St. Georg apartment to [The Book Review](https://www.nytimes.com/column/book-review-podcast), or listening to [Pavel Mayer explaining C++ on CRE](https://cre.fm/cre063-die-programmiersprache-c-plus-plus) in front of the fire place with my laptop on the floor.
 
-Today, with everyone carrying a connected playback device in their pockets, audio is big—for input and output. Once again, podcasts are in bloom. [The Daily](https://www.nytimes.com/podcasts/the-daily) quickly became a household name during the 2016 election campaign. Pioneers like [Radio Open Source](http://radioopensource.org), [99pi](https://99percentinvisible.org), [This American Life](https://www.thisamericanlife.org), [Radio Lab](https://www.wnycstudios.org/shows/radiolab) are still going strong.
+Today, with everyone carrying a connected playback device in their pockets, audio is big—for input and output. Once again, podcasts are sprouting in all corners of pop—and not so pop—culture. [The Daily](https://www.nytimes.com/podcasts/the-daily) quickly became a household name during the 2016 election campaign. Pioneers like [Radio Open Source](http://radioopensource.org), [99pi](https://99percentinvisible.org), [This American Life](https://www.thisamericanlife.org), [Radio Lab](https://www.wnycstudios.org/shows/radiolab) are still going strong.
 
-Podcast labels—publishing and production—are a thing now: [Radiotopia](https://www.radiotopia.fm), [Wondery](https://wondery.com), [Headgum](https://headgum.com), [Gimlet](https://www.gimletmedia.com), [Pineapple Street Media](http://pineapple.fm), or the German [Viertausendhertz](https://viertausendhertz.de), [Pool Artists](http://www.poolartists.de), and [Metaebene](https://metaebene.me).
+Podcast labels—publishing and production—are a thing now: [Radiotopia](https://www.radiotopia.fm), [Wondery](https://wondery.com), [Headgum](https://headgum.com), [Gimlet](https://www.gimletmedia.com), [Pineapple Street Media](http://pineapple.fm); or the German [Viertausendhertz](https://viertausendhertz.de), [Pool Artists](http://www.poolartists.de), and [Metaebene](https://metaebene.me).
 
-Print publications understand that podcasts can connect their readers with their brand and their writers: Monocle, New York Times, [New Yorker](https://www.newyorker.com/podcast), New York Magazine. Digital natives like [Slate](http://www.slate.com/articles/podcasts.html), [Vox](https://www.vox.com/pages/podcasts), or [The Verge](https://www.theverge.com/podcasts) have it easy. After merely mirroring their signals into this space, following early adopters like NPR or WYNC, traditional broadcasters like the [BBC](https://www.bbc.co.uk/podcasts) are getting serious.
+Print publications understand that podcasts can connect their readers with their brand and their writers: [Monocle](https://monocle.com/radio/), [New York Times](https://www.nytimes.com/spotlight/podcasts), [New Yorker](https://www.newyorker.com/podcast), and more recently [New York Magazine](http://nymag.com/tags/podcast/).
+
+Digital natives like [Slate](http://www.slate.com/articles/podcasts.html), [Vox](https://www.vox.com/pages/podcasts), or [The Verge](https://www.theverge.com/podcasts) have it easy. Platforms like [Spotify](https://www.spotify.com), [Deezer](https://www.deezer.com/), or [Audible](https://www.aubile.com/) integrate podcasts.
+
+After merely mirroring their signals into the podcast space, following early adopters like [NPR](https://www.npr.org) or [WYNC](https://www.wnyc.org), broadcasters like the [BBC](https://www.bbc.co.uk/podcasts) are getting serious.
 
 #### Apps are made of priorities and compromises
 
@@ -68,6 +73,10 @@ Podest is a simple, yet powerful podcast app. Obviously, this late in the party 
 Check the [App Store](https://itunes.apple.com/us/app/podest/id794983364) for details.
 
 I’m in the process of open sourcing all components of this app, all the Swift and JavaScript modules get published on [GitHub](https://github.com/michaelnisi/), many parts are already there.
+
+#### Improving internal playback controls and dark mode
+
+Once my modest promoting the app is concluded, I will work on the internal player controls—currently the relies on Control Center for scrubbing—adding controls for scrubbing, skipping a few seconds forward, and a sleep function. After that I want to add dark mode, although iOS might be surfacing an API for it in the near future.
 
 #### Download on the App Store
 
