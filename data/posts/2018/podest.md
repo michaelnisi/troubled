@@ -19,9 +19,13 @@ Podcast labels—publishing and production—are a thing now: [Radiotopia](https
 
 Print publications understand that podcasts can connect their readers with their brand and their writers: [Monocle](https://monocle.com/radio/), [New York Times](https://www.nytimes.com/spotlight/podcasts), [New Yorker](https://www.newyorker.com/podcast), and more recently [New York Magazine](http://nymag.com/tags/podcast/).
 
-Digital natives like [Slate](http://www.slate.com/articles/podcasts.html), [Vox](https://www.vox.com/pages/podcasts), or [The Verge](https://www.theverge.com/podcasts) have it easy. Platforms like [Spotify](https://www.spotify.com), [Deezer](https://www.deezer.com/), or [Audible](https://www.aubile.com/) integrate podcasts.
+Digital natives like [Slate](http://www.slate.com/articles/podcasts.html), [Vox](https://www.vox.com/pages/podcasts), or [The Verge](https://www.theverge.com/podcasts) don’t have to reach far.
+
+Streaming services like [SoundCloud](https://soundcloud.com/for/podcasting), [Spotify](https://www.spotify.com), [Deezer](https://www.deezer.com/) integrate podcasts. Amazon produces podcasts—for [Alexa](https://developer.amazon.com/alexa), I guess—with its audio book company [Audible](https://www.audible.com/blog/), but for something to call itself podcast it must have a public feed, per definition.
 
 After merely mirroring their signals into the podcast space, following early adopters like [NPR](https://www.npr.org) or [WYNC](https://www.wnyc.org), broadcasters like the [BBC](https://www.bbc.co.uk/podcasts) are getting serious.
+
+[Stitcher](https://www.stitcher.com) cultivates a collection of podcasts, an alternative to the original by [Apple](https://www.apple.com/itunes/podcasts/), the founding fathers of podcast land, inventors of the [iPod](https://en.wikipedia.org/wiki/IPod).
 
 #### Apps are made of priorities and compromises
 
