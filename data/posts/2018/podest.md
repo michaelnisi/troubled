@@ -2,30 +2,34 @@
   "title": "Why Another Podcast App",
   "description": "The market for podcast apps on the App Store might be saturated. Why make another one?",
   "template": "article.pug",
-  "date": "2018-10-22",
+  "date": "2018-10-23",
   "path": "2018/10",
   "image": "img/podest.svg"
 }
 
-Promoting my new podcast app, available on the [App Store](https://itunes.apple.com/us/app/podest/id794983364), I’m reminded of just how many podcast apps there are now, there were less when I started making the app. Searching the term “podcast” in the store, you are faced with a wall of podcast players. I came for glory, not for squeezing my hard work into this saturated space. Does this choir of apps, blaring their unique selling propositions, need another voice in its cacophony?
+Promoting my new podcast app, available on the [App Store](https://itunes.apple.com/us/app/podest/id794983364), I’m reminded of just how many podcast apps there are—now. Searching the term “podcast” in the store, I face a wall of podcast players. *I came for glory,* I shout shaking my fist, not for squeezing my hard work into these saturated shelves. Does this choir of apps, blaring their unique selling propositions, ask for another voice in its cacophony?
 
 #### I love podcasts
 
-Podcasts first clicked with me, when I discovered [StackOverflow](https://stackoverflow.blog/2008/04/17/podcast-1/), back in 2008. This weekly conversation between [Joel Spolsky](https://www.joelonsoftware.com) and [Jeff Atwood](https://blog.codinghorror.com), about the progress of building the [Stackoverflow](https://stackoverflow.com) site, was an eye opener. Listening to human voices at close range, over headphones or device speakers, can create an intimate bubble, a feeling of connectedness between listener and hosts. I have fond memories—strangely enough—of long wintery walks with the dog listening to [John Gruber](https://daringfireball.net) and [Dan Benjamin](http://danbenjamin.com) chatting about Apple stuff on the original [Talk Show](http://5by5.tv/talkshow), of wiping the wooden floors of my St. Georg apartment to [The Book Review](https://www.nytimes.com/column/book-review-podcast), or listening to [Pavel Mayer explaining C++ on CRE](https://cre.fm/cre063-die-programmiersprache-c-plus-plus) in front of the fire place with my laptop on the floor.
+Podcasts first clicked with me, when I discovered the [Stack Overflow podcast](https://stackoverflow.blog/2008/04/17/podcast-1/), back in 2008. This periodic conversation between [Joel Spolsky](https://www.joelonsoftware.com) and [Jeff Atwood](https://blog.codinghorror.com), about the progress of building their [site](https://stackoverflow.com), was an eye opener. Listening to human voices at close range, over headphones or device speakers, can create an intimate bubble, a feeling of connectedness between listener and hosts. I have fond memories—strangely enough—of long wintery walks with the dog listening to [John Gruber](https://daringfireball.net) and [Dan Benjamin](http://danbenjamin.com) chatting about Apple stuff on the original [Talk Show](http://5by5.tv/talkshow), of wiping the wooden floors of my St. Georg apartment to [The Book Review](https://www.nytimes.com/column/book-review-podcast), or listening to [Pavel Mayer elucidating C++ on CRE](https://cre.fm/cre063-die-programmiersprache-c-plus-plus) in front of the fire place with my laptop on the floor.
 
-Today, with everyone carrying a connected playback device in their pockets, audio is big—for input and output. Once again, podcasts are sprouting in all corners of pop—and not so pop—culture. [The Daily](https://www.nytimes.com/podcasts/the-daily) quickly became a household name during the 2016 election campaign. Pioneers like [Radio Open Source](http://radioopensource.org), [99pi](https://99percentinvisible.org), [This American Life](https://www.thisamericanlife.org), [Radio Lab](https://www.wnycstudios.org/shows/radiolab) are still going strong.
+## 🔥
 
-Podcast labels—publishing and production—are a thing now: [Radiotopia](https://www.radiotopia.fm), [Wondery](https://wondery.com), [Headgum](https://headgum.com), [Gimlet](https://www.gimletmedia.com), [Pineapple Street Media](http://pineapple.fm); or the German [Viertausendhertz](https://viertausendhertz.de), [Pool Artists](http://www.poolartists.de), and [Metaebene](https://metaebene.me).
+Today, with everyone carrying a connected—playback and recording—device in their pockets, audio is big—for voice control and listening. [The Daily](https://www.nytimes.com/podcasts/the-daily) quickly became a household name during the 2016 election campaign, reaching five million unique listeners every month, [they say](https://www.recode.net/2018/2/13/17005660/new-york-times-the-daily-american-public-media-radio-podcast-michael-barbaro-lisa-tobin-code-media). Pioneers like [Radio Open Source](http://radioopensource.org), [99pi](https://99percentinvisible.org), [This American Life](https://www.thisamericanlife.org), [Radio Lab](https://www.wnycstudios.org/shows/radiolab) are still going strong.
 
-Print publications understand that podcasts can connect their readers with their brand and their writers: [Monocle](https://monocle.com/radio/), [New York Times](https://www.nytimes.com/spotlight/podcasts), [New Yorker](https://www.newyorker.com/podcast), and more recently [New York Magazine](http://nymag.com/tags/podcast/).
+> Podcasting continues to grow year after year. ([Nielsen](https://www.nielsen.com/us/en/insights/reports/2018/nielsen-podcast-insights-q3-2018.html))
 
-Digital natives like [Slate](http://www.slate.com/articles/podcasts.html), [Vox](https://www.vox.com/pages/podcasts), or [The Verge](https://www.theverge.com/podcasts) don’t have to reach far.
+Podcast labels—publishing and production—are a thing now: [Radiotopia](https://www.radiotopia.fm), [Wondery](https://wondery.com), [Headgum](https://headgum.com), [Gimlet](https://www.gimletmedia.com), [Pineapple Street Media](http://pineapple.fm) to name a few. I also want to mention the German studios [Viertausendhertz](https://viertausendhertz.de), [Pool Artists](http://www.poolartists.de), and [Metaebene](https://metaebene.me).
 
-Streaming services like [SoundCloud](https://soundcloud.com/for/podcasting), [Spotify](https://www.spotify.com), [Deezer](https://www.deezer.com/) integrate podcasts. Amazon produces podcasts—for [Alexa](https://developer.amazon.com/alexa), I guess—with its audio book company [Audible](https://www.audible.com/blog/), but for something to call itself podcast it must have a public feed, per definition.
+Print publications understand that podcasts bond readers with writers, deepening the connection to their brands. Not only newspapers, like [The Guardian](https://www.theguardian.com/audio) and [New York Times](https://www.nytimes.com/spotlight/podcasts), also magazines—[Monocle](https://monocle.com/radio/), [New Yorker](https://www.newyorker.com/podcast), and more recently [New York Magazine](http://nymag.com/tags/podcast/)—are creating stunning audio experiences.
+
+Digital natives, [Slate](http://www.slate.com/articles/podcasts.html), [Vox](https://www.vox.com/pages/podcasts), or [Recode](https://www.recode.net/podcasts/) and [The Verge](https://www.theverge.com/podcasts), are already there. [The Cut](https://thecut.com) just released their [first episode](https://www.thecut.com/2018/10/the-cut-on-tuesdays-podcast-episode-1-power.html).
+
+Streaming services like [SoundCloud](https://soundcloud.com/for/podcasting), [Spotify](https://www.spotify.com), [Deezer](https://www.deezer.com/) integrate podcasts. Amazon produces podcasts—for [Alexa](https://developer.amazon.com/alexa) I guess—with its audio book company [Audible](https://www.audible.com/blog/), but for something to call itself podcast it must have a public feed, per definition.
 
 After merely mirroring their signals into the podcast space, following early adopters like [NPR](https://www.npr.org) or [WYNC](https://www.wnyc.org), broadcasters like the [BBC](https://www.bbc.co.uk/podcasts) are getting serious.
 
-[Stitcher](https://www.stitcher.com) cultivates a collection of podcasts, an alternative to the original by [Apple](https://www.apple.com/itunes/podcasts/), the founding fathers of podcast land, inventors of the [iPod](https://en.wikipedia.org/wiki/IPod).
+[Stitcher](https://www.stitcher.com) cultivates a collection of podcasts, an alternative to the original [iTunes](https://www.apple.com/itunes/podcasts/), being the inventor of the [iPod](https://en.wikipedia.org/wiki/IPod), in 2001, Apple is a founder [podcast](https://en.wikipedia.org/wiki/Podcast) land.
 
 #### Apps are made of priorities and compromises
 
