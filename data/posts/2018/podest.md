@@ -72,9 +72,17 @@ In parallel I worked on parsing. Podcasts, not unlike blogs, are published as XM
 
 Actually, when I started tinkering with this podcast app idea, the first thing I wrote was a [chapter parser](https://github.com/michaelnisi/MNAVChapters)—now used in Castro.
 
-Podest is a simple, yet powerful podcast app. Obviously, this late in the party, I can’t compete by increasing the number of features, but I can compete in quality. It helps that Podest is all Swift—don’t @ me.
+#### Internal playback controls, dark mode, and open source
+
+I’m in the process of open sourcing all components of this app, all the Swift and JavaScript modules get published on [GitHub](https://github.com/michaelnisi/), many parts are already there.
+
+Once my modest promoting the app is concluded, I will work on the internal player controls—currently the relies on Control Center for scrubbing—adding controls for scrubbing, skipping a few seconds forward, and a sleep function. After that I want to add dark mode, although iOS might be surfacing an API for it in the near future.
+
+#### Download on the App Store
 
 [![Podest](/img/podest_app_icon.svg "Podest App Icon")](https://itunes.apple.com/us/app/podest/id794983364)
+
+Podest is a simple, yet powerful podcast app. Obviously, this late in the party, I can’t compete by increasing the number of features, but I can compete in quality. Podest is all Swift and has around 70% logical code coverage, which I have to improve.
 
 - Audio and video playback
 - Powerful search
@@ -82,15 +90,7 @@ Podest is a simple, yet powerful podcast app. Obviously, this late in the party,
 - Energy efficiency
 - Landscape mode
 
-Check the [App Store](https://itunes.apple.com/us/app/podest/id794983364) for details.
-
-I’m in the process of open sourcing all components of this app, all the Swift and JavaScript modules get published on [GitHub](https://github.com/michaelnisi/), many parts are already there.
-
-#### Improving internal playback controls and dark mode
-
-Once my modest promoting the app is concluded, I will work on the internal player controls—currently the relies on Control Center for scrubbing—adding controls for scrubbing, skipping a few seconds forward, and a sleep function. After that I want to add dark mode, although iOS might be surfacing an API for it in the near future.
-
-#### Download on the App Store
+Check the [App Store](https://itunes.apple.com/us/app/podest/id794983364) for details. If you have read this far, why not rate the app or write a review? That would help me a lot. Thank you.
 
 Back to the initial question. Does it make sense to build something that already exists? If you think you can improve something, of course, but even if not. If you can, you should build all the things. Diversity produces progress. Always reinvent the wheel! That’s how we learn.
 
