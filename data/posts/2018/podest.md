@@ -33,44 +33,46 @@ After merely mirroring their signals into the podcast space, following early ado
 
 #### Apps are made of priorities and compromises
 
-I have forgotten how I first listened, with iTunes and iPod, I think. Later, on iPhone, I began with Apple [Podcasts](https://itunes.apple.com/us/app/podcasts/id525463029), and later [Downcast](https://itunes.apple.com/us/app/downcast/id393858566), which I used for quite some time. Then came [Instacast](https://itunes.apple.com/us/app/instacast-core/id108386833), which I liked, but as it turned out, didn’t scale to hundreds of subscriptions. I had to return to Apple Podcasts. I kept trying [Overcast](https://overcast.fm) occasionally, but stuck with Apple Podcasts, apparently made by developers who did not listen to podcasts, at least back then.
+I have forgotten how I intitially listened, with iTunes and iPod, I think. Later, on iPhone, I began with Apple [Podcasts](https://itunes.apple.com/us/app/podcasts/id525463029), and later [Downcast](https://itunes.apple.com/us/app/downcast/id393858566), which I used for quite some time. Then came [Instacast](https://itunes.apple.com/us/app/instacast-core/id108386833), which I liked, but as it turned out, didn’t scale to hundreds of subscriptions. I had to return to Apple Podcasts. I kept trying [Overcast](https://overcast.fm), but stuck with Apple Podcasts, apparently made by developers who did not listen to podcasts, at least back then.
 
-Apps are made of priorities and compromises. From time to time, I try one of the newer apps coming out, but find them confusing. If a podcast app requires me to bear its tutorial, something went wrong. This all goes to show, after a decade of listening, I have not found a podcast app I enjoy—here be dragons.
+Apps are made of priorities and compromises. From time to time, I try one of the newer apps coming out, but find them confusing. If a podcast app requires me to wade through a tutorial, something went wrong. This all goes to show, after a decade of listening, I have not found a podcast app I enjoy—here be dragons.
 
 #### You're holding it wrong
 
 My way of consuming podcasts might be unfit for the available apps. How do I listen to podcasts? I don’t walk the streets with headphones and I don’t have a commute. I listen at home, walking around the house, doing chors, while shaving or in bed before sleep, without headphones, using the internal device speakers—another reason why I prefer larger devices. For pausing and resuming playback and skipping I use the watch, with the phone in my pocket or placed somewhere near. I never use AirPlay or listen over the stereo. Podcasts are near-field audio for me, they are personal. When another person enters the room, I stop playback. I quit listening on walks, prefering sounds of nature, the city, or company.
 
-Constanly trying out new podcasts, my subscriptions level around one hundred podcasts. Three of my regulars, I love and have been listening to for years, are [Scriptnotes](http://scriptnotes.net), [Longform](https://longform.org/podcast), and the [New Yorker Fiction](https://www.newyorker.com/podcast/fiction) podcast.
-
-I never tinker with playback speed. Podcasts are sound, editors put effort into that shit. At what speed do you listen to music?
-
-Chapters? I don’t need those. That’s what episodes are for, skipping forward means next episode. Don’t @ me.
+Constanly trying out new podcasts, my subscriptions level around one hundred podcasts. Three of my longtime favorites are [Scriptnotes](http://scriptnotes.net), [Longform](https://longform.org/podcast), and the [New Yorker Fiction](https://www.newyorker.com/podcast/fiction) podcast.
 
 #### What do I want
-
-Can I shift priorities and combine compromises in a way that lets me build a better podcasts app?
 
 - Audio and video playback including streaming
 - Use the app offline
 - Clear user interface
 - Good search for shows and episodes
-- Enriching landscape mode
-- Read about episodes before playing them
+- Informative lists leveraging landscape mode
+- Browse and read show notes while playing
 - Access from all my devices
-- Solid skipping via Control Center and Apple Watch
+- Control Center and Apple Watch controls
 
-And what we all want: a snappy experience, a full battery, and not being bothered. I just want to listen to podcasts, that’s it.
+And what we all want, from all apps, a snappy user interface that stays of the way and a full battery.
 
 #### Inverted approach to building it
 
-The user interface of a podcast app is challenging, it has to communicate two narratives, information and playback. You can look at one thing, while you are playing another thing. A browser and a player.
+Can I shift priorities and combine compromises in a way that lets me build a better podcast app? Probably not, such an app would exist by now, wouldn’t it?
+
+The user interface of a podcast app is challenging, it has to communicate two narratives in parllel, information and playback. It’s different from Netflix in that way, the video app doesn’t let you browse, while you are watching. With an audio app you can be listening to one thing, while you’re looking at another—a player and a browser. Additionally, a good podcast app, while focusing on audio, must integrate video playback.
+
+Boosting my chances for coming up with something new, I deleted all podcast apps from my devices and went to work. If I wanted to listen to podcasts, I had to build an app, that was in 2014. Apple just had announced Swift, a good time to start an app, with me as its [first customer](https://github.com/joyent/eng/blob/master/docs/index.md#rule-1-fcs-quality-all-the-time).
 
 [![Podest](/img/podest.svg "Podest Logotype")](https://itunes.apple.com/us/app/podest/id794983364)
 
-Once I had a somewhat working prototype, I quit using other apps. I deleted them from my phone to go about this fresh. This was great for motivation, when my app didn’t work, I wasn’t able to listen to podcasts. I’m the [first customer](https://github.com/joyent/eng/blob/master/docs/index.md#rule-1-fcs-quality-all-the-time), dogfooding daily builds.
+The obvious approach would be to start with an audio player, building the app around it. Instead, to foster innovation, I decided to work on searching and browsing first, before concerning myself with playback. I’ve structured the project analogous to the application flow: searching, browsing, and playback.
 
-Podest is a simple, yet powerful podcast app. Obviously, this late in the party I’m not trying to compete with the quantity of features, but with quality.
+In parallel I worked on parsing. Podcasts, not unlike blogs, are published as XML feeds with enclosed media files, plain references to the audio files. Quickly it became apparent that parsing on the device would not scale. You can parse a few feeds, but not hundreds. Alone the required network connection would kill the performance and the battery. I wrote two streaming parsers for the server side feed cache, I was about to build, [pickup](https://github.com/michaelnisi/pickup) for Node and [feeder](https://github.com/michaelnisi/feeder) in Erlang—not committing to a stack just yet.
+
+Actually, when I started tinkering with this podcast app idea, the first thing I wrote was a [chapter parser](https://github.com/michaelnisi/MNAVChapters)—now used in Castro.
+
+Podest is a simple, yet powerful podcast app. Obviously, this late in the party, I can’t compete by increasing the number of features, but I can compete in quality. It helps that Podest is all Swift—don’t @ me.
 
 [![Podest](/img/podest_app_icon.svg "Podest App Icon")](https://itunes.apple.com/us/app/podest/id794983364)
 
