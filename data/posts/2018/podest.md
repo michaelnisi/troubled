@@ -17,7 +17,7 @@ Podcasts first clicked with me, when I discovered the [Stack Overflow podcast](h
 
 Today, with everyone carrying a connected—playback and recording—device in their pockets, audio is big—for voice control and listening. [The Daily](https://www.nytimes.com/podcasts/the-daily) quickly became a household name during the 2016 election campaign, reaching five million unique listeners every month, [they say](https://www.recode.net/2018/2/13/17005660/new-york-times-the-daily-american-public-media-radio-podcast-michael-barbaro-lisa-tobin-code-media). Pioneers like [Radio Open Source](http://radioopensource.org), [99pi](https://99percentinvisible.org), [This American Life](https://www.thisamericanlife.org), [Radio Lab](https://www.wnycstudios.org/shows/radiolab) are still going strong.
 
-> Podcasting continues to grow year after year. ([Nielsen](https://www.nielsen.com/us/en/insights/reports/2018/nielsen-podcast-insights-q3-2018.html))
+> Podcasting continues to grow year after year.—[Nielsen](https://www.nielsen.com/us/en/insights/reports/2018/nielsen-podcast-insights-q3-2018.html)
 
 Podcast labels—publishing and production—are a thing now: [Radiotopia](https://www.radiotopia.fm), [Wondery](https://wondery.com), [Headgum](https://headgum.com), [Gimlet](https://www.gimletmedia.com), [Pineapple Street Media](http://pineapple.fm) to name a few. I also want to mention the German studios [Viertausendhertz](https://viertausendhertz.de), [Pool Artists](http://www.poolartists.de), and [Metaebene](https://metaebene.me).
 
@@ -33,7 +33,7 @@ After merely mirroring their signals into the podcast space, following early ado
 
 #### Apps are made of priorities and compromises
 
-I have forgotten how I intitially listened, with iTunes and iPod, I think. Later, on iPhone, I began with Apple [Podcasts](https://itunes.apple.com/us/app/podcasts/id525463029), and later [Downcast](https://itunes.apple.com/us/app/downcast/id393858566), which I used for quite some time. Then came [Instacast](https://itunes.apple.com/us/app/instacast-core/id108386833), which I liked, but as it turned out, didn’t scale to hundreds of subscriptions. I had to return to Apple Podcasts. I kept trying [Overcast](https://overcast.fm), but stuck with Apple Podcasts, apparently made by developers who did not listen to podcasts, at least back then.
+I have forgotten how I intitially listened, with iTunes and iPod, I think. On iPhone, of course, I began with Apple [Podcasts](https://itunes.apple.com/us/app/podcasts/id525463029) and later [Downcast](https://itunes.apple.com/us/app/downcast/id393858566), which I used for quite some time. Then came [Instacast](https://itunes.apple.com/us/app/instacast-core/id108386833), which I liked, but as it turned out, didn’t scale to hundreds of subscriptions. I had to return to Apple Podcasts. I kept trying [Overcast](https://overcast.fm), but stuck with Apple Podcasts, apparently made by developers who did not listen to podcasts, at least back then.
 
 Apps are made of priorities and compromises. From time to time, I try one of the newer apps coming out, but find them confusing. If a podcast app requires me to wade through a tutorial, something went wrong. This all goes to show, after a decade of listening, I have not found a podcast app I enjoy—here be dragons.
 
@@ -56,44 +56,27 @@ Constanly trying out new podcasts, my subscriptions level around one hundred pod
 
 And what we all want, from all apps, a snappy user interface that stays of the way and a full battery.
 
-#### Inverted approach to building it
+#### Biting the bullet
 
 Can I shift priorities and combine compromises in a way that lets me build a better podcast app? Probably not, such an app would exist by now, wouldn’t it?
 
 The user interface of a podcast app is challenging, it has to communicate two narratives in parllel, information and playback. It’s different from Netflix in that way, the video app doesn’t let you browse, while you are watching. With an audio app you can be listening to one thing, while you’re looking at another—a player and a browser. Additionally, a good podcast app, while focusing on audio, must integrate video playback.
 
-Boosting my chances for coming up with something new, I deleted all podcast apps from my devices and went to work. If I wanted to listen to podcasts, I had to build an app, that was in 2014. Apple just had announced Swift, a good time to start an app, with me as its [first customer](https://github.com/joyent/eng/blob/master/docs/index.md#rule-1-fcs-quality-all-the-time).
+Unable to shake the question, I tricked myself into biting the bullet by deleting all podcast apps from my devices. If I wanted to listen to podcasts, I had to build an app. That was in 2014, Apple had just announced Swift. A good time for starting an app.
 
 [![Podest](/img/podest.svg "Podest Logotype")](https://itunes.apple.com/us/app/podest/id794983364)
-
-The obvious approach would be to start with an audio player, building the app around it. Instead, to foster innovation, I decided to work on searching and browsing first, before concerning myself with playback. I’ve structured the project analogous to the application flow: searching, browsing, and playback.
-
-In parallel I worked on parsing. Podcasts, not unlike blogs, are published as XML feeds with enclosed media files, plain references to the audio files. Quickly it became apparent that parsing on the device would not scale. You can parse a few feeds, but not hundreds. Alone the required network connection would kill the performance and the battery. I wrote two streaming parsers for the server side feed cache, I was about to build, [pickup](https://github.com/michaelnisi/pickup) for Node and [feeder](https://github.com/michaelnisi/feeder) in Erlang—not committing to a stack just yet.
-
-Actually, when I started tinkering with this podcast app idea, the first thing I wrote was a [chapter parser](https://github.com/michaelnisi/MNAVChapters)—now used in Castro.
-
-#### Internal playback controls, dark mode, and open source
-
-I’m in the process of open sourcing all components of this app, all the Swift and JavaScript modules get published on [GitHub](https://github.com/michaelnisi/), many parts are already there.
-
-Once my modest promoting the app is concluded, I will work on the internal player controls—currently the relies on Control Center for scrubbing—adding controls for scrubbing, skipping a few seconds forward, and a sleep function. After that I want to add dark mode, although iOS might be surfacing an API for it in the near future.
 
 #### Download on the App Store
 
 [![Podest](/img/podest_app_icon.svg "Podest App Icon")](https://itunes.apple.com/us/app/podest/id794983364)
 
-Podest is a simple, yet powerful podcast app. Obviously, this late in the party, I can’t compete by increasing the number of features, but I can compete in quality. Podest is all Swift and has around 70% logical code coverage, which I have to improve.
+Podest is a simple, yet powerful podcast app. Obviously, this late in the game, I’m not competing by counting features, that wasn’t the goal of this app in the first place—lean and mean—but where I want to compete it quality. Podest is all Swift and has around 70% logical code coverage at this point. I’m in the process of open sourcing all components of this app, all the Swift and JavaScript modules get published on [GitHub](https://github.com/michaelnisi/), many parts are already there.
 
-- Audio and video playback
-- Powerful search
-- Accessible from all your iOS devices
-- Energy efficiency
-- Landscape mode
+> If you want a streamlined & efficient podcast player app, give Podest a try. I helped beta test it.—[@a_grebenyuk](https://twitter.com/a_grebenyuk)
 
-Check the [App Store](https://itunes.apple.com/us/app/podest/id794983364) for details. If you have read this far, why not rate the app or write a review? That would help me a lot. Thank you.
+Check the [App Store](https://itunes.apple.com/us/app/podest/id794983364) for details. If you have read this far, why not rate the app or write a review? That would help me a lot—thank you.
 
-Back to the initial question. Does it make sense to build something that already exists? If you think you can improve something, of course, but even if not. If you can, you should build all the things. Diversity produces progress. Always reinvent the wheel! That’s how we learn.
-
+But back to the initial question for a second. Does it make sense to build something that already exists? If you think you can improve something, of course, but even if not. Podest has the classic open source genesis, scratching an itch. If you feel like it and have the privilege to invest the time, you should build all the things. Break things down into modules and the time investment becomes managable. Diversity produces progress. Always reinvent the wheel! That’s how we learn.
 
 **There were plenty podcast players, but no podcast browser. Try it and tell me what you think.**
 [![App Store](/img/app_store.svg "App Store Badge")](https://itunes.apple.com/us/app/podest/id794983364)
