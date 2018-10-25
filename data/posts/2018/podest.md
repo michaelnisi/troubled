@@ -15,7 +15,7 @@ Podcasts first clicked with me, when I discovered the [Stack Overflow podcast](h
 
 ## 🔥
 
-Today, with all of us carrying connected—playback and recording—devices in our pockets, audio is big—for voice control and listening. [The Daily](https://www.nytimes.com/podcasts/the-daily) promptly became a household name during the 2016 election campaign, reaching five million unique listeners every month, [they say](https://www.recode.net/2018/2/13/17005660/new-york-times-the-daily-american-public-media-radio-podcast-michael-barbaro-lisa-tobin-code-media). Pioneers like [Radio Open Source](http://radioopensource.org), [99pi](https://99percentinvisible.org), [This American Life](https://www.thisamericanlife.org), [Radio Lab](https://www.wnycstudios.org/shows/radiolab) are still going strong.
+Today, with all of us carrying connected audio devices in our pockets, capable of playback and recording, audio is big. Voice control. Recording. Listening. [The Daily](https://www.nytimes.com/podcasts/the-daily) promptly became a household name during the 2016 election campaign, reaching five million unique listeners every month, [they say](https://www.recode.net/2018/2/13/17005660/new-york-times-the-daily-american-public-media-radio-podcast-michael-barbaro-lisa-tobin-code-media). Pioneers like [Radio Open Source](http://radioopensource.org), [99pi](https://99percentinvisible.org), [This American Life](https://www.thisamericanlife.org), [Radio Lab](https://www.wnycstudios.org/shows/radiolab) are still going strong.
 
 > Podcasting continues to grow year after year.—[Nielsen](https://www.nielsen.com/us/en/insights/reports/2018/nielsen-podcast-insights-q3-2018.html)
 
