@@ -7,7 +7,7 @@
   "image": "img/podest_app_icon.svg"
 }
 
-PROMOTING my new podcast app, available on the [App Store](https://itunes.apple.com/us/app/podest/id794983364), I’m reminded of just how many podcast apps there are now. Searching for the term “podcast”, I face a wall of podcast players. *I came for glory,* I shout shaking my fist, not for squeezing my hard work into these saturated shelves. Does this choir of apps, praising their *unique* selling propositions, ask for another voice in its cacophony?
+PROMOTING my new podcast app, available on the [App Store](https://itunes.apple.com/us/app/podest/id794983364), I’m reminded of just how many podcast apps there are now. Searching for the term “podcast”, I face a wall of podcast players. *I came for glory,* I shout shaking my fist, before I stuff my hard work into these saturated shelves. Does this choir of apps, praising their *unique* selling propositions, ask for another voice in its cacophony?
 
 #### I love podcasts
 
