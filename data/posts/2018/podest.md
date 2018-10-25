@@ -4,7 +4,7 @@
   "template": "article.pug",
   "date": "2018-10-23",
   "path": "2018/10",
-  "image": "img/podest_card.png"
+  "image": "img/podest_app_icon.png"
 }
 
 Promoting my new podcast app, available on the [App Store](https://itunes.apple.com/us/app/podest/id794983364), I’m reminded of just how many podcast apps there are now. Searching for the term “podcast”, I face a wall of podcast players. *I came for glory,* I shout shaking my fist, before I stuff my hard work into the saturated shelves. Does this choir of apps, praising their *unique* selling propositions, really for another voice in its cacophony?
