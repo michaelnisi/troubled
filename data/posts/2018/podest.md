@@ -7,13 +7,13 @@
   "image": "img/podest_large_card.png"
 }
 
-Promoting my new podcast app, available on the [App Store](https://itunes.apple.com/us/app/podest/id794983364), I’m reminded of just how many podcast apps there are now. Searching for the term “podcast”, I face a wall of podcast players. *I came for glory,* I shout shaking my fist, before I stuff my hard work into the saturated shelves. This choir of apps, praising their *unique* selling propositions, doesn’t need another voice in its cacophony, or does it?
+Promoting my new podcast app, available on the [App Store](https://itunes.apple.com/us/app/podest/id794983364), I’m reminded of just how many podcast apps there are now. Searching for the term “podcast”, I face a wall of podcast players. I came for glory, I mumble, stuffing my hard work into these saturated shelves. This choir of apps doesn’t ask for another unique selling proposition, or does it?
 
 #### I love podcasts
 
 Podcasts first clicked with me, when I discovered the [Stack Overflow podcast](https://stackoverflow.blog/2008/04/17/podcast-1/), back in 2008. This periodic conversation between [Joel Spolsky](https://www.joelonsoftware.com) and [Jeff Atwood](https://blog.codinghorror.com), about the progress of building their [site](https://stackoverflow.com), was an eye opener.
 
-Listening to human voices at close range, over headphones or device speakers, can create an intimate bubble, experienced as connectedness to the hosts by the listener. I have fond memories—strangely enough—of long wintery walks with the dog listening to [John Gruber](https://daringfireball.net) and [Dan Benjamin](http://danbenjamin.com) chatting about Apple stuff on the original [Talk Show](http://5by5.tv/talkshow), of wiping the wooden floors of my St. Georg apartment to [The Book Review](https://www.nytimes.com/column/book-review-podcast), or [Pavel Mayer elucidating C++ on CRE](https://cre.fm/cre063-die-programmiersprache-c-plus-plus), while I sat in front of the fire place, with my laptop on the floor.
+Listening to human voices at close range, over headphones or device speakers, can create an intimate bubble, experienced as connectedness to the hosts by the listener. I have fond memories—strangely enough—of long wintery walks with the dog listening to [John Gruber](https://daringfireball.net) and [Dan Benjamin](http://danbenjamin.com) chatting about Apple stuff on the original [Talk Show](http://5by5.tv/talkshow), of wiping the wooden floors of my St. Georg apartment to [The Book Review](https://www.nytimes.com/column/book-review-podcast), or [Pavel Mayer elucidating C++ on CRE](https://cre.fm/cre063-die-programmiersprache-c-plus-plus), with me sitting in front of the fire place, laptop on the floor.
 
 ## 🔥
 
@@ -77,15 +77,19 @@ Unable to shake the question, I tricked myself into biting the bullet by deletin
 
 [![Podest](/img/podest_app_icon.svg "Podest App Icon")](https://itunes.apple.com/us/app/podest/id794983364)
 
-Podest is a simple, yet powerful podcast app. Its clear interface stays out of the way and puts podcast episodes center stage. Access all you need with the simple queue. Hear more without losing track.
+Podest is a simple, yet powerful podcast app. Its clear interface stays out of the way and puts podcast episodes center stage. Access all your episodes, subscriptions, and other podcasts from a single list, your queue. Enjoy more podcasts without losing track.
 
 > If you want a streamlined & efficient podcast player app, give Podest a try. I helped beta test it.—[@a_grebenyuk](https://twitter.com/a_grebenyuk)
 
-I’m in the process of open sourcing all components, publishing all Swift and JavaScript packages on [GitHub](https://github.com/michaelnisi/), many parts are already there.
-
 Enough already! I’m reluctant to advertising my own work, just [try it](https://itunes.apple.com/us/app/podest/id794983364). To support this independent project and make me happy, please rate or review Podest on the App Store.
 
-Back to the initial question, at least for a second. Does it make sense to build something that already exists? Podest’s genesis is classic open source, scratching an itch. If you discover a use case, not yet covered by existing tools, and have the privilege to invest time, you should *build all the things*, picking up new technologies along the way—Swift in my case. Breaking your project down into modules makes time investment manageable. At this point, being rewarded with each module you are releasing, the final product becomes secondary. Diversity produces progress. Always reinvent the wheel! That’s how we learn.
+I’m in the process of open sourcing all components of the app, publishing all Swift and JavaScript packages on [GitHub](https://github.com/michaelnisi/), many parts are already there.
+
+Back to the initial question. Does it make sense to build something that, in some form or the other, already exists? Podest’s genesis is classic open source, scratching an itch, I answered the personal need for a simpler way of listening to podcasts—something I’m truly passionate about.
+
+If you discover a use case, unsatisfyingly covered by existing tools—these are mostly hard though—and you are privileged to invest time, you should *build all the things*, picking up new technologies along the way. Breaking your project down into modules makes the time investment manageable and the final composite becomes secondary, for you are rewarded with each module. Open source these components and other people can learn and profit from your work.
+
+Diversity produces progress. Always reinvent the wheel! Learning never stops.
 
 **There were plenty podcast players, but no podcast browser. Try Podest and tell me what you think.**
 [![App Store](/img/app_store.svg "App Store Badge")](https://itunes.apple.com/us/app/podest/id794983364)
