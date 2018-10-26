@@ -247,6 +247,8 @@ const md = markdown({
 })
 
 function localsWithItem (item) {
+  const image = `https://troubled.pro/${item.header.image || 'img/michael_2x.jpg'}`
+
   return {
     content: md.render(item.body),
     date: item.date,
@@ -258,7 +260,8 @@ function localsWithItem (item) {
     pubDate: item.date.toUTCString(),
     title: item.header.title,
     url: `https://troubled.pro/${item.link}`,
-    image: `https://troubled.pro/${item.header.image || 'img/michael_2x.jpg'}`
+    image:  image,
+    card: image.indexOf('large') !== -1 ? 1 : 0
   }
 }
 

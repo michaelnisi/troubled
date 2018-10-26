@@ -83,7 +83,7 @@ Obviously, this late in the game, I’m not competing by piling up features, but
 
 I’m in the process of open sourcing all components, publishing all Swift and JavaScript packages on [GitHub](https://github.com/michaelnisi/), many parts are already there.
 
-Enough already! I’m reluctant to advertising my own work, just [try it](https://itunes.apple.com/us/app/podest/id794983364). You can support this independent endeavour by rating or reviewing Podest on the App Store—that would make me happy.
+Enough already! I’m reluctant to advertising my own work, just [try it](https://itunes.apple.com/us/app/podest/id794983364). To support this independent project and make me happy, please rate or review Podest on the App Store.
 
 Back to the initial question, at least for a second. Does it make sense to build something that already exists? Podest’s genesis is classic open source, scratching an itch. If you discover a use case, not yet covered by existing tools, and have the privilege to invest time, you should *build all the things*, picking up new technologies along the way—Swift in my case. Breaking your project down into modules makes time investment managable. At this point, being rewarded with each module you are releasing, the final product becomes secondary. Diversity produces progress. Always reinvent the wheel! That’s how we learn.
 
