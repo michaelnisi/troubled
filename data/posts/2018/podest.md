@@ -4,7 +4,7 @@
   "template": "article.pug",
   "date": "2018-10-23",
   "path": "2018/10",
-  "image": "img/podest_app_icon.png"
+  "image": "img/podest_large_card.png"
 }
 
 Promoting my new podcast app, available on the [App Store](https://itunes.apple.com/us/app/podest/id794983364), I’m reminded of just how many podcast apps there are now. Searching for the term “podcast”, I face a wall of podcast players. *I came for glory,* I shout shaking my fist, before I stuff my hard work into the saturated shelves. Does this choir of apps, praising their *unique* selling propositions, really for another voice in its cacophony?
@@ -77,15 +77,15 @@ Unable to shake the question, I tricked myself into biting the bullet by deletin
 
 Podest is a simple, yet powerful podcast app. Its clear interface stays out of the way and puts podcast episodes center stage. Access all you need with the simple queue. Hear more without losing track.
 
-Enough already! I’m reluctant to advertising my own work, just [try it](https://itunes.apple.com/us/app/podest/id794983364). Please rate it or leave a review on the App Store.
-
 > If you want a streamlined & efficient podcast player app, give Podest a try. I helped beta test it.—[@a_grebenyuk](https://twitter.com/a_grebenyuk)
 
 Obviously, this late in the game, I’m not competing by piling up features, but by quality. Podest is all Swift and has around 70% logical code coverage at this point.
 
 I’m in the process of open sourcing all components, publishing all Swift and JavaScript packages on [GitHub](https://github.com/michaelnisi/), many parts are already there.
 
-But back to the initial question, at least for a second. Does it make sense to build something that already exists? Podest’s genesis is classic open source, scratching an itch. If you discover a use case, not yet covered by existing tools, and have the privilege to invest time, you should *build all the things*, picking up new technologies along the way—Swift in my case. Breaking your project down into modules makes time investment managable. At this point, being rewarded with each module you are releasing, the final product becomes secondary. Diversity produces progress. Always reinvent the wheel! That’s how we learn.
+Enough already! I’m reluctant to advertising my own work, just [try it](https://itunes.apple.com/us/app/podest/id794983364). You can support this independent endeavour by rating or reviewing Podest on the App Store—that would make me happy.
+
+Back to the initial question, at least for a second. Does it make sense to build something that already exists? Podest’s genesis is classic open source, scratching an itch. If you discover a use case, not yet covered by existing tools, and have the privilege to invest time, you should *build all the things*, picking up new technologies along the way—Swift in my case. Breaking your project down into modules makes time investment managable. At this point, being rewarded with each module you are releasing, the final product becomes secondary. Diversity produces progress. Always reinvent the wheel! That’s how we learn.
 
 **There were plenty podcast players, but no podcast browser. Try Podest and tell me what you think.**
 [![App Store](/img/app_store.svg "App Store Badge")](https://itunes.apple.com/us/app/podest/id794983364)
