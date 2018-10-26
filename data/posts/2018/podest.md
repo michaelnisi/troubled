@@ -79,8 +79,6 @@ Podest is a simple, yet powerful podcast app. Its clear interface stays out of t
 
 > If you want a streamlined & efficient podcast player app, give Podest a try. I helped beta test it.—[@a_grebenyuk](https://twitter.com/a_grebenyuk)
 
-Obviously, this late in the game, I’m not competing by piling up features, but by quality. Podest is all Swift and has around 70% logical code coverage at this point.
-
 I’m in the process of open sourcing all components, publishing all Swift and JavaScript packages on [GitHub](https://github.com/michaelnisi/), many parts are already there.
 
 Enough already! I’m reluctant to advertising my own work, just [try it](https://itunes.apple.com/us/app/podest/id794983364). To support this independent project and make me happy, please rate or review Podest on the App Store.
