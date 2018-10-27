@@ -7,7 +7,7 @@
   "image": "img/podest_large_card.png"
 }
 
-Promoting my new podcast app, available on the [App Store](https://itunes.apple.com/us/app/podest/id794983364), I’m reminded of just how many podcast apps there are now. Searching for the term “podcast”, I face a wall of podcast players. I came for glory, I mumble, stuffing my hard work into these saturated shelves. This choir of apps doesn’t ask for another unique selling proposition, or does it?
+Promoting my new app, available on the [App Store](https://itunes.apple.com/us/app/podest/id794983364), I’m reminded of just how many podcast apps there are now. Searching for the term “podcast”, I face a wall of similar looking apps. I came for glory, I mumble, stuffing the fruit of my hard work into these saturated shelves. Arguably, this choir doesn’t scream for another voice, purring its unique selling proposition.
 
 #### I love podcasts
 
@@ -77,19 +77,19 @@ Unable to shake the question, I tricked myself into biting the bullet by deletin
 
 [![Podest](/img/podest_app_icon.svg "Podest App Icon")](https://itunes.apple.com/us/app/podest/id794983364)
 
-Podest is a simple, yet powerful podcast app. Its clear interface stays out of the way and puts podcast episodes center stage. Access all your episodes, subscriptions, and other podcasts from a single list, your queue. Enjoy more podcasts without losing track.
+Podest is a simple, yet powerful podcast app. Its clear interface stays out of the way and puts podcast episodes center stage. Access all your episodes, subscriptions, and other podcasts from a single list—your queue. Enjoy more podcasts without losing track.
 
 > If you want a streamlined & efficient podcast player app, give Podest a try. I helped beta test it.—[@a_grebenyuk](https://twitter.com/a_grebenyuk)
 
-Enough already! I’m reluctant to advertising my own work, just [try it](https://itunes.apple.com/us/app/podest/id794983364). To support this independent project and make me happy, please rate or review Podest on the App Store.
-
 I’m in the process of open sourcing all components of the app, publishing all Swift and JavaScript packages on [GitHub](https://github.com/michaelnisi/), many parts are already there.
+
+Enough of that, I don’t want to repeat the pitch here, check the [App Store](https://itunes.apple.com/us/app/podest/id794983364) for details. And please rate or review the app to support this independent project—that would make me happy.
 
 Back to the initial question. Does it make sense to build something that, in some form or the other, already exists? Podest’s genesis is classic open source, scratching an itch, I answered the personal need for a simpler way of listening to podcasts—something I’m truly passionate about.
 
-If you discover a use case, unsatisfyingly covered by existing tools—these are mostly hard though—and you are privileged to invest time, you should *build all the things*, picking up new technologies along the way. Breaking your project down into modules makes the time investment manageable and the final composite becomes secondary, for you are rewarded with each module. Open source these components and other people can learn and profit from your work.
+If you discover a use case, unsatisfyingly covered by existing tools—a tough nut to crack—and you are privileged to invest time, you should *build all the things*, picking up new technologies along the way. Breaking your project down into modules makes the time investment manageable and the final composite becomes secondary, for you are rewarded with each module. Open source these components and other people can learn and profit from your work.
 
-Diversity produces progress. Always reinvent the wheel! Learning never stops.
+Diversity produces progress. Always reinvent the wheel! Learning never ends.
 
 **There were plenty podcast players, but no podcast browser. Try Podest and tell me what you think.**
 [![App Store](/img/app_store.svg "App Store Badge")](https://itunes.apple.com/us/app/podest/id794983364)
