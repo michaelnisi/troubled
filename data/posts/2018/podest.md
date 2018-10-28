@@ -43,7 +43,7 @@ Came iPhone, of course, I began with Apple [Podcasts](https://itunes.apple.com/u
 
 Apps are made of priorities and compromises. From time to time, I try one of the newer apps coming out, but find them confusing. If a podcast app requires me to wade through a tutorial, something went wrong. This all goes to show, after a decade of listening, I have not found a podcast app I enjoy—here be dragons.
 
-I’ve recently took another look at [Pocket Casts](https://play.pocketcasts.com) and, despite its complexity, it might be an option for me—if there wasn’t another alternative.
+Recently, I took another look at [Pocket Casts](https://play.pocketcasts.com) and, despite its complexity, it might be an option for me—if there wasn’t another alternative.
 
 #### You're holding it wrong
 
