@@ -90,7 +90,7 @@ Back to the initial question. Why another podcast app? Why build something that,
 
 To generalize, if you discover a use case, not or unsatisfyingly covered by existing tools and you are privileged to invest time, you should *build all the things*, picking up new or required technologies along the way—here Swift. Breaking your project down into modules makes the time investment manageable and the final composite becomes secondary, for you are rewarded with each module. Open source these components not only provides intermediate results, but allows others to learn and profit from your work as well.
 
-Podest is mostly open source. Some packages and the app itself, using frameworks the least exciting part, still need to be published on [GitHub](https://github.com/michaelnisi/). I want to make it 100% open source.
+Podest is mostly open source. Some packages and the app itself, using frameworks the least exciting part, still need to be published on [GitHub](https://github.com/michaelnisi/). I want to make Podest 100% open source.
 
 **There were plenty podcast players, but no podcast browser. Try Podest and tell me what you think.**
 [![App Store](/img/app_store.svg "App Store Badge")](https://itunes.apple.com/us/app/podest/id794983364)
