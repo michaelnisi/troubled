@@ -13,7 +13,7 @@ Promoting my new app, available on the [App Store](https://itunes.apple.com/us/a
 
 Podcasts first clicked with me, when I discovered the [Stack Overflow podcast](https://stackoverflow.blog/2008/04/17/podcast-1/), back in 2008. This periodic conversation between [Joel Spolsky](https://www.joelonsoftware.com) and [Jeff Atwood](https://blog.codinghorror.com), about the progress of building their [site](https://stackoverflow.com), was an eye opener.
 
-Listening to human voices at close range, over headphones or device speakers, can create an intimate bubble, experienced as connectedness to the hosts by the listener. I have fond memories—strangely enough—of long wintery walks with the dog listening to [John Gruber](https://daringfireball.net) and [Dan Benjamin](http://danbenjamin.com) chatting about Apple stuff on the original [Talk Show](http://5by5.tv/talkshow), of wiping the wooden floors of my St. Georg apartment to [The Book Review](https://www.nytimes.com/column/book-review-podcast), or [Pavel Mayer elucidating C++ on CRE](https://cre.fm/cre063-die-programmiersprache-c-plus-plus), with me sitting in front of the fire place, laptop on the floor.
+Listening to human voices at close range, over headphones or device speakers, can create an intimate bubble, experienced as connectedness to the hosts by the listener. I have fond memories—strangely enough—of long wintery walks with the dog listening to [John Gruber](https://daringfireball.net) and [Dan Benjamin](http://danbenjamin.com) chatting about Apple stuff on the original [Talk Show](http://5by5.tv/talkshow), of wiping the boarded floors of my pad to [The Book Review](https://www.nytimes.com/column/book-review-podcast), or [Pavel Mayer elucidating C++ on CRE](https://cre.fm/cre063-die-programmiersprache-c-plus-plus), with me sitting in front of the fire place, laptop on the floor.
 
 ## 🔥
 
@@ -43,6 +43,8 @@ Came iPhone, of course, I began with Apple [Podcasts](https://itunes.apple.com/u
 
 Apps are made of priorities and compromises. From time to time, I try one of the newer apps coming out, but find them confusing. If a podcast app requires me to wade through a tutorial, something went wrong. This all goes to show, after a decade of listening, I have not found a podcast app I enjoy—here be dragons.
 
+I’ve recently took another look at [Pocket Casts](https://play.pocketcasts.com) and, despite its complexity, it might be an option for me—if there wasn’t another alternative.
+
 #### You're holding it wrong
 
 My way of consuming podcasts might be unfit for the available apps. How do I listen to podcasts? I don’t walk the streets with headphones and I don’t have a commute. I listen at home, walking around the house, doing chores, while shaving or in bed before sleep, without headphones, using the internal device speakers—another reason why I prefer larger devices. For pausing and resuming playback and skipping I use the watch, with the phone in my pocket or placed somewhere near. I never use AirPlay or listen over the stereo. Podcasts are near-field audio for me, they are personal. When another person enters the room, I stop playback. I quit listening on walks, preferring sounds of nature, the city, or company.
@@ -58,6 +60,7 @@ Constantly trying out new podcasts, my subscriptions level around one hundred po
 - Control Center and Apple Watch controls
 - Good search for shows and episodes
 - Informative lists leveraging landscape mode
+- No sign up
 - Snappy clear user interface
 - Use the app offline
 
@@ -81,15 +84,13 @@ Podest is a simple, yet powerful podcast app. Its clear interface stays out of t
 
 > If you want a streamlined & efficient podcast player app, give Podest a try. I helped beta test it.—[@a_grebenyuk](https://twitter.com/a_grebenyuk)
 
-I’m in the process of open sourcing all components of the app, publishing all Swift and JavaScript packages on [GitHub](https://github.com/michaelnisi/), many parts are already there.
+Enough of that, I don’t want to repeat the pitch here, check the [App Store](https://itunes.apple.com/us/app/podest/id794983364) and download the app. Please leave a rating or a review to support this indie project. That would make me happy.
 
-Enough of that, I don’t want to repeat the pitch here, check the [App Store](https://itunes.apple.com/us/app/podest/id794983364) for details. And please rate or review the app to support this independent project—that would make me happy.
+Back to the initial question. Why another podcast app? Why build something that, in some form or the other, already exists? Podest’s genesis is classic open source, scratching an itch. I answered the personal need for a simpler way of listening to podcasts—something I’m truly passionate about—in the hopes if I’m looking an alternative podcast app, others might be looking too.
 
-Back to the initial question. Does it make sense to build something that, in some form or the other, already exists? Podest’s genesis is classic open source, scratching an itch, I answered the personal need for a simpler way of listening to podcasts—something I’m truly passionate about.
+To generalize, if you discover a use case, not or unsatisfyingly covered by existing tools and you are privileged to invest time, you should *build all the things*, picking up new or required technologies along the way—here Swift. Breaking your project down into modules makes the time investment manageable and the final composite becomes secondary, for you are rewarded with each module. Open source these components not only provides intermediate results, but allows others to learn and profit from your work as well.
 
-If you discover a use case, unsatisfyingly covered by existing tools—a tough nut to crack—and you are privileged to invest time, you should *build all the things*, picking up new technologies along the way. Breaking your project down into modules makes the time investment manageable and the final composite becomes secondary, for you are rewarded with each module. Open source these components and other people can learn and profit from your work.
-
-Diversity produces progress. Always reinvent the wheel! Learning never ends.
+Podest is mostly open source. Some packages and the app itself, using frameworks the least exciting part, still need to be published on [GitHub](https://github.com/michaelnisi/). I want to make it 100% open source.
 
 **There were plenty podcast players, but no podcast browser. Try Podest and tell me what you think.**
 [![App Store](/img/app_store.svg "App Store Badge")](https://itunes.apple.com/us/app/podest/id794983364)
