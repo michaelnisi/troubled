@@ -43,7 +43,7 @@ I forget how I initially listened. With iTunes and iPod, I guess,  [casually moo
 
 Came iPhone, of course, I began with Apple [Podcasts](https://itunes.apple.com/us/app/podcasts/id525463029) and later [Downcast](https://itunes.apple.com/us/app/downcast/id393858566), which I used for quite some time. Then came [Instacast](https://itunes.apple.com/us/app/instacast-core/id108386833), which I liked, but as it turned out, didn’t scale to hundreds of subscriptions. I had to return to Apple Podcasts. I kept trying [Overcast](https://overcast.fm), but stuck with Apple Podcasts in the end—apparently made by developers who aren’t into podcasts.
 
-Recently, I took another look at [Pocket Casts](https://play.pocketcasts.com) and, despite its complexity, it might be an option—if there wasn’t another alternative. 😇
+Recently, I checked [Pocket Casts](https://play.pocketcasts.com) again and, despite its complexity, it might be an option—if there wasn’t another alternative. 💡
 
 Apps are made of priorities and compromises. From time to time, I try some of the newer ones coming out, but find most of them confusing. I won’t wade through a tutorial to listen to a podcast. After a decade of podcasts on iPhone, I have not found an app I really like.
 
@@ -90,7 +90,7 @@ Enough of that, I don’t want to repeat the pitch here, check the [App Store](h
 
 Back to the initial question. Why another podcast app? Why build something that, in some form or the other, already exists? Podest’s genesis is classic open source, scratching an itch. I answered the personal need for a simpler way of listening to podcasts—something I’m truly passionate about—in the hopes if I’m looking an alternative podcast app, others might be looking too.
 
-To generalize, if you discover a use case, not or unsatisfyingly covered by existing tools and you are privileged to invest time, you should *build all the things*, picking up new technologies along the way—here Swift. Like podcast user interfaces, those unresolved problems, of course, tend to be inherently tough nuts to crack. Breaking your project down into modules makes the time investment manageable and the final composite becomes secondary, for you are rewarded with each module. Open sourcing components generates intermediate products, hardens resiliency through wider usage, and might be instructive for others. Reading code and contributing to open source are excellent means for learning.
+To generalize, if you discover a use case, not or unsatisfyingly covered by existing tools and you are privileged to invest time, you should *build all the things*, picking up new technologies along the way—here Swift. Like podcast user interfaces, those unresolved problems, of course, tend to be inherently tough nuts to crack. Breaking your project down into modules makes the time investment manageable and the final composite becomes secondaryOpen sourcing components generates intermediate products, hardens resiliency through wider usage, and might be instructive for others. Reading code and contributing to open source are excellent means for learning.
 
 Podest is mostly open source. Some packages and the app itself, using frameworks the least exciting part, still need to be published on [GitHub](https://github.com/michaelnisi/). I want to make Podest 100% open source.
 
