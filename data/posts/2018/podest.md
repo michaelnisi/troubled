@@ -7,13 +7,15 @@
   "image": "img/podest_large_card.png"
 }
 
-Promoting my new app, available on the [App Store](https://itunes.apple.com/us/app/podest/id794983364), I’m reminded of just how many podcast apps there are now. Searching for the term “podcast”, I face a wall of similar looking apps. I came for glory, I mumble, stuffing the fruit of my hard work into these saturated shelves. Arguably, this choir doesn’t scream for another *unique selling proposition*.
+Promoting my new app, available on the [App Store](https://itunes.apple.com/us/app/podest/id794983364), I’m reminded of just how many podcast apps there are now. Searching for the term “podcast”, I look at a wall of apps. Eat that, I mumble, stuffing the fruit of my hard work into the saturated shelves. Arguably, this choir doesn’t scream for another *unique selling proposition*.
 
 #### I love podcasts
 
 Podcasts first clicked with me, when I discovered the [Stack Overflow podcast](https://stackoverflow.blog/2008/04/17/podcast-1/), back in 2008. This periodic conversation between [Joel Spolsky](https://www.joelonsoftware.com) and [Jeff Atwood](https://blog.codinghorror.com), about the progress of building their [site](https://stackoverflow.com), was an eye opener.
 
-Listening to human voices at close range, over headphones or device speakers, can create an intimate bubble, experienced as connectedness to the hosts by the listener. I have fond memories—strangely enough—of long wintery walks with the dog listening to [John Gruber](https://daringfireball.net) and [Dan Benjamin](http://danbenjamin.com) chatting about Apple stuff on the original [Talk Show](http://5by5.tv/talkshow), of wiping the boarded floors of my pad to [The Book Review](https://www.nytimes.com/column/book-review-podcast), or [Pavel Mayer elucidating C++ on CRE](https://cre.fm/cre063-die-programmiersprache-c-plus-plus), with me sitting in front of the fire place, laptop on the floor.
+Listening to human voices at close range, over headphones or device speakers, can create an intimate bubble.
+
+I have fond memories—strangely enough—of long wintery walks with the dog listening to [John Gruber](https://daringfireball.net) and [Dan Benjamin](http://danbenjamin.com) chatting about Apple stuff on the original [Talk Show](http://5by5.tv/talkshow), of wiping the boarded floors of my pad to [The Book Review](https://www.nytimes.com/column/book-review-podcast), or [Pavel Mayer elucidating C++ on CRE](https://cre.fm/cre063-die-programmiersprache-c-plus-plus), with me sitting in front of the fire place, laptop on the floor.
 
 ## 🔥
 
@@ -23,11 +25,11 @@ Today, with all of us carrying connected audio devices in our pockets, capable o
 
 Podcast labels—publishing and production—are a thing now. [Radiotopia](https://www.radiotopia.fm), [Wondery](https://wondery.com), [Headgum](https://headgum.com), [Gimlet](https://www.gimletmedia.com), and [Pineapple Street Media](http://pineapple.fm), to name a few. Being German myself, shoutouts to [Metaebene](https://metaebene.me), [Viertausendhertz](https://viertausendhertz.de), [hauseins](https://hauseins.fm), and [Pool Artists](http://www.poolartists.de), with the splashy [WIMAF](https://wimaf.podigee.io) podcast.
 
-Print publications understand how podcasts bond readers with writers, getting them closer to their brands. Not only newspapers, like [The Guardian](https://www.theguardian.com/audio) and [The New York Times](https://www.nytimes.com/spotlight/podcasts), also magazines—[Monocle](https://monocle.com/radio/), [The New Yorker](https://www.newyorker.com/podcast), and more recently [New York Magazine](http://nymag.com), which just premiered [The Cut on Tuesdays](https://www.thecut.com/2019/10/the-cut-on-tuesdays-podcast-episode-1-power.html), a new weekly with Gimlet—are creating splendid audio. In Germany, [Die Zeit](https://www.zeit.de/podcasts) got the memo.
+Print publications understand how podcasts bond readers with writers, getting them closer to their brands. Not only newspapers, like [The Guardian](https://www.theguardian.com/audio) and [The New York Times](https://www.nytimes.com/spotlight/podcasts), also magazines—[Monocle](https://monocle.com/radio/), [The New Yorker](https://www.newyorker.com/podcast), and more recently [New York Magazine](http://nymag.com), which just premiered [The Cut on Tuesdays](https://www.thecut.com/2019/10/the-cut-on-tuesdays-podcast-episode-1-power.html), a new weekly with Gimlet—publish splendid audio. In Germany, [Die Zeit](https://www.zeit.de/podcasts) got the memo.
 
 Digital natives, [Slate](http://www.slate.com/articles/podcasts.html), [Vox](https://www.vox.com/pages/podcasts), [Recode](https://www.recode.net/podcasts/), and [The Verge](https://www.theverge.com/podcasts), are already there.
 
-[SoundCloud](https://soundcloud.com/for/podcasting), [Spotify](https://www.spotify.com), and [Deezer](https://www.deezer.com/) have integrated podcasts into their offerings. Amazon produces podcasts—for [Alexa](https://developer.amazon.com/alexa) I guess—with its audio book company [Audible](https://www.audible.com/blog/). But these products are chimera, for something to call itself a podcast, it must provide some kind of public feed, I think.
+[SoundCloud](https://soundcloud.com/for/podcasting), [Spotify](https://www.spotify.com), and [Deezer](https://www.deezer.com/) have integrated podcasts into their offerings. Amazon produces podcasts—for [Alexa](https://developer.amazon.com/alexa)—with its audio book company [Audible](https://www.audible.com/blog/). But these products are chimera, for something to call itself a podcast, it must provide some kind of public feed, I think.
 
 After merely mirroring their signals into the podcast space, following early adopters like [NPR](https://www.npr.org) or [WYNC](https://www.wnyc.org), grand broadcasters like the [BBC](https://www.bbc.co.uk/podcasts) are getting serious.
 
@@ -39,17 +41,17 @@ I forget how I initially listened. With iTunes and iPod, I guess,  [casually moo
 
 #### Apps are made of priorities and compromises
 
-Came iPhone, of course, I began with Apple [Podcasts](https://itunes.apple.com/us/app/podcasts/id525463029) and later [Downcast](https://itunes.apple.com/us/app/downcast/id393858566), which I used for quite some time. Then came [Instacast](https://itunes.apple.com/us/app/instacast-core/id108386833), which I liked, but as it turned out, didn’t scale to hundreds of subscriptions. I had to return to Apple Podcasts. I kept trying [Overcast](https://overcast.fm), but stuck with Apple Podcasts, apparently made by developers who did not listen to podcasts, at least back then.
+Came iPhone, of course, I began with Apple [Podcasts](https://itunes.apple.com/us/app/podcasts/id525463029) and later [Downcast](https://itunes.apple.com/us/app/downcast/id393858566), which I used for quite some time. Then came [Instacast](https://itunes.apple.com/us/app/instacast-core/id108386833), which I liked, but as it turned out, didn’t scale to hundreds of subscriptions. I had to return to Apple Podcasts. I kept trying [Overcast](https://overcast.fm), but stuck with Apple Podcasts in the end—apparently made by developers who aren’t into podcasts.
 
-Apps are made of priorities and compromises. From time to time, I try one of the newer apps coming out, but find them confusing. If a podcast app requires me to wade through a tutorial, something went wrong. This all goes to show, after a decade of listening, I have not found a podcast app I enjoy—here be dragons.
+Recently, I took another look at [Pocket Casts](https://play.pocketcasts.com) and, despite its complexity, it might be an option—if there wasn’t another alternative. 😇
 
-Recently, I took another look at [Pocket Casts](https://play.pocketcasts.com) and, despite its complexity, it might be an option for me—if there wasn’t another alternative.
+Apps are made of priorities and compromises. From time to time, I try some of the newer ones coming out, but find most of them confusing. I won’t wade through a tutorial to listen to a podcast. After a decade of podcasts on iPhone, I have not found an app I really like.
 
 #### You're holding it wrong
 
 My way of consuming podcasts might be unfit for the available apps. How do I listen to podcasts? I don’t walk the streets with headphones and I don’t have a commute. I listen at home, walking around the house, doing chores, while shaving or in bed before sleep, without headphones, using the internal device speakers—another reason why I prefer larger devices. For pausing and resuming playback and skipping I use the watch, with the phone in my pocket or placed somewhere near. I never use AirPlay or listen over the stereo. Podcasts are near-field audio for me, they are personal. When another person enters the room, I stop playback. I quit listening on walks, preferring sounds of nature, the city, or company.
 
-Constantly trying out new podcasts, my subscriptions level around one hundred podcasts. Three of my longtime favorites are [Scriptnotes](http://scriptnotes.net), [Longform](https://longform.org/podcast), and the [New Yorker Fiction](https://www.newyorker.com/podcast/fiction) podcast.
+Constantly trying out new podcasts, my subscriptions level around one hundred podcasts. Three of my longtime favorites, maybe slightly off the beaten path, are [Scriptnotes](http://scriptnotes.net), [Longform](https://longform.org/podcast), and the [New Yorker Fiction](https://www.newyorker.com/podcast/fiction) podcast.
 
 #### What do I want
 
@@ -88,7 +90,7 @@ Enough of that, I don’t want to repeat the pitch here, check the [App Store](h
 
 Back to the initial question. Why another podcast app? Why build something that, in some form or the other, already exists? Podest’s genesis is classic open source, scratching an itch. I answered the personal need for a simpler way of listening to podcasts—something I’m truly passionate about—in the hopes if I’m looking an alternative podcast app, others might be looking too.
 
-To generalize, if you discover a use case, not or unsatisfyingly covered by existing tools and you are privileged to invest time, you should *build all the things*, picking up new technologies along the way—here Swift. Like podcast user interfaces, those unresolved problems, of course, tend to be inherently tough nuts to crack. Breaking your project down into modules makes the time investment manageable and the final composite becomes secondary, for you are rewarded with each module. Open source these components not only provides intermediate results, but allows others to learn and profit from your work as well.
+To generalize, if you discover a use case, not or unsatisfyingly covered by existing tools and you are privileged to invest time, you should *build all the things*, picking up new technologies along the way—here Swift. Like podcast user interfaces, those unresolved problems, of course, tend to be inherently tough nuts to crack. Breaking your project down into modules makes the time investment manageable and the final composite becomes secondary, for you are rewarded with each module. Open sourcing components generates intermediate products, hardens resiliency through wider usage, and might be instructive for others. Reading code and contributing to open source are excellent means for learning.
 
 Podest is mostly open source. Some packages and the app itself, using frameworks the least exciting part, still need to be published on [GitHub](https://github.com/michaelnisi/). I want to make Podest 100% open source.
 
