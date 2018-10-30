@@ -7,7 +7,7 @@
   "image": "img/podest_large_card.png"
 }
 
-Promoting my new app, available on the [App Store](https://itunes.apple.com/us/app/podest/id794983364), I’m reminded of just how many podcast apps there are now. Searching for the term “podcast”, I look at a wall of apps. “Oh good”, I mumble, stuffing the fruit of my hard work into the saturated shelves. This choir is screaming for another unique selling proposition.
+Promoting my new app, available on the [App Store](https://itunes.apple.com/us/app/podest/id794983364), I’m reminded of just how many podcast apps there are now. Searching for the term “podcast”, I look at a wall of apps. “Oh good”, I mumble, stuffing the fruit of my hard work into the saturated shelves. Clearly, this choir is screaming for another unique selling proposition.
 
 #### I love podcasts
 
@@ -55,7 +55,7 @@ Constantly trying out new podcasts, my subscriptions level around one hundred po
 
 #### What do I want
 
-- Access from all my devices
+- Access from all my iOS devices
 - Audio and video playback including streaming
 - Browse and read show notes while playing
 - Comprehensive queue
@@ -86,7 +86,7 @@ Podest is a simple, yet powerful podcast app. Its clear interface stays out of t
 
 > If you want a streamlined & efficient podcast player app, give Podest a try. I helped beta test it.—[@a_grebenyuk](https://twitter.com/a_grebenyuk)
 
-Enough of that, I don’t want to repeat the pitch here, check the [App Store](https://itunes.apple.com/us/app/podest/id794983364) and download the app. Please leave a rating or a review to support this indie project. That would make me happy.
+Enough of that, I don’t want to repeat the pitch here, please check the [App Store](https://itunes.apple.com/us/app/podest/id794983364), download the app, and leave a rating or a review to support this indie project. That would make me happy.
 
 Back to the initial question. Why another podcast app? Why build something that, in some form or the other, already exists? Podest’s genesis is classic open source, scratching an itch. I answered the personal need for a simpler way of listening to podcasts—something I’m truly passionate about—in the hopes if I’m looking an alternative podcast app, others might be looking too.
 
