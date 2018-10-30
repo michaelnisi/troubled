@@ -7,7 +7,7 @@
   "image": "img/podest_large_card.png"
 }
 
-Promoting my new app, available on the [App Store](https://itunes.apple.com/us/app/podest/id794983364), I’m reminded of just how many podcast apps there are now. Searching for the term “podcast”, I look at a wall of apps. “Oh good”, I mumble, stuffing the fruit of my hard work into the saturated shelves. Clearly, this choir is screaming for another unique selling proposition.
+Promoting my new app, available on the [App Store](https://itunes.apple.com/us/app/podest/id794983364), I’m reminded of just how many podcast apps there are now. Searching for the term “podcast”, I look at a wall of apps, screaming for another unique selling proposition. “Oh good”, I mumble, stuffing the fruit of my hard work into the saturated shelves.
 
 #### I love podcasts
 
