@@ -7,7 +7,7 @@
   "image": "img/podest_large_card.png"
 }
 
-Promoting my new app, available on the [App Store](https://itunes.apple.com/us/app/podest/id794983364), I’m reminded of just how many podcast apps there are now. Searching the term “podcast” yields a wall of similar looking apps, literally screaming for yet another unique selling proposition.
+Promoting my new app, available on the [App Store](https://itunes.apple.com/us/app/podest/id794983364), I’m reminded of how many podcast apps there are now. Searching the term “podcast” yields a wall of similar looking apps, just screaming for yet another unique selling proposition.
 
 #### I love podcasts
 
@@ -80,7 +80,7 @@ Unable to shake the question, I tricked myself into biting the bullet by deletin
 
 #### Download on the App Store
 
-[![Podest](/img/podest_app_icon.svg "Podest App Icon")](https://appstore.com/podest)
+[![Podest](/img/podest_app_icon.svg "Podest App Icon")](https://itunes.apple.com/us/app/podest/id794983364)
 
 Podest is a simple, yet powerful podcast app. Its clear interface stays out of the way and puts podcast episodes center stage. Access all your episodes, subscriptions, and other podcasts from a single list—your queue. Enjoy more podcasts without losing track.
 
