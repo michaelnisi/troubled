@@ -15,8 +15,11 @@ As an application developer, my objective is to build meaningful mobile applicat
 
 In this blog, I write about software making, open source, and quality. With my background in art and design, I bring a holistic perspective to the field.
 
-> It is the pervading law of all things organic and inorganic, of all things physical and metaphysical, of all things human, and all things super-human, of all true manifestations of the head, of the heart, of the soul, that the life is recognizable in its expression, that form ever follows function. *This is the law.*
+> Sing clearvoice Muse, of Hephaestus famed for skill. With bright-eyed Athena he taught men glorious crafts throughout the world—men who before used to dwell in caves in the mountains like wild beasts. But now that they have learned crafts through Hephaestus famous for his art they live a peaceful life in their own houses the whole year round.
+>—*Homer*
 
 I like building things with [Node](https://github.com/michaelnisi/manger), [Swift](https://github.com/michaelnisi/fileproxy), [Erlang](https://github.com/michaelnisi/feeder), and [Bash](https://www.gnu.org/software/bash/). I’m the author of [Podest](https://itunes.apple.com/us/app/podest/id794983364), a podcast app for iOS.
 
 If you have any questions, reach me by email at <michael.nisi@gmail.com>.
+
+## Let’s talk!
