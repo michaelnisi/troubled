@@ -6,7 +6,7 @@
   "path": "2019/02"
 }
 
-A coding task, within a job application recently, gave me the opportunity to try GraphQL. Looking at clients for iOS, I chose Apollo and built [Swifters](https://github.com/michaelnisi/swifters), a little app that lists Swift users on GitHub. But its main purpose, of course, has been exploring GraphQL with Apollo and to land the job, of which, unfortunately, only the first part panned out—in hindsight, I prefer this outcome.
+A coding task, within a job application recently, gave me the opportunity to try GraphQL. Looking at clients for iOS, I chose Apollo and built [Swifters](https://github.com/michaelnisi/swifters), a little app that lists Swift users on GitHub. But its main purpose, of course, has been exploring GraphQL with Apollo while landing the job.
 
 [GraphQL](https://graphql.org) is a query language for APIs, originally created at Facebook in 2012. Interacting with a GraphQL endpoint, you describe what you need in your query and get exactly that, with the result’s fields mirroring the query’s. A single GraphQL endpoint may aggregate data from many resources. Its typed schema can replace versioning, which, especially for microservices, is error prone.
 
@@ -50,4 +50,8 @@ Exploring APIs with [curl](https://curl.haxx.se) is fun, but to actually build s
 
 [![Swift](/img/taylor.gif "Swift")](https://swift.org)
 
-But for this article, why not build an iOS application using [Apollo iOS](https://www.apollographql.com/docs/ios/). The app lists [Swifters](https://github.com/michaelnisi/swifters). No, not sheep, housekeepers neither, but Taylor Swift fans on [GitHub](https://github.com/search?q=swift&type=Users).
+But let’s review aforementioned iOS application that uses [Apollo iOS](https://www.apollographql.com/docs/ios/), a strongly type, caching GraphQL client for native iOS apps. This app lists [Swifters](https://github.com/michaelnisi/swifters). No, not sheep, housekeepers neither, but Taylor Swift fans on [GitHub](https://github.com/search?q=swift&type=Users).
+
+…
+
+By the way, I’ve been lucky to not get that job. It didn’t fit.
