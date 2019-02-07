@@ -6,7 +6,7 @@
   "path": "2019/02"
 }
 
-A coding task, within a job application recently, gave me the opportunity to try GraphQL. Looking at clients for iOS, I chose Apollo and built [Swifters](https://github.com/michaelnisi/swifters), a little app that lists Swift users on GitHub. But its main purpose, of course, has been exploring GraphQL with Apollo while landing the job.
+A coding task, within a job application recently, gave me the opportunity to try GraphQL. Looking at clients for iOS, I chose Apollo and built [Swifters](https://github.com/michaelnisi/swifters), a little app that lists Swift users on GitHub. But its main purpose, of course, was exploring GraphQL while landing the job.
 
 [GraphQL](https://graphql.org) is a query language for APIs, originally created at Facebook in 2012. Interacting with a GraphQL endpoint, you describe what you need in your query and get exactly that, with the result’s fields mirroring the query’s. A single GraphQL endpoint may aggregate data from many resources. Its typed schema can replace versioning, which, especially for microservices, is error prone.
 
@@ -125,5 +125,6 @@ A week later, do I still believe in REST? I haven’t experienced implementing a
 - Offline first? How would we persist the graph cache?
 - How does memory management of the graph work?
 - Why is `GraphQLFragment` not `Hashable`?
+- What’s up with these memory leaks?
 
-By the way, I’ve been lucky to not get that job. It didn’t fit.
+By the way, I’ve probably been lucky not getting that job. It just wouldn’t have panned out with these folks, I guess. Apollo who?
