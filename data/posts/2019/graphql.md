@@ -30,7 +30,7 @@ Responding with:
 }
 ```
 
-After you have [created](https://developer.github.com/v4/guides/forming-calls/#authenticating-with-graphql) your OAuth <token>, try logging in bearing the <token>.
+After you have [created](https://developer.github.com/v4/guides/forming-calls/#authenticating-with-graphql) your OAuth token, try logging in bearing the `<token>`.
 
 ```
 curl -H "Authorization: bearer <token>" -X POST -d " \
@@ -43,9 +43,11 @@ curl -H "Authorization: bearer <token>" -X POST -d " \
 Voilà!
 
 ```js
-{"data":{"viewer":{"login":"michaelnisi"}}}
+{"data":{"viewer":{"login":"<your_github_login>"}}}
 ```
 
 Exploring APIs with [curl](https://curl.haxx.se) is fun, but to actually build something, of course, you need a client. For JavaScript, there are [Relay](https://facebook.github.io/relay/), [Apollo](https://www.apollographql.com/docs/react/), and many [more](https://graphql.org/code/#javascript-1). For [other languages](https://graphql.org/code/#graphql-clients) as well.
 
-But for this article, why not build an iOS application using [Apollo iOS](https://www.apollographql.com/docs/ios/). The app lists [Swifters](https://github.com/michaelnisi/swifters). No, not sheep, housekeepers neither, but Swift users on [GitHub](https://github.com/search?q=swift&type=Users).
+[![Swift](/img/taylor.gif "Swift")](https://swift.org)
+
+But for this article, why not build an iOS application using [Apollo iOS](https://www.apollographql.com/docs/ios/). The app lists [Swifters](https://github.com/michaelnisi/swifters). No, not sheep, housekeepers neither, but Taylor Swift fans on [GitHub](https://github.com/search?q=swift&type=Users).
