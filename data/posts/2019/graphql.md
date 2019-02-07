@@ -1,5 +1,5 @@
 {
-  "title": "Exploring GraphQL with Apollo",
+  "title": "GraphQL with Apollo iOS",
   "description": "GraphQL encodes a uniform language, type system, and philosophy.",
   "template": "article.pug",
   "date": "2019-02-07",
