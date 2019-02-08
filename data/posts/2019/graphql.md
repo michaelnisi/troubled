@@ -8,14 +8,15 @@
 
 Recently, I had a chance to try GraphQL on iOS. After a quick search for a client library, I picked Apollo iOS and built [Swifters](https://github.com/michaelnisi/swifters), a little app that lists Swift users on GitHub. But its main purpose, of course, has been to compare the imperative REST approach to the declarative GraphQL way.
 
-
-REST is procedural and if you have ever maintained an app which talks to a bunch of microservices, you know the pain. Coordinating servers and clients, even if it’s the same person or team working on them, is a mess—eventually leading to conservatism within your group. People develop a fear of change, because there are just too many moving parts. And to take the biscuit, imagine you would use some dynamic, let alone object-oriented, language on your servers and your clients… But hey, who does that, right?
+REST is procedural and if you have ever maintained an app which talks to a bunch of microservices, you know the pain. Coordinating servers and clients, even if it’s the same person or team working on them, is a mess—eventually leading to conservatism. We develop a fear of change, there are just too many moving parts.
 
 > REST isn't a fit for modern applications—[Why is GraphQL important?](https://www.apollographql.com/why-graphql)
 
-With Swift, statically typed, bordering to functional programming, we can be pretty safe on the client side. But how can we safely integrate with remote APIs, while staying flexible, so we can embrace change?
+And to take the biscuit, imagine doing this with a dynamic language, server side and client side. But hey, who does that, right? Using Swift, statically typed, with traces of functional programming, we are pretty safe. But how can we safely integrate with remote APIs, so we can embrace change?
 
-[GraphQL](https://graphql.org) is a query language for APIs, originally created at Facebook in 2012. Interacting with a GraphQL endpoint, you describe what you need in your query and get exactly that, with the result’s fields mirroring the query’s. A single GraphQL endpoint may aggregate data from many resources. Its typed schema can replace versioning, which, especially for microservices, is error prone.
+#### We need a type-safe contract between client and server
+
+[GraphQL](https://graphql.org) is a query language for APIs, originally created at Facebook in 2012. Interacting with a GraphQL endpoint, you describe what you need in your query and get exactly that, with the result’s fields mirroring the query’s. A single GraphQL endpoint may aggregate data from many resources. Its typed schema can replace versioning, which is flimsy anyways, especially for microservices—that service of yours is what version now?
 
 [Apollo iOS](https://www.apollographql.com/docs/ios/) is a strongly-typed, caching GraphQL client.
 
@@ -24,7 +25,7 @@ There are many GraphQL [implementations](https://graphql.org/code/). For example
 You don’t need a complex client to hit a GraphQL endpoint. Here’s GitHub:
 
 ```
-curl https://api.github.com/graphql
+$ curl https://api.github.com/graphql
 ```
 
 Responding with:
@@ -39,7 +40,7 @@ Responding with:
 After you have [created](https://developer.github.com/v4/guides/forming-calls/#authenticating-with-graphql) your OAuth token, try logging in bearing the `<token>`.
 
 ```
-curl -H "Authorization: bearer <token>" -X POST -d " \
+$ curl -H "Authorization: bearer <token>" -X POST -d " \
  { \
    \"query\": \"query { viewer { login }}\" \
  } \
@@ -56,19 +57,21 @@ Exploring APIs with [curl](https://curl.haxx.se) is fun, but to actually build s
 
 [![Swift](/img/taylor.gif "Swift")](https://swift.org)
 
-But let’s review aforementioned iOS application that uses [Apollo iOS](https://www.apollographql.com/docs/ios/), a strongly typed, caching GraphQL client for native iOS apps. Our app lists [Swifters](https://github.com/michaelnisi/swifters). No, not sheep, housekeepers neither, but Taylor Swift fans on [GitHub](https://github.com/search?q=swift&type=Users).
+But let’s return to aforementioned iOS application. Swifters uses [Apollo iOS](https://www.apollographql.com/docs/ios/), a strongly typed, caching GraphQL client for native iOS apps. Our app lists [Swifters](https://github.com/michaelnisi/swifters). No, not sheep, housekeepers neither. Taylor Swift fans on [GitHub](https://github.com/search?q=swift&type=Users).
+
+#### Making the difference
 
 Creating adaptive UIs, collection views and table views can be used to structure apps. This requires rich data sources providing these views with data. Correctly built, with diffing and `performBatchUpdates(_:completion:)`, flexible app structures emerge.
 
 Detailed understanding of `performBatchUpdates(_:completion:)` is essential for building this kind of apps. I recommend taking [A Tour of UICollectionView](https://developer.apple.com/videos/play/wwdc2018/225/).
 
-Every iOS developer has implemented a diffing algorithm for updating collection views or table views, one way or another. Looking around, I found [DeepDiff](https://github.com/onmyway133/DeepDiff) and extracted the diffing into a single, 386 LOC [file](https://github.com/michaelnisi/swifters/blob/master/Swifters/ds/diff.swift), to be flexible at call-site, not knowing how I was going to apply it yet.
+Every iOS developer has implemented a diffing algorithm for updating collection views or table views, one way or another. Looking around, I like [DeepDiff](https://github.com/onmyway133/DeepDiff). In fact, I like it so much that I have  extracted its `diff` function into a single [file](https://github.com/michaelnisi/swifters/blob/master/Swifters/ds/diff.swift)—386 lines of code.
 
 I’m excited about the recent [Ordered Collection Diffing](https://github.com/apple/swift-evolution/blob/master/proposals/0240-ordered-collection-diffing.md) proposal, describing additions to the Swift Standard Library that provide an interchange format for diffs as well as diffing/patching functionality for appropriate collection types.
 
 #### Diving in
 
-The app repo contains detailed installation instructions, here’s just a quick intro, independent from the app. Firstly, are installing the Apollo command line tool.
+The app repo contains detailed [installation](https://github.com/michaelnisi/swifters#installation) instructions, here’s just a quick intro, independent from the app. Firstly, in a new directory, we are installing the Apollo command line tool.
 
 ```
 $ npm i apollo
@@ -94,6 +97,12 @@ COMMANDS
   help     display help for apollo
   queries  Checks your GraphQL operations for compatibility with the server. Checks against the published schema in Apollo Engine.
   schema   Check a schema against the version registered in Apollo Engine.
+```
+
+Type `help` followed by a command name to explore the tool, for example:
+
+```
+$ npx apollo help schema
 ```
 
 #### Schemas and Types
