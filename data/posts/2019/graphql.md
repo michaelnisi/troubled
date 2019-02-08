@@ -6,7 +6,7 @@
   "path": "2019/02"
 }
 
-Recently, I had a chance to try GraphQL on iOS. After a quick search for a client library, I picked Apollo iOS and built [Swifters](https://github.com/michaelnisi/swifters), a little app that lists Swift users on GitHub. But its main purpose, of course, has been to compare the imperative REST approach to the declarative GraphQL way.
+Recently, I had a chance to try GraphQL on iOS. After a quick search for a client library, I picked Apollo iOS and built [Swifters](https://github.com/michaelnisi/swifters), a little app that lists Swift users on GitHub. But its main purpose, of course, has been to compare the imperative REST approach to the declarative GraphQL way, from a client author’s perspective.
 
 REST is procedural and if you have ever maintained an app which talks to a bunch of microservices, you know the pain. Coordinating servers and clients, even if it’s the same person or team working on them, is a mess—eventually leading to conservatism. We develop a fear of change, there are just too many moving parts.
 
@@ -71,13 +71,13 @@ I’m excited about the recent [Ordered Collection Diffing](https://github.com/a
 
 #### Diving in
 
-The app repo contains detailed [installation](https://github.com/michaelnisi/swifters#installation) instructions, here’s just a quick intro, independent from the app. Firstly, in a new directory, we are installing the Apollo command line tool.
+The app repo contains detailed [installation](https://github.com/michaelnisi/swifters#installation) instructions, here’s just a quick intro—independent from the app—exploring the Apollo command line tool. Let’s install it with npm. In a new directory, do:
 
 ```
 $ npm i apollo
 ```
 
-We can try it locally using npx.
+We can try it locally using [npx](https://blog.npmjs.org/post/162869356040/introducing-npx-an-npm-package-runner), an npm package runner.
 
 ```
 $ npx apollo
@@ -107,15 +107,17 @@ $ npx apollo help schema
 
 #### Schemas and Types
 
-A GraphQL service is created by defining types and fields on those types, then providing functions for each field on each type. These types are define in a schema, a contract with clients.
+> A GraphQL service is created by defining types and fields on those types, then providing functions for each field on each type.
 
-Let’s download said contract for the GitHub API.
+These types are defined in a schema, a contract with clients. Let’s download the schema of the GitHub GraphQL API, authenticating with the OAuth token from above.
 
 ```
 npx apollo schema:download --endpoint=https://api.github.com/graphql --header="Authorization: <token>"
 ```
 
-And with that, we have just downloaded the 45K LOC schema file of the GitHub GraphQL API v4. 😮
+And with that, we have just downloaded the 45K LOC schema file of the GitHub GraphQL API v4. 😮 Peeking into the file, we find the GitHub API Graph expressed in JSON, not for humans though, but for [machines](https://developer.github.com/v4/guides/intro-to-graphql/#discovering-the-graphql-api) to read. GraphQL is [introspective](https://graphql.org/learn/introspection/), you can ask a schema about itself.
+
+#### …
 
 #### First look at Apollo iOS
 
