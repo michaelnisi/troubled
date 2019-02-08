@@ -2,16 +2,20 @@
   "title": "GraphQL with Apollo iOS",
   "description": "GraphQL encodes a uniform language, type system, and philosophy.",
   "template": "article.pug",
-  "date": "2019-02-07",
+  "date": "2019-02-08",
   "path": "2019/02"
 }
 
-A coding task, within a job application recently, gave me the opportunity to try GraphQL. Looking at clients for iOS, I chose Apollo and built [Swifters](https://github.com/michaelnisi/swifters), a little app that lists Swift users on GitHub. But its main purpose, of course, was exploring GraphQL while landing the job.
+Recently, I had a chance to try GraphQL on iOS. After a quick search for a client library, I picked Apollo iOS and built [Swifters](https://github.com/michaelnisi/swifters), a little app that lists Swift users on GitHub. But its main purpose, of course, has been to compare the imperative REST approach to the declarative GraphQL way.
+
+
+REST is procedural and if you have ever maintained an app which talks to a bunch of microservices, you know the pain. Coordinating servers and clients, even if it’s the same person or team working on them, is a mess and eventually develops into conservatism—fear of change.
+
+> REST isn't a fit for modern applications—[Why is GraphQL important?](https://www.apollographql.com/why-graphql)
 
 [GraphQL](https://graphql.org) is a query language for APIs, originally created at Facebook in 2012. Interacting with a GraphQL endpoint, you describe what you need in your query and get exactly that, with the result’s fields mirroring the query’s. A single GraphQL endpoint may aggregate data from many resources. Its typed schema can replace versioning, which, especially for microservices, is error prone.
 
 [Apollo iOS](https://www.apollographql.com/docs/ios/) is a strongly-typed, caching GraphQL client.
-
 
 There are many GraphQL [implementations](https://graphql.org/code/). For example, server-side frameworks for [JavaScript](https://graphql.org/graphql-js/) and [Erlang](https://github.com/shopgun/graphql-erlang).
 
@@ -126,5 +130,3 @@ A week later, do I still believe in REST? I haven’t experienced implementing a
 - How does memory management of the graph work?
 - Why is `GraphQLFragment` not `Hashable`?
 - What’s up with these memory leaks?
-
-By the way, I’ve probably been lucky not getting that job. It just wouldn’t have panned out with these folks, I guess. Apollo who?
