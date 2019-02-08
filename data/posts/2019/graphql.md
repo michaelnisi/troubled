@@ -115,7 +115,25 @@ These types are defined in a schema, a contract with clients. Let’s download t
 npx apollo schema:download --endpoint=https://api.github.com/graphql --header="Authorization: <token>"
 ```
 
-And with that, we have just downloaded the 45K LOC schema file of the GitHub GraphQL API v4. 😮 Peeking into the file, we find the GitHub API Graph expressed in JSON, not for humans though, but for [machines](https://developer.github.com/v4/guides/intro-to-graphql/#discovering-the-graphql-api) to read. GraphQL is [introspective](https://graphql.org/learn/introspection/), you can ask a schema about itself.
+And with that, we have just downloaded the 45K LOC schema file of the GitHub GraphQL API v4. 😮 Peeking into the file, we find the GitHub API Graph expressed in JSON, not for humans though, but for [machines](https://developer.github.com/v4/guides/intro-to-graphql/#discovering-the-graphql-api) to read. GraphQL is [introspective](https://graphql.org/learn/introspection/), you can ask a schema about itself. For example, this query JSON would list all GitHub types:
+
+```json
+{
+  "query": "{ __schema { types { name } } }"
+}
+```
+
+```
+$ curl -sSH "Authorization: bearer <token>" -X POST -d '{ "query": "{ __schema { types { name } } }" }' https://api.github.com/graphql | json -ga data.__schema.types | json -ga name | wc -l
+```
+
+```
+482
+```
+
+Wow! This API has almost 500 different types.
+
+Of course, there are more convenient ways of exploring GraphQL API queries, like [GraphiQL](https://github.com/graphql/graphiql). You can explore the GitHub GraphQL API in your [browser](https://developer.github.com/v4/explorer/).
 
 #### …
 
