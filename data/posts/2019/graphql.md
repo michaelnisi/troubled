@@ -9,7 +9,7 @@
 Recently, I had a chance to try GraphQL on iOS. After a quick search for a client library, I picked Apollo iOS and built [Swifters](https://github.com/michaelnisi/swifters), a little app that lists Swift users on GitHub. But its main purpose, of course, has been to compare the imperative REST approach to the declarative GraphQL way.
 
 
-REST is procedural and if you have ever maintained an app which talks to a bunch of microservices, you know the pain. Coordinating servers and clients, even if it’s the same person or team working on them, is a mess and eventually develops into conservatism—fear of change.
+REST is procedural and if you have ever maintained an app which talks to a bunch of microservices, you know the pain. Coordinating servers and clients, even if it’s the same person or team working on them, is a mess, eventually leading to conservatism within your group. People develop a fear of change, because there are just too many moving parts. And to take the biscuit, imagine you would use some dynamic, let alone object-oriented, language on your servers and your clients… But hey, who does that, right?
 
 > REST isn't a fit for modern applications—[Why is GraphQL important?](https://www.apollographql.com/why-graphql)
 
