@@ -9,9 +9,11 @@
 Recently, I had a chance to try GraphQL on iOS. After a quick search for a client library, I picked Apollo iOS and built [Swifters](https://github.com/michaelnisi/swifters), a little app that lists Swift users on GitHub. But its main purpose, of course, has been to compare the imperative REST approach to the declarative GraphQL way.
 
 
-REST is procedural and if you have ever maintained an app which talks to a bunch of microservices, you know the pain. Coordinating servers and clients, even if it’s the same person or team working on them, is a mess, eventually leading to conservatism within your group. People develop a fear of change, because there are just too many moving parts. And to take the biscuit, imagine you would use some dynamic, let alone object-oriented, language on your servers and your clients… But hey, who does that, right?
+REST is procedural and if you have ever maintained an app which talks to a bunch of microservices, you know the pain. Coordinating servers and clients, even if it’s the same person or team working on them, is a mess—eventually leading to conservatism within your group. People develop a fear of change, because there are just too many moving parts. And to take the biscuit, imagine you would use some dynamic, let alone object-oriented, language on your servers and your clients… But hey, who does that, right?
 
 > REST isn't a fit for modern applications—[Why is GraphQL important?](https://www.apollographql.com/why-graphql)
+
+With Swift, statically typed, bordering to functional programming, we can be pretty safe on the client side. But how can we safely integrate with remote APIs, while staying flexible, so we can embrace change?
 
 [GraphQL](https://graphql.org) is a query language for APIs, originally created at Facebook in 2012. Interacting with a GraphQL endpoint, you describe what you need in your query and get exactly that, with the result’s fields mirroring the query’s. A single GraphQL endpoint may aggregate data from many resources. Its typed schema can replace versioning, which, especially for microservices, is error prone.
 
