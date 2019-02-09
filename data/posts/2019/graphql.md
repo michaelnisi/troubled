@@ -71,7 +71,7 @@ I’m excited about the recent [Ordered Collection Diffing](https://github.com/a
 
 #### Diving in
 
-The app repo contains detailed [installation](https://github.com/michaelnisi/swifters#installation) instructions, here’s just a quick intro—independent from the app—exploring the Apollo command line tool. Let’s install it with npm. In a new directory, do:
+The Swifters repo contains detailed [installation](https://github.com/michaelnisi/swifters#installation) instructions, here’s just a quick intro—independent from the app—exploring the Apollo command line tool. Let’s install it with npm. In a new directory, do:
 
 ```
 $ npm i apollo
