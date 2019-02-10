@@ -71,7 +71,7 @@ I’m excited about the recent [Ordered Collection Diffing](https://github.com/a
 
 #### Diving in
 
-The app repo contains detailed [installation](https://github.com/michaelnisi/swifters#installation) instructions, here’s just a quick intro—independent from the app—exploring the Apollo command line tool. Let’s install it with npm. In a new directory, do:
+The app repo contains detailed [installation](https://github.com/michaelnisi/swifters#installation) instructions, here’s just a quick intro, independent from the app, exploring the Apollo command line tool. Let’s install it with npm. In a tempdirectory, do:
 
 ```
 $ npm i apollo
@@ -131,17 +131,17 @@ $ curl -sSH "Authorization: bearer <token>" -X POST -d '{ "query": "{ __schema {
 482
 ```
 
-Wow! This API has almost 500 different types.
+Wow, with almost 500 different types, this API is vast. ✨
 
-Of course, there are more convenient ways of exploring GraphQL API queries, like [GraphiQL](https://github.com/graphql/graphiql). You can explore the GitHub GraphQL API in your [browser](https://developer.github.com/v4/explorer/).
+Naturally, there are more convenient ways of exploring GraphQL. [GraphiQL](https://github.com/graphql/graphiql) lets you write, validate, and test GraphQL queries in your [browser](https://developer.github.com/v4/explorer/).
 
-#### …
+### Noted while writing the app
 
-#### First look at Apollo iOS
+Here are my notes, jotted down while making the app.
 
-Apollo uses [npx](https://blog.npmjs.org/post/162869356040/introducing-npx-an-npm-package-runner), which is neat. npx is a command-line tool from npm that lets you execute commands locally, or from a central cache, installing any packages needed.
+#### First impressions
 
-Reading the Apollo documentation, my main concern with Apollo’s approach is the tight coupling between view controllers and the remote API, merging access and storage. On the other hand, [repositories](https://www.martinfowler.com/eaaCatalog/repository.html) have the same surface and its purpose is removing the serialization layer, which can be a millstone around the neck of developers, rendering them hesitant to change. Propagating an adjustment from the server onto the screen is often laborious and often requires coordination between different teams.
+Reading the Apollo documentation, my main concern with Apollo iOS approach is the tight coupling between view controllers and the remote API, merging access and storage. On the other hand, [repositories](https://www.martinfowler.com/eaaCatalog/repository.html) have the same surface. Apollo wants to remove the serialization layer, which can be a millstone around the neck of developers, rendering them hesitant to change. Propagating an adjustment from the server onto the screen is often laborious and requires coordination between different teams.
 
 But the service logic leaks into your view controllers. Is that modern? Maybe. The `schema.json` is a contract. I have to read up on GraphQL API versioning.
 
@@ -161,3 +161,5 @@ A week later, do I still believe in REST? I haven’t experienced implementing a
 - How does memory management of the graph work?
 - Why is `GraphQLFragment` not `Hashable`?
 - What’s up with these memory leaks?
+
+### Swifters
