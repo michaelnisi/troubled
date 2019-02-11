@@ -6,9 +6,9 @@
   "path": "2019/02"
 }
 
-Recently, I had a chance to try GraphQL on iOS. After a quick search for a client library, I picked Apollo iOS and built [Swifters](https://github.com/michaelnisi/swifters), a little app that lists Swift users on GitHub. But its main purpose, of course, has been to compare the imperative REST approach to the declarative GraphQL way, from a client author’s perspective.
+Recently, I had a chance to try GraphQL on iOS. After a quick search for a client library, I picked Apollo iOS and built [Swifters](https://github.com/michaelnisi/swifters), a little app that lists Swift users on GitHub. But its main purpose is comparing the imperative RESTful with the declarative GraphQL way, from a client author’s perspective.
 
-REST is procedural and if you have ever maintained an app which talks to a bunch of microservices, you know the pain. Coordinating servers and clients, even if it’s the same person or team working on them, is a mess—eventually leading to conservatism. We develop a fear of change, there are just too many moving parts.
+REST is procedural and if you have ever maintained an app which talks to a bunch of microservices, you know the pain. Coordinating servers and clients, even if it’s the same person or team working on them, is a mess—eventually leading to conservatism. With too many moving parts comes a fear of change.
 
 > REST isn't a fit for modern applications—[Why is GraphQL important?](https://www.apollographql.com/why-graphql)
 
@@ -135,7 +135,7 @@ Naturally, there are more convenient ways of exploring GraphQL. [GraphiQL](https
 
 #### First impressions
 
-This article is getting lengthy. If I go into the next section now, it won’t end under 1500 words. Why not end it with my unreflected notes? They are kind of dumb, but hey, I need to catch my breath. There might be a second part, tweet [@michaelnisi](https://twitter.com/michaelnisi) if your interested. Here are my notes, jotted down while making the app.
+This article is getting lengthy. If I go into the next section now, it won’t end under 1500 words. Why not end it with my unreflected notes? They are kind of dumb, but hey, I need to catch my breath. There might be a second part, tweet [@michaelnisi](https://twitter.com/michaelnisi) if you are interested. Here are my notes, jotted down while making the app.
 
 > Making myself familiar with Apollo iOS, what troubles me is the tight coupling of view controllers and the remote API, merging access and storage. On the other hand, [repositories](https://www.martinfowler.com/eaaCatalog/repository.html) have the same surface. Apollo wants to remove the serialization layer, which can be a millstone around the neck of developers, rendering them hesitant to change. Propagating an adjustment from the server onto the screen is often laborious and requires coordination between different teams.
 
