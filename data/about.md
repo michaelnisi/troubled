@@ -2,7 +2,7 @@
   "title": "About The Troubled Programmer",
   "template": "about.pug",
   "name": "about.html",
-  "date": "2019-02-06",
+  "date": "2019-02-11",
   "icons": [
     {"src": "/img/octocat.svg", "href": "https://github.com/michaelnisi"},
     {"src": "/img/npm.svg", "href": "https://www.npmjs.org/~michaelnisi"}
@@ -18,8 +18,6 @@ In this blog, I write about software making, open source, and quality. With my b
 > Sing clearvoice Muse, of Hephaestus famed for skill. With bright-eyed Athena he taught men glorious crafts throughout the world—men who before used to dwell in caves in the mountains like wild beasts. But now that they have learned crafts through Hephaestus famous for his art they live a peaceful life in their own houses the whole year round.
 >—*Homer*
 
-I like building things with [Node](https://github.com/michaelnisi/manger), [Swift](https://github.com/michaelnisi/fileproxy), [Erlang](https://github.com/michaelnisi/feeder), and [Bash](https://www.gnu.org/software/bash/). I’m the author of [Podest](https://itunes.apple.com/us/app/podest/id794983364), a podcast app for iOS.
+I like building things with [Swift](https://github.com/michaelnisi/fileproxy) and [Node.js](https://github.com/michaelnisi/manger), sometimes [Erlang/OTP](https://github.com/michaelnisi/feeder). I’m the author of [Podest](https://itunes.apple.com/us/app/podest/id794983364), a podcast app for iOS.
 
 If you have any questions, reach me by email at <michael.nisi@gmail.com>.
-
-## Let’s talk!

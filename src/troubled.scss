@@ -24,17 +24,18 @@ h1 {
   font-size: 1.625em;
   letter-spacing: .1em;
   text-transform: uppercase;
+  text-align: center;
 }
 
 h2 {
   font-size: 2em;
   letter-spacing: .1em;
-  text-align: center;
 }
 
 h3 {
   font-size: 1.25em;
   letter-spacing: .1em;
+  text-transform: uppercase;
 }
 
 h4, h5 {
@@ -44,8 +45,7 @@ h4, h5 {
 
 h4 {
   font-size: 1.25em;
-  font-style: italic;
-  text-align: center;
+  font-weight: bolder;
 }
 
 h5 {
@@ -84,7 +84,7 @@ time {
 header {
   text-align: center;
   width: 100%;
-  padding-bottom: 1em;
+  padding-bottom: 3em;
 }
 
 header p {
@@ -149,7 +149,6 @@ nav a, section#likes ul li a {
 }
 
 #summary {
-  text-align: center;
   padding-bottom: 1em;
 }
 
