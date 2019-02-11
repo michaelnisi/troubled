@@ -17,7 +17,7 @@ Listening to human voices at close range, over headphones or device speakers, ca
 
 I have fond memories—strangely enough—of long wintery walks with the dog listening to [John Gruber](https://daringfireball.net) and [Dan Benjamin](http://danbenjamin.com) chatting about Apple stuff on the original [Talk Show](http://5by5.tv/talkshow), of wiping the boarded floors of my pad to [The Book Review](https://www.nytimes.com/column/book-review-podcast), or [Pavel Mayer elucidating C++ on CRE](https://cre.fm/cre063-die-programmiersprache-c-plus-plus), while I was sitting in front of the fire place, laptop on the floor.
 
-## 🔥
+# 🔥
 
 Today, with all of us carrying connected audio devices, capable of playback and recording, in our pockets, audio is big. Voice control. Recording. Listening. [The Daily](https://www.nytimes.com/podcasts/the-daily) promptly became a household name during the 2016 election campaign, reaching [five million unique listeners every month](https://www.recode.net/2018/2/13/17005660/new-york-times-the-daily-american-public-media-radio-podcast-michael-barbaro-lisa-tobin-code-media). Pioneers, like [Radio Open Source](http://radioopensource.org), [99pi](https://99percentinvisible.org), [This American Life](https://www.thisamericanlife.org), or [Radio Lab](https://www.wnycstudios.org/shows/radiolab), are still going strong.
 
