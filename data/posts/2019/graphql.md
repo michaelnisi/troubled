@@ -135,7 +135,7 @@ Naturally, there are more convenient ways of exploring GraphQL. [GraphiQL](https
 
 #### First impressions
 
-This article is getting lengthy. If I go into the next section now, it won’t end under 1500 words. Why not end it with my unreflected notes? They are kind of dumb, but hey, I need to catch my breath. There might be a second part, tweet [@michaelnisi](https://twitter.com/michaelnisi) if you are interested. Here are my notes, jotted down while making the app.
+This article is getting lengthy. If I go into the next section now, it won’t end under 1500 words. Why not end it with my unreflected notes? They are kind of dumb, but hey, I need to catch my breath. There might be a second part, tweet [@michaelnisi](https://twitter.com/michaelnisi) if you are interested. But for now, here are my notes, jotted down while making the app.
 
 > Making myself familiar with Apollo iOS, what troubles me is the tight coupling of view controllers and the remote API, merging access and storage. On the other hand, [repositories](https://www.martinfowler.com/eaaCatalog/repository.html) have the same surface. Apollo wants to remove the serialization layer, which can be a millstone around the neck of developers, rendering them hesitant to change. Propagating an adjustment from the server onto the screen is often laborious and requires coordination between different teams.
 
