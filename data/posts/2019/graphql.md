@@ -20,7 +20,7 @@ And to take the biscuit, imagine doing this with a dynamic language, server side
 
 [Apollo iOS](https://www.apollographql.com/docs/ios/) is a strongly-typed, caching GraphQL client.
 
-There are many GraphQL [implementations](https://graphql.org/code/). For example, server-side frameworks for [JavaScript](https://graphql.org/graphql-js/) and [Erlang](https://github.com/shopgun/graphql-erlang).
+In addition to the reference implementation in [JavaScript](https://github.com/graphql/graphql-js), there are server libraries for many [languages](https://graphql.org/code/). I want to point out the excellently documented [graphql-erlang](https://github.com/shopgun/graphql-erlang). If your looking for a server integration, Matteo Collina has written an [adapter](https://github.com/mcollina/fastify-gql) for [Fastify](https://github.com/fastify/fastify).
 
 You don’t need a complex client to hit a GraphQL endpoint. Here’s GitHub:
 
@@ -55,11 +55,9 @@ Voilà!
 
 Exploring APIs with [curl](https://curl.haxx.se) is fun, but to actually build something, of course, you need a client. For JavaScript, there are [Relay](https://facebook.github.io/relay/), [Apollo](https://www.apollographql.com/docs/react/), and many [more](https://graphql.org/code/#javascript-1). For [other languages](https://graphql.org/code/#graphql-clients) as well.
 
-[![Swift](/img/taylor.gif "Swift")](https://swift.org)
-
-But let’s return to aforementioned iOS application. Swifters uses [Apollo iOS](https://www.apollographql.com/docs/ios/), a strongly typed, caching GraphQL client for native iOS apps. Our app lists [Swifters](https://github.com/michaelnisi/swifters). No, not sheep, housekeepers neither. Taylor Swift fans on [GitHub](https://github.com/search?q=swift&type=Users).
-
 #### Making the difference
+
+Before returning to aforementioned app, a few words on iOS collection views.
 
 Creating adaptive UIs, collection views and table views can be used to structure apps. This requires rich data sources providing these views with data. Correctly built, with diffing and `performBatchUpdates(_:completion:)`, flexible app structures emerge.
 
@@ -71,7 +69,7 @@ I’m excited about the recent [Ordered Collection Diffing](https://github.com/a
 
 #### Diving in
 
-The Swifters repo contains detailed [installation](https://github.com/michaelnisi/swifters#installation) instructions, here’s just a quick intro—independent from the app—exploring the Apollo command line tool. Let’s install it with npm. In a new directory, do:
+For [Swifters](https://github.com/michaelnisi/swifters), I’ve chosen [Apollo iOS](https://www.apollographql.com/docs/ios/), a strongly typed, caching GraphQL client for native iOS apps. The app repo contains detailed [installation](https://github.com/michaelnisi/swifters#installation) instructions—here’s just a quick intro, independent from the app, for exploring the Apollo command line tool. Let’s install it with npm. In a new directory, do:
 
 ```
 $ npm i apollo
@@ -135,31 +133,22 @@ Wow, with almost 500 different types, this API is vast. ✨
 
 Naturally, there are more convenient ways of exploring GraphQL. [GraphiQL](https://github.com/graphql/graphiql) lets you write, validate, and test GraphQL queries in your [browser](https://developer.github.com/v4/explorer/).
 
-### Noted while writing the app
-
-Here are my notes, jotted down while making the app.
-
 #### First impressions
 
-Reading the Apollo documentation, my main concern with Apollo iOS approach is the tight coupling between view controllers and the remote API, merging access and storage. On the other hand, [repositories](https://www.martinfowler.com/eaaCatalog/repository.html) have the same surface. Apollo wants to remove the serialization layer, which can be a millstone around the neck of developers, rendering them hesitant to change. Propagating an adjustment from the server onto the screen is often laborious and requires coordination between different teams.
+Here are my notes, jotted down while making the app. This article is getting lengthy, why not end it with these kind of dumb and unreflected notes. Maybe just for catching my breath, there’s might be a second part, tweet [@michaelnisi](https://twitter.com/michaelnisi) if your interested.
 
-But the service logic leaks into your view controllers. Is that modern? Maybe. The `schema.json` is a contract. I have to read up on GraphQL API versioning.
+> Making myself familiar with Apollo iOS, what troubles me is the tight coupling of view controllers and the remote API, merging access and storage. On the other hand, [repositories](https://www.martinfowler.com/eaaCatalog/repository.html) have the same surface. Apollo wants to remove the serialization layer, which can be a millstone around the neck of developers, rendering them hesitant to change. Propagating an adjustment from the server onto the screen is often laborious and requires coordination between different teams.
 
-Apollo does not only remove serialization, but also builds a local graph. I decided to go all in for this little experiment and query from my collection view data sources, which accompanies nicely my other dogma for this demo: collection views only.
+> But the service logic leaks into your view controllers. Is that modern? Maybe. The `schema.json` is a contract. I have to read up on GraphQL API versioning.
 
-#### Three days later
+> Apollo does not only remove serialization, but also builds a local graph. I decided to go all in for this little experiment and query from my collection view data sources, which accompanies nicely my other dogma for this demo: collection views only.
 
-Three days later, I’m impressed. After passing the intial ramp, aquiring a rudimentary understanding of GraphQL and setting up Apollo, it has been a downhill ride—thrilling and fast. Building an app by modeling queries like clay is incredibly effective. Development can get pretty spontaneous that way. For large apps, of course, this may also become a problem, despite all being statically typed, which is pretty amazing by the way.
+*Three days later*
+> I’m impressed. After passing the intial ramp, aquiring a rudimentary understanding of GraphQL and setting up Apollo iOS, it has been a downhill ride—thrilling and fast. Building an app by modeling queries like clay is incredibly effective. Development can get pretty spontaneous that way, while still being safe, Type-Safe.
 
-#### A week later
+*A week later*
+> Do I still believe in REST? I haven’t experienced implementing a GraphQL server, but from the client perspective and what I’ve seen so far, it seems to me, GraphQL is the way. All parts fell into place quite naturally. Intuitive decisions were mostly right. My reading matter for the next couple of weeks is set. 📚
 
-A week later, do I still believe in REST? I haven’t experienced implementing a GraphQL server—[graphql-erlang](https://github.com/shopgun/graphql-erlang) looks fantastic—but from the client perspective and what I’ve seen so far, I would recommend GraphQL. All parts fell into place quite naturally. Intuitive decisions were mostly right. My reading matter for the next couple of weeks is set. 📚
+*I have questions*
 
-#### I have questions
-
-- Offline first? How would we persist the graph cache?
-- How does memory management of the graph work?
-- Why is `GraphQLFragment` not `Hashable`?
-- What’s up with these memory leaks?
-
-### Swifters
+> Offline first? How would we persist the graph cache? How does memory management of the graph work? Why is `GraphQLFragment` not `Hashable`? And what’s up with those memory leaks?
