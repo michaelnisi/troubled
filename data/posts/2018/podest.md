@@ -76,11 +76,13 @@ The user interface of a podcast app is challenging, it has to communicate two na
 
 Unable to shake the question, I tricked myself into biting the bullet by deleting all podcast apps from my devices. If I wanted to listen to podcasts, I had to build an app. That was in 2014, Apple had just announced Swift. A good time for starting an app.
 
-[![Podest](/img/podest.svg "Podest Logotype")](https://www.moma.org/collection/works/2500)
+![Podest](/img/podest.svg "Podest Logotype")
 
-# Download on the App Store
+The app icon was inspired by this [old radio](https://www.moma.org/collection/works/2500).
 
 [![Podest](/img/podest_app_icon.svg "Podest App Icon")](https://itunes.apple.com/us/app/podest/id794983364)
+
+#### Download on the App Store
 
 Podest is a simple, yet powerful podcast app. Its clear interface stays out of the way and puts podcast episodes center stage. Access all your episodes, subscriptions, and other podcasts from a single list—your queue. Enjoy more podcasts without losing track.
 
@@ -92,7 +94,9 @@ Back to the initial question. Why another podcast app? Why build something that,
 
 To generalize, if you discover a use case, not or unsatisfyingly covered by existing tools and you are privileged to invest time, you should *build all the things*, picking up new technologies along the way—here Swift. Like podcast user interfaces, those unresolved problems, of course, tend to be inherently tough nuts to crack. Breaking your project down into modules makes the time investment manageable and the final composite becomes secondary. Open sourcing components generates intermediate products, hardens resiliency through wider usage, and might be instructive for others. Reading code and contributing to open source are excellent means for learning.
 
-Podest is mostly open source. Some packages and the app itself still need to be published on [GitHub](https://github.com/michaelnisi/). I want to make Podest 100% open source.
+#### 100% open source
+
+Podest is [open source](https://github.com/michaelnisi/). Please leave a rating or a review on the App Store to support my work.
 
 **There were plenty podcast players, but no podcast browser. Try Podest and tell me what you think.**
 [![App Store](/img/app_store.svg "App Store Badge")](https://itunes.apple.com/us/app/podest/id794983364)
