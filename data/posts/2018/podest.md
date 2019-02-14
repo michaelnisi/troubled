@@ -78,7 +78,7 @@ Unable to shake the question, I tricked myself into biting the bullet by deletin
 
 [![Podest](/img/podest.svg "Podest Logotype")](https://www.moma.org/collection/works/2500)
 
-#### Download on the App Store
+# Download on the App Store
 
 [![Podest](/img/podest_app_icon.svg "Podest App Icon")](https://itunes.apple.com/us/app/podest/id794983364)
 
