@@ -6,7 +6,7 @@
   "path": "2019/02"
 }
 
-Recently, I had a chance to try GraphQL on iOS. After a quick search for a client library, I picked Apollo iOS and built [Swifters](https://github.com/michaelnisi/swifters), a little app that lists Swift users on GitHub. But its main purpose is comparing the imperative RESTful with the declarative GraphQL way, from a client author’s perspective.
+Recently, I finally got around to try GraphQL. I know, right? Ready to jump on the bandwagon—it’s a developer [mega-trend](https://blog.apollographql.com/highlights-from-graphql-summit-2018-30a766291691)—I picked Apollo iOS and built [Swifters](https://github.com/michaelnisi/swifters), a little app that lists Swift users on GitHub. Although incredibly useful in its own right, its purpose is to explore GraphQL, evaluating its declarative—compared with the imperative [REST](https://en.wikipedia.org/wiki/Representational_state_transfer)—architecture.
 
 REST is procedural and if you have ever maintained an app which talks to a bunch of microservices, you know the pain. Coordinating servers and clients, even if it’s the same person or team working on them, is a mess—eventually leading to conservatism. With too many moving parts comes a fear of change.
 
@@ -16,7 +16,9 @@ And to take the biscuit, imagine doing this with a dynamic language, server side
 
 #### We need a type-safe contract between client and server
 
-[GraphQL](https://graphql.org) is a query language for APIs, originally created at Facebook in 2012. Interacting with a GraphQL endpoint, you describe what you need in your query and get exactly that, with the result’s fields mirroring the query’s. A single GraphQL endpoint may aggregate data from many resources. Its typed schema can replace versioning, which is flimsy anyways, especially for microservices—that service of yours is what version now?
+[GraphQL](https://graphql.org) is a query language for APIs, originally created at Facebook in 2012. Interacting with a GraphQL endpoint, you describe what you need in your query and get exactly that. The result mirrors the fields of the query, filling them with data.
+
+A single GraphQL endpoint may aggregate data from many resources. Its typed schema can replace versioning, which is flimsy anyways, especially for microservices, with people ending up bumping version numbers wholesale in unison. Do you even [semver](https://semver.org)?
 
 [Apollo iOS](https://www.apollographql.com/docs/ios/) is a strongly-typed, caching GraphQL client.
 
@@ -135,7 +137,7 @@ Naturally, there are more convenient ways of exploring GraphQL. [GraphiQL](https
 
 #### First impressions
 
-This article is getting lengthy. If I go into the next section now, I can’t keep it under 1500 words. Why not end it with my unreflected notes? They are kind of dumb, but hey, I need to catch my breath. There might be a second part, tweet [@michaelnisi](https://twitter.com/michaelnisi) if you are interested. But for now, here’s what I’ve jotted down building the app in December.
+This article is getting lengthy. Why not end it with my unreflected notes? They are kind of dumb, but hey, I need a breather and you can read the [code](https://github.com/michaelnisi/swifters) if you just can’t get enough. Here’s what I’ve jotted down building the app last December.
 
 > Making myself familiar with Apollo iOS, what troubles me is the tight coupling of view controllers and the remote API, merging access and storage. On the other hand, [repositories](https://www.martinfowler.com/eaaCatalog/repository.html) have the same surface. Apollo wants to remove the serialization layer, which can be a millstone around the neck of developers, rendering them hesitant to change. Propagating an adjustment from the server onto the screen is often laborious and requires coordination between different teams.
 
@@ -147,8 +149,16 @@ This article is getting lengthy. If I go into the next section now, I can’t ke
 > I’m impressed. After passing the intial ramp, aquiring a rudimentary understanding of GraphQL and setting up Apollo iOS, it has been a downhill ride—thrilling and fast. Building an app by modeling queries like clay is incredibly effective. Development can get pretty spontaneous that way, while still being safe, Type-Safe.
 
 *A week later*
-> Do I still believe in REST? I haven’t experienced implementing a GraphQL server, but from the client perspective and what I’ve seen so far, it seems to me, GraphQL is the way. All parts fell into place quite naturally. Intuitive decisions were mostly right. My reading matter for the next couple of weeks is set. 📚
+> Do I still believe in REST? I have yet to experience implementing GraphQL server, but what I have seen so far, from the client perspective, indicates strongly that GraphQL with Apollo is a great way for building and growing apps. All parts fell into place quite naturally. Intuitive decisions were mostly right. My reading matter for the next couple of weeks is set. 📚
 
 *I have questions*
 
 > Offline first? How would we persist the graph cache? How does memory management of the graph work? Why is `GraphQLFragment` not `Hashable`? And what’s up with those memory leaks?
+
+#### Bringing things together again
+
+After the final monolith has been broken into microservices, we are introducing a new layer to bring things together again.
+
+>  This new layer brings all of a company's app data and services together in one place, with one consistent, secure, and easy-to-use interface, so that anyone can draw upon it with minimal friction
+
+Read on, this is a quote from [Principled GraphQL](https://principledgraphql.com).
