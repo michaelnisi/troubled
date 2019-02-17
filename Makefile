@@ -8,7 +8,7 @@ NORMALIZE=resources/css/normalize.css
 RESPOND=resources/js/respond.js
 RESPONDJS=node_modules/respond.js/dest/respond.src.js
 SCRIPT=resources/js/script.min.js
-STYLE=resources/css/style.css
+STYLE=resources/css/1550423038978.css
 SYNTAX=resources/css/syntax.css
 
 .PHONY: all
