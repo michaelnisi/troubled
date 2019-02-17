@@ -3,7 +3,8 @@
   "description": "GraphQL encodes a uniform language, type system, and philosophy.",
   "template": "article.pug",
   "date": "2019-02-08",
-  "path": "2019/02"
+  "path": "2019/02",
+  "image": "img/graphql_large_card.png"
 }
 
 Recently, I finally got around to try GraphQL. I know, right? Ready to jump on the bandwagon—it’s a developer [mega-trend](https://blog.apollographql.com/highlights-from-graphql-summit-2018-30a766291691)—I picked Apollo iOS and built [Swifters](https://github.com/michaelnisi/swifters), a little app that lists Swift users on GitHub. Although incredibly useful in its own right, its purpose is to explore GraphQL, evaluating its declarative—as opposed to the imperative REST—architecture.
