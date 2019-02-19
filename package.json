@@ -21,7 +21,7 @@
     "pickup": "^3.0.1",
     "prettydate": "0.0.1",
     "property-ttl": "^1.0.0",
-    "pug": "^2.0.0-beta6",
+    "pug": "^2.0.3",
     "request": "^2.88.0",
     "twitter-text": "^1.13.4"
   },
