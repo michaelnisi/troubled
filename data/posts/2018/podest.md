@@ -98,7 +98,7 @@ To generalize, if you discover a use case, not or unsatisfyingly covered by exis
 
 Podest is [open source](https://github.com/michaelnisi/). Please leave a rating or a review on the App Store to support my work.
 
-![Podest](/img/podest/se_1x.png)
+![Four iPhone SEs showing different screens of the app](/img/podest/se_1x.png "Finding a good show has never been easier")
 
 **There were plenty podcast players, but no podcast browser. Try Podest and tell me what you think.**
 [![App Store Badge](/img/app_store.svg "Download on the App Store")](https://itunes.apple.com/us/app/podest/id794983364)
