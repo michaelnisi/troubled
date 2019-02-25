@@ -76,11 +76,11 @@ The user interface of a podcast app is challenging, it has to communicate two na
 
 Unable to shake the question, I tricked myself into biting the bullet by deleting all podcast apps from my devices. If I wanted to listen to podcasts, I had to build an app. That was in 2014, Apple had just announced Swift. A good time for starting an app.
 
-![Podest](/img/podest.svg "Podest Logotype")
+![Podest Logotype](/img/podest.svg "The eighties are back")
 
 The app icon was inspired by this [old radio](https://www.moma.org/collection/works/2500).
 
-[![Podest](/img/podest_app_icon.svg "Podest App Icon")](https://itunes.apple.com/us/app/podest/id794983364)
+[![Podest App Icon](/img/podest_app_icon.svg "Download on the App Store")](https://itunes.apple.com/us/app/podest/id794983364)
 
 #### Download on the App Store
 
@@ -98,5 +98,7 @@ To generalize, if you discover a use case, not or unsatisfyingly covered by exis
 
 Podest is [open source](https://github.com/michaelnisi/). Please leave a rating or a review on the App Store to support my work.
 
+![Podest](/img/podest/se_1x.png)
+
 **There were plenty podcast players, but no podcast browser. Try Podest and tell me what you think.**
-[![App Store](/img/app_store.svg "App Store Badge")](https://itunes.apple.com/us/app/podest/id794983364)
+[![App Store Badge](/img/app_store.svg "Download on the App Store")](https://itunes.apple.com/us/app/podest/id794983364)

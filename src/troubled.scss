@@ -56,12 +56,12 @@ h5 {
 
 pre, code {
   font-family: 'Source Code Pro', monospace;
-  background-color: #f7f7f7;
+	background-color: #fdf6e3; /* base3 */
   color: #657b83;
 }
 
-p pre, p code {
-  font-size: 0.813em;
+article p pre, article p code {
+  font-size: 0.9em;
 }
 
 a, a:visited, a:hover {

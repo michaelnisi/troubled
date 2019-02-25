@@ -20,17 +20,29 @@ exports.views = {
   'tweet.pug': tweet
 }
 
-const Highlights = require('highlights')
-const clean = require('property-ttl')
 const https = require('https')
-const markdown = require('markdown-it')
-const pickBy = require('lodash.pickby')
 const pickup = require('pickup')
 const pug = require('pug')
 const qs = require('querystring')
+const rehypePrism = require('rehype-prism')
+const rehypeStringify = require('rehype-stringify')
+const remarkRehype = require('remark-rehype')
+const remarkParse = require('remark-parse')
 const request = require('request')
 const strftime = require('prettydate').strftime
 const twitter = require('twitter-text')
+const unified = require('unified')
+const loadLanguages = require('prismjs/components/')
+
+loadLanguages([
+  'erlang',
+  'swift',
+  'bash',
+  'coffeescript',
+  'rust',
+  'python',
+  'perl'
+])
 
 function compile (item) {
   const opts = {
@@ -184,73 +196,21 @@ function channel (item, articles) {
   }
 }
 
-function cleanup (grammars) {
-  let managed = 0
-  const stops = []
-  scan()
-  return function stopAll () {
-    while (stops.length) stops.shift()()
-  }
-  function scan () {
-    while (managed < grammars.length - 1) {
-      stops.push(
-        clean(grammars[managed], 'repository', 2000, () => {
-          scan() // start watching new grammars if they are added later.
-        }),
-        clean(grammars[managed++], 'initialRule', 2000)
-      )
-    }
-  }
+// Returns a new Markdown processor.
+function createProcessor () {
+  return unified()
+    .use(remarkParse)
+    .use(remarkRehype)
+    .use(rehypePrism)
+    .use(rehypeStringify)
 }
-
-const hl = new Highlights()
-cleanup(hl.registry.grammars)
-
-const languages = [
-  'language-erlang',
-  'language-swift'
-]
-
-languages.forEach((language) => {
-  hl.requireGrammarsSync({
-    modulePath: require.resolve(language + '/package.json')
-  })
-})
-
-const mappings = {
-  sh: 'source.shell',
-  markdown: 'source.gfm',
-  erb: 'text.html.erb'
-}
-
-function scopeNameFromLang (highlighter, lang) {
-  if (mappings[lang]) return mappings[lang]
-  const grammar = pickBy(hl.registry.grammarsByScopeName, (val, key) => {
-    return val.name.toLowerCase() === lang
-  })
-  if (Object.keys(grammar).length) {
-    return Object.keys(grammar)[0]
-  }
-  const name = 'source.' + lang
-  mappings[lang] = name
-  return name
-}
-
-const md = markdown({
-  highlight: (str, lang) => {
-    const scope = scopeNameFromLang(hl, lang)
-    return hl.highlightSync({
-      fileContents: str,
-      scopeName: scope
-    })
-  }
-})
 
 function localsWithItem (item) {
   const image = `https://troubled.pro/${item.header.image || 'img/michael_2x.jpg'}`
+  const processor = createProcessor()
 
   return {
-    content: md.render(item.body),
+    content: processor.processSync(item.body),
     date: item.date,
     dateString: strftime(item.date, '%d %B %Y'),
     description: item.header.description,
@@ -260,7 +220,7 @@ function localsWithItem (item) {
     pubDate: item.date.toUTCString(),
     title: item.header.title,
     url: `https://troubled.pro/${item.link}`,
-    image:  image,
+    image: image,
     card: image.indexOf('large') !== -1 ? 1 : 0
   }
 }
