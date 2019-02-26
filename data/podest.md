@@ -1,5 +1,5 @@
 {
-  "title": "Podest gets the podcasts you love.",
+  "title": "Podest. Get the podcasts you love.",
   "description": "Wether hundreds of subscriptions or just a quick listen, get your podcasts with Podest. With its familiar user interface and full-text search, it’s easy to find a good show. Podest updates your queue efficiently in the background, without draining your battery. If you love podcasts and look for a simple way to enjoy them, without sign up or tracking, try this streamlined podcast player.",
   "template": "article.pug",
   "date": "2019-02-26",
