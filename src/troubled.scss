@@ -138,6 +138,10 @@ nav ul li, #page_footer ul#smallprint li {
   padding-right: 1em;
 }
 
+section {
+  overflow: hidden;
+}
+
 nav a, section#likes ul li a {
   letter-spacing: .1em;
 }

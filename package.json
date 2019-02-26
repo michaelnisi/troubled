@@ -20,8 +20,7 @@
     "remark-rehype": "^4.0.0",
     "request": "^2.88.0",
     "twitter-text": "^1.13.4",
-    "unified": "^7.1.0",
-    "unified-stream": "^1.0.4"
+    "unified": "^7.1.0"
   },
   "keywords": [],
   "author": "Michael Nisi <michael.nisi@gmail.com> (http://troubled.pro/)",
