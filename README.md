@@ -1,6 +1,6 @@
 # troubled - making is thinking
 
-The [blake](https://github.com/michaelnisi/blake) source module for generating my [site](http://troubled.pro/).
+The [blake](https://github.com/michaelnisi/blake) source module for generating my [website](http://troubled.pro/).
 
 ### License
 

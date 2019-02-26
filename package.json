@@ -1,7 +1,7 @@
 {
   "name": "troubled",
   "version": "3.0.0",
-  "description": "The content of my site",
+  "description": "The content of my website",
   "main": "index.js",
   "scripts": {
     "syntax": "min.css node_modules/prismjs/themes/prism-solarizedlight.css > resources/css/syntax.css",
