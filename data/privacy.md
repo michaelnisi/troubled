@@ -1,7 +1,7 @@
 {
   "title": "Privacy Policy",
   "template": "article.pug",
-  "description": "The Michael Nisi Privacy Policy was updated on May 27, 2019.",
+  "description": "The Michael Nisi Privacy Policy was updated on February 27, 2019.",
   "name": "privacy.html",
   "date": "2019-02-27"
 }
