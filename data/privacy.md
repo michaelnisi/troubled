@@ -1,12 +1,12 @@
 {
   "title": "Privacy Policy",
   "template": "article.pug",
-  "description": "The Troubled Privacy Policy was updated on June 16, 2018.",
+  "description": "The Michael Nisi Privacy Policy was updated on May 27, 2019.",
   "name": "privacy.html",
-  "date": "2018-06-15"
+  "date": "2019-02-27"
 }
 
-Your privacy is as important to me as my own. I’m a person who writes software, I have neither interest nor means to store data about you. Thus, the software I build is designed to accumulate as little data as possible. I’m committed to keeping your personal information safe. OK, that last sentence I’ve lifted from [Apple](https://apple.com), I don’t store personal information, they do that for me. I rely on Apple’s strict [policies](https://www.apple.com/legal/privacy/) and quality of execution.
+Your privacy is as important to me. I’m an individual like you, not a corporation, who writes software. I have neither interest nor means to store data about you. Thus, the software I build is designed to accumulate as little data as possible. I’m committed to keeping your personal information safe. I don’t store personal information. For my apps that use [iCloud](https://www.apple.com/lae/icloud/), I rely on Apple’s strict [policies](https://www.apple.com/legal/privacy/) and quality of execution.
 
 Building iOS apps, I don’t require personal information or logins, using [iCloud](https://support.apple.com/en-us/HT202303) I can build personalized apps without knowing anything personal about the users of my software, except that they have an iOS device. Apple’s iCloud handles authentication for me, capsulating personal information from me, while still letting me map personalized application data to users. Note the distinction between personal data and personalized data.
 
