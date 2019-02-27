@@ -27,7 +27,7 @@ In addition to the reference implementation in [JavaScript](https://github.com/g
 
 You don’t need a complex client to hit a GraphQL endpoint. Here’s GitHub:
 
-```
+```bash
 $ curl https://api.github.com/graphql
 ```
 
@@ -42,7 +42,7 @@ Responding with:
 
 After you have [created](https://developer.github.com/v4/guides/forming-calls/#authenticating-with-graphql) your OAuth token, try logging in bearing the `<token>`.
 
-```
+```bash
 $ curl -H "Authorization: bearer <token>" -X POST -d " \
  { \
    \"query\": \"query { viewer { login }}\" \
@@ -74,7 +74,7 @@ I’m excited about the recent [Ordered Collection Diffing](https://github.com/a
 
 For [Swifters](https://github.com/michaelnisi/swifters), I’ve chosen [Apollo iOS](https://www.apollographql.com/docs/ios/), a strongly typed, caching GraphQL client for native iOS apps. The app repo contains detailed [installation](https://github.com/michaelnisi/swifters#installation) instructions—here’s just a quick intro, independent from the app, for exploring the Apollo command line tool. Let’s install it with npm. In a new directory, do:
 
-```
+```bash
 $ npm i apollo
 ```
 
@@ -118,13 +118,13 @@ npx apollo schema:download --endpoint=https://api.github.com/graphql --header="A
 
 And with that, we have just downloaded the 45K LOC *schema* file of the GitHub GraphQL API v4. 😮 Peeking into the file, we find the GitHub API Graph expressed in JSON, not for humans though, but for [machines](https://developer.github.com/v4/guides/intro-to-graphql/#discovering-the-graphql-api) to read. GraphQL is [introspective](https://graphql.org/learn/introspection/), you can ask a *schema* about itself. For example, this query JSON would list all GitHub types:
 
-```json
+```js
 {
   "query": "{ __schema { types { name } } }"
 }
 ```
 
-```
+```bash
 $ curl -sSH "Authorization: bearer <token>" -X POST -d '{ "query": "{ __schema { types { name } } }" }' https://api.github.com/graphql | json -ga data.__schema.types | json -ga name | wc -l
 ```
 

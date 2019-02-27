@@ -221,7 +221,7 @@ function localsWithItem (item) {
     title: item.header.title,
     url: `https://troubled.pro/${item.link}`,
     image: image,
-    card: image.indexOf('large') !== -1 ? 1 : 0
+    card: item.header.card === 1 || image.indexOf('large') !== -1 ? 1 : 0
   }
 }
 
