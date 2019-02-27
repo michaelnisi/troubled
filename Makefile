@@ -11,7 +11,7 @@ NORMALIZE=$(CSS)/normalize.css
 RESPOND=$(JS)/respond.js
 RESPONDJS=node_modules/respond.js/dest/respond.src.js
 SCRIPT=$(JS)/script.min.js
-STYLE=$(CSS)/1551164594349.css
+STYLE=$(CSS)/style.css
 SYNTAX=$(CSS)/syntax.css
 
 .PHONY: all
