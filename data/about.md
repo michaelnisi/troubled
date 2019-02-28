@@ -15,8 +15,9 @@ As an application developer, my objective is to build meaningful mobile applicat
 
 In this blog, I write about software making, open source, and quality. With my background in art and design, I bring a holistic perspective to the field.
 
-> Sing clearvoice Muse, of Hephaestus famed for skill. With bright-eyed Athena he taught men glorious crafts throughout the world—men who before used to dwell in caves in the mountains like wild beasts. But now that they have learned crafts through Hephaestus famous for his art they live a peaceful life in their own houses the whole year round.
->—*Homer*
+#### Form and function are one
+
+> Five lines where three are enough is always stupidity. Nine pounds where three are sufficient is obesity… To know what to leave out and what to put in, just where and just how, ah, that is to have been educated in knowledge of simplicity—toward ultimate freedom of expression.—*Frank Lloyd Wright*
 
 I like building things with [Swift](https://github.com/michaelnisi/fileproxy) and [Node.js](https://github.com/michaelnisi/manger), sometimes [Erlang/OTP](https://github.com/michaelnisi/feeder). I’m the author of [Podest](https://itunes.apple.com/us/app/podest/id794983364), a podcast app for iOS.
 
