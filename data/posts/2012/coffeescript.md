@@ -21,7 +21,7 @@ Jeremy Ashkenas, distinguished through [backbone](http://documentcloud.github.co
 
 ##### Splats and Default Arguments
 
-```coffee
+```coffeescript
 { test } = require('tap')
 
 add = (sum, values...) ->
@@ -43,7 +43,7 @@ test 'say', (t) ->
 
 ##### String Interpolations
 
-```coffee
+```coffeescript
 { test } = require 'tap'
 name = 'Coltrane'
 
@@ -55,7 +55,7 @@ test 'string', (t) ->
 
 ##### Destructuring Assignments
 
-```coffee
+```coffeescript
 { test } = require('tap')
 { name } = name: 'Moe'
 
@@ -66,7 +66,7 @@ test 'assignment', (t) ->
 
 ##### Array Comprehensions
 
-```coffee
+```coffeescript
 { test } = require('tap')
 
 getItem = (name) ->
@@ -98,7 +98,7 @@ test 'filter', (t) ->
 
 ##### Classes and Inheritance
 
-```coffee
+```coffeescript
 { test } = require 'tap'
 
 class Animal
