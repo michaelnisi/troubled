@@ -2,7 +2,7 @@
 
 UGLIFYJS=node_modules/uglify-js/bin/uglifyjs
 
-BUILD=/tmp/troubled
+TMP=/tmp/troubled
 CSS=resources/css
 JS=resources/js
 
@@ -14,33 +14,50 @@ SCRIPT=$(JS)/script.min.js
 STYLE=$(CSS)/style.css
 SYNTAX=$(CSS)/syntax.css
 
-.PHONY: all
-all: $(BUILD)
+$(TMP): scripts stylesheets
+	blake $(TMP)
 
-$(SCRIPT):
+.PHONY: stylesheets
+stylesheets: $(STYLE) $(SYNTAX) $(NORMALIZE)
+	mv $(STYLE) $(CSS)/style.$(shell md5 -q $(STYLE)).css
+	mv $(SYNTAX) $(CSS)/syntax.$(shell md5 -q $(SYNTAX)).css
+	mv $(NORMALIZE) $(CSS)/normalize.$(shell md5 -q $(NORMALIZE)).css
+
+.PHONY: scripts
+scripts: $(SCRIPT) $(MODERNIZE) $(RESPOND)
+
+# JavaScript
+
+$(JS):
+	mkdir -p $(JS)
+
+$(SCRIPT): $(JS)
 	$(UGLIFYJS) src/script.js -o $(SCRIPT) --compress
 
-$(STYLE):
+$(MODERNIZE): $(JS)
+	npm run modernize
+
+$(RESPOND): $(JS)
+	$(UGLIFYJS) $(RESPONDJS) -o $(RESPOND) --compress
+
+# CSS
+
+$(CSS):
 	mkdir -p $(CSS)
+
+$(STYLE): $(CSS)
 	sassc src/style.scss $(STYLE) -t compressed
 
 $(NORMALIZE):
 	npm run normalize
 
-$(MODERNIZE):
-	npm run modernize
-
-$(SYNTAX):
+$(SYNTAX): $(CSS)
 	npm run syntax
 
-$(RESPOND):
-	$(UGLIFYJS) $(RESPONDJS) -o $(RESPOND) --compress
-
-$(BUILD): $(SCRIPT) $(STYLE) $(NORMALIZE) $(MODERNIZE) $(RESPOND) $(SYNTAX)
-	blake $(BUILD)
+# Remove
 
 .PHONY: clean
 clean:
-	rm $(SCRIPT) $(NORMALIZE) $(MODERNIZE) $(RESPOND)
-	rm -rf $(BUILD)
+	rm $(SCRIPT) $(MODERNIZE) $(RESPOND)
+	rm -rf $(TMP)
 	rm -rf $(CSS)
