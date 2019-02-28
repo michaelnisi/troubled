@@ -1,21 +1,26 @@
 # Makefile - generate site
 
 UGLIFYJS=node_modules/uglify-js/bin/uglifyjs
+RESPONDJS=node_modules/respond.js/dest/respond.src.js
 
 TMP=/tmp/troubled
-CSS=resources/css
-JS=resources/js
 
-MODERNIZE=$(JS)/modernizr.js
+CSS=resources/css
 NORMALIZE=$(CSS)/normalize.css
-RESPOND=$(JS)/respond.js
-RESPONDJS=node_modules/respond.js/dest/respond.src.js
-SCRIPT=$(JS)/script.min.js
 STYLE=$(CSS)/style.css
 SYNTAX=$(CSS)/syntax.css
 
+JS=resources/js
+MODERNIZE=$(JS)/modernizr.js
+RESPOND=$(JS)/respond.js
+SCRIPT=$(JS)/script.min.js
+
+# Building a temporary site
+
 $(TMP): scripts stylesheets
 	blake $(TMP)
+
+# Updating static resources
 
 .PHONY: stylesheets
 stylesheets: $(STYLE) $(SYNTAX) $(NORMALIZE)
@@ -26,7 +31,7 @@ stylesheets: $(STYLE) $(SYNTAX) $(NORMALIZE)
 .PHONY: scripts
 scripts: $(SCRIPT) $(MODERNIZE) $(RESPOND)
 
-# JavaScript
+# Generating JavaScript files
 
 $(JS):
 	mkdir -p $(JS)
@@ -40,7 +45,7 @@ $(MODERNIZE): $(JS)
 $(RESPOND): $(JS)
 	$(UGLIFYJS) $(RESPONDJS) -o $(RESPOND) --compress
 
-# CSS
+# Generating CSS files
 
 $(CSS):
 	mkdir -p $(CSS)
@@ -54,7 +59,7 @@ $(NORMALIZE):
 $(SYNTAX): $(CSS)
 	npm run syntax
 
-# Remove
+# Removing all artifacts
 
 .PHONY: clean
 clean:
