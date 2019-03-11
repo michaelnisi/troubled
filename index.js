@@ -21,18 +21,19 @@ exports.views = {
 }
 
 const https = require('https')
+const loadLanguages = require('prismjs/components/')
 const pickup = require('pickup')
 const pug = require('pug')
 const qs = require('querystring')
 const rehypePrism = require('rehype-prism')
+const rehypeResolution = require('rehype-resolution')
 const rehypeStringify = require('rehype-stringify')
-const remarkRehype = require('remark-rehype')
 const remarkParse = require('remark-parse')
+const remarkRehype = require('remark-rehype')
 const request = require('request')
 const strftime = require('prettydate').strftime
 const twitter = require('twitter-text')
 const unified = require('unified')
-const loadLanguages = require('prismjs/components/')
 
 loadLanguages([
   'erlang',
@@ -201,6 +202,7 @@ function createProcessor () {
   return unified()
     .use(remarkParse)
     .use(remarkRehype)
+    .use(rehypeResolution)
     .use(rehypePrism)
     .use(rehypeStringify)
 }
