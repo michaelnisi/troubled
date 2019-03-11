@@ -4,11 +4,11 @@
   "template": "article.pug",
   "date": "2019-02-26",
   "path": "/",
-  "image": "img/podest/se_1x.png",
+  "image": "img/podest/se@2x.png",
   "card": 1
 }
 
-![Four iPhone SEs showing different screens of the app](/img/podest/se_1x.png "Finding a good show has never been easier")
+![Four iPhone SEs showing different screens of the app](/img/podest/se@1x.png "Finding a good show has never been easier")
 
 # Get your podcasts.
 
