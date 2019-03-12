@@ -53,7 +53,7 @@
             Picking up <a href="https://swift.org">Swift</a> along the way, a language in its infancy when I started, brought some growing pains, but overall sounds worse than it was. The cognitive interplay between writing the servers in JavaScript and the client in Swift proved itself inspiring.
             </p>
             <p>
-            Remote caching is realized in <a href="https://nodejs.org">Node.js</a>, deployed to Joyent <a href="https://www.joyent.com/smartos">SmartOS</a> instances. These backends are fronted by <a href="https://haproxy.com">HAProxy</a>, running on <a href="https://alpinelinux.org">Alpine Linux</a>. I like simple things.
+            Remote caching is realized in <a href="https://nodejs.org">Node.js</a>, deployed to Joyent <a href="https://www.joyent.com/smartos">SmartOS</a> instances. These backends are fronted by <a href="https://haproxy.com">HAProxy</a>, running on <a href="https://alpinelinux.org">Alpine Linux</a>, with <a href="http://feurix.org/projects/hatop/">HATop</a> for monitoring. All APIs are designed for good CDN caching ratios, I use <a href="https://www.fastly.com">Fastly</a>.
             </p>
             <p>
             <a href="https://github.com/michaelnisi/podest/tree/master/Podest/sync">Sync</a> between devices is implemented using <a href="https://developer.apple.com/documentation/cloudkit">CloudKit</a>, maybe my favorite Apple API.
