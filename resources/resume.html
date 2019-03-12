@@ -3,6 +3,15 @@
   <head>
     <meta charset="utf-8">
     <title>Michael Nisi’s Resume</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        font-size: 1em;
+        line-height: 1.5em;
+        margin: 0;
+        padding: 3em;
+      }
+    </style>
   </head>
   <body>
     <article>
@@ -14,7 +23,7 @@
           German Citizen, Software Engineer
         </address>
         <p>
-        As an application developer, my objective is to build meaningful mobile applications for end users, while enhancing software reliability and maintainability to create resilient distributed systems—from a file somewhere in a data center to the pixel on the glass in the user’s hand. I have a high standard of quality, in coding and writing, and believe that developing software is communication, in the end it’s about language.
+        As an application developer, my objective is to build meaningful applications for end users, while enhancing software reliability and maintainability to create resilient distributed systems—from a file somewhere in a data center to the pixel on the glass in the user’s hand. I have a high standard of quality, in coding and writing, and believe that developing software is communication, in the end it’s about language.
         </p>
 
         <blockquote>Everything boils down to words.</blockquote>
@@ -33,21 +42,30 @@
       <section id="oss">
         <h2>Selected Open Source Contributions</h2>
         <p>
-        I prefer writing and using open source software. Find more of my contributions on <a href="https://github.com/michaelnisi">GitHub</a>—mostly <a href="https://nodejs.org/en/">Node</a>, <a href="https://swift.org">Swift</a>, and <a href="http://www.erlang.org">Erlang</a>. I seem to have a weak spot for streaming text parsers and HTTP.
+        I prefer writing and using open source software. Find more of my contributions on <a href="https://github.com/michaelnisi">GitHub</a>—mostly <a href="https://swift.org">Swift</a> and <a href="https://nodejs.org/en/">Node</a>, some <a href="http://www.erlang.org">Erlang</a>.
         </p>
         <ul>
-          <li><a href="https://github.com/michaelnisi/fileproxy">fileproxy</a> File proxy using background downloads</li>
-          <li><a href="https://github.com/michaelnisi/skull">skull</a> Swift SQLite</li>
-          <li><a href="https://github.com/michaelnisi/pickup">pickup</a> Transform XML feeds</li>
-          <li><a href="https://github.com/michaelnisi/manger">manger</a> Cache RSS and Atom feeds</li>
+          <li><a href="https://github.com/michaelnisi/swifters">Swifters</a> Browse Swift users on GitHub</li>
+          <li><a href="https://github.com/michaelnisi/podest">Podest</a> Get your podcasts</li>
           <li><a href="https://github.com/michaelnisi/feeder">feeder</a> Parse RSS and Atom feeds</li>
+          <li><a href="https://github.com/michaelnisi/pickup">pickup</a> Transform XML feeds</li>
+          <li><a href="https://github.com/michaelnisi/MNAVChapters">MNAVChapters</a> Read chapter metadata of AVAssets</li>
         </ul>
         <ul>
           <li><a href="https://github.com/kean/Nuke">Nuke</a> A powerful image loading and caching system</li>
-          <li><a href="https://github.com/trentm/node-bunyan">bunyan</a> a simple and fast JSON logging module for node.js services</li>
-          <li><a href="https://github.com/npm/cli">npm</a> A package manager for JavaScript</li>
           <li><a href="https://github.com/restify/node-restify">restify</a> The future of Node.js REST development</li>
+          <li><a href="https://github.com/npm/cli">npm</a> A package manager for JavaScript</li>
+          <li><a href="https://github.com/trentm/node-bunyan">bunyan</a> a simple and fast JSON logging module for node.js services</li>
           <li><a href="https://github.com/isaacs/sax-js">sax-js</a> A sax style parser for JS</li>
+        </ul>
+      </section>
+
+      <section id="writings">
+        <h2>Selected Articles</h2>
+        <ul>
+          <li><a href="https://troubled.pro/2019/02/graphql.html"> GraphQL with Apollo iOS</a><br>GraphQL encodes a uniform language, type system, and philosophy. </li>
+          <br>
+          <li><a href="https://troubled.pro/2018/08/cloudkit.html"> Synchronizing With CloudKit</a><br>A conceptual overview of using Apple’s CloudKit framework to synchronize data across devices running your app.</li>
         </ul>
       </section>
 
@@ -55,7 +73,7 @@
         <h2>Work History</h2>
         <ul>
           <li>
-            2015 - 2018 Developer/Founder, Walsrode
+            2015 - 2019 Developer/Founder, Walsrode
             <p>
             I wrote <a href="https://itunes.apple.com/us/app/podest/id794983364">Podest</a>, a modest podcast client for iOS, focusing on performance and efficiency. Caching data remotely and locally makes searching and browsing a snappy and unintrusive experience. Podest’s minimalist user interface sets the stage for awesome podcasts. Building an app of this complexity alone and shipping it has been challenging. Picking up <a href="https://swift.org">Swift</a> along the way, a language in the making, sounds harder than it was. The cognitive interplay between writing JavaScript—I use <a href="https://nodejs.org">Node</a> for centralized feed parsing and caching—and Swift proved itself as surprisingly fruitful. For this app, of course, I‘m also doing operations, running <a href="https://haproxy.org">HAProxy</a> fronted Node instances, using Triton <a href="https://www.joyent.com/smartos">SmartOS</a>, which I love.
           </li>
@@ -92,7 +110,7 @@
         The older I get, the more of a fitness nut I become—standing desk and all. I love surfing, swimming, and running. I eat well, read books, and take walks.
         </p>
         <ul>
-          <li>2012 - 2016 Surfing, Extensive yearly stays in Algarve, Portugal
+          <li>2012 - 2016 Surfing, Atlantic, Europe
             <li>1993 - 1994 Competitive windsurfer, Deutscher Windsurf Cup</li>
             <li>1992 - 1993 Windsurfing, Maui, Hawaii</li>
             <li>1991 - 1992 Worker, cylinder block casting, Mercedes-Benz plant, Untertürkheim</li>
@@ -103,7 +121,7 @@
         Further windsurfing travels, more work at the plant, delivering parcels as a courier driver, and building exhibition stands across Europe—aquiring skills handy to this day.
         </p>
       </section>
-      <footer><i><a href="https://troubled.pro/resume.html">This</a> was last updated in November 2018. It may be out of date.</i></footer>
+      <footer><i><a href="https://troubled.pro/resume.html">This</a> was last updated in March 2019. It may be out of date.</i></footer>
     </article>
   </body>
 </html>
