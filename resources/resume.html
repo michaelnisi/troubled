@@ -46,7 +46,21 @@
           <li>
             2015 - 2019 Developer/Founder, Walsrode
             <p>
-            I wrote <a href="https://itunes.apple.com/us/app/podest/id794983364">Podest</a>, a modest podcast client for iOS, focusing on performance and efficiency. Caching data remotely and locally makes searching and browsing a snappy and unintrusive experience. Podest’s minimalist user interface sets the stage for awesome podcasts. Building an app of this complexity alone and shipping it has been challenging. Picking up <a href="https://swift.org">Swift</a> along the way, a language in the making, sounds harder than it was. The cognitive interplay between writing JavaScript—I use <a href="https://nodejs.org">Node</a> for centralized feed parsing and caching—and Swift proved itself as surprisingly fruitful. For this app, of course, I‘m also doing operations, running <a href="https://haproxy.org">HAProxy</a> fronted Node instances, using Triton <a href="https://www.joyent.com/smartos">SmartOS</a>, which I love.
+            I wrote <a href="https://itunes.apple.com/us/app/podest/id794983364">Podest</a>, a modest podcast client for iOS, focusing on performance and efficiency. Multilevel caching is hard to implement, but it makes searching and browsing a snappy and unintrusive experience.
+            </p>
+
+            <p>Shipping an app of this complexity solo has been challenging, I’ve learned to prioritize.
+            Picking up <a href="https://swift.org">Swift</a> along the way, a language in its infancy when I started, brought some growing pains, but overall sounds worse than it was. The cognitive interplay between writing the servers in JavaScript and the client in Swift proved itself inspiring.
+            </p>
+            <p>
+            Remote caching is realized in <a href="https://nodejs.org">Node.js</a>, deployed to Joyent <a href="https://www.joyent.com/smartos">SmartOS</a> instances. These backends are fronted by <a href="https://haproxy.com">HAProxy</a>, running on <a href="https://alpinelinux.org">Alpine Linux</a>. I like simple things.
+            </p>
+            <p>
+            <a href="https://github.com/michaelnisi/podest/tree/master/Podest/sync">Sync</a> between devices is implemented using <a href="https://developer.apple.com/documentation/cloudkit">CloudKit</a>, maybe my favorite Apple API.
+            </p>
+            <p>
+            💯% <a href="https://github.com/michaelnisi/podest">open source</a>
+            </p>
           </li>
           <li>
             2008 - 2012 Developer, <a href="https://www.cmcmarkets.com">CMC Markets</a>, London/Hamburg/Vienna
