@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     <title>Michael Nisi’s Resume</title>
     <style>
-      body {
-        font-family: sans-serif;
-        font-size: 1em;
-        line-height: 1.5em;
-        margin: 0;
-        padding: 3em;
-      }
+body {
+  font-family: sans-serif;
+  font-size: 1em;
+  line-height: 1.5em;
+  margin: 0;
+  padding: 3em;
+}
     </style>
   </head>
   <body>
@@ -49,8 +49,8 @@
             I wrote <a href="https://itunes.apple.com/us/app/podest/id794983364">Podest</a>, a modest podcast client for iOS, focusing on performance and efficiency. Multilevel caching is hard to implement, but it makes searching and browsing a snappy and unintrusive experience.
             </p>
 
-            <p>Shipping an app of this complexity solo has been challenging, I’ve learned to prioritize.
-            Picking up <a href="https://swift.org">Swift</a> along the way, a language in its infancy when I started, brought some growing pains, but overall sounds worse than it was. The cognitive interplay between writing the servers in JavaScript and the client in Swift proved itself inspiring.
+            <p>Shipping an app of this complexity solo has been challenging—it taught me to prioritize.
+            Picking up <a href="https://swift.org">Swift</a> along the way, a language in its infancy when I started, brought some growing pains, but overall sounds worse than it was. Switching back and forth between Swift and JavaScript has been proving itself fruitful.
             </p>
             <p>
             Remote caching is realized in <a href="https://nodejs.org">Node.js</a>, deployed to Joyent <a href="https://www.joyent.com/smartos">SmartOS</a> instances. These backends are fronted by <a href="https://haproxy.com">HAProxy</a>, running on <a href="https://alpinelinux.org">Alpine Linux</a>, with <a href="http://feurix.org/projects/hatop/">HATop</a> for monitoring. All APIs are designed for good CDN caching ratios, I use <a href="https://www.fastly.com">Fastly</a>.
@@ -93,38 +93,58 @@
 
       <section id="oss">
         <h2>Selected Open Source Contributions</h2>
-        <p>
-          I’m into HTTP and streams.
-        </p>
         <ul>
-          <li><a href="https://github.com/michaelnisi/swifters">Swifters</a> Browse Swift users on GitHub</li>
-          <li><a href="https://github.com/michaelnisi/podest">Podest</a> Get your podcasts</li>
-          <li><a href="https://github.com/michaelnisi/feeder">feeder</a> Parse RSS and Atom feeds</li>
-          <li><a href="https://github.com/michaelnisi/pickup">pickup</a> Transform XML feeds</li>
-          <li><a href="https://github.com/michaelnisi/MNAVChapters">MNAVChapters</a> Read chapter metadata of AVAssets</li>
+          <li>
+            <a href="https://github.com/michaelnisi/skull">Skull</a> Swift SQLite – iOS
+            <p>
+              Apple uses SQLite in most applications on macOS and iOS. Being the defacto standard database on Apple devices, there are many ways to use it, from CoreData to SQLite.swift. But for me, these dependencies are often too heavy. For that reason I wrote Skull, just one thin layer of Swift, barely covering the C library. I like simple things. Software development is difficult enough.
+            </p>
+          </li>
+
+          <li><a href="https://github.com/michaelnisi/feeder">feeder</a> Parse RSS and Atom feeds – Erlang
+            <p>Learn you some Erlang for great good!</p>
+          </li>
+
+          <li>
+            <a href="https://github.com/kean/Nuke">Nuke</a> A powerful image loading and caching system
+            <p>
+            Nuke is the high performance image loader, written by Alexander Grebenyuk, I use in Podest for quick loading of arbitrary images over HTTP while scrolling. I want to point out this impenetrable <a href="https://github.com/kean/Nuke/issues/174">race condition</a>, we managed to <a href="https://github.com/kean/Nuke/pull/190">resolve</a> sometime last year.
+            </p>
+          </li>
+
+          <li>
+            <a href="https://github.com/restify/node-restify">restify</a> The future of Node.js REST development
+            <p>dear to my heart</p>
+          </li>
+
+          <li>
+            <a href="https://github.com/npm/cli">npm</a> A package manager for JavaScript
+            <p>roots</p>
+          </li>
         </ul>
-        <ul>
-          <li><a href="https://github.com/kean/Nuke">Nuke</a> A powerful image loading and caching system</li>
-          <li><a href="https://github.com/restify/node-restify">restify</a> The future of Node.js REST development</li>
-          <li><a href="https://github.com/npm/cli">npm</a> A package manager for JavaScript</li>
-          <li><a href="https://github.com/trentm/node-bunyan">bunyan</a> a simple and fast JSON logging module for node.js services</li>
-          <li><a href="https://github.com/isaacs/sax-js">sax-js</a> A sax style parser for JS</li>
-        </ul>
+        <p>Please visit my <a href="https://github.com/michaelnisi">GitHub profile</a> for more.</p>
       </section>
 
       <section id="writing">
         <h2>Selected Articles</h2>
         <ul>
-          <li><a href="https://troubled.pro/2019/02/graphql.html"> GraphQL with Apollo iOS</a><br>GraphQL encodes a uniform language, type system, and philosophy. </li>
-          <br>
-          <li><a href="https://troubled.pro/2018/08/cloudkit.html"> Synchronizing With CloudKit</a><br>A conceptual overview of using Apple’s CloudKit framework to synchronize data across devices running your app.</li>
+          <li><a href="https://troubled.pro/2019/02/graphql.html"> GraphQL with Apollo iOS</a>
+            <p>
+              GraphQL encodes a uniform language, type system, and philosophy.
+            </p>
+          </li>
+          <li><a href="https://troubled.pro/2018/08/cloudkit.html"> Synchronizing With CloudKit</a>
+            <p>
+              A conceptual overview of using Apple’s CloudKit framework to synchronize data across devices running your app.
+            </p>
+          </li>
         </ul>
       </section>
 
       <section id="other">
         <h2>Other Interests and Activities</h2>
         <p>
-        The older I get, the more of a fitness nut I become—standing desk and all. I love surfing, swimming, and running. I eat well, read books, and take walks.
+        The older I get, the more of a fitness nut I become—standing desk and all. I love surfing, swimming, and running. I eat well, like to read actual books, and take walks.
         </p>
         <ul>
           <li>2012 - 2016 Surfing, Atlantic, Europe
