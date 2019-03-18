@@ -30,6 +30,8 @@ body {
 
         <p>I can lead and follow. As a leader I continuously ask myself how I might serve my followers. As a follower I’m likewise driven by a desire to be of use.</p>
 
+        <p>First and foremost, I love coding.</p>
+
         <h2>Resume Contents</h2>
         <ul>
           <li><a href="#work">Work History</a></li>
@@ -46,7 +48,7 @@ body {
           <li>
             2015 - 2019 Developer/Founder, Walsrode
             <p>
-            I wrote <a href="https://itunes.apple.com/us/app/podest/id794983364">Podest</a>, a modest podcast client for iOS, focusing on performance and efficiency. Multilevel caching is hard to implement, but it makes searching and browsing a snappy and unintrusive experience.
+            I wrote <a href="https://itunes.apple.com/us/app/podest/id794983364">Podest</a>, a modest podcast app for iOS, focusing on performance and efficiency. Multilevel caching is hard to implement, but it makes searching and browsing a snappy and unintrusive experience.
             </p>
 
             <p>Shipping an app of this complexity solo has been challenging—it taught me to prioritize.
@@ -73,7 +75,7 @@ body {
           <li>2002 - 2008 Consulting, <a href="https://www.drid.de">DRID</a>, Bassier, Bergmann &amp; Kindler; Kuborgh, and more
 
             <p>
-            In the heyday of Adobe Flash, we developed product sites, games, and banners, selling everything between packet soup to luxory cars. Memorable is the 2006 FIFA World Cup in Germany, for which I built a stylable betting game with DRID, which was sold to multiple clients.
+            In the heyday of Adobe Flash, we developed product sites, games, and banners—selling anything from packet soup to luxury cars. Memorable is the 2006 FIFA World Cup in Germany, for which I built a stylable betting game with DRID, which was sold to multiple clients.
             </p>
 
           </li>
@@ -85,7 +87,7 @@ body {
 
       <section id="education">
         <h2>Education</h2>
-        Not exactly a role model regarding formal education, being an art school dropout, I’ve learned most things I know autodidactly by practice. I wrote my first line of JavaScript in 1996. Learning never ends.
+        Not exactly a role model regarding formal education, being an art school dropout, I’ve learned most things I know autodidactically by practice. I wrote my first line of JavaScript in 1996. Learning never ends.
         <ul>
           <li>1994 - 1996 Alsterdamm – School of Visual Arts, Hamburg</li>
         </ul>
@@ -95,26 +97,37 @@ body {
         <h2>Selected Open Source Contributions</h2>
         <ul>
           <li>
-            <a href="https://github.com/michaelnisi/skull">Skull</a> Swift SQLite – iOS
+            <a href="https://github.com/michaelnisi/podest/tree/master/Podest/store">Podest/store</a> Podest IAPs – iOS
             <p>
-              Apple uses SQLite in most applications on macOS and iOS. Being the defacto standard database on Apple devices, there are many ways to use it, from CoreData to SQLite.swift. But for me, these dependencies are often too heavy. For that reason I wrote Skull, just one thin layer of Swift, barely covering the C library. I like simple things. Software development is difficult enough.
+              Mobile apps are notoriously hard to test, naturally safe code is essential. Swift—statically typed—enables us to design compelling data structures, leveraging the compiler for building confidence in our code. In the in-app purchasing store of Podest, I use finite-state machines with enumerated states and events, a frequent pattern in my code.
             </p>
           </li>
 
           <li><a href="https://github.com/michaelnisi/feeder">feeder</a> Parse RSS and Atom feeds – Erlang
-            <p>Having written pickup, the streaming parser Podest uses, I wanted a comparison. And while only a means for learning Erlang, feeder seems to resonate with the Elixir community. Memory characteristics of the BEAM, the Erlang virtual machine, really bring Node to shame. And speed is hardly of concern for streaming parsers, IO is their bottleneck.
+            <p>After <a href="https://github.com/michaelnisi/pickup">pickup</a>, the Node.js streaming parser I’ve written for Podest, I wanted to have a comparison. Feeder is a good example for using xmerl_sax_parser—the OTP SAX parser—and seems to resonate with the Elixir community. Memory characteristics of the BEAM bring Node to shame, but that’s comparing apples and oranges.
             </p>
           </li>
 
-          <li>
-            <a href="https://github.com/kean/Nuke">Nuke</a> A powerful image loading and caching system
+          <li><a href="https://github.com/michaelnisi/manger-http">manger-http</a> Caching podcast feed proxy – Node
             <p>
-            Nuke is the high performance image loader, written by Alexander Grebenyuk, I use in Podest for quick loading of arbitrary images over HTTP while scrolling. I want to point out this highly volatile <a href="https://github.com/kean/Nuke/issues/174">race condition</a>, we managed to <a href="https://github.com/kean/Nuke/pull/190">resolve</a> sometime last year.
+              I enjoy building HTTP APIs, preferably without locking myself into a bloated framework.
+            </p>
+          <li>
+            <a href="https://github.com/michaelnisi/skull">Skull</a> Swift SQLite – iOS
+            <p>
+              Apple uses SQLite in most of their apps on macOS and iOS. Being the de facto standard database on Apple devices, packages for using it are plenty. For me, these dependencies are often too thick. That’s why I wrote Skull, a thin layer of Swift, barely covering the C library. I like simple things, software development is hard enough.
             </p>
           </li>
 
           <li>
-            <a href="https://github.com/restify/node-restify">restify</a> The future of Node.js REST development
+            <a href="https://github.com/kean/Nuke">Nuke</a> Caching image loader – iOS
+            <p>
+            Nuke is the high performance image loader—written by Alexander Grebenyuk—I use in Podest for quick loading of arbitrary images over HTTP while scrolling. I’m happy, we were able to <a href="https://github.com/kean/Nuke/pull/190">resolve</a> this highly volatile <a href="https://github.com/kean/Nuke/issues/174">race condition</a>.
+            </p>
+          </li>
+
+          <li>
+            <a href="https://github.com/restify/node-restify">restify</a> Old school REST – Node
             <p>Not quite the <a href="https://github.com/fastify/fastify">future</a> of REST development, but still dear to my heart. I’ve learned a lot about HTTP by reading Mark Cavage’s code. I’m hoping to find time to follow through with this <a href="https://github.com/restify/clients/pull/198">PR</a>, enabling better streaming support for restify clients.</p>
           </li>
 
@@ -152,7 +165,7 @@ body {
             <li>1978 - 1989 Handball, TSV Denkendorf</li>
         </ul>
         <p>
-        Further windsurfing travels, more work at the plant, delivering parcels as a courier driver, and building exhibition stands across Europe—aquiring skills handy to this day.
+        Further windsurfing travels, more work at the plant, delivering parcels as a courier driver, and building exhibition stands across Europe, acquiring skills handy to this day.
         </p>
       </section>
       <footer><i><a href="https://troubled.pro/resume.html">This</a> was last updated in March 2019. It may be out of date.</i></footer>
