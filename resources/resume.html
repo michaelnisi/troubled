@@ -95,19 +95,19 @@ body {
         <h2>Selected Open Source Contributions</h2>
         <ul>
           <li>
-            <a href="https://github.com/michaelnisi/podest/tree/master/Podest/store">Podest/store</a> Podest IAPs – iOS
+            <a href="https://github.com/michaelnisi/podest/tree/master/Podest/store">Podest/store</a> non-renewing StoreKit subscriptions – iOS
             <p>
               Mobile apps are notoriously hard to test, naturally safe code is essential. Swift, being statically typed, enables us to design compelling data structures, leveraging the compiler for building up confidence in our code. In the in-app store of Podest, I use finite-state machines with enumerated states and events—a frequent pattern in my code.
             </p>
           </li>
 
           <li><a href="https://github.com/michaelnisi/feeder">feeder</a> Parse RSS and Atom feeds – Erlang
-            <p>After <a href="https://github.com/michaelnisi/pickup">pickup</a>, the Node.js streaming parser I’ve written for Podest, I needed comparison. Feeder is a good example for using xmerl_sax_parser—the OTP SAX parser—and seems to resonate with the Elixir community. Memory characteristics of the BEAM bring Node to shame, but that’s comparing apples and oranges.
+            <p>After <a href="https://github.com/michaelnisi/pickup">pickup</a>, the Node.js streaming parser I’ve written for Podest, I needed comparison. Feeder is a good example for using xmerl_sax_parser, the OTP SAX parser API, and seems to resonate with the Elixir community. Memory characteristics of the BEAM bring Node to shame, but that’s comparing apples and oranges.
             </p>
           </li>
 
           <li><a href="https://github.com/michaelnisi/manger-http">manger-http</a> Caching podcast feed proxy – Node
-            <p>Podest’s feed proxy is tailor-made, not depending on any specific HTTP framework. Its requirements of high volume and small memory footprint demand highly efficient inbound and outbound data-flow. This has been realized using Node’s standard HTTP interfaces and <a href="https://github.com/Level">Level</a>.
+            <p>Podest’s feed proxy is tailor-made, not depending on any specific HTTP framework. Its requirements, high volume and small memory footprint, demand efficient inbound and outbound data-flow. This has been realized using Node’s standard HTTP interfaces and <a href="https://github.com/Level">Level</a>.
             </p>
           <li>
             <a href="https://github.com/michaelnisi/skull">Skull</a> Swift SQLite – iOS
