@@ -30,8 +30,6 @@ body {
 
         <p>I can lead and follow. As a leader I continuously ask myself how I might serve my followers. As a follower I’m likewise driven by a desire to be of use.</p>
 
-        <p>But first and foremost, wether within a team or solo, I love coding.</p>
-
         <h2>Resume Contents</h2>
         <ul>
           <li><a href="#work">Work History</a></li>
@@ -104,13 +102,12 @@ body {
           </li>
 
           <li><a href="https://github.com/michaelnisi/feeder">feeder</a> Parse RSS and Atom feeds – Erlang
-            <p>After <a href="https://github.com/michaelnisi/pickup">pickup</a>, the Node.js streaming parser I’ve written for Podest, I wanted to have a comparison. Feeder is a good example for using xmerl_sax_parser—the OTP SAX parser—and seems to resonate with the Elixir community. Memory characteristics of the BEAM bring Node to shame, but that’s comparing apples and oranges.
+            <p>After <a href="https://github.com/michaelnisi/pickup">pickup</a>, the Node.js streaming parser I’ve written for Podest, I needed comparison. Feeder is a good example for using xmerl_sax_parser—the OTP SAX parser—and seems to resonate with the Elixir community. Memory characteristics of the BEAM bring Node to shame, but that’s comparing apples and oranges.
             </p>
           </li>
 
           <li><a href="https://github.com/michaelnisi/manger-http">manger-http</a> Caching podcast feed proxy – Node
-            <p>
-              I enjoy building HTTP APIs, preferably without locking myself into some bloated framework.
+            <p>Podest’s feed proxy is tailor-made, not depending on any specific HTTP framework. Its requirements of high volume and small memory footprint demand highly efficient inbound and outbound data-flow. This has been realized using Node’s standard HTTP interfaces and <a href="https://github.com/Level">Level</a>.
             </p>
           <li>
             <a href="https://github.com/michaelnisi/skull">Skull</a> Swift SQLite – iOS
@@ -128,7 +125,7 @@ body {
 
           <li>
             <a href="https://github.com/restify/node-restify">restify</a> Old school REST – Node
-            <p>Not quite the <a href="https://github.com/fastify/fastify">future</a> of REST development, but still dear to my heart. I’ve learned a lot about HTTP by reading Mark Cavage’s code. I’m hoping to find time to follow through with this <a href="https://github.com/restify/clients/pull/198">PR</a>, enabling better streaming support for restify clients.</p>
+            <p>Not quite the <a href="https://github.com/fastify">future</a> of REST development, but still dear to my heart. I’ve learned a lot about HTTP by reading Mark Cavage’s code. I’m hoping to find time to follow through with this <a href="https://github.com/restify/clients/pull/198">PR</a>, enabling better streaming support for restify clients.</p>
           </li>
 
         </ul>
