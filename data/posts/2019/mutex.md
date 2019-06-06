@@ -20,7 +20,7 @@ TODO: Explain lock
 
 #### DispatchQueue
 
-Better than using locks is to design points of synchronization into your program. Queues are the obvious tool for organzing work. Many may be familiar with [message queues](https://en.wikipedia.org/wiki/Message_queue). On Apple platforms we use [Dispatch.framework](https://developer.apple.com/documentation/dispatch) to run code on multicore hardware. It uses dispatch queues to manages the execution of tasks serially or concurrently. *Dispatch* distributes work to threads and cores that lets us concentrate on our apps.
+Better than using locks is to design points of synchronization into your program. Queues are the obvious tool for organzing work. Many may be familiar with [message queues](https://en.wikipedia.org/wiki/Message_queue). On Apple platforms we use [Dispatch.framework](https://developer.apple.com/documentation/dispatch) to run code on multicore hardware. It uses dispatch queues to manages the execution of tasks serially or concurrently. *Dispatch* distributes work to threads and cores. Doing chores, it lets us concentrate on our apps.
 
 TODO: Explain serial queue sync locking
 
