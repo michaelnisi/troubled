@@ -1,16 +1,14 @@
 {
-  "title": "Mutual exclusion",
-  "description": "Practical concurrency control with Swift.",
+  "title": "Oh, We Met Through a Mutual Friend ",
+  "description": "Access control to shared mutable state with Swift.",
   "template": "article.pug",
-  "date": "2019-06-05",
+  "date": "2019-06-11",
   "path": "2019/06"
 }
 
-Threads enable execution of multiple code paths concurrently. A lock or mutex is a construct that guards access to a critical section in your code. Granting access to only one thread at a given time prevents race conditions. A race condition is a situation where truth becomes ambigious in your program. What happens if you subtract one from two twice, at the exact same time?
+Threads enable execution of multiple code paths concurrently. With things happening at the same time, we need to control access to mutable state in our programs. Granting access to only one thread at a time prevents race conditions, which put your program into quantum superposition—you know, the thing with the [cat](https://en.wikipedia.org/wiki/Schrödinger%27s_cat). What happens if you and your date at dinner reach for the same piece of bread at the exact same time? 🍞
 
-[Foundation](https://developer.apple.com/documentation/foundation) provides [Thread](https://developer.apple.com/documentation/foundation/thread) and [Runloop](https://developer.apple.com/documentation/foundation/runloop) APIs, but we have better tools for mutual exlcusion control.
-
-Mike Ash has a list of available mutex [APIs](https://www.mikeash.com/pyblog/friday-qa-2017-10-27-locks-thread-safety-and-swift-2017-edition.html). Here are the mutex constructs we use in iOS apps.
+As introduction you should read what [Mike Ash](https://www.mikeash.com/pyblog/) has to say in [Locks, Thread Safety, and Swift: 2017 Edition](https://www.mikeash.com/pyblog/friday-qa-2017-10-27-locks-thread-safety-and-swift-2017-edition.html). Here’s a [Gist](https://gist.github.com/steipete/36350a8a60693d440954b95ea6cbbafc) by [@steipete](https://twitter.com/steipete) with performance tests of all locking options. I want to talk about two constructs I use with Swift on iOS to control access to mutable state from different threads: NSLock and DispatchQueue.
 
 #### NSLock
 
