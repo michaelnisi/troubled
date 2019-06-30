@@ -1,12 +1,15 @@
 {
   "title": "Swift Fruits",
-  "description": "At the Apple Worldwide Developers Conference 2019 the fruit company presented its Swift harvest.",
+  "description": "At the Apple Worldwide Developers Conference 2019 the fruit company presented its richest Swift harvest so far.",
   "template": "article.pug",
   "date": "2019-06-28",
   "path": "2019/06"
 }
 
-This year’s [Dub Dub](https://developer.apple.com/wwdc19/) keynote was quite a bombshell. While hot takes have been stewing for while now, three weeks later, I quickly want to highlight a few things. En passant initiated by a research project that lead to [LLVM](https://llvm.org), after five years of community driven [evolution](https://apple.github.io/swift-evolution/), [Swift](https://swift.org) is real now.
+
+This year’s [Dub Dub](https://developer.apple.com/wwdc19/) keynote was quite a bombshell. Now, three weeks later, after the hot takes cooled down a little, I want to highlight some things that came from Swift. En passant initiated by a research project that lead to [LLVM](https://llvm.org), after five years of community driven [evolution](https://apple.github.io/swift-evolution/), [Swift](https://swift.org) is real now.
+
+Amazing, how some syntactic sugar and a type system on top of LLVM, as Chris Lattner jokingly put it on Sundell’s [show](https://www.swiftbysundell.com/podcast/50), has changed Apple’s platforms.
 
 #### Declarative user interface programming
 
@@ -16,13 +19,15 @@ Building apps in a declarative way is one pillar of this year’s Dub Dub. [RxSw
 
 React developers can relate to [SwiftUI](https://developer.apple.com/xcode/swiftui/), a declarative user interface framework with a new Swift [DSL](https://forums.swift.org/t/important-evolution-discussion-of-the-new-dsl-feature-behind-swiftui/25168) and deep Xcode integration, including live previews. Most developers are excited, [some](https://twitter.com/monkeydom/status/1144172782344986624) aren’t, Apple hit a nerve. SwiftUI is a simple way to build user interfaces across all Apple platforms. It’s a stepping stone to a unified Apple developer experience. If you have been on the fence, now is a good time to start developing for Apple platforms.
 
-A live-coding environment for Xcode, beyond playgrounds, is a thing many have been anticipating for a long time. However, knowing the complexities of building *real* apps, I remain sceptical and can’t wait to explore what can be build with SwiftUI. It’s all in the details. There’s a reason why I have never considered [React Native](https://facebook.github.io/react-native/).
+A live-coding environment for Xcode, beyond playgrounds, is a thing many have been anticipating for a long time.
 
 ![SwiftUI in Xcode](/img/wwdc19/swiftui@1x.jpg "Xcode 11")
 
 These declarative Swift APIs are enabled by [Function Builders](https://github.com/apple/swift-evolution/blob/9992cf3c11c2d5e0ea20bee98657d93902d5b174/proposals/XXXX-function-builders.md), which allow you to create embedded domain-specific languages in Swift. Other parts of the puzzle are [Property Delegates](https://github.com/apple/swift-evolution/blob/master/proposals/0258-property-delegates.md) and the new custom view controller initializers.
 
 📚 Read up on [Functional Swift](https://t.co/NkYwU3LE42) or watch some [videos](https://www.pointfree.co) if that’s your thing.
+
+I cannot wait to build something with SwiftUI. However, familar with the subtleties of app making, I remain sceptical. It’s all in the details. There’s a reason why I have never considered [React Native](https://facebook.github.io/react-native/).
 
 #### Organizing and sharing code
 
