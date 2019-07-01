@@ -36,13 +36,13 @@ Since the Swift Runtime is part of the OS, not longer baked into apps, launch ti
 
 With [ABI stability](https://swift.org/blog/abi-stability-and-more/), reached with Swift 5, and [module stability](https://forums.swift.org/t/plan-for-module-stability/14551), added now with 5.1, distributing binary frameworks became feasible. Framework and program can be build with different compilers. Module stability added a textual interface that is available during development.
 
-📦 We love packages. They are the foundation of modern code ecosystems. Where would JavaScript be without [npm](https://www.npmjs.com)? One of the first things Mozilla put into place for Rust were [crates](https://crates.io). For the longest time, the Cocoa community had to help itself with [CocoaPods](https://cocoapods.org), a dull surrogate. Open sourcing Swift, Apple introduced [Swift Package Manager](https://github.com/apple/swift-package-manager), but without Xcode integration it was not ready for prime time, some even went so far and doubted its future. Fortunately, they were wrong. [Xcode 11](https://developer.apple.com/documentation/xcode_release_notes/xcode_11_beta_2_release_notes) supports Swift packages for all Apple platforms. 🍾
+📦 We love packages. They are the foundation of modern code ecosystems. Where would JavaScript be without [npm](https://www.npmjs.com)? One of the first things Mozilla put into place for Rust were [crates](https://crates.io). The Cocoa community has been substituting with [CocoaPods](https://cocoapods.org) and [Carthage](https://github.com/Carthage/Carthage). Open sourcing Swift, Apple introduced [Swift Package Manager](https://github.com/apple/swift-package-manager), but without Xcode integration it was not ready for prime time, some even went so far and doubted its future. Fortunately, they were wrong. [Xcode 11](https://developer.apple.com/documentation/xcode_release_notes/xcode_11_beta_2_release_notes) supports Swift packages for all Apple platforms. 🍾
 
 Packages are platform independent, they build for whatever the client needs. For example, you can build an iOS app and a watchOS app using the same package. Xcode builds the package accordingly. If you have ever maintained a multi-platform library, I am sure you will appreciate the implications of this.
 
 Many common package manager practices, like [semantic versioning](https://semver.org) and package locking, become a part of software development with Xcode. Of course, niceties like code completion and documentation for dependencies are available within the IDE.
 
-Xcode 11 is great, it really makes it hard to return to the old version, once you have used the Beta. I 💜 the mini-map, written in [Metal](https://developer.apple.com/metal/), I hear.
+Xcode 11 is great, one doesn’t want to go back to the previous version. I 💜 the mini-map, written in [Metal](https://developer.apple.com/metal/), I hear.
 
 💡 Keep `Package.resolved` under version control. Similar to `package-lock.json` in the JavaScript community, people seem to get confused by this. If you want to make sure, you are talking about the same thing when you are discussing your software with your team, check in this file. Without it, you cannot know which code the other person is running.
 
@@ -50,8 +50,4 @@ In the coming years we will see a flourishing open source ecosystem for Apple pl
 
 > Less Code. Better Code. Everywhere.
 
-It’s great to see Swift bearing fruit. 🍒 I have not felt that inspired by Apple since the introduction of Swift. If SwiftUI is the new way of building apps, UIKit and AppKit are on their way of becoming implementation details.
-
-The back and forth between code and [Interface Builder](https://developer.apple.com/xcode/interface-builder/) has always felt brittle and produced very individual workflows, making it harder to collaborate. Merging *storyboard* files became a dreaded part of the process. Replacing *storyboards* with a declarative UI programming language is a game changer.
-
-I’m fired up for creating apps using these new possibilities, but mind you, our beloved UIKit isn’t going anywhere. Did you see those UI collection updates ([220](https://developer.apple.com/videos/play/wwdc2019/220/), [215](https://developer.apple.com/videos/play/wwdc2019/215))? 😍
+It’s great to see Swift bearing fruit. 🍒 I have not felt that inspired by Apple since the introduction of Swift itself. Fired up by the [sessions](https://developer.apple.com/videos/wwdc2019/), I cannot wait to get my hands dirty using these new tools, but mind you, our beloved UIKit is not going anywhere. Did you see those UI collection updates ([220](https://developer.apple.com/videos/play/wwdc2019/220/), [215](https://developer.apple.com/videos/play/wwdc2019/215))? 😍
