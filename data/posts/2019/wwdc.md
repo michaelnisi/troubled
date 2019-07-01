@@ -50,4 +50,4 @@ In the coming years we will see a flourishing open source ecosystem for Apple pl
 
 > Less Code. Better Code. Everywhere.
 
-It’s great to see Swift bearing fruit. 🍒 I have not felt that inspired by Apple since the introduction of Swift itself. Fired up by the [sessions](https://developer.apple.com/videos/wwdc2019/), I cannot wait to get my hands dirty using these new tools, but mind you, our beloved UIKit is not going anywhere. Did you see those UI collection updates ([220](https://developer.apple.com/videos/play/wwdc2019/220/), [215](https://developer.apple.com/videos/play/wwdc2019/215))? 😍
+It’s great to see Swift bearing fruit. 🍒 I have not felt that inspired by Apple since the introduction of Swift itself. Fired up by the [sessions](https://developer.apple.com/videos/wwdc2019/), I cannot wait to get my hands dirty using these new tools, but mind you, UIKit is not going anywhere anytime soon. Did you see those UI collection updates ([220](https://developer.apple.com/videos/play/wwdc2019/220/), [215](https://developer.apple.com/videos/play/wwdc2019/215))? 😍
