@@ -26,7 +26,7 @@ These declarative Swift APIs are enabled by [Function Builders](https://github.c
 
 📚 Read up on [Functional Swift](https://t.co/NkYwU3LE42) or watch some [videos](https://www.pointfree.co) if that’s your thing.
 
-I cannot wait to build something with SwiftUI. However, familiar with the subtleties of app making, I remain sceptical. It’s all in the details. There’s a reason why I have never considered [React Native](https://facebook.github.io/react-native/).
+I cannot wait to build something with SwiftUI. However, familiar with the intricacies of app making, I remain sceptical. It’s all in the details. There’s a reason why I have never considered [React Native](https://facebook.github.io/react-native/).
 
 #### Organizing and sharing code
 
