@@ -6,7 +6,7 @@
   "path": "2019/06"
 }
 
-*Write code. Blow minds.* This year’s [Dub Dub](https://developer.apple.com/wwdc19/) did not fall short of its motto. Now, three weeks later, after the hot takes have cooled down, I quickly want to put the spotlight on the programming language that enabled these groundbreaking changes. En passant initiated by a research project that lead to [LLVM](https://llvm.org), after five years of community driven [evolution](https://apple.github.io/swift-evolution/), [Swift](https://swift.org) is real now.
+*Write code. Blow minds.* This year’s [Dub Dub](https://developer.apple.com/wwdc19/) did not fall short of its motto. Now, three weeks later, after the hot takes have cooled down, I quickly want to highlight some things that were seeded with this new programming language. En passant initiated by a research project that lead to [LLVM](https://llvm.org), after five years of community driven [evolution](https://apple.github.io/swift-evolution/), [Swift](https://swift.org) is real now.
 
 Amazing, how some syntactic sugar and a type system on top of LLVM, as Chris Lattner jokingly put it on Sundell’s [show](https://www.swiftbysundell.com/podcast/50), has changed Apple’s software engineering.
 
