@@ -3,7 +3,8 @@
   "description": "At the Apple Worldwide Developers Conference 2019 the fruit company presented its richest Swift induced harvest so far.",
   "template": "article.pug",
   "date": "2019-06-28",
-  "path": "2019/06"
+  "path": "2019/06",
+  "image": "img/fruits.jpg"
 }
 
 *Write code. Blow minds.* This year’s [Dub Dub](https://developer.apple.com/wwdc19/) did not fall short of its motto. Now, three weeks later, after the hot takes have cooled down, I quickly want to highlight some things that were seeded with a new programming language. En passant initiated by a research project that lead to [LLVM](https://llvm.org), after five years of community driven [evolution](https://apple.github.io/swift-evolution/), [Swift](https://swift.org) is real now.
