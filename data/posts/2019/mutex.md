@@ -41,7 +41,7 @@ var cheeseburger: 🍔 {
 }
 ```
 
-The serial queue guarantees singly access, only one caller, thread to stay on topic, can access the resource at a time. Imagine a queue at a supermarket cash register or 🏧.
+The serial queue guarantees singly access, only one caller, thread to stay on topic, can access the resource at a time. Imagine a queue at a supermarket cash register where only customer gets served at a time. 🛒🛒🛒
 
 Again, measure *performance*, in my use cases I did not find this technique slowing anything down, quite the contrary. Keeping your code synchonous in the lower levels, allows more creativity in the higher levels for making things go fast. Also, note that creating a new DispatchQueue is quick, `os_signpost` just reported 160.93 µs Avg Duration, that’s 0.00016093 seconds on my crusty iPhone 6s Plus.
 
