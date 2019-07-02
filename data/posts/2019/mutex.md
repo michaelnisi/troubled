@@ -66,7 +66,7 @@ let serialQueue = DispatchQueue(
 
 #### Trust the system
 
-Please fasten your seat belts—[ThreadSantizer](https://clang.llvm.org/docs/ThreadSanitizer.html) and the Main Thread Checker, in the Diagnostics tab of your Scheme in Xcode. Do not try to control threading yourself, trust Dispatch and keep your code simple.
+Always fasten your seatbelts—[ThreadSantizer](https://clang.llvm.org/docs/ThreadSanitizer.html) and Main Thread Checker, found in the Diagnostics tab of your Xcode Scheme. Do not try to control threading yourself, trust Dispatch and keep your code simple.
 
 💡 Check dispatch conditions with [dispatchPrecondition(condition:)](https://developer.apple.com/documentation/dispatch/1780605-dispatchprecondition)
 
