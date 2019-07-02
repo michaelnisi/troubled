@@ -19,9 +19,9 @@ Building apps in a declarative way was one pillar of this year’s Dub Dub. [RxS
 
 React developers can relate to [SwiftUI](https://developer.apple.com/xcode/swiftui/), a declarative user interface framework with a new Swift [DSL](https://forums.swift.org/t/important-evolution-discussion-of-the-new-dsl-feature-behind-swiftui/25168) and deep Xcode integration, including live previews. Most developers are excited, [some](https://twitter.com/monkeydom/status/1144172782344986624) not so much—closing a chapter Apple hit a nerve.
 
-> WWDC marks the end of Apple’s NeXT era and the beginning of the Swift era.—*[Brent Simmons](https://inessential.com/2019/06/07/the_next_era_ends_the_swift_era_begins)*
-
 SwiftUI is a simple way to build user interfaces across all Apple platforms. It’s a stepping stone to a unified Apple developer experience. If you have been on the fence, now is a good time to start developing for Apple platforms.
+
+> WWDC marks the end of Apple’s NeXT era and the beginning of the Swift era.—*[Brent Simmons](https://inessential.com/2019/06/07/the_next_era_ends_the_swift_era_begins)*
 
 Anticipated for the longest time, a live-coding environment for Xcode—beyond *playgrounds*.
 
