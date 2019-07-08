@@ -1,6 +1,6 @@
 {
   "title": "Mutual Exclusivity",
-  "description": "Access control to shared mutable state with Swift.",
+  "description": "Synchronized access to shared mutable state with Swift.",
   "template": "article.pug",
   "date": "2019-07-02",
   "path": "2019/07"
@@ -14,7 +14,7 @@ I tend to control access to mutable state from different threads on iOS with Dis
 
 #### NSLock
 
-In [Foundation.framework](https://developer.apple.com/documentation/foundation) we find [NSLock](https://developer.apple.com/documentation/foundation/nslock), a simple but brittle and somewhat wordy mechanism for controlling access to a resource.
+In [Foundation.framework](https://developer.apple.com/documentation/foundation) we find [NSLock](https://developer.apple.com/documentation/foundation/nslock), a simple but brittle and somewhat wordy mechanism for synchronizing access to a resource.
 
 ```swift
 cheeseburger.lock()
@@ -37,7 +37,7 @@ let serialQueue = DispatchQueue(
 )
 
 var cheeseburger: 🍔 {
-  serialQueue.sync { return compute() }
+  return serialQueue.sync { compute() }
 }
 ```
 
