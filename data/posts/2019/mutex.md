@@ -72,4 +72,4 @@ Always fasten your seatbelts—[ThreadSantizer](https://clang.llvm.org/docs/Thre
 
 💡 Check dispatch conditions with [dispatchPrecondition(condition:)](https://developer.apple.com/documentation/dispatch/1780605-dispatchprecondition).
 
-Thread safely.
+Thread safely, the [future](https://github.com/apple/swift/blob/master/docs/OwnershipManifesto.md) looks bright.
