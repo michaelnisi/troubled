@@ -53,6 +53,8 @@ For performance critical code with many reads and rare slow writes, you can go f
 
 If you are haunted by race conditions, don’t perforate your code with locks, instead go back to the drawing board and think about the design of your software. Often times there is an elegant way out. Try to think in queues of events and tasks. Keep in mind that an [OperationQueue](https://developer.apple.com/documentation/foundation/operationqueue) can be made serial by limiting its maximum number of queued operations to one. Combining DispatchQueue and OperationQueue creatively often produces satisfying solutions for humans and computers. Remember, performance is not everything.
 
+💡 If your tasks are small, context switching can thwart your efforts.
+
 #### Avoid excessive thread creation
 
 Unfortunately, we cannot be entirely thread-agnostic using Dispatch [yet](https://gist.github.com/lattner/31ed37682ef1576b16bca1432ea9f782). Designing our own queues, we must avoid excessive thread creation. Never block the current thread from a task submitted to a concurrent dispatch queue, the system will create new threads to run its other tasks and eventually your app will run out of threads. Try not to use private concurrent queues, use the global concurrent queues instead. Locking with serial queues is super handy, but you might end up creating many queues. Make sure to set the target of your serial queues to one of the [global system queues](https://developer.apple.com/documentation/dispatch/dispatchqueue/2300077-global).
