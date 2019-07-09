@@ -1,8 +1,8 @@
 {
   "title": "Mutual Exclusivity",
-  "description": "Synchronized access to shared mutable state with Swift.",
+  "description": "Exclusive access to shared mutable state with Swift.",
   "template": "article.pug",
-  "date": "2019-07-02",
+  "date": "2019-07-09",
   "path": "2019/07"
 }
 
@@ -10,7 +10,7 @@ Threads enable execution of multiple code paths concurrently. With things happen
 
 As introduction you should read what [Mike Ash](https://www.mikeash.com/pyblog/) has to say in [Locks, Thread Safety, and Swift: 2017 Edition](https://www.mikeash.com/pyblog/friday-qa-2017-10-27-locks-thread-safety-and-swift-2017-edition.html). And here’s a [Gist](https://gist.github.com/steipete/36350a8a60693d440954b95ea6cbbafc) by [@steipete](https://twitter.com/steipete) with performance tests of all locking options.
 
-I tend to control access to mutable state from different threads on iOS with DispatchQueue, but let’s first look a Foundation class.
+I tend to control access to mutable state from different threads on iOS with DispatchQueue, but let’s first look at a Foundation class.
 
 #### NSLock
 
@@ -43,7 +43,9 @@ var cheeseburger: 🍔 {
 
 The serial queue guarantees singly access, only one caller, thread to stay on topic, can access the resource at a time. Imagine a queue at a supermarket cash register where only one customer gets served at a time. 🛒🛒🛒
 
-Again, measure *performance*, in my use cases I did not find this technique slowing anything down, quite the contrary. Keeping your code synchonous in the lower levels, allows more creativity in the higher levels for making things go fast. Also, note that creating a new DispatchQueue is quick, `os_signpost` just reported 160.93 µs Avg Duration, that’s 0.00016093 seconds on my crusty iPhone 6s Plus.
+Again, measure *performance*, in my use cases I did not find this technique slowing anything down, quite the contrary. Keeping your code synchronous at the lower levels, allows more creativity at the higher levels for making things go fast.
+
+Also, note that creating a new DispatchQueue is quick, `os_signpost` just reported 160.93 µs Avg Duration, that’s 0.00016093 seconds on a crusty iPhone 6s Plus. However, I should probably trace the first dispatch, now that I think of it. Measuring the wrong thing doesn’t help either. Don’t trust your numbers.
 
 For performance critical code with many reads and rare slow writes, you can go faster by using a concurrent queue to which you would submit your writing blocks with the `.barrier` flag asynchronously. This construction models a [readers-writer lock](https://en.wikipedia.org/wiki/Readers–writer_lock), only stalling reads during writes without corrupting ongoing reads.
 
@@ -55,7 +57,7 @@ If you are haunted by race conditions, don’t perforate your code with locks, i
 
 Unfortunately, we cannot be entirely thread-agnostic using Dispatch [yet](https://gist.github.com/lattner/31ed37682ef1576b16bca1432ea9f782). Designing our own queues, we must avoid excessive thread creation. Never block the current thread from a task submitted to a concurrent dispatch queue, the system will create new threads to run its other tasks and eventually your app will run out of threads. Try not to use private concurrent queues, use the global concurrent queues instead. Locking with serial queues is super handy, but you might end up creating many queues. Make sure to set the target of your serial queues to one of the [global system queues](https://developer.apple.com/documentation/dispatch/dispatchqueue/2300077-global).
 
-💡 Set targets of your serial queues to global concurrent queues
+💡 Set targets of your serial queues to global concurrent queues.
 
 ```swift
 let serialQueue = DispatchQueue(
@@ -68,6 +70,6 @@ let serialQueue = DispatchQueue(
 
 Always fasten your seatbelts—[ThreadSantizer](https://clang.llvm.org/docs/ThreadSanitizer.html) and Main Thread Checker, found in the Diagnostics tab of your Xcode Scheme. Do not try to control threading yourself, trust Dispatch and keep your code simple.
 
-💡 Check dispatch conditions with [dispatchPrecondition(condition:)](https://developer.apple.com/documentation/dispatch/1780605-dispatchprecondition)
+💡 Check dispatch conditions with [dispatchPrecondition(condition:)](https://developer.apple.com/documentation/dispatch/1780605-dispatchprecondition).
 
 Thread safely.
