@@ -86,6 +86,6 @@ If your code absolutely must run on a specific queue, make it part of the contra
 
 💡 Track down accessors with Xcode’s Find Call Hierarchy.
 
-That’s all awfully ambivalent, but mutual exclusivity is hard, even with Dispatch. We need stricter [contracts](https://github.com/apple/swift/blob/master/docs/OwnershipManifesto.md), so the compiler can safe us from ourselves.
+That’s all awfully ambivalent, but concurrent access is always a situation, even with Dispatch. We need stricter [contracts](https://github.com/apple/swift/blob/master/docs/OwnershipManifesto.md), so the compiler can safe us from ourselves.
 
 Thread safely 🧵
