@@ -3,7 +3,8 @@
   "description": "Exclusive access to shared mutable state with Swift.",
   "template": "article.pug",
   "date": "2019-07-28",
-  "path": "2019/07"
+  "path": "2019/07",
+  "image": "img/mutex/davos_large_card.jpg"
 }
 
 Threads enable execution of multiple code paths concurrently. With things happening at the same time, we need to control access of mutable state in our programs. Granting access to only one thread at a time prevents race conditions, which put your program into quantum superposition—you know, the thing with the [cat](https://en.wikipedia.org/wiki/Schrödinger%27s_cat).
