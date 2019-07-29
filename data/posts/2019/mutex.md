@@ -47,13 +47,13 @@ The serial queue guarantees singly access, only one caller, thread to stay on to
 
 Making apps, I did not find this technique slowing anything down, quite the contrary. Keeping your code synchronous at the lower levels, allows for more creativity at the higher levels for making things go fast.
 
+💡 Aside from its ambiguity, always measure *performance*. Never make assumptions, you are not a computer.
+
 Also, note that creating a new DispatchQueue is quick, `os_signpost` just reported 160.93 µs Avg Duration, that’s 0.00016093 seconds on a crusty iPhone 6s Plus. However, I should probably trace the first dispatch, now that I think of it. Measuring can be misleading, keep that in mind.
 
 For performance critical code with many reads and rare slow writes, you can go faster by using a concurrent queue to which you would submit your writing blocks with the `.barrier` flag asynchronously. This construction models a [readers-writer lock](https://en.wikipedia.org/wiki/Readers–writer_lock), only stalling reads during writes without corrupting ongoing reads.
 
-💡 Aside from its ambiguity, always measure *performance*. Never make assumptions, you are not a computer.
-
-If you are haunted by race conditions, don’t just perforate your code with locks and disparate queues, instead go back to the drawing board and think about the design of your software. Often times there is an elegant way out. Try to think in queues of events and tasks. Keep in mind that an [OperationQueue](https://developer.apple.com/documentation/foundation/operationqueue) can be made serial by limiting its maximum number of queued operations to one.
+If you are haunted by race conditions, don’t perforate your code with locks and disparate queues, instead go back to the drawing board and think about the design of your software. Often times there is an elegant way out. Try to think in queues of events and tasks. Keep in mind that an [OperationQueue](https://developer.apple.com/documentation/foundation/operationqueue) can be made serial by limiting its maximum number of queued operations to one.
 
 Combining DispatchQueue and OperationQueue creatively often produces satisfying solutions for humans and computers. Remember, performance is not everything.
 
@@ -72,7 +72,7 @@ let serialQueue = DispatchQueue(
 )
 ```
 
-The default [DispatchQoS.QoSClass](https://developer.apple.com/documentation/dispatch/dispatchqos/qosclass) usually does the job. If necessary, you can fine-tune timing by conducting access using different quality of service classes: user-interactive, user-initiated, default, utility, background, and unspecified.
+The default [DispatchQoS.QoSClass](https://developer.apple.com/documentation/dispatch/dispatchqos/qosclass) usually does the job. If necessary, you can fine-tune timing by prioritizing access targeting different quality of service classes: user-interactive, user-initiated, default, utility, background, and unspecified.
 
 #### Trust the system
 
@@ -82,10 +82,10 @@ Always fasten your seatbelts—[ThreadSantizer](https://clang.llvm.org/docs/Thre
 
 Writing closures, don’t make assumptions about their target queue. Although redispatching seems costly, too many target assumptions set you up for a rickety house of cards, where unrelated changes have unexpected effects.
 
-If your code absolutely must run on a specific queue, make it part of the contract, cleary expressed and documented. General rules within an app or library, segmenting it into subsystems that operate in specific dispatch trees, can help here. For example, [UIKit](https://developer.apple.com/documentation/uikit) only runs on the main queue. That’s the rule.
+If your code must run on a specific queue, make it part of the contract, cleary expressed and documented. General rules within an app or library, segmenting it into subsystems that operate in specific dispatch trees, can help here. For example, [UIKit](https://developer.apple.com/documentation/uikit) only runs on the main queue. That’s the rule.
 
 💡 Track down accessors with Xcode’s Find Call Hierarchy.
 
-That’s all awfully ambivalent, but concurrent access is always a situation, even with Dispatch. We need stricter [contracts](https://github.com/apple/swift/blob/master/docs/OwnershipManifesto.md), so the compiler can safe us from ourselves.
+That’s all awfully ambivalent, but concurrent access is always a situation, even with Dispatch. The takeaway if any: **think about access patterns at design time**. Designing the surface of your API first and a clear understanding of its use scenarios helps. Anyway, we need stricter [contracts](https://github.com/apple/swift/blob/master/docs/OwnershipManifesto.md), so the compiler can safe us from ourselves.
 
 Thread safely 🧵
