@@ -4,7 +4,7 @@
   "description": "The content of my website",
   "main": "index.js",
   "scripts": {
-    "syntax": "min.css node_modules/prismjs/themes/prism-solarizedlight.css > resources/css/syntax.css",
+    "syntax": "min.css node_modules/prismjs/themes/prism-tomorrow.css > resources/css/syntax.css",
     "modernize": "modernizr -c src/modernizr.json -d resources/js/modernizr.js",
     "normalize": "min.css node_modules/normalize.css/normalize.css > resources/css/normalize.css",
     "test": "standard index.js"
