@@ -8,7 +8,6 @@ troubled.moveFooter = function () {
 
 $(function () {
   $('#likes').load('/likes.html');
-  $('#tweet').load('/tweet.html');
   troubled.moveFooter();
 });
 
