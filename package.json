@@ -1,6 +1,6 @@
 {
   "name": "troubled",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "description": "The content of my website",
   "main": "index.js",
   "scripts": {
@@ -21,7 +21,6 @@
     "remark-parse": "^6.0.3",
     "remark-rehype": "^4.0.0",
     "request": "^2.88.0",
-    "twitter-text": "^1.13.4",
     "unified": "^7.1.0"
   },
   "keywords": [],

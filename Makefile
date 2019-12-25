@@ -27,6 +27,7 @@ stylesheets: $(STYLE) $(SYNTAX) $(NORMALIZE)
 	mv $(STYLE) $(CSS)/style.$(shell md5 -q $(STYLE)).css
 	mv $(SYNTAX) $(CSS)/syntax.$(shell md5 -q $(SYNTAX)).css
 	mv $(NORMALIZE) $(CSS)/normalize.$(shell md5 -q $(NORMALIZE)).css
+	./css.sh
 
 .PHONY: scripts
 scripts: $(SCRIPT) $(MODERNIZE) $(RESPOND)
@@ -58,6 +59,12 @@ $(NORMALIZE):
 
 $(SYNTAX): $(CSS)
 	npm run syntax
+
+# Synchronizing local /tmp site with S3 bucket
+
+.PHONY: deploy
+deploy:
+	aws s3 sync /tmp/troubled s3://troubled.pro
 
 # Removing all artifacts
 

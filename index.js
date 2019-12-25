@@ -16,8 +16,7 @@ exports.views = {
   'about.pug': article,
   'error.pug': article,
   'archive.pug': archive,
-  'likes.pug': likes,
-  'tweet.pug': tweet
+  'likes.pug': likes
 }
 
 const https = require('https')
@@ -32,7 +31,6 @@ const remarkParse = require('remark-parse')
 const remarkRehype = require('remark-rehype')
 const request = require('request')
 const strftime = require('prettydate').strftime
-const twitter = require('twitter-text')
 const unified = require('unified')
 
 loadLanguages([
@@ -61,49 +59,6 @@ function oauth (env) {
     token: env.ACCESS_TOKEN,
     token_secret: env.ACCESS_TOKEN_SECRET
   }
-}
-
-function tweet (item, cb) {
-  const header = item.header
-  let url = header.url
-  const params = {
-    screen_name: header.screen_name,
-    count: 1
-  }
-  const opts = {
-    url: url += qs.stringify(params),
-    oauth: oauth(process.env)
-  }
-  request(opts, function onRequest (er, res, body) {
-    if (er) {
-      return cb(er)
-    }
-    let json
-    try {
-      json = JSON.parse(body)
-    } catch (ex) {
-      return cb(ex)
-    }
-    if (json.errors instanceof Array) {
-      const first = json.errors[0]
-      const jsonError = new Error(first.message)
-      jsonError.code = first.code
-      return cb(jsonError)
-    }
-    if (!(json instanceof Array)) {
-      return cb(new Error('unexpected data: ' + json))
-    }
-    const tweet = json[0]
-    if (!((tweet != null) && (tweet.text != null))) {
-      const tweetError = new Error('no tweet')
-      return cb(tweetError)
-    }
-    const text = twitter.autoLink(tweet.text, {
-      urlEntities: tweet.entities.urls
-    })
-    const result = compile(item)({ text: text })
-    return cb(null, result)
-  })
 }
 
 function splitLocals (item, items, shift) {
