@@ -17,4 +17,6 @@ logs
 node_modules
 npm-debug.log
 pids
+resources/css
 results
+templates/head.pug
