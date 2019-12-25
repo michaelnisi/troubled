@@ -20,6 +20,11 @@ SCRIPT=$(JS)/script.min.js
 $(TMP): scripts stylesheets
 	blake $(TMP)
 
+# Install
+
+node_modules:
+	npm i
+
 # Updating static resources
 
 .PHONY: stylesheets
@@ -30,7 +35,7 @@ stylesheets: $(STYLE) $(SYNTAX) $(NORMALIZE)
 	./css.sh
 
 .PHONY: scripts
-scripts: $(SCRIPT) $(MODERNIZE) $(RESPOND)
+scripts: node_modules $(SCRIPT) $(MODERNIZE) $(RESPOND)
 
 # Generating JavaScript files
 
