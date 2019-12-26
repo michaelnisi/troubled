@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Michael Nisi’s Resume</title>
     <style>
-body {
-  font-family: sans-serif;
-  font-size: 1em;
-  line-height: 1.5em;
-  margin: 0;
-  padding: 3em;
-}
+      body {
+        font-family: sans-serif;
+        font-size: 1em;
+        line-height: 1.5em;
+        margin: 0;
+        padding: 3em;
+      }
     </style>
   </head>
   <body>
@@ -18,17 +18,28 @@ body {
       <header>
         <h1>Michael Nisi</h1>
         <address>
-          <a href="https://troubled.pro">troubled.pro</a><br>
-          <a href="mailto:michael.nisi@gmail.com">michael.nisi@gmail.com</a><br>
+          <a href="https://troubled.pro">troubled.pro</a><br />
+          <a href="mailto:michael.nisi@gmail.com">michael.nisi@gmail.com</a
+          ><br />
           German Citizen, Software Engineer
         </address>
         <p>
-        As an application developer, my objective is to build meaningful applications for end users, while enhancing software reliability and maintainability to create resilient distributed systems—from a file somewhere in a data center to the pixel on the glass in the user’s hand. I have a high standard of quality, in coding and writing, and believe that developing software is communication, in the end it’s about language.
+          As an application developer, my objective is to build meaningful
+          applications for end users, while enhancing software reliability and
+          maintainability to create resilient distributed systems—from a file
+          somewhere in a data center to the pixel on the glass in the user’s
+          hand. I have a high standard of quality, in coding and writing, and
+          believe that developing software is communication, in the end it’s
+          about language.
         </p>
 
         <blockquote>Everything boils down to words.</blockquote>
 
-        <p>I can lead and follow. As a leader I continuously ask myself how I might serve my followers. As a follower I’m likewise driven by a desire to be of use.</p>
+        <p>
+          I can lead and follow. As a leader I continuously ask myself how I
+          might serve my followers. As a follower I’m likewise driven by a
+          desire to be of use.
+        </p>
 
         <h2>Resume Contents</h2>
         <ul>
@@ -44,48 +55,110 @@ body {
         <h2>Work History</h2>
         <ul>
           <li>
-            2015 - 2019 Developer/Founder, Walsrode
+            2019 - now Senior Software Engineer,
+            <a href="https://apploft.de">apploft.</a>, Hamburg
             <p>
-            I wrote <a href="https://itunes.apple.com/us/app/podest/id794983364">Podest</a>, a modest podcast app for iOS, focusing on performance and efficiency. Multilevel caching is hard to implement, but it makes searching and browsing a snappy and unintrusive experience.
-            </p>
-
-            <p>Shipping an app of this complexity solo has been challenging—it taught me to prioritize.
-            Picking up <a href="https://swift.org">Swift</a> along the way, a language in its infancy when I started, brought some growing pains, but overall sounds worse than it was. Switching back and forth between Swift and JavaScript has been proving itself fruitful.
-            </p>
-            <p>
-            Remote caching is realized in <a href="https://nodejs.org">Node.js</a>, deployed to Joyent <a href="https://www.joyent.com/smartos">SmartOS</a> instances. These backends are fronted by <a href="https://haproxy.com">HAProxy</a>, running on <a href="https://alpinelinux.org">Alpine Linux</a>, with <a href="http://feurix.org/projects/hatop/">HATop</a> for monitoring. All APIs are designed for good CDN caching ratios, I use <a href="https://www.fastly.com">Fastly</a>.
-            </p>
-            <p>
-            <a href="https://github.com/michaelnisi/podest/tree/master/Podest/sync">Sync</a> between devices is implemented using <a href="https://developer.apple.com/documentation/cloudkit">CloudKit</a>, maybe my favorite Apple API.
-            </p>
-            <p>
-            💯% <a href="https://github.com/michaelnisi/podest">open source</a>
+              I contribute to different iOS apps, develop components, and build
+              UI with <a href="https://reactjs.org">React</a>.
             </p>
           </li>
           <li>
-            2008 - 2012 Developer, <a href="https://www.cmcmarkets.com">CMC Markets</a>, London/Hamburg/Vienna
+            2015 - 2019 Developer/Founder, Walsrode
+            <p>
+              I wrote
+              <a href="https://itunes.apple.com/us/app/podest/id794983364"
+                >Podest</a
+              >, a modest podcast app for iOS, focusing on performance and
+              efficiency. Multilevel caching is hard to implement, but it makes
+              searching and browsing a snappy and unintrusive experience.
+            </p>
 
             <p>
-            Starting with a distributed team of five, for CMC, we brought their spread betting platform to the web. With the team growing to around 50 people, we built a rich, modular Adobe Flash application. I was responsible for the product library and the trading ticket of the Flash client. This integral role allowed me to catalyse and harmonize team communication between groups.
+              Shipping an app of this complexity solo has been challenging—it
+              taught me to prioritize. Picking up
+              <a href="https://swift.org">Swift</a> along the way, a language in
+              its infancy when I started, brought some growing pains, but
+              overall sounds worse than it was. Switching back and forth between
+              Swift and JavaScript has been proving itself fruitful.
+            </p>
+            <p>
+              Remote caching is realized in
+              <a href="https://nodejs.org">Node.js</a> running in
+              <a href="https://aws.amazon.com/fargate/">AWS Fargate</a>.
+            </p>
+            <p>
+              Initially, deployed to Joyent’s now discontinued public cloud on
+              <a href="https://www.joyent.com/smartos">SmartOS</a>, these
+              backends were fronted by
+              <a href="https://haproxy.com">HAProxy</a>, running on
+              <a href="https://alpinelinux.org">Alpine Linux</a>, with
+              <a href="http://feurix.org/projects/hatop/">HATop</a> for
+              monitoring.
+            </p>
+            <p>
+              All APIs are designed for good CDN caching ratios, I use
+              <a href="https://www.fastly.com">Fastly</a>.
+            </p>
+
+            <p>
+              <a
+                href="https://github.com/michaelnisi/podest/tree/master/Podest/sync"
+                >Sync</a
+              >
+              between devices is implemented using
+              <a href="https://developer.apple.com/documentation/cloudkit"
+                >CloudKit</a
+              >, maybe my favorite Apple API.
+            </p>
+            <p>
+              💯%
+              <a href="https://github.com/michaelnisi/podest">open source</a>
+            </p>
+          </li>
+          <li>
+            2008 - 2012 Developer,
+            <a href="https://www.cmcmarkets.com">CMC Markets</a>,
+            London/Hamburg/Vienna
+
+            <p>
+              Starting with a distributed team of five, for CMC, we brought
+              their spread betting platform to the web. With the team growing to
+              around 50 people, we built a rich, modular Adobe Flash
+              application. I was responsible for the product library and the
+              trading ticket of the Flash client. This integral role allowed me
+              to catalyse and harmonize team communication between groups.
             </p>
           </li>
 
-          <li>2002 - 2008 Consulting, <a href="https://www.drid.de">DRID</a>, Bassier, Bergmann &amp; Kindler; Kuborgh, and more
+          <li>
+            2002 - 2008 Consulting, <a href="https://www.drid.de">DRID</a>,
+            Bassier, Bergmann &amp; Kindler; Kuborgh, and more
 
             <p>
-            In the heyday of Adobe Flash, we developed product sites, games, and banners—selling anything from packet soup to luxury cars. Memorable is the 2006 FIFA World Cup in Germany, for which I built a stylable betting game with DRID, which was sold to multiple clients.
+              In the heyday of Adobe Flash, we developed product sites, games,
+              and banners—selling anything from packet soup to luxury cars.
+              Memorable is the 2006 FIFA World Cup in Germany, for which I built
+              a stylable betting game with DRID, which was sold to multiple
+              clients.
             </p>
-
           </li>
 
-          <li>2000 - 2001 Designer, <a href="https://www.publicispixelpark.de">Pixelpark</a>, Hamburg</li>
-          <li>1996 - 1999 Graphic Designer/Founder, i &amp; i visual communication, Hamburg</li>
+          <li>
+            2000 - 2001 Designer,
+            <a href="https://www.publicispixelpark.de">Pixelpark</a>, Hamburg
+          </li>
+          <li>
+            1996 - 1999 Graphic Designer/Founder, i &amp; i visual
+            communication, Hamburg
+          </li>
         </ul>
       </section>
 
       <section id="education">
         <h2>Education</h2>
-        Not exactly a role model regarding formal education, being an art school dropout, I’ve learned most things I know autodidactically by practice. I wrote my first line of JavaScript in 1996. Learning never ends.
+        Not exactly a role model regarding formal education, being an art school
+        dropout, I’ve learned most things I know autodidactically by practice. I
+        wrote my first line of JavaScript in 1996. Learning never ends.
         <ul>
           <li>1994 - 1996 Alsterdamm – School of Visual Arts, Hamburg</li>
         </ul>
@@ -95,54 +168,112 @@ body {
         <h2>Selected Open Source Contributions</h2>
         <ul>
           <li>
-            <a href="https://github.com/michaelnisi/podest/tree/master/Podest/store">Podest/store</a> non-renewing StoreKit subscriptions – iOS
+            <a
+              href="https://github.com/michaelnisi/podest/tree/master/Podest/store"
+              >Podest/store</a
+            >
+            non-renewing StoreKit subscriptions – iOS
             <p>
-            Mobile apps are notoriously hard to test, naturally safe code is essential. With Swift’s type system we can construct compelling data structures, leveraging the compiler for correctness of our code. In the in-app store of Podest, I use a finite-state machine with enumerated type-safe states and events. A common pattern in my code, I have learned to appreciate through <a href="http://erlang.org/doc/man/gen_statem.html">OTP</a>.
-            </p>
-          </li>
-
-          <li><a href="https://github.com/michaelnisi/feeder">feeder</a> Parse RSS and Atom feeds – Erlang
-            <p>After <a href="https://github.com/michaelnisi/pickup">pickup</a>, the Node.js streaming parser I’ve written for Podest, I needed comparison. Feeder is a good example for using xmerl_sax_parser, the OTP SAX parser API, and seems to resonate with the Elixir community. Memory characteristics of the BEAM bring Node to shame, but that’s comparing apples and oranges.
-            </p>
-          </li>
-
-          <li><a href="https://github.com/michaelnisi/manger-http">manger-http</a> Caching podcast feed proxy – Node
-            <p>Podest’s feed proxy is tailor-made, not depending on any specific HTTP framework. Its requirements, high volume and small memory footprint, demand efficient inbound and outbound data-flow. This has been realized using Node’s standard HTTP interfaces and <a href="https://github.com/Level">Level</a>.
-            </p>
-          <li>
-            <a href="https://github.com/michaelnisi/skull">Skull</a> Swift SQLite – iOS
-            <p>
-              Apple uses SQLite in most of their apps on macOS and iOS. Being the de facto standard database on Apple devices, packages for using it are plenty. For me, these dependencies are often too thick. That’s why I wrote Skull, a thin layer of Swift, barely covering the C library. I like simple things, software development is hard enough.
+              Mobile apps are notoriously hard to test, naturally safe code is
+              essential. With Swift’s type system we can construct compelling
+              data structures, leveraging the compiler for correctness of our
+              code. In the in-app store of Podest, I use a finite-state machine
+              with enumerated type-safe states and events. A common pattern in
+              my code, I have learned to appreciate through
+              <a href="http://erlang.org/doc/man/gen_statem.html">OTP</a>.
             </p>
           </li>
 
           <li>
-            <a href="https://github.com/kean/Nuke">Nuke</a> Caching image loader – iOS
+            <a href="https://github.com/michaelnisi/feeder">feeder</a> Parse RSS
+            and Atom feeds – Erlang
             <p>
-            Nuke is the high performance image loader, written by Alexander Grebenyuk, I use in Podest for quick loading of arbitrary images over HTTP while scrolling. I’m happy, we were able to <a href="https://github.com/kean/Nuke/pull/190">resolve</a> this highly volatile <a href="https://github.com/kean/Nuke/issues/174">race condition</a>.
+              After <a href="https://github.com/michaelnisi/pickup">pickup</a>,
+              the Node.js streaming parser I’ve written for Podest, I needed
+              comparison. Feeder is a good example for using xmerl_sax_parser,
+              the OTP SAX parser API, and seems to resonate with the Elixir
+              community. Memory characteristics of the BEAM bring Node to shame,
+              but that’s comparing apples and oranges.
             </p>
           </li>
 
           <li>
-            <a href="https://github.com/restify/node-restify">restify</a> Old school REST – Node
-            <p>Not quite the <a href="https://github.com/fastify">future</a> of REST development, but still dear to my heart. I’ve learned a lot about HTTP by reading Mark Cavage’s code. I’m hoping to find time to follow through with this <a href="https://github.com/restify/clients/pull/198">PR</a>, enabling better streaming support for restify clients.</p>
+            <a href="https://github.com/michaelnisi/manger-http">manger-http</a>
+            Caching podcast feed proxy – Node
+            <p>
+              Podest’s feed proxy is tailor-made, not depending on any specific
+              HTTP framework. Its requirements, high volume and small memory
+              footprint, demand efficient inbound and outbound data-flow. This
+              has been realized using Node’s standard HTTP interfaces and
+              <a href="https://github.com/Level">Level</a>.
+            </p>
           </li>
 
+          <li>
+            <a href="https://github.com/michaelnisi/skull">Skull</a> Swift
+            SQLite – iOS
+            <p>
+              Apple uses SQLite in most of their apps on macOS and iOS. Being
+              the de facto standard database on Apple devices, packages for
+              using it are plenty. For me, these dependencies are often too
+              thick. That’s why I wrote Skull, a thin layer of Swift, barely
+              covering the C library. I like simple things, software development
+              is hard enough.
+            </p>
+          </li>
+
+          <li>
+            <a href="https://github.com/kean/Nuke">Nuke</a> Caching image loader
+            – iOS
+            <p>
+              Nuke is the high performance image loader, written by Alexander
+              Grebenyuk, I use in Podest for quick loading of arbitrary images
+              over HTTP while scrolling. I’m happy, we were able to
+              <a href="https://github.com/kean/Nuke/pull/190">resolve</a> this
+              highly volatile
+              <a href="https://github.com/kean/Nuke/issues/174"
+                >race condition</a
+              >.
+            </p>
+          </li>
+
+          <li>
+            <a href="https://github.com/restify/node-restify">restify</a> Old
+            school REST – Node
+            <p>
+              Not quite the <a href="https://github.com/fastify">future</a> of
+              REST development, but still dear to my heart. I’ve learned a lot
+              about HTTP by reading Mark Cavage’s code. I’m hoping to find time
+              to follow through with this
+              <a href="https://github.com/restify/clients/pull/198">PR</a>,
+              enabling better streaming support for restify clients.
+            </p>
+          </li>
         </ul>
-        <p>Please visit my <a href="https://github.com/michaelnisi">GitHub profile</a> for more.</p>
+        <p>
+          Please visit my
+          <a href="https://github.com/michaelnisi">GitHub profile</a> for more.
+        </p>
       </section>
 
       <section id="writing">
         <h2>Selected Articles</h2>
         <ul>
-          <li><a href="https://troubled.pro/2019/02/graphql.html"> GraphQL with Apollo iOS</a>
+          <li>
+            <a href="https://troubled.pro/2019/02/graphql.html">
+              GraphQL with Apollo iOS</a
+            >
             <p>
               GraphQL encodes a uniform language, type system, and philosophy.
             </p>
           </li>
-          <li><a href="https://troubled.pro/2018/08/cloudkit.html"> Synchronizing With CloudKit</a>
+          <li>
+            <a href="https://troubled.pro/2018/08/cloudkit.html">
+              Synchronizing With CloudKit</a
+            >
             <p>
-              A conceptual overview of using Apple’s CloudKit framework to synchronize data across devices running your app.
+              A conceptual overview of using Apple’s CloudKit framework to
+              synchronize data across devices running your app.
             </p>
           </li>
         </ul>
@@ -151,21 +282,35 @@ body {
       <section id="other">
         <h2>Other Interests and Activities</h2>
         <p>
-        The older I get, the more of a fitness nut I become—standing desk and all. I love surfing, swimming, and running. I eat well, like to read actual books, and take walks. 🙄
+          The older I get, the more of a fitness nut I become—standing desk and
+          all. I love surfing, swimming, and running. I eat well, like to read
+          actual books, and take walks. 🙄
         </p>
         <ul>
-          <li>2012 - 2016 Surfing, Atlantic, Europe
-            <li>1993 - 1994 Competitive windsurfer, Deutscher Windsurf Cup</li>
-            <li>1992 - 1993 Windsurfing, Maui, Hawaii</li>
-            <li>1991 - 1992 Worker, cylinder block casting, Mercedes-Benz plant, Untertürkheim</li>
-            <li>1990 - 1991 Paratrooper, military service, Luftlandebrigade 25</li>
-            <li>1978 - 1989 Handball, TSV Denkendorf</li>
+          <li>2012 - 2016 Surfing, Atlantic, Europe</li>
+          <li>1993 - 1994 Competitive windsurfer, Deutscher Windsurf Cup</li>
+          <li>1992 - 1993 Windsurfing, Maui, Hawaii</li>
+          <li>
+            1991 - 1992 Worker, cylinder block casting, Mercedes-Benz plant,
+            Untertürkheim
+          </li>
+          <li>
+            1990 - 1991 Paratrooper, military service, Luftlandebrigade 25
+          </li>
+          <li>1978 - 1989 Handball, TSV Denkendorf</li>
         </ul>
         <p>
-        Further windsurfing travels, more work at the plant, delivering parcels as a courier driver, and building exhibition stands across Europe, acquiring skills handy to this day.
+          Further windsurfing travels, more work at the plant, delivering
+          parcels as a courier driver, and building exhibition stands across
+          Europe, acquiring skills handy to this day.
         </p>
       </section>
-      <footer><i><a href="https://troubled.pro/resume.html">This</a> was last updated in June 2019. It may be out of date.</i></footer>
+      <footer>
+        <i
+          ><a href="https://troubled.pro/resume.html">This</a> was last updated
+          in December 2019. It may be out of date.</i
+        >
+      </footer>
     </article>
   </body>
 </html>
