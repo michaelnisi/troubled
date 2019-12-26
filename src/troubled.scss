@@ -66,8 +66,8 @@ h5 {
 pre,
 code {
   font-family: "Source Code Pro", monospace;
-  background-color: #2d2d2d; /* base3 */
-  color: #657b83;
+  background-color: #fffae0; /* base3 */
+  color: #1a1a1a;
 }
 
 article p pre,
@@ -286,5 +286,11 @@ a#understated,
 
   a h1 {
     color: #8a9a9b;
+  }
+
+  pre,
+  code {
+    background-color: #2d2d2d;
+    color: #cccccc;
   }
 }
