@@ -1,9 +1,9 @@
 {
-  "title": "Shimmy Shimmy Ya",
-  "description": "With Swift 4.2 the Package Manager introduces System Library Targets.",
-  "template": "article.pug",
-  "date": "2018-09-25",
-  "path": "2018/09"
+"title": "Shimmy Shimmy Ya",
+"description": "With Swift 4.2 the Package Manager introduces System Library Targets.",
+"template": "article.pug",
+"date": "2018-09-25",
+"path": "2018/09"
 }
 
 Being an iOS developer, I cannot fully use the [Package Manager](https://swift.org/package-manager/) yet, but I keep my frameworks compatible if possible, with the nice side effect of making them workable without Xcode.
@@ -65,7 +65,7 @@ let package = Package(
 
 And provide the [module map](https://clang.llvm.org/docs/Modules.html) for the system library named `CSqlite3` within the package via the `path` parameter.
 
-```
+```sh
 Libraries
 └── CSqlite3
     ├── module.modulemap
@@ -74,19 +74,19 @@ Libraries
 
 It works if, after cloning into Skull, you are able run its tests.
 
-```
-swift test
+```sh
+$ swift test
 ```
 
 Another thing you might want to try is running the example, which is slightly more interesting, for it’s also resolving dependencies.
 
-```
-cd example && swift run
+```sh
+$ cd example && swift run
 ```
 
 Which should result in something like the following.
 
-```
+```sh
 Fetching https://github.com/michaelnisi/skull
 Completed resolution in 1.53s
 Cloning https://github.com/michaelnisi/skull

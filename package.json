@@ -10,6 +10,7 @@
     "test": "standard index.js"
   },
   "dependencies": {
+    "blake": "^1.0.1",
     "pickup": "^8.0.1",
     "prettydate": "0.0.1",
     "property-ttl": "^1.0.0",

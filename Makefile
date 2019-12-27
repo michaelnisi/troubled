@@ -18,7 +18,7 @@ SCRIPT=$(JS)/script.min.js
 # Building a temporary site
 
 $(TMP): scripts stylesheets
-	blake $(TMP)
+	./node_modules/blake/bin/cli.js $(TMP)
 
 # Install
 

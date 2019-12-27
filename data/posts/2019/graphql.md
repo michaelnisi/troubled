@@ -1,10 +1,10 @@
 {
-  "title": "GraphQL with Apollo iOS",
-  "description": "GraphQL encodes a uniform language, type system, and philosophy.",
-  "template": "article.pug",
-  "date": "2019-02-08",
-  "path": "2019/02",
-  "image": "img/graphql_large_card.png"
+"title": "GraphQL with Apollo iOS",
+"description": "GraphQL encodes a uniform language, type system, and philosophy.",
+"template": "article.pug",
+"date": "2019-02-08",
+"path": "2019/02",
+"image": "img/graphql_large_card.png"
 }
 
 Recently, I finally got around to try GraphQL. I know, right? Ready to jump on the bandwagon—it’s a developer [mega-trend](https://blog.apollographql.com/highlights-from-graphql-summit-2018-30a766291691)—I picked Apollo iOS and built [Swifters](https://github.com/michaelnisi/swifters), a little app that lists Swift users on GitHub. Although incredibly useful in its own right, its purpose is to explore GraphQL, evaluating its declarative—as opposed to the imperative REST—architecture.
@@ -19,7 +19,7 @@ And to take the biscuit, imagine doing this with a dynamic language, server side
 
 [GraphQL](https://graphql.org) is a query language for APIs, originally created at Facebook in 2012. Interacting with a GraphQL endpoint, you describe what you need in your query and get exactly that. The result reflects the structure of the query.
 
-A single GraphQL endpoint may aggregate data from many resources. Its typed *schema* can replace versioning, which is flimsy anyways, especially for microservices, with people ending up bumping version numbers wholesale in unison. Do you even [semver](https://semver.org)?
+A single GraphQL endpoint may aggregate data from many resources. Its typed _schema_ can replace versioning, which is flimsy anyways, especially for microservices, with people ending up bumping version numbers wholesale in unison. Do you even [semver](https://semver.org)?
 
 [Apollo iOS](https://www.apollographql.com/docs/ios/) is a strongly-typed, caching GraphQL client.
 
@@ -27,7 +27,7 @@ In addition to the reference implementation in [JavaScript](https://github.com/g
 
 You don’t need a complex client to hit a GraphQL endpoint. Here’s GitHub:
 
-```bash
+```sh
 $ curl https://api.github.com/graphql
 ```
 
@@ -42,7 +42,7 @@ Responding with:
 
 After you have [created](https://developer.github.com/v4/guides/forming-calls/#authenticating-with-graphql) your OAuth token, try logging in bearing the `<token>`.
 
-```bash
+```sh
 $ curl -H "Authorization: bearer <token>" -X POST -d " \
  { \
    \"query\": \"query { viewer { login }}\" \
@@ -66,7 +66,7 @@ Creating adaptive UIs, collection views and table views can be used to structure
 
 Detailed understanding of `performBatchUpdates(_:completion:)` is essential for building this kind of apps. I recommend taking [A Tour of UICollectionView](https://developer.apple.com/videos/play/wwdc2018/225/).
 
-Every iOS developer has implemented a diffing algorithm for updating collection views or table views, one way or another. Looking around, I like [DeepDiff](https://github.com/onmyway133/DeepDiff). In fact, I like it so much that I have  extracted its `diff` function into a single [file](https://github.com/michaelnisi/swifters/blob/master/Swifters/ds/diff.swift)—386 lines of code.
+Every iOS developer has implemented a diffing algorithm for updating collection views or table views, one way or another. Looking around, I like [DeepDiff](https://github.com/onmyway133/DeepDiff). In fact, I like it so much that I have extracted its `diff` function into a single [file](https://github.com/michaelnisi/swifters/blob/master/Swifters/ds/diff.swift)—386 lines of code.
 
 I’m excited about the recent [Ordered Collection Diffing](https://github.com/apple/swift-evolution/blob/master/proposals/0240-ordered-collection-diffing.md) proposal, describing additions to the Swift Standard Library that provide an interchange format for diffs as well as diffing/patching functionality for appropriate collection types.
 
@@ -74,13 +74,13 @@ I’m excited about the recent [Ordered Collection Diffing](https://github.com/a
 
 For [Swifters](https://github.com/michaelnisi/swifters), I’ve chosen [Apollo iOS](https://www.apollographql.com/docs/ios/), a strongly typed, caching GraphQL client for native iOS apps. The app repo contains detailed [installation](https://github.com/michaelnisi/swifters#installation) instructions—here’s just a quick intro, independent from the app, for exploring the Apollo command line tool. Let’s install it with npm. In a new directory, do:
 
-```bash
+```sh
 $ npm i apollo
 ```
 
 We can try it locally using [npx](https://blog.npmjs.org/post/162869356040/introducing-npx-an-npm-package-runner), an npm package runner.
 
-```
+```sh
 $ npx apollo
 ```
 
@@ -102,7 +102,7 @@ COMMANDS
 
 Type `help` followed by a command name to explore the tool, for example:
 
-```
+```sh
 $ npx apollo help schema
 ```
 
@@ -110,13 +110,13 @@ $ npx apollo help schema
 
 > A GraphQL service is created by defining types and fields on those types, then providing functions for each field on each type.
 
-These types are defined in a *schema*, a contract with clients. Let’s download the *schema* of the GitHub GraphQL API, authenticating with the OAuth token from above.
+These types are defined in a _schema_, a contract with clients. Let’s download the _schema_ of the GitHub GraphQL API, authenticating with the OAuth token from above.
 
-```
+```sh
 npx apollo schema:download --endpoint=https://api.github.com/graphql --header="Authorization: <token>"
 ```
 
-And with that, we have just downloaded the 45K LOC *schema* file of the GitHub GraphQL API v4. 😮 Peeking into the file, we find the GitHub API Graph expressed in JSON, not for humans though, but for [machines](https://developer.github.com/v4/guides/intro-to-graphql/#discovering-the-graphql-api) to read. GraphQL is [introspective](https://graphql.org/learn/introspection/), you can ask a *schema* about itself. For example, this query JSON would list all GitHub types:
+And with that, we have just downloaded the 45K LOC _schema_ file of the GitHub GraphQL API v4. 😮 Peeking into the file, we find the GitHub API Graph expressed in JSON, not for humans though, but for [machines](https://developer.github.com/v4/guides/intro-to-graphql/#discovering-the-graphql-api) to read. GraphQL is [introspective](https://graphql.org/learn/introspection/), you can ask a _schema_ about itself. For example, this query JSON would list all GitHub types:
 
 ```js
 {
@@ -124,11 +124,11 @@ And with that, we have just downloaded the 45K LOC *schema* file of the GitHub G
 }
 ```
 
-```bash
+```sh
 $ curl -sSH "Authorization: bearer <token>" -X POST -d '{ "query": "{ __schema { types { name } } }" }' https://api.github.com/graphql | json -ga data.__schema.types | json -ga name | wc -l
 ```
 
-```
+```sh
 482
 ```
 
@@ -146,13 +146,15 @@ This article is getting lengthy. Why not end it with my unreflected notes? They 
 
 > Apollo does not only remove serialization, but also builds a local graph. I decided to go all in for this little experiment and query from my collection view data sources, which accompanies nicely my other dogma for this demo: collection views only.
 
-*Three days later*
+_Three days later_
+
 > I’m impressed. After passing the intial ramp, acquiring a rudimentary understanding of GraphQL and setting up Apollo iOS, it has been a downhill ride—thrilling and fast. Building an app by modeling queries like clay is incredibly effective. Development can get pretty spontaneous that way, while still being safe, Type-Safe.
 
-*A week later*
+_A week later_
+
 > Do I still believe in REST? I have yet to experience implementing GraphQL server, but what I have seen so far, from the client perspective, indicates strongly that GraphQL with Apollo is a great way for building and growing apps. All parts fell into place quite naturally. Intuitive decisions were mostly right. My reading matter for the next couple of weeks is set. 📚
 
-*I have questions*
+_I have questions_
 
 > Offline first? How would we persist the graph cache? How does memory management of the graph work? Why is `GraphQLFragment` not `Hashable`? And what’s up with those memory leaks?
 
@@ -160,6 +162,6 @@ This article is getting lengthy. Why not end it with my unreflected notes? They 
 
 After the final monolith has been broken down into microservices, we are introducing a new layer to bring things together again.
 
->  This new layer brings all of a company's app data and services together in one place, with one consistent, secure, and easy-to-use interface, so that anyone can draw upon it with minimal friction
+> This new layer brings all of a company's app data and services together in one place, with one consistent, secure, and easy-to-use interface, so that anyone can draw upon it with minimal friction
 
 Read on, this is a quote from [Principled GraphQL](https://principledgraphql.com).
