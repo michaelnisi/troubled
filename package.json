@@ -14,7 +14,7 @@
     "pickup": "^8.0.1",
     "prettydate": "0.0.1",
     "property-ttl": "^1.0.0",
-    "pug": "^2.0.3",
+    "pug": "^3.0.1",
     "rehype-prism": "^0.1.0",
     "rehype-resolution": "^1.0.0",
     "rehype-stringify": "^5.0.0",
