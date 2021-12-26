@@ -84,7 +84,7 @@ We can try it locally using [npx](https://blog.npmjs.org/post/162869356040/intro
 $ npx apollo
 ```
 
-```
+```sh
 Command line tool for Apollo GraphQL
 
 VERSION
