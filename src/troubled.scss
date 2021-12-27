@@ -5,7 +5,7 @@ $secondary: #9acd99;
 
 body {
   color: #343838;
-  background-color: #fff;
+  background-color: #f0f0f0;
   font-weight: 400;
   font-family: "Fira Sans", sans-serif;
 }
@@ -54,8 +54,11 @@ h5 {
 pre,
 code {
   font-family: "Source Code Pro", monospace;
-  background-color: #fffae0; /* base3 */
-  color: #1a1a1a;
+  background-color: #E0E0E0;
+  color: #474747;
+}
+
+pre {
   border-radius: 0.4em;
 }
 
@@ -167,7 +170,7 @@ section#likes ul li a {
 section#cover,
 section#articles,
 section#likes {
-  border-top-color: #cccccc;
+  border-top-color: #c7c7c7;
   border-top-width: 1px;
   border-top-style: solid;
   padding: 1em;
@@ -246,7 +249,7 @@ a#understated,
   display: none;
 }
 
-#page_footer {
+html, #page_footer {
   background-color: #1b091b;
 }
 
@@ -274,6 +277,10 @@ a#understated,
     color: #93a1a1;
   }
 
+  section#cover, section#articles, section#likes {
+    border-top-color: #848487;
+  }
+
   a h1 {
     color: #8a9a9b;
   }
@@ -281,6 +288,6 @@ a#understated,
   pre,
   code {
     background-color: #2d2d2d;
-    color: #cccccc;
+    color: #848487;
   }
 }
